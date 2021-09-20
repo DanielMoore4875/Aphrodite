@@ -1,0 +1,2 @@
+include ':AphroditeApp'
+rootProject.name = "Aphrodite"
