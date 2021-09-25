@@ -1,5 +1,6 @@
 #Aphrodite
 
+# Kainotomia Daniel Moore (n01354875) Alyssa Gomez (n01042777) Jose Antonio Teodoro (n01384776) Ryan Black (n01305403)
 
 ## Proposal
 Mirrors have been in use for hundreds of years and are a sleek and simple way to see yourself and make a room look bigger. With the space they take up, however, they don’t accomplish that much in terms of showing important information like how your phone does. Since mobile phones and computers have become such a necessity in our lives, it is only a step forward to make something as simple as a mirror show such important everyday information.
