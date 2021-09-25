@@ -3,4 +3,8 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="MA_AlertDialogExitApp_title">Exit App</string>
+    <string name="MA_AlertDialogExitApp_msg">Are you sure you want to exit?</string>
+    <string name="MA_AlertDialogExitApp_yes">Yes, exit app</string>
+    <string name="MA_AlertDialogExitApp_no">No, stay in app</string>
 </resources>
