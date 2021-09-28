@@ -1,0 +1,14 @@
+<!--Jose Antonio Castro Teodoro n01384776 Section B-->
+<!--Daniel Moore n01354875 Section B-->
+<!--Ryan Black n01305403 Section B-->
+<!--Alyssa Gomez n01042777 Section B-->
+<resources>
+    <string name="app_name">Aphrodite</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="MA_AlertDialogExitApp_title">Quitter L\'application</string>
+    <string name="MA_AlertDialogExitApp_msg">Êtes-vous sûr de vouloir quitter?</string>
+    <string name="MA_AlertDialogExitApp_yes">Oui, quitter l\'application</string>
+    <string name="MA_AlertDialogExitApp_no">Non, restez dans l\'application</string>
+</resources>
