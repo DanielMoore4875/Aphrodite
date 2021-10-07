@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "862254589566",
+    "firebase_url": "https://aphrodite-ceng-2021-default-rtdb.firebaseio.com",
+    "project_id": "aphrodite-ceng-2021",
+    "storage_bucket": "aphrodite-ceng-2021.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:862254589566:android:12c4bcd0b917428c7fda2f",
+        "android_client_info": {
+          "package_name": "ca.kainotomia.it.aphrodite"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "862254589566-qfpf5j61i3v7tlb3hcrmpohg0s61jmri.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ca.kainotomia.it.aphrodite",
+            "certificate_hash": "9d6328c64399c30633d3c86ef39ee5cf3de40d1f"
+          }
+        },
+        {
+          "client_id": "862254589566-0cvfjpl3d7l16qh1v7rohm87t6cpg6ae.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAeXzbnlHEhvhPhMX-6rRcJYFV-T7ZejpU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "862254589566-0cvfjpl3d7l16qh1v7rohm87t6cpg6ae.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
