@@ -2,19 +2,19 @@
 //Daniel Moore n01354875 Section B
 //Ryan Black n01305403 Section B
 //Alyssa Gomez n01042777 Section B
-package ca.kainotomia.it.aphrodite.ui.notifications;
+package ca.kainotomia.it.aphrodite.ui.account;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class NotificationsViewModel extends ViewModel {
+public class AccountViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public NotificationsViewModel() {
+    public AccountViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is notifications fragment");
+        mText.setValue("This is Account fragment");
     }
 
     public LiveData<String> getText() {
