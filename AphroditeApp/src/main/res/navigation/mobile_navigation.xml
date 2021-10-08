@@ -14,7 +14,7 @@
     <fragment
         android:id="@+id/navigation_dashboard"
         android:name="ca.kainotomia.it.aphrodite.ui.layouts.LayoutFragment"
-        android:label="@string/title_dashboard"
+        android:label="@string/title_layouts"
         tools:layout="@layout/fragment_dashboard" />
 
     <fragment
