@@ -14,7 +14,7 @@ public class LayoutViewModel extends ViewModel {
 
     public LayoutViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is dashboard fragment");
+        mText.setValue("This is layout fragment");
     }
 
     public LiveData<String> getText() {
