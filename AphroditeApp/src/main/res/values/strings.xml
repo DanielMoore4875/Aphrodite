@@ -5,8 +5,8 @@
 <resources>
     <string name="app_name">Aphrodite</string>
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_layouts">Layouts</string>
+    <string name="title_account">Account</string>
     <string name="MA_AlertDialogExitApp_title">Exit App</string>
     <string name="MA_AlertDialogExitApp_msg">Are you sure you want to exit?</string>
     <string name="MA_AlertDialogExitApp_yes">Yes, exit app</string>
