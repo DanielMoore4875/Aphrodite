@@ -16,14 +16,14 @@ public class SplashScreenActivity extends AppCompatActivity {
             @Override
             public void run() {
                 startActivity(new Intent(SplashScreenActivity.this, MainActivity.class));
-                doNextWork();
+                doneScreen();
             }
         }, 3000);
 
 
     }
 
-    private void doNextWork() {
+    private void doneScreen() {
         finish();
     }
 
