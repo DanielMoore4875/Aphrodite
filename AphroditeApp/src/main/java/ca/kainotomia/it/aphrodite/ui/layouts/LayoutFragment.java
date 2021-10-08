@@ -26,7 +26,7 @@ public class LayoutFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         layoutViewModel =
                 new ViewModelProvider(this).get(LayoutViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_dashboard, container, false);
+        View root = inflater.inflate(R.layout.fragment_layouts, container, false);
         final TextView textView = root.findViewById(R.id.text_dashboard);
         layoutViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
