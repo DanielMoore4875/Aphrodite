@@ -2,7 +2,7 @@
 //Daniel Moore n01354875 Section B
 //Ryan Black n01305403 Section B
 //Alyssa Gomez n01042777 Section B
-package ca.kainotomia.it.aphrodite.ui.dashboard;
+package ca.kainotomia.it.aphrodite.ui.layouts;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -18,17 +18,17 @@ import androidx.lifecycle.ViewModelProvider;
 
 import ca.kainotomia.it.aphrodite.R;
 
-public class DashboardFragment extends Fragment {
+public class LayoutFragment extends Fragment {
 
-    private DashboardViewModel dashboardViewModel;
+    private LayoutViewModel layoutViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        dashboardViewModel =
-                new ViewModelProvider(this).get(DashboardViewModel.class);
+        layoutViewModel =
+                new ViewModelProvider(this).get(LayoutViewModel.class);
         View root = inflater.inflate(R.layout.fragment_dashboard, container, false);
         final TextView textView = root.findViewById(R.id.text_dashboard);
-        dashboardViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        layoutViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
