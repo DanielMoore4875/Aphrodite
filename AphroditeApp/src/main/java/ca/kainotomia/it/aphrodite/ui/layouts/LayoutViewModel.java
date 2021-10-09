@@ -14,7 +14,7 @@ public class LayoutViewModel extends ViewModel {
 
     public LayoutViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is layout fragment");
+        mText.setValue("This is sample text I am typing");
     }
 
     public LiveData<String> getText() {

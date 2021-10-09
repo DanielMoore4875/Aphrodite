@@ -11,4 +11,11 @@
     <string name="MA_AlertDialogExitApp_msg">Are you sure you want to exit?</string>
     <string name="MA_AlertDialogExitApp_yes">Yes, exit app</string>
     <string name="MA_AlertDialogExitApp_no">No, stay in app</string>
+    <string name="on_off">ON/OFF</string>
+    <string name="saved_layouts">Saved Layouts</string>
+    <string name="savebutton">Save button</string>
+    <string name="humidtemperature">Humidity Temperature</string>
+    <string name="proximity">Proximity</string>
+    <string name="voicerecognition">Voice Recognition</string>
+    <string name="weather">Weather</string>
 </resources>
