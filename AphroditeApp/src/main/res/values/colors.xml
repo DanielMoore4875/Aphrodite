@@ -13,6 +13,6 @@
     <color name="oak">#ab8057</color>
     <color name="light_oak">#eac79c</color>
     <color name="peach">#eb7e62</color>
-
-
+    <color name="darkmode_grey">#282828</color>
+    <color name="dark_green">#006400</color>
 </resources>
