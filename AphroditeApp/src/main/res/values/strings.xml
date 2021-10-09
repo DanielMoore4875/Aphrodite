@@ -11,5 +11,4 @@
     <string name="MA_AlertDialogExitApp_msg">Are you sure you want to exit?</string>
     <string name="MA_AlertDialogExitApp_yes">Yes, exit app</string>
     <string name="MA_AlertDialogExitApp_no">No, stay in app</string>
-    <string name="title_voice">Voice Commands</string>
 </resources>
