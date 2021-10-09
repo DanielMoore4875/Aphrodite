@@ -22,4 +22,10 @@
         android:name="ca.kainotomia.it.aphrodite.ui.account.AccountFragment"
         android:label="@string/title_account"
         tools:layout="@layout/fragment_account" />
+
+    <fragment
+        android:id="@+id/navigation_voice"
+        android:name="ca.kainotomia.it.aphrodite.ui.voice.VoiceFragment"
+        android:label="@string/title_voice"
+        tools:layout="@layout/voice_fragment" />
 </navigation>

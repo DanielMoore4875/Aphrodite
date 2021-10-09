@@ -5,10 +5,11 @@
 <resources>
     <string name="app_name">Aphrodite</string>
     <string name="title_home">Home</string>
-    <string name="title_layouts">Dashboard</string>
-    <string name="title_account">Notifications</string>
+    <string name="title_layouts">Layouts</string>
+    <string name="title_account">Account</string>
     <string name="MA_AlertDialogExitApp_title">Quitter L\'application</string>
     <string name="MA_AlertDialogExitApp_msg">Êtes-vous sûr de vouloir quitter?</string>
     <string name="MA_AlertDialogExitApp_yes">Oui, quitter l\'application</string>
     <string name="MA_AlertDialogExitApp_no">Non, restez dans l\'application</string>
+    <string name="title_voice">Voice Commands</string>
 </resources>

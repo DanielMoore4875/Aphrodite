@@ -16,4 +16,9 @@
         android:icon="@drawable/ic_baseline_account_circle_24"
         android:title="@string/title_account" />
 
+    <item
+        android:id="@+id/navigation_voice"
+        android:icon="@drawable/ic_voice_icon"
+        android:title="@string/title_voice" />
+
 </menu>

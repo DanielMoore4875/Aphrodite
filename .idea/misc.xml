@@ -11,16 +11,19 @@
         <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.225" />
         <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/layout/activity_main.xml" value="0.20833333333333334" />
         <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/layout/activity_splash_screen.xml" value="0.20833333333333334" />
+        <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/layout/fragment_account.xml" value="0.24954710144927536" />
         <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/layout/fragment_dashboard.xml" value="0.20833333333333334" />
         <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/layout/fragment_home.xml" value="0.20833333333333334" />
+        <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/layout/fragment_layouts.xml" value="0.24954710144927536" />
         <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/layout/fragment_notifications.xml" value="0.20833333333333334" />
+        <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/layout/fragment_voice.xml" value="0.24954710144927536" />
+        <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/layout/voice_fragment.xml" value="0.24954710144927536" />
         <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/menu/bottom_nav_menu.xml" value="0.22395833333333334" />
         <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/mipmap-anydpi-v26/aphrodite_logo.xml" value="0.1" />
-        <entry key="..\:/CollegeHomework/Year3,Semester1/SoftwareProject/Aphrodite/AphroditeApp/src/main/res/menu/bottom_nav_menu.xml" value="0.36666666666666664" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
