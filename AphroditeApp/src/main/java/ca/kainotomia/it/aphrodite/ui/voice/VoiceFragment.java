@@ -2,7 +2,7 @@
 //Daniel Moore n01354875 Section B
 //Ryan Black n01305403 Section B
 //Alyssa Gomez n01042777 Section B
-package ca.kainotomia.it.aphrodite.ui.account;
+package ca.kainotomia.it.aphrodite.ui.voice;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -18,17 +18,18 @@ import androidx.lifecycle.ViewModelProvider;
 
 import ca.kainotomia.it.aphrodite.R;
 
-public class AccountFragment extends Fragment {
+public class VoiceFragment extends Fragment {
 
-    private AccountViewModel accountViewModel;
+    private VoiceViewModel voiceViewModel;
+
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        accountViewModel =
-                new ViewModelProvider(this).get(AccountViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_account, container, false);
-        final TextView textView = root.findViewById(R.id.AF_TextNotification_title);
-        accountViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        voiceViewModel =
+                new ViewModelProvider(this).get(VoiceViewModel.class);
+        View root = inflater.inflate(R.layout.voice_fragment, container, false);
+        final TextView textView = root.findViewById(R.id.text_voice);
+        voiceViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
