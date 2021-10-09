@@ -14,5 +14,7 @@
     <string name="title_voice">Voice Commands</string>
     <string name="AF_TextView_username">Username</string>
     <string name="AF_TextView_version">Version Number</string>
+    <string name="LA_EditText_txt">Email</string>
+    <string name="LA_EditText_password_txt">Password</string>
 
 </resources>
