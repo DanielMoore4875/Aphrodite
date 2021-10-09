@@ -14,7 +14,7 @@ public class VoiceViewModel extends ViewModel {
 
     public VoiceViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("THis is the VOice Fragment");
+       // mText.setValue("THis is the VOice Fragment");
     }
 
     public LiveData<String> getText() { return  mText;}
