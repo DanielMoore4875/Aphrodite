@@ -15,5 +15,6 @@
     <string name="AF_TextView_username">Username</string>
     <string name="AF_TextView_version">Version Num</string>
     <string name="HO_HomePage_title">HOME</string>
+    <string name="LA_EditText_txt">Email</string>
 
 </resources>
