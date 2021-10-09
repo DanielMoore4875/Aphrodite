@@ -12,37 +12,43 @@
         android:id="@+id/AF_ImageButton_support"
         android:layout_width="181dp"
         android:layout_height="129dp"
-        android:src="@drawable/help"
+        android:background="@color/white"
+        android:scaleType="fitCenter"
+        android:src="@drawable/about"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.93"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.576" />
+        app:layout_constraintVertical_bias="0.561" />
 
     <ImageButton
         android:id="@+id/AF_ImageButton_manage"
         android:layout_width="181dp"
         android:layout_height="129dp"
+        android:background="@color/white"
+        android:scaleType="fitCenter"
         android:src="@drawable/manage"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.056"
+        app:layout_constraintHorizontal_bias="0.069"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.805" />
+        app:layout_constraintVertical_bias="0.794" />
 
     <ImageButton
         android:id="@+id/AF_ImageButton_logout"
         android:layout_width="181dp"
         android:layout_height="130dp"
+        android:background="@color/white"
+        android:scaleType="fitCenter"
         android:src="@drawable/logout"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.93"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.806"
+        app:layout_constraintVertical_bias="0.792"
         tools:src="@drawable/logout" />
 
     <TextView
@@ -56,10 +62,10 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.257" />
+        app:layout_constraintVertical_bias="0.224" />
 
     <ImageView
         android:id="@+id/AF_ImageView_profilepicture"
@@ -69,21 +75,23 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.011"
-        app:srcCompat="@drawable/ic_baseline_account_circle_24"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/profile"
         tools:src="@tools:sample/avatars" />
 
     <ImageButton
         android:id="@+id/AF_ImageButton_about"
         android:layout_width="181dp"
         android:layout_height="129dp"
+        android:background="@color/white"
+        android:scaleType="fitCenter"
         android:src="@drawable/about"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.056"
+        app:layout_constraintHorizontal_bias="0.069"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.576" />
+        app:layout_constraintVertical_bias="0.561" />
 
     <TextView
         android:id="@+id/AF_TextView_version"
@@ -93,10 +101,10 @@
         android:text="@string/AF_TextView_version"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.724"
+        app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.908" />
+        app:layout_constraintVertical_bias="0.895" />
 
     <TextView
         android:id="@+id/AF_TextView_username"
@@ -110,6 +118,6 @@
         app:layout_constraintHorizontal_bias="0.481"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.203" />
+        app:layout_constraintVertical_bias="0.177" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
