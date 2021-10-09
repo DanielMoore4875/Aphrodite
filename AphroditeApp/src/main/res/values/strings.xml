@@ -13,6 +13,7 @@
     <string name="MA_AlertDialogExitApp_no">No, stay in app</string>
     <string name="title_voice">Voice Commands</string>
     <string name="AF_TextView_username">Username</string>
-    <string name="AF_TextView_version">Version Number</string>
+    <string name="AF_TextView_version">Version Num</string>
+    <string name="HO_HomePage_title">HOME</string>
 
 </resources>
