@@ -7,16 +7,46 @@
     tools:context=".ui.home.HomeFragment">
 
     <TextView
-        android:id="@+id/text_home"
-        android:layout_width="match_parent"
+        android:id="@+id/H_HomeTitle_title"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/amiko"
+        android:text="@string/HO_HomePage_title"
         android:textAlignment="center"
-        android:textSize="20sp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.022" />
+
+    <ImageButton
+        android:id="@+id/imageButton5"
+        android:layout_width="138dp"
+        android:layout_height="141dp"
+        android:layout_marginStart="40dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/test_pic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/H_HomeTitle_title"
+        app:layout_constraintVertical_bias="0.086" />
+
+    <ImageButton
+        android:id="@+id/imageButton7"
+        android:layout_width="138dp"
+        android:layout_height="141dp"
+        android:layout_marginEnd="3400dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/test_pic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/imageButton5"
+        app:layout_constraintTop_toBottomOf="@+id/H_HomeTitle_title"
+        app:layout_constraintVertical_bias="0.088" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
