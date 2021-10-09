@@ -36,12 +36,10 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
 
         // Set the dimensions of the sign-in button.
         SignInButton signInButton = (SignInButton) findViewById(R.id.sign_in_button);
-        signInButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = Auth.GoogleSignInApi.getSignInIntent(googleApiClient);
-                startActivityForResult(intent,RC_SIGN_IN);
-            }
+        signInButton.setOnClickListener(v -> {
+            Intent intent = Auth.GoogleSignInApi.getSignInIntent(googleApiClient);
+            startActivityForResult(intent,RC_SIGN_IN);
+            finish();
         });
         signInButton.setSize(SignInButton.SIZE_STANDARD);
     }
