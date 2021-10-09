@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#b734eb"
+    android:background="@color/light_oak"
     tools:context=".ui.layouts.LayoutFragment"
     tools:ignore="UseSwitchCompatOrMaterialXml">
 
@@ -35,6 +35,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.113"
+        app:rippleColor="@color/white"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
