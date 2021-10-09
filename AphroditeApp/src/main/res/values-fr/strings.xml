@@ -11,4 +11,6 @@
     <string name="MA_AlertDialogExitApp_msg">Êtes-vous sûr de vouloir quitter?</string>
     <string name="MA_AlertDialogExitApp_yes">Oui, quitter l\'application</string>
     <string name="MA_AlertDialogExitApp_no">Non, restez dans l\'application</string>
+    <string name="AF_TextView_username">Username</string>
+    <string name="AF_TextView_version">Version Number</string>
 </resources>
