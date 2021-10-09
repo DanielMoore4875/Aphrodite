@@ -2,22 +2,20 @@
 //Daniel Moore n01354875 Section B
 //Ryan Black n01305403 Section B
 //Alyssa Gomez n01042777 Section B
-package ca.kainotomia.it.aphrodite.ui.home;
+package ca.kainotomia.it.aphrodite.ui.voice;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class HomeViewModel extends ViewModel {
+public class VoiceViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public HomeViewModel() {
+    public VoiceViewModel() {
         mText = new MutableLiveData<>();
-       // mText.setValue("This is home fragment");
+        mText.setValue("THis is the VOice Fragment");
     }
 
-    public LiveData<String> getText() {
-        return mText;
-    }
+    public LiveData<String> getText() { return  mText;}
 }

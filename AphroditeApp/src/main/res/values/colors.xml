@@ -16,4 +16,6 @@
     <color name="magenta">#b734eb</color>
 
 
+    <color name="darkmode_grey">#282828</color>
+    <color name="dark_green">#006400</color>
 </resources>
