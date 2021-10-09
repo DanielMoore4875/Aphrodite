@@ -28,13 +28,7 @@ public class VoiceFragment extends Fragment {
         voiceViewModel =
                 new ViewModelProvider(this).get(VoiceViewModel.class);
         View root = inflater.inflate(R.layout.voice_fragment, container, false);
-        final TextView textView = root.findViewById(R.id.text_voice);
-        voiceViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+
         return root;
     }
 }
