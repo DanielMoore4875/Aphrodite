@@ -11,25 +11,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
 
 import ca.kainotomia.it.aphrodite.AccountActivity;
 import ca.kainotomia.it.aphrodite.BlankFragment;
 import ca.kainotomia.it.aphrodite.R;
 
-public class AccountFragment extends Fragment {
+public class AccountFragment extends android.app.Fragment {
 
     private AccountViewModel accountViewModel;
     private ViewGroup container;
     private LayoutInflater inflater;
-    private EditText editText;
     private TextView textView;
     private Button button;
 
@@ -49,15 +43,15 @@ public class AccountFragment extends Fragment {
 
         // Inflate the appropriate layout based on the screen orientation.
         if (orientation == Configuration.ORIENTATION_PORTRAIT) {
-            view = inflater.inflate(R.layout.fragment_main_activity, container, false);
+            view = inflater.inflate(R.layout.fragment_account, container, false);
         }
         else { // orientation == Configuration.ORIENTATION_LANDSCAPE
-            view = inflater.inflate(R.layout.fragment_main_activity_horizontal, container, false);
+            view = inflater.inflate(R.layout.fragment_account_horizontal, container, false);
         }
 
         // Instantiate our widgets from the layout.
-        editText = view.findViewById(R.id.editText);
-        textView = view.findViewById(R.id.textView);
+        textView = view.findViewById(R.id.AF_TextNotification_username);
+        textView = view.findViewById(R.id.AF_TextView_version);
         button = view.findViewById(R.id.AF_Button_support);
 
         // Display the orientation in the text view.
@@ -82,7 +76,7 @@ public class AccountFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 // Cast the activity to the MainActivity class and call the load fragment method.
-                ((AccountActivity)getActivity()).loadFragment(new BlankFragment());
+                ((AccountActivity)getActivity()).loadFragment(new BlankFragment()); //FIX
             }
         });
 
@@ -90,18 +84,18 @@ public class AccountFragment extends Fragment {
     }
 
 
+    @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        accountViewModel =
-                new ViewModelProvider(this).get(AccountViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_account, container, false);
-        final TextView textView = root.findViewById(R.id.AF_TextNotification_title);
-        accountViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
-        return root;
+        this.container = container;
+        this.inflater = inflater;
+        return initializeUserInterface();
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        View view = initializeUserInterface();
+        container.addView(view);
+        super.onConfigurationChanged(newConfig);
     }
 }

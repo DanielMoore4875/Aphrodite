@@ -11,11 +11,7 @@ public class AccountActivity extends AppCompatActivity {
 
     private FrameLayout frameLayout;
 
-    /**
-     * Clear any existing layout, add the current fragment
-     * to the back stack, and load the new fragment.
-     * @param fragment fragment to load
-     */
+
     public void loadFragment(Fragment fragment) {
         // Clear any existing layout.
         frameLayout.removeAllViews();
@@ -23,14 +19,10 @@ public class AccountActivity extends AppCompatActivity {
         // Load the new fragment to the layout.
         getFragmentManager().beginTransaction()
                 .addToBackStack(null) // Go to the previous fragment when clicking the back button.
-                .replace(R.id.frameLayout, fragment)
+                .replace(R.id.AF_FrameLayout_orientation, fragment)
                 .commit();
     }
 
-    /**
-     * If fragments overlap each other when pressing the back button,
-     * you need to overload the onBackPressed function.
-     */
     @Override
     public void onBackPressed() {
         // Clear any existing layouts before popping the stack.
@@ -58,11 +50,11 @@ public class AccountActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // Attach the frame layout to a handle.
-        frameLayout = (FrameLayout) findViewById(R.id.frameLayout);
+        frameLayout = (FrameLayout) findViewById(R.id.AF_FrameLayout_orientation);
 
         // Load the fragment into the layout handle.
         getFragmentManager().beginTransaction()
-                .replace(R.id.frameLayout, new AccountFragment())
+                .replace(R.id.AF_FrameLayout_orientation, new AccountFragment())
                 .commit();
     }
 }

@@ -14,7 +14,7 @@ public class AccountViewModel extends ViewModel {
 
     public AccountViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("Account Fragment");
+        mText.setValue("UserName");
     }
 
     public LiveData<String> getText() {
