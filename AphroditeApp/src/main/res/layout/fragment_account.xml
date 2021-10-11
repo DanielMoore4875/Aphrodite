@@ -84,7 +84,7 @@
         android:id="@+id/AF_ImageButton_about"
         android:layout_width="181dp"
         android:layout_height="129dp"
-        android:backgroundTint="@color/dark_green"
+        android:backgroundTint="@color/lighter_oak"
         android:scaleType="fitCenter"
         android:src="@drawable/about"
         app:layout_constraintBottom_toBottomOf="parent"
