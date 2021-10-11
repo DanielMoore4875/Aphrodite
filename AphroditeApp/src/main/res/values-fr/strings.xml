@@ -18,10 +18,14 @@
     <string name="proximity">Proximité</string>
     <string name="voicerecognition">Reconnaissance vocale</string>
     <string name="weather">Temps</string>
-    <string name="title_voice">Voice Commands</string>
-    <string name="AF_TextView_username">Username</string>
-    <string name="AF_TextView_version">Version Number</string>
-    <string name="LA_EditText_txt">Email</string>
+    <string name="title_voice">Commande Vocale</string>
+    <string name="AF_TextView_username">Nom d\'utilisateur</string>
+    <string name="AF_TextView_version">Numéro de version</string>
+    <string name="LA_EditText_txt">e-mail</string>
     <string name="LA_EditText_password_txt">Password</string>
+    <string name="H_MorningButton_text">" Matin"</string>
+    <string name="H_ChildButton_text">Enfant</string>
+    <string name="H_AddButton_text">Ajouter</string>
+    <string name="H_NightButton_text">nuit</string>
 
 </resources>

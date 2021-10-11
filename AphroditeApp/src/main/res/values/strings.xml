@@ -24,4 +24,8 @@
     <string name="HO_HomePage_title" translatable="false">HOME</string>
     <string name="LA_EditText_txt">Email</string>
     <string name="LA_EditText_password_txt">Password</string>
+    <string name="H_MorningButton_text">morning</string>
+    <string name="H_ChildButton_text">child</string>
+    <string name="H_AddButton_text">add</string>
+    <string name="H_NightButton_text">night</string>
 </resources>

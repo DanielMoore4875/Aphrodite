@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/dark_green"
+    android:background="@color/lighter_oak"
     tools:context=".ui.account.AccountFragment"
     tools:layout_editor_absoluteX="-28dp"
     tools:layout_editor_absoluteY="160dp">
