@@ -41,7 +41,6 @@ public class AccountFragment extends android.app.Fragment {
         // Get the screen orientation.
         int orientation = getActivity().getResources().getConfiguration().orientation;
 
-        // Inflate the appropriate layout based on the screen orientation.
         if (orientation == Configuration.ORIENTATION_PORTRAIT) {
             view = inflater.inflate(R.layout.fragment_account, container, false);
         }
@@ -70,15 +69,6 @@ public class AccountFragment extends android.app.Fragment {
                 textView.setTextSize(12);
             }
         }
-
-        // Create an on click listener for the button that loads a new fragment for the user.
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // Cast the activity to the MainActivity class and call the load fragment method.
-                ((AccountActivity)getActivity()).loadFragment(new BlankFragment()); //FIX
-            }
-        });
 
         return view;
     }
