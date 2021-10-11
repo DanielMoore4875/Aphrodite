@@ -54,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
     private AlertDialog AskExit() {
         return new AlertDialog.Builder(this)
                 .setTitle(R.string.MA_AlertDialogExitApp_title)
+                .setIcon(R.drawable.cancel_button)
                 .setMessage(R.string.MA_AlertDialogExitApp_msg)
                 .setPositiveButton(R.string.MA_AlertDialogExitApp_yes, (dialog, which) -> finish())
                 .setNegativeButton(R.string.MA_AlertDialogExitApp_no, (dialog, which) -> dialog.dismiss())
