@@ -58,7 +58,7 @@ public class AccountFragment extends Fragment {
         // Instantiate our widgets from the layout.
         editText = view.findViewById(R.id.editText);
         textView = view.findViewById(R.id.textView);
-        button = view.findViewById(R.id.button);
+        button = view.findViewById(R.id.AF_Button_support);
 
         // Display the orientation in the text view.
         if (orientation == Configuration.ORIENTATION_PORTRAIT) {
