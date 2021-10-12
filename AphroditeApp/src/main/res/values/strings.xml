@@ -41,6 +41,14 @@
     <string name="H_ChildButton_text">child</string>
     <string name="H_AddButton_text">add</string>
     <string name="H_NightButton_text">night</string>
-    <string name="AF_setTextPortrait_txt">Portrait</string>
-    <string name="AF_setTextLandscape_txt">Landscape</string>
+
+    <string-array name="voicecommands">
+        <item>New Command 1</item>
+        <item>New Command 2</item>
+        <item>New Command 3</item>
+        <item>New Command 4</item>
+        <item>New Command 5</item>
+        <item>New Command 6</item>
+        <item>New Command 7</item>
+    </string-array>
 </resources>

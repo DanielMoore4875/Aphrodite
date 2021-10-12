@@ -2,7 +2,6 @@
 //Daniel Moore n01354875 Section B
 //Ryan Black n01305403 Section B
 //Alyssa Gomez n01042777 Section B
-
 package ca.kainotomia.it.aphrodite.ui.account;
 
 import android.content.res.Configuration;
@@ -54,10 +53,10 @@ public class AccountFragment extends android.app.Fragment {
 
         // Display the orientation in the text view.
         if (orientation == Configuration.ORIENTATION_PORTRAIT) {
-            textView.setText(R.string.AF_setTextPortrait_txt);
+            textView.setText("Portrait");
         }
         else {
-            textView.setText(R.string.AF_setTextLandscape_txt);
+            textView.setText("Landscape");
 
             // Get the width of the screen.
             DisplayMetrics displayMetrics = getResources().getDisplayMetrics();

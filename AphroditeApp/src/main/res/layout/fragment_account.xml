@@ -16,7 +16,7 @@
     <Button
         android:id="@+id/AFSS_Button_add"
         android:layout_width="375dp"
-        android:layout_height="47dp"
+        android:layout_height="48dp"
         android:backgroundTint="@color/light_ocean"
         android:text="@string/AF_Button_settings"
         android:textColor="@color/mid_ocean"
@@ -27,39 +27,42 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.549" />
+        app:layout_constraintVertical_bias="0.549"
+        tools:ignore="TextContrastCheck" />
 
     <Button
         android:id="@+id/AF_Button_logout"
         android:layout_width="375dp"
-        android:layout_height="47dp"
+        android:layout_height="48dp"
         android:backgroundTint="@color/peach"
         android:text="@string/AF_Button_logout"
         android:textColor="@color/light_oak"
-        app:iconTint="@color/light_oak"
         app:icon="@drawable/logout"
         app:iconSize="25dp"
+        app:iconTint="@color/light_oak"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.659"
-        app:rippleColor="@color/dark_ocean" />
+        app:rippleColor="@color/dark_ocean"
+        tools:ignore="TextContrastCheck" />
 
     <Button
         android:id="@+id/AF_Button_about"
         android:layout_width="375dp"
-        android:layout_height="47dp"
+        android:layout_height="48dp"
         android:backgroundTint="@color/light_ocean"
         android:text="@string/AF_Button_about"
-        app:icon="@drawable/about"
         android:textColor="@color/mid_ocean"
+        app:icon="@drawable/about"
         app:iconTint="@color/mid_ocean"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.33" />
+        app:layout_constraintVertical_bias="0.33"
+        tools:ignore="TextContrastCheck" />
 
     <TextView
         android:id="@+id/AF_TextView_username"
@@ -92,8 +95,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.026"
         app:srcCompat="@drawable/profile"
-        tools:src="@tools:sample/avatars"
-        tools:ignore="ContentDescription" />
+        tools:src="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/AF_TextView_version"
@@ -109,7 +111,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.773" />
+        app:layout_constraintVertical_bias="0.773"
+        tools:ignore="TextContrastCheck" />
 
     <Button
         android:id="@+id/AF_Button_support"
@@ -125,7 +128,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.441"
-        app:rippleColor="@color/mid_ocean" />
+        app:rippleColor="@color/mid_ocean"
+        tools:ignore="TextContrastCheck" />
 
     <FrameLayout
         android:id="@+id/AF_FrameLayout_orientation"
@@ -136,6 +140,6 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="1.0"></FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

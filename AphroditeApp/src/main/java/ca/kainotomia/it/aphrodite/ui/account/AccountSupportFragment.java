@@ -55,10 +55,10 @@ public class AccountSupportFragment extends android.app.Fragment {
 
         // Display the orientation in the text view.
         if (orientation == Configuration.ORIENTATION_PORTRAIT) {
-            textView.setText(R.string.AF_setTextPortrait_txt);
+            textView.setText("Portrait");
         }
         else {
-            textView.setText(R.string.AF_setTextLandscape_txt);
+            textView.setText("Landscape");
 
             // Get the width of the screen.
             DisplayMetrics displayMetrics = getResources().getDisplayMetrics();

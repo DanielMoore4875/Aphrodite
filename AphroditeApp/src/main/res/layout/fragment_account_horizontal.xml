@@ -91,8 +91,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.052"
         app:srcCompat="@drawable/profile"
-        tools:src="@tools:sample/avatars"
-        tools:ignore="ContentDescription" />
+        tools:src="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/AF_TextView_version"
@@ -131,6 +130,6 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"></FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
