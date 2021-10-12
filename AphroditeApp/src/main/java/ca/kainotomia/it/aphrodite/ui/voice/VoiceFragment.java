@@ -5,12 +5,15 @@
 package ca.kainotomia.it.aphrodite.ui.voice;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 
 import androidx.annotation.NonNull;
@@ -20,6 +23,10 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.google.android.material.snackbar.Snackbar;
 
+import org.w3c.dom.Text;
+
+import java.util.Locale;
+
 import ca.kainotomia.it.aphrodite.R;
 
 public class VoiceFragment extends Fragment {
@@ -27,10 +34,10 @@ public class VoiceFragment extends Fragment {
     Spinner spinner;
     String spinItem;
 
-    Snackbar showInfo;
+    EditText cmdName;
+    Button recordCmd;
 
-    Button remove_btn;
-    Button add_btn;
+    Snackbar showInfo;
 
     private VoiceViewModel voiceViewModel;
 
@@ -48,10 +55,11 @@ public class VoiceFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        remove_btn = view.findViewById(R.id.VF_remove_command_btn);
-        add_btn = view.findViewById(R.id.VF_add_command_btn);
-
         spinner = view.findViewById(R.id.VF_voice_spinner);
+
+        cmdName = view.findViewById(R.id.VF_commandName_txt);
+        recordCmd = view.findViewById(R.id.VF_record_btn);
+        recordCmd.setEnabled(false);
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getContext(), R.array.voicecommands, R.layout.support_simple_spinner_dropdown_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -70,21 +78,33 @@ public class VoiceFragment extends Fragment {
             }
         });
 
-        add_btn.setOnClickListener(new View.OnClickListener() {
+        //Disable record button if command name is empty
+        cmdName.addTextChangedListener(new TextWatcher() {
             @Override
-            public void onClick(View v) {
-                showInfo = Snackbar.make(view, R.string.VF_snackbar_add_txt,Snackbar.LENGTH_LONG);
-                showInfo.show();
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                if (s.toString().trim().length() == 0) {
+                    recordCmd.setEnabled(false);
+                } else {
+                    recordCmd.setEnabled(true);
+                }
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (s.toString().trim().length() == 0) {
+                    recordCmd.setEnabled(false);
+                } else {
+                    recordCmd.setEnabled(true);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
             }
         });
 
-        remove_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showInfo = Snackbar.make(view, R.string.VF_snackbar_remove_txt,Snackbar.LENGTH_LONG);
-                showInfo.show();
-            }
-        });
+
 
 
     }
