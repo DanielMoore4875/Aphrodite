@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--Jose Antonio Castro Teodoro n01384776 Section B-->
+<!--Daniel Moore n01354875 Section B-->
+<!--Ryan Black n01305403 Section B-->
+<!--Alyssa Gomez n01042777 Section B-->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -20,7 +24,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.497"
-        app:srcCompat="@drawable/aphrodite_logot_trans_med" />
+        app:srcCompat="@drawable/aphrodite_logot_trans_med"
+        tools:ignore="ContentDescription" />
 
     <TextView
         android:id="@+id/AFA_TextView_title"
@@ -62,6 +67,6 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"></FrameLayout>
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

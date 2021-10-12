@@ -41,4 +41,6 @@
     <string name="H_ChildButton_text">child</string>
     <string name="H_AddButton_text">add</string>
     <string name="H_NightButton_text">night</string>
+    <string name="AF_setTextPortrait_txt">Portrait</string>
+    <string name="AF_setTextLandscape_txt">Landscape</string>
 </resources>
