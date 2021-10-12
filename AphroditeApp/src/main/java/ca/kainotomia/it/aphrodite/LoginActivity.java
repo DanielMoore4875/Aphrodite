@@ -1,3 +1,7 @@
+//Jose Antonio Castro Teodoro n01384776 Section B
+//Daniel Moore n01354875 Section B
+//Ryan Black n01305403 Section B
+//Alyssa Gomez n01042777 Section B
 package ca.kainotomia.it.aphrodite;
 
 import androidx.annotation.NonNull;
@@ -35,7 +39,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                 .build();
 
         // Set the dimensions of the sign-in button.
-        SignInButton signInButton = (SignInButton) findViewById(R.id.sign_in_button);
+        SignInButton signInButton = findViewById(R.id.sign_in_button);
         signInButton.setOnClickListener(v -> {
             Intent intent = Auth.GoogleSignInApi.getSignInIntent(googleApiClient);
             startActivityForResult(intent,RC_SIGN_IN);

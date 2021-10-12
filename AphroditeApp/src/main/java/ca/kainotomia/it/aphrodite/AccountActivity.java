@@ -1,3 +1,7 @@
+//Jose Antonio Castro Teodoro n01384776 Section B
+//Daniel Moore n01354875 Section B
+//Ryan Black n01305403 Section B
+//Alyssa Gomez n01042777 Section B
 package ca.kainotomia.it.aphrodite;
 
 import android.app.FragmentManager;
@@ -33,7 +37,7 @@ public class AccountActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_account);
 
-        frameLayout = (FrameLayout) findViewById(R.id.AF_FrameLayout_orientation);
+        frameLayout = findViewById(R.id.AF_FrameLayout_orientation);
 
         // Load the fragment into the layout handle.
         getFragmentManager().beginTransaction()
