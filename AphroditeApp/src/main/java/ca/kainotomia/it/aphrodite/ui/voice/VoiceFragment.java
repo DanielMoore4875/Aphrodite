@@ -25,6 +25,7 @@ import com.google.android.material.snackbar.Snackbar;
 
 import org.w3c.dom.Text;
 
+import java.util.ArrayList;
 import java.util.Locale;
 
 import ca.kainotomia.it.aphrodite.R;
@@ -39,7 +40,11 @@ public class VoiceFragment extends Fragment {
 
     Snackbar showInfo;
 
+    ArrayList<String> cmdArr;
+
     private VoiceViewModel voiceViewModel;
+
+    ArrayAdapter<String> cmdAdapter;
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -61,20 +66,30 @@ public class VoiceFragment extends Fragment {
         recordCmd = view.findViewById(R.id.VF_record_btn);
         recordCmd.setEnabled(false);
 
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getContext(), R.array.voicecommands, R.layout.support_simple_spinner_dropdown_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
+        //LATER WILL BE GETTING DATA FROM DATABASE
+        cmdArr = new ArrayList<>();
+        cmdArr.add("empty cmd");
+        cmdArr.add("empty cmd");
+        cmdArr.add("empty cmd");
+        cmdArr.add("empty cmd");
+        System.out.println(cmdArr.toString());
 
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        String[] hello = cmdArr.toArray(new String[cmdArr.size()]);
+
+        cmdAdapter = new ArrayAdapter<String>(getContext(),R.layout.support_simple_spinner_dropdown_item,hello);
+        cmdAdapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
+        spinner.setAdapter(cmdAdapter);
+
+        recordCmd.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                spinItem = parent.getItemAtPosition(position).toString();
-                System.out.println(spinItem);
-            }
+            public void onClick(View v) {
+               cmdArr.add(cmdName.getText().toString());
+                String[] hello = cmdArr.toArray(new String[cmdArr.size()]);
 
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
+                cmdAdapter = new ArrayAdapter<String>(getContext(),R.layout.support_simple_spinner_dropdown_item,hello);
+                cmdAdapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
+                spinner.setAdapter(cmdAdapter); //UPDATES DROP DOWN SPINNER
+                System.out.println(cmdArr.toString());
             }
         });
 
@@ -103,6 +118,8 @@ public class VoiceFragment extends Fragment {
 
             }
         });
+
+
 
 
 

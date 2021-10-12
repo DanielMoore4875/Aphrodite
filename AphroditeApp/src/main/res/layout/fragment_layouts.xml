@@ -25,7 +25,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.882"
-        app:rippleColor="@color/white"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
@@ -40,7 +39,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.113"
-        app:rippleColor="@color/white"
         tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
 
     <ImageButton
@@ -55,7 +53,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.113"
-        app:rippleColor="@color/white"
         tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
 
     <ImageButton
@@ -70,7 +67,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.499"
-        app:rippleColor="@color/white"
         tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
 
     <ImageButton
@@ -85,7 +81,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.881"
-        app:rippleColor="@color/white"
         tools:ignore="ContentDescription" />
 
     <ImageButton
@@ -100,7 +95,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.499"
-        app:rippleColor="@color/white"
         tools:ignore="ContentDescription" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
