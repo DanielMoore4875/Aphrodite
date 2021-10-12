@@ -1,7 +1,3 @@
-//Jose Antonio Castro Teodoro n01384776 Section B
-//Daniel Moore n01354875 Section B
-//Ryan Black n01305403 Section B
-//Alyssa Gomez n01042777 Section B
 package ca.kainotomia.it.aphrodite.ui.account;
 
 import android.content.res.Configuration;
@@ -11,21 +7,22 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
 import ca.kainotomia.it.aphrodite.R;
 
-public class AccountFragment extends android.app.Fragment {
-
+public class AccountSupportFragment extends android.app.Fragment {
     private AccountViewModel accountViewModel;
     private ViewGroup container;
     private LayoutInflater inflater;
     private TextView textView;
+    private ImageView imageView;
     private Button button;
 
-    public AccountFragment() {
+    public AccountSupportFragment() {
     }
 
     public View initializeUserInterface() {
@@ -40,16 +37,17 @@ public class AccountFragment extends android.app.Fragment {
         int orientation = getActivity().getResources().getConfiguration().orientation;
 
         if (orientation == Configuration.ORIENTATION_PORTRAIT) {
-            view = inflater.inflate(R.layout.fragment_account, container, false);
+            view = inflater.inflate(R.layout.fragment_account_support, container, false);
         }
         else { // orientation == Configuration.ORIENTATION_LANDSCAPE
-            view = inflater.inflate(R.layout.fragment_account_horizontal, container, false);
+            view = inflater.inflate(R.layout.fragment_account_support_horizontal, container, false);
         }
 
         // Instantiate our widgets from the layout.
-        textView = view.findViewById(R.id.AF_TextView_username);
-        textView = view.findViewById(R.id.AF_TextView_version);
-        button = view.findViewById(R.id.AF_Button_support);
+        textView = view.findViewById(R.id.AFS_TextView_title);
+        textView = view.findViewById(R.id.AFS_TextView_Email);
+        textView = view.findViewById(R.id.AFS_TextView_Number);
+        imageView = view.findViewById(R.id.AFS_ImageView_logo);
 
         // Display the orientation in the text view.
         if (orientation == Configuration.ORIENTATION_PORTRAIT) {

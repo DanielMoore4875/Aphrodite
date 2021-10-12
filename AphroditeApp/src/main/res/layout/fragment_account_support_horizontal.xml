@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/tan"
+    tools:context=".ui.account.AccountFragment"
+    tools:layout_editor_absoluteX="-28dp"
+    tools:layout_editor_absoluteY="160dp">
+
+    <ImageView
+        android:id="@+id/AFS_ImageView_logo"
+        android:layout_width="208dp"
+        android:layout_height="192dp"
+        android:background="@drawable/roundcorner_darkmodegrey"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.055"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.073"
+        app:srcCompat="@drawable/aphrodite_logot_trans_med" />
+
+    <TextView
+        android:id="@+id/AFS_TextView_title"
+        android:layout_width="189dp"
+        android:layout_height="40dp"
+        android:background="@drawable/roundcorner_peach"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:text="@string/AFS_TextView_title"
+        android:textColor="@color/light_oak"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.749"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.08" />
+
+    <TextView
+        android:id="@+id/AFS_TextView_Email"
+        android:layout_width="410dp"
+        android:layout_height="108dp"
+        android:background="@drawable/roundcorner_lightocean"
+        android:gravity="center"
+        android:text="@string/AFS_TextView_Email"
+        android:textColor="@color/mid_ocean"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.906"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.33" />
+
+    <TextView
+        android:id="@+id/AFS_TextView_Number"
+        android:layout_width="410dp"
+        android:layout_height="108dp"
+        android:background="@drawable/roundcorner_lightocean"
+        android:gravity="center"
+        android:text="@string/AFS_TextView_Number"
+        android:textColor="@color/mid_ocean"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.906"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.821" />
+
+    <FrameLayout
+        android:id="@+id/AF_FrameLayout_orientation"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"></FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

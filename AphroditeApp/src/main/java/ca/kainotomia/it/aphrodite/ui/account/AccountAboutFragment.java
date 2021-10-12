@@ -11,21 +11,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
-
 import ca.kainotomia.it.aphrodite.R;
 
-public class AccountFragment extends android.app.Fragment {
-
+public class AccountAboutFragment extends android.app.Fragment{
     private AccountViewModel accountViewModel;
     private ViewGroup container;
     private LayoutInflater inflater;
     private TextView textView;
+    private ImageView imageView;
     private Button button;
 
-    public AccountFragment() {
+    public AccountAboutFragment() {
     }
 
     public View initializeUserInterface() {
@@ -40,16 +39,14 @@ public class AccountFragment extends android.app.Fragment {
         int orientation = getActivity().getResources().getConfiguration().orientation;
 
         if (orientation == Configuration.ORIENTATION_PORTRAIT) {
-            view = inflater.inflate(R.layout.fragment_account, container, false);
+            view = inflater.inflate(R.layout.fragment_account_about, container, false);
         }
         else { // orientation == Configuration.ORIENTATION_LANDSCAPE
-            view = inflater.inflate(R.layout.fragment_account_horizontal, container, false);
+            view = inflater.inflate(R.layout.fragment_account_about_horizontal, container, false);
         }
 
-        // Instantiate our widgets from the layout.
-        textView = view.findViewById(R.id.AF_TextView_username);
-        textView = view.findViewById(R.id.AF_TextView_version);
-        button = view.findViewById(R.id.AF_Button_support);
+        textView = view.findViewById(R.id.AFA_TextView_title);
+        imageView= view.findViewById(R.id.AFA_ImageView_logo);
 
         // Display the orientation in the text view.
         if (orientation == Configuration.ORIENTATION_PORTRAIT) {
@@ -71,7 +68,6 @@ public class AccountFragment extends android.app.Fragment {
         return view;
     }
 
-
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -79,7 +75,6 @@ public class AccountFragment extends android.app.Fragment {
         this.inflater = inflater;
         return initializeUserInterface();
     }
-
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         View view = initializeUserInterface();

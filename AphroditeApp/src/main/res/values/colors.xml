@@ -18,4 +18,5 @@
     <color name="brown">#964B00</color>
     <color name="darkmode_grey">#282828</color>
     <color name="dark_green">#006400</color>
+    <color name="border_color">#DBDDE0</color>
 </resources>

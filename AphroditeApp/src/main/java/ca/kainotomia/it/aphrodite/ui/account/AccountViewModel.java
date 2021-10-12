@@ -13,10 +13,8 @@ public class AccountViewModel extends ViewModel {
     private MutableLiveData<String> mText;
 
     public AccountViewModel() {
-        mText = new MutableLiveData<>();
-        mText.setValue("UserName");
-    }
 
+    }
     public LiveData<String> getText() {
         return mText;
     }
