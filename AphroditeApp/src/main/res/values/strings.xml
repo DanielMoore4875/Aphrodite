@@ -45,6 +45,7 @@
     <string name="VF_snackbar_remove_txt">REMOVE COMMAND</string>
     <string name="VR_record_txt">Record Command</string>
     <string name="VF_command_name_hint">Command Name</string>
+    <string name="VF_command_name_txt">Command Name</string>
     <string name="VF_record_help_txt">Enter Name then press Record</string>
 
     <string-array name="voicecommands">
