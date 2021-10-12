@@ -41,6 +41,8 @@
     <string name="H_ChildButton_text">child</string>
     <string name="H_AddButton_text">add</string>
     <string name="H_NightButton_text">night</string>
+    <string name="VF_snackbar_add_txt">ADD COMMAND</string>
+    <string name="VF_snackbar_remove_txt">REMOVE COMMAND</string>
 
     <string-array name="voicecommands">
         <item>New Command 1</item>

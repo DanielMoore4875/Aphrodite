@@ -39,9 +39,9 @@ public class AccountActivity extends AppCompatActivity {
 
         frameLayout = findViewById(R.id.AF_FrameLayout_orientation);
 
-        // Load the fragment into the layout handle.
-        getFragmentManager().beginTransaction()
-                .replace(R.id.AF_FrameLayout_orientation, new AccountFragment())
-                .commit();
+//        // Load the fragment into the layout handle.
+//        getFragmentManager().beginTransaction()
+//                .replace(R.id.AF_FrameLayout_orientation, new AccountFragment())
+//                .commit();
     }
 }

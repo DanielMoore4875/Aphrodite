@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 
 import androidx.annotation.NonNull;
@@ -17,12 +18,19 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.google.android.material.snackbar.Snackbar;
+
 import ca.kainotomia.it.aphrodite.R;
 
 public class VoiceFragment extends Fragment {
 
     Spinner spinner;
     String spinItem;
+
+    Snackbar showInfo;
+
+    Button remove_btn;
+    Button add_btn;
 
     private VoiceViewModel voiceViewModel;
 
@@ -39,6 +47,9 @@ public class VoiceFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        remove_btn = view.findViewById(R.id.VF_remove_command_btn);
+        add_btn = view.findViewById(R.id.VF_add_command_btn);
 
         spinner = view.findViewById(R.id.VF_voice_spinner);
 
@@ -58,5 +69,24 @@ public class VoiceFragment extends Fragment {
 
             }
         });
+
+        add_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showInfo = Snackbar.make(view, R.string.VF_snackbar_add_txt,Snackbar.LENGTH_LONG);
+                showInfo.show();
+            }
+        });
+
+        remove_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showInfo = Snackbar.make(view, R.string.VF_snackbar_remove_txt,Snackbar.LENGTH_LONG);
+                showInfo.show();
+            }
+        });
+
+
     }
+
 }

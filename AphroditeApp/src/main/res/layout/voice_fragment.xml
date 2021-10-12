@@ -12,7 +12,7 @@
     tools:context=".ui.voice.VoiceFragment">
 
     <Button
-        android:id="@+id/add_command_btn"
+        android:id="@+id/VF_add_command_btn"
         android:layout_width="87dp"
         android:layout_height="97dp"
         android:backgroundTint="@color/dark_ocean"
@@ -23,6 +23,23 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.947"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.025"
+        app:rippleColor="@color/white" />
+
+    <Button
+        android:id="@+id/VF_remove_command_btn"
+        android:layout_width="87dp"
+        android:layout_height="97dp"
+        android:backgroundTint="@color/dark_ocean"
+        app:cornerRadius="7dp"
+        app:icon="@drawable/ic_minimize"
+        app:iconGravity="textTop"
+        app:iconTint="@color/light_oak"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.083"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.025"
