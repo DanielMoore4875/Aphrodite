@@ -34,5 +34,11 @@
     <string name="AFSS_Button_add">Add New Profile</string>
     <string name="AFSS_Button_terminate">Terminate Aphrodite Account</string>
     <string name="AFSS_Button_remove">Remove Profile</string>
+    <string name="AFS_TextView_Email">Email</string>
+    <string name="AFS_TextView_title">Title</string>
+    <string name="H_MorningButton_text">morning</string>
+    <string name="H_ChildButton_text">child</string>
+    <string name="H_AddButton_text">add</string>
+    <string name="H_NightButton_text">night</string>
 
 </resources>
