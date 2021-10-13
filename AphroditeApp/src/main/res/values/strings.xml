@@ -48,6 +48,7 @@
     <string name="VF_command_name_txt">Command Name</string>
     <string name="VF_record_help_txt">Enter Name then press Record</string>
     <string name="VF_spinner_help_txt">View Stored Commands</string>
+    <string name="LA_signInWithGoogle_txt">Sign in with Google</string>
 
     <!--    <string-array name="voicecommands">-->
 <!--        <item>Empty 1</item>-->
