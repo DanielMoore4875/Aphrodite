@@ -18,15 +18,8 @@ public class SplashScreenActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         handler.postDelayed(() -> {
             //LOGIN ACTIVITY HERE
-            startActivity(new Intent(SplashScreenActivity.this, MainActivity.class));
-            doneScreen();
+            startActivity(new Intent(SplashScreenActivity.this, LoginActivity.class));
+            finish();
         }, 2000);
-
-
     }
-
-    private void doneScreen() {
-        finish();
-    }
-
 }
