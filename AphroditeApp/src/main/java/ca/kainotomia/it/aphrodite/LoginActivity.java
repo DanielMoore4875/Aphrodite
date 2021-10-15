@@ -44,6 +44,9 @@ public class LoginActivity extends AppCompatActivity {
                 .requestEmail()
                 .build();
 
+//        GoogleSignInAccount userIn = GoogleSignIn.getLastSignedInAccount(this);
+//        updateUI(userIn);
+
         AphroditeGSIC = GoogleSignIn.getClient(this, gSIO);
 
         // Initialize Firebase Auth

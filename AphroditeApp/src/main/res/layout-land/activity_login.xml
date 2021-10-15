@@ -12,7 +12,7 @@
     tools:context=".LoginActivity">
 
     <com.google.android.gms.common.SignInButton
-        android:id="@+id/sign_in_button"
+        android:id="@+id/google_sign_in_button"
         android:layout_width="187dp"
         android:layout_height="57dp"
         android:layout_centerInParent="true"
@@ -26,7 +26,7 @@
         app:layout_constraintVertical_bias="0.745" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress"
+        android:id="@+id/login_email_editTextID"
         android:layout_width="279dp"
         android:layout_height="54dp"
         android:ems="10"
@@ -41,7 +41,7 @@
         app:layout_constraintVertical_bias="0.347" />
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/login_pass_editTextTD"
         android:layout_width="277dp"
         android:layout_height="49dp"
         android:ems="10"
@@ -56,7 +56,7 @@
         app:layout_constraintVertical_bias="0.544" />
 
     <ImageView
-        android:id="@+id/LA_aphLogo_img"
+        android:id="@+id/login_logo_imgID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -68,7 +68,7 @@
         app:srcCompat="@drawable/aphrodite_logo" />
 
     <TextView
-        android:id="@+id/LA_txt_SIWG"
+        android:id="@+id/login_signIn_txtID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/LA_signInWithGoogle_txt"
