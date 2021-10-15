@@ -21,8 +21,6 @@
     <string name="title_voice">Voice Commands</string>
     <string name="AF_TextView_username">Username</string>
     <string name="AF_TextView_version">Version Number</string>
-    <string name="LA_EditText_txt">Email</string>
-    <string name="LA_EditText_password_txt">Password</string>
     <string name="AFA_TextView_aboutustext">Text</string>
     <string name="AFA_TextView_title">ABOUT US</string>
     <string name="AFS_TextView_Number">Phone Number</string>
@@ -47,6 +45,5 @@
     <string name="VF_command_name_hint">Command Name</string>
     <string name="VF_record_help_txt">Enter Name then press Record</string>
     <string name="VF_spinner_help_txt">View Stored Commands</string>
-    <string name="LA_signInWithGoogle_txt">Sign in with Google</string>
 
 </resources>
