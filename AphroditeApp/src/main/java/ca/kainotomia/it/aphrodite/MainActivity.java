@@ -31,8 +31,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Intent login = new Intent(this, LoginActivity.class);
-            startActivity(login);
+//        Intent login = new Intent(this, LoginActivity.class);
+//            startActivity(login);
             loggedIn = true;
 //        loggedInData = savedInstanceState;
 //        loggedIn = savedInstanceState.getBoolean("loggedIn", false); // user hasn't logged in yet
