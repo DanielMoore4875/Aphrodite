@@ -45,5 +45,7 @@
     <string name="VF_command_name_hint">Command Name</string>
     <string name="VF_record_help_txt">Enter Name then press Record</string>
     <string name="VF_spinner_help_txt">View Stored Commands</string>
+    <string name="VC_placeholder_vcName_txt">Voice Command Name</string>
+    <string name="VC_placeholder_vcDesc_txt">Voice Command Description</string>
 
 </resources>
