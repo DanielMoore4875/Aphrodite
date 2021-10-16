@@ -49,6 +49,8 @@
     <string name="LA_webClientID_txt" translatable="false">862254589566-0cvfjpl3d7l16qh1v7rohm87t6cpg6ae.apps.googleusercontent.com</string>
     <string name="VC_placeholder_vcName_txt">Voice Command Name</string>
     <string name="VC_placeholder_vcDesc_txt">Voice Command Description</string>
+    <string name="VC_mute_mic_txt">Mute Mic</string>
+    <string name="VC_led_txt">LED Colour</string>
 
     <!--    <string-array name="voicecommands">-->
     <!--        <item>Empty 1</item>-->
