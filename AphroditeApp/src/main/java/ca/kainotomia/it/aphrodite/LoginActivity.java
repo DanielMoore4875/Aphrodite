@@ -44,6 +44,12 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 //        setContentView(R.layout.activity_login);
+        FirebaseUser auth = FirebaseAuth.getInstance().getCurrentUser();
+        if (auth != null) {
+            System.out.println("USER IS SIGNED IN");
+        } else {
+            System.out.println("USER IS SIGNED OUT");
+        }
 
         initAuth();
     }
