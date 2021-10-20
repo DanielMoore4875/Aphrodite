@@ -52,13 +52,4 @@
     <string name="VC_mute_mic_txt">Mute Mic</string>
     <string name="VC_led_txt">LED Colour</string>
 
-    <!--    <string-array name="voicecommands">-->
-    <!--        <item>Empty 1</item>-->
-    <!--        <item>Empty 2</item>-->
-    <!--        <item>Empty 3</item>-->
-    <!--        <item>Empty 4</item>-->
-    <!--        <item>Empty 5</item>-->
-    <!--        <item>Empty 6</item>-->
-    <!--        <item>Empty 7</item>-->
-    <!--    </string-array>-->
 </resources>
