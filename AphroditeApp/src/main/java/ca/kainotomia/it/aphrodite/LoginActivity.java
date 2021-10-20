@@ -50,7 +50,8 @@ public class LoginActivity extends AppCompatActivity {
 
     private void initAuth() {
         providers = Arrays.asList(
-                new AuthUI.IdpConfig.GoogleBuilder().build()    // Google Sign In
+                new AuthUI.IdpConfig.GoogleBuilder().build(),    // Google Sign In
+                new AuthUI.IdpConfig.EmailBuilder().build()     // Email Sign In
         );
 
         AphFBAuth = FirebaseAuth.getInstance(); // Starting state of firebase auth

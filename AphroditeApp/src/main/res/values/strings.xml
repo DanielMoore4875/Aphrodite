@@ -51,5 +51,4 @@
     <string name="VC_placeholder_vcDesc_txt">Voice Command Description</string>
     <string name="VC_mute_mic_txt">Mute Mic</string>
     <string name="VC_led_txt">LED Colour</string>
-
 </resources>
