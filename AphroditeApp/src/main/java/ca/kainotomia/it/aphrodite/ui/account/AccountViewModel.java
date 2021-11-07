@@ -13,10 +13,8 @@ public class AccountViewModel extends ViewModel {
     private MutableLiveData<String> mText;
 
     public AccountViewModel() {
-        mText = new MutableLiveData<>();
-        mText.setValue("Account Fragment");
-    }
 
+    }
     public LiveData<String> getText() {
         return mText;
     }

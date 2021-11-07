@@ -19,12 +19,21 @@ import androidx.navigation.ui.NavigationUI;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final String TAG = "MainActivity";
+
+    private boolean loggedIn = false;
+//    private Bundle loggedInData;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Intent login = new Intent(this, LoginActivity.class);
-        startActivity(login);
+//        Intent login = new Intent(this, LoginActivity.class);
+//            startActivity(login);
+            loggedIn = true;
+//        loggedInData = savedInstanceState;
+//        loggedIn = savedInstanceState.getBoolean("loggedIn", false); // user hasn't logged in yet
+
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
@@ -38,7 +47,28 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle activityData) {
+        super.onSaveInstanceState(activityData);
+//        activityData.putBoolean("loggedIn", loggedIn); // store whether the user is already logged in
 
+    }
+
+//    @Override
+//    protected void onUserLeaveHint() {
+////        super.onUserLeaveHint();
+//        loggedIn = false; // user pressed home
+//    }
+//
+//    @Override
+//    protected void onPostResume() {
+//        super.onPostResume();
+//        if (!loggedIn) {
+//            // Log in activity
+//            Intent login = new Intent(this, LoginActivity.class);
+//            startActivity(login);
+//        }
+//    }
 
     @Override
     public void onBackPressed() {

@@ -1,3 +1,7 @@
+//Jose Antonio Castro Teodoro n01384776 Section B
+//Daniel Moore n01354875 Section B
+//Ryan Black n01305403 Section B
+//Alyssa Gomez n01042777 Section B
 package ca.kainotomia.it.aphrodite;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,19 +16,10 @@ public class SplashScreenActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                startActivity(new Intent(SplashScreenActivity.this, MainActivity.class));
-                doneScreen();
-            }
+        handler.postDelayed(() -> {
+            //LOGIN ACTIVITY HERE
+            startActivity(new Intent(SplashScreenActivity.this, LoginActivity.class));
+            finish();
         }, 2000);
-
-
     }
-
-    private void doneScreen() {
-        finish();
-    }
-
 }

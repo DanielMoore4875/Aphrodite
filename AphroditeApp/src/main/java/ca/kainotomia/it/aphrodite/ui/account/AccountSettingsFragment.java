@@ -12,13 +12,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
-
 import ca.kainotomia.it.aphrodite.R;
 
-public class AccountFragment extends Fragment {
+public class AccountSettingsFragment extends android.app.Fragment {
 
     private AccountViewModel accountViewModel;
     private ViewGroup container;
@@ -26,7 +23,7 @@ public class AccountFragment extends Fragment {
     private TextView textView;
     private Button button;
 
-    public AccountFragment() {
+    public AccountSettingsFragment() {
     }
 
     public View initializeUserInterface() {
@@ -41,16 +38,13 @@ public class AccountFragment extends Fragment {
         int orientation = getActivity().getResources().getConfiguration().orientation;
 
         if (orientation == Configuration.ORIENTATION_PORTRAIT) {
-            view = inflater.inflate(R.layout.fragment_account, container, false);
+            view = inflater.inflate(R.layout.fragment_account_settings, container, false);
         }
         else { // orientation == Configuration.ORIENTATION_LANDSCAPE
-            view = inflater.inflate(R.layout.fragment_account_horizontal, container, false);
+            view = inflater.inflate(R.layout.fragment_account_settings_horizontal, container, false);
         }
 
         // Instantiate our widgets from the layout.
-        textView = view.findViewById(R.id.AF_TextView_username);
-        textView = view.findViewById(R.id.AF_TextView_version);
-        button = view.findViewById(R.id.AF_Button_support);
 
         // Display the orientation in the text view.
         if (orientation == Configuration.ORIENTATION_PORTRAIT) {
@@ -87,4 +81,5 @@ public class AccountFragment extends Fragment {
         container.addView(view);
         super.onConfigurationChanged(newConfig);
     }
+
 }

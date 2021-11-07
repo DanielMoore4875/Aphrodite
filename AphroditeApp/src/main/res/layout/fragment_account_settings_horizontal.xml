@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Jose Antonio Castro Teodoro n01384776 Section B-->
+<!--Daniel Moore n01354875 Section B-->
+<!--Ryan Black n01305403 Section B-->
+<!--Alyssa Gomez n01042777 Section B-->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/tan"
+    tools:context=".ui.account.AccountFragment"
+    tools:layout_editor_absoluteX="-28dp"
+    tools:layout_editor_absoluteY="160dp">
+
+    <TextView
+        android:id="@+id/AFSS_TextView_title"
+        android:layout_width="653dp"
+        android:layout_height="42dp"
+        android:background="@drawable/roundcorner_peach"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:text="@string/AFSS_TextView_title"
+        android:textColor="@color/light_oak"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.043" />
+
+    <Button
+        android:id="@+id/AFSS_Button_add"
+        android:layout_width="206dp"
+        android:layout_height="302dp"
+        android:backgroundTint="@color/light_ocean"
+        android:text="@string/AFSS_Button_add"
+        android:textColor="@color/mid_ocean"
+        app:icon="@drawable/add"
+        app:iconSize="22dp"
+        app:iconTint="@color/mid_ocean"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.074"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.724" />
+
+    <Button
+        android:id="@+id/AFSS_Button_remove"
+        android:layout_width="206dp"
+        android:layout_height="302dp"
+        android:backgroundTint="@color/peach"
+        android:text="@string/AFSS_Button_remove"
+        android:textColor="@color/light_oak"
+        app:icon="@drawable/remove"
+        app:iconSize="22dp"
+        app:iconTint="@color/light_oak"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.499"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.724" />
+
+    <Button
+        android:id="@+id/AFSS_Button_terminate"
+        android:layout_width="206dp"
+        android:layout_height="302dp"
+        android:backgroundTint="@color/peach"
+        android:text="@string/AFSS_Button_terminate"
+        android:textColor="@color/light_oak"
+        app:icon="@drawable/terminate"
+        app:iconSize="22dp"
+        app:iconTint="@color/light_oak"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.925"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.724" />
+
+    <FrameLayout
+        android:id="@+id/AF_FrameLayout_orientation"
+        android:layout_width="731dp"
+        android:layout_height="414dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"></FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

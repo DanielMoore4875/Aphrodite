@@ -15,8 +15,9 @@
     <color name="lighter_oak">#EDE1D2</color>
     <color name="peach">#eb7e62</color>
     <color name="magenta">#b734eb</color>
-
-
+    <color name="tan">#D2B48C</color>
+    <color name="brown">#964B00</color>
     <color name="darkmode_grey">#282828</color>
     <color name="dark_green">#006400</color>
+    <color name="border_color">#DBDDE0</color>
 </resources>
