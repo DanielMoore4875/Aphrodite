@@ -20,6 +20,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.google.android.material.snackbar.Snackbar;
@@ -35,6 +37,7 @@ import java.util.ArrayList;
 import java.util.Locale;
 
 import ca.kainotomia.it.aphrodite.R;
+import ca.kainotomia.it.aphrodite.ui.account.AccountFragment;
 
 public class VoiceFragment extends Fragment {
 
@@ -42,6 +45,7 @@ public class VoiceFragment extends Fragment {
     TextView d1, d2, d3, d4, d5, d6, d7;
 
     private VoiceViewModel voiceViewModel;
+    Button muteMic;
 
     // Write a message to the database
     FirebaseDatabase database;
@@ -52,14 +56,21 @@ public class VoiceFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         voiceViewModel =
                 new ViewModelProvider(this).get(VoiceViewModel.class);
-        View root = inflater.inflate(R.layout.voice_fragment, container, false);
 
-        return root;
+        return inflater.inflate(R.layout.voice_fragment, container, false);
+        // View root = inflater.inflate(R.layout.voice_fragment, container, false);
+        //
+        //        return root;
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        muteMic = view.findViewById(R.id.VC_muteMic_btnID);
+        muteMic.setOnClickListener(v -> {
+            // do stuff on muteMic Click
+
+        });
 
         FirebaseUser auth = FirebaseAuth.getInstance().getCurrentUser();
         System.out.println("USER: " + auth);
