@@ -1,9 +1,16 @@
 package ca.kainotomia.it.aphrodite;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.widget.Toast;
@@ -36,7 +43,8 @@ public class LoginActivity extends AppCompatActivity {
         if (authListen != null) {
             AphFBAuth.removeAuthStateListener(authListen);
         }
-        FirebaseAuth.getInstance().signOut();
+        //THIS WILL SIGN THE USER OUT
+//        FirebaseAuth.getInstance().signOut();
         super.onStop();
     }
 
@@ -81,16 +89,24 @@ public class LoginActivity extends AppCompatActivity {
                         finish();
                     }, 500);
                 } else {
-                    // Login
-                    startActivityForResult(AuthUI.getInstance()
+                    //New way of logging in without using startActivityForResult
+                    Intent intent = AuthUI.getInstance()
                             .createSignInIntentBuilder()
                             .setAvailableProviders(providers)
                             .setIsSmartLockEnabled(false)
                             .setLogo(R.drawable.aphrodite_logo)
                             .setTheme(R.style.LoginTheme)
-                            .build(), AUTH_REQUEST_CODE);
+                            .build();
+                    activityResultLauncher.launch(intent);
                 }
             }
         };
     }
+    ActivityResultLauncher<Intent> activityResultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
+        if (result.getResultCode() == Activity.RESULT_OK) {
+            // no request codes
+            Intent data = result.getData();
+        }
+        System.out.println("HELLO THIS WAS RUN");
+    });
 }

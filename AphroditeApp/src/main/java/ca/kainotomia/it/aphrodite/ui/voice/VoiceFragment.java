@@ -23,6 +23,11 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.internal.zzx;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import org.w3c.dom.Text;
 
@@ -38,6 +43,11 @@ public class VoiceFragment extends Fragment {
 
     private VoiceViewModel voiceViewModel;
 
+    // Write a message to the database
+    FirebaseDatabase database;
+    DatabaseReference myRef;
+
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         voiceViewModel =
@@ -50,6 +60,14 @@ public class VoiceFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        FirebaseUser auth = FirebaseAuth.getInstance().getCurrentUser();
+        System.out.println("USER: " + auth);
+
+        database = FirebaseDatabase.getInstance();
+       myRef = database.getReference("message");
+
+        myRef.setValue("Hello, World!");
 
         String names = "placeholder command name";
         String desc = "placeholder command desc";
