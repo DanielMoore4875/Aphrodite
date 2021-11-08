@@ -146,4 +146,12 @@
     <string name="CL_CreateLayout_Text">Create Layout</string>
     <string name="CL_Feature_Text_1">Lorem Ipsum</string>
     <string name="CL_Feature_Text_2">Lorem Ipsum 2</string>
+    <string name="CL_Feature_Text_3">Lorem Ipsum 3</string>
+    <string name="CL_Feature_Text_4">Lorem 4</string>
+    <string name="CL_Feature_Text_5">Lorem 5</string>
+    <string name="CL_Feature_Text_6">Lorem 6</string>
+    <string name="CL_Feature_Text_7">Lorem 7</string>
+    <string name="CL_Feature_Text_8">Lorem 8</string>
+    <string name="CL_Feature_Text_9">Lorem 9</string>
+    <string name="CL_SaveButton_Text">Save</string>
 </resources>
