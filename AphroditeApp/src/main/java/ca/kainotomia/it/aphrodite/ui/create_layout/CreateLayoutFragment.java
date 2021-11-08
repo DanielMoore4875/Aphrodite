@@ -26,7 +26,6 @@ public class CreateLayoutFragment extends Fragment {
         View root=inflater.inflate(R.layout.create_layout_page_fragment, container, false);
 
 
-
         return root;
     }
 
