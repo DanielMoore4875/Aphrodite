@@ -36,4 +36,13 @@
         <item name="android:windowBackground">@color/lighter_oak</item>
         <item name="android:textColorHint">@color/dark_ocean</item>
     </style>
+
+    <style name="Theme.Aphrodite.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.Aphrodite.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.Aphrodite.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

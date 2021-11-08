@@ -12,30 +12,43 @@ import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 
 import ca.kainotomia.it.aphrodite.R;
+import ca.kainotomia.it.aphrodite.ui.create_layout.CreateLayoutFragment;
 
 public class HomeFragment extends Fragment {
 
     private HomeViewModel homeViewModel;
+    Button goToCreateLayout_H;
+
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         homeViewModel =
                 new ViewModelProvider(this).get(HomeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_home, container, false);
-//        final TextView textView = root.findViewById(R.id.H_HomeTitle_title);
-//        homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-//            @Override
-//            public void onChanged(@Nullable String s) {
-//                textView.setText(s);
-//            }
-//        });
-        Button addButtonHome = (Button) root.findViewById(R.id.H_AddButton_button);
+
+       goToCreateLayout_H = root.findViewById(R.id.H_AddButton_button);
+
+       goToCreateLayout_H.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               Fragment fragment = new CreateLayoutFragment();
+               FragmentManager fragmentManager=getActivity().getSupportFragmentManager();
+               FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
+               fragmentTransaction.replace(R.id.container, CreateLayoutFragment.class, null);
+               fragmentTransaction.addToBackStack(null);
+               fragmentTransaction.commit();
+           }
+       });
 
         return root;
     }
+
+
+
 }
 
