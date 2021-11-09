@@ -51,18 +51,19 @@
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/CL_CreateLayout_TV"
-            app:layout_constraintVertical_bias="0.077" />
+            app:layout_constraintVertical_bias="0.077"
+            tools:ignore="TextContrastCheck" />
 
 
         <androidx.appcompat.widget.SwitchCompat
-            android:id="@+id/CL_Feature_1"
+            android:id="@+id/CL_Feature_Time"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
             android:minHeight="48dp"
-            android:text="@string/CL_Feature_Text_1"
+            android:text="@string/CL_Feature_Text_Time"
             android:textColor="@color/dark_ocean"
             android:theme="@style/StateCSwitch"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -70,128 +71,137 @@
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/CL_LayoutName_User_Input_PT"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="TextContrastCheck" />
 
         <androidx.appcompat.widget.SwitchCompat
-            android:id="@+id/CL_Feature_2"
+            android:id="@+id/CL_Feature_Date"
             android:layout_width="371dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:minHeight="48dp"
-            android:text="@string/CL_Feature_Text_2"
+            android:text="@string/CL_Feature_Text_Date"
             android:textColor="@color/dark_ocean"
             android:theme="@style/StateCSwitch"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/CL_Feature_1"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toBottomOf="@+id/CL_Feature_Time"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="TextContrastCheck" />
 
         <androidx.appcompat.widget.SwitchCompat
-            android:id="@+id/CL_Feature_3"
+            android:id="@+id/CL_Feature_Calendar"
             android:layout_width="371dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:minHeight="48dp"
-            android:text="@string/CL_Feature_Text_3"
+            android:text="@string/CL_Feature_Text_Calendar"
             android:textColor="@color/dark_ocean"
             android:theme="@style/StateCSwitch"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/CL_Feature_2"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toBottomOf="@+id/CL_Feature_Date"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="TextContrastCheck" />
 
         <androidx.appcompat.widget.SwitchCompat
-            android:id="@+id/CL_Feature_4"
+            android:id="@+id/CL_Feature_Weather"
             android:layout_width="371dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:minHeight="48dp"
-            android:text="@string/CL_Feature_Text_4"
+            android:text="@string/CL_Feature_Text_Weather"
             android:textColor="@color/dark_ocean"
             android:theme="@style/StateCSwitch"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/CL_Feature_3"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toBottomOf="@+id/CL_Feature_Calendar"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="TextContrastCheck" />
 
         <androidx.appcompat.widget.SwitchCompat
-            android:id="@+id/CL_Feature_5"
+            android:id="@+id/CL_Feature_ToDoList"
             android:layout_width="371dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:minHeight="48dp"
-            android:text="@string/CL_Feature_Text_5"
+            android:text="@string/CL_Feature_Text_ToDoList"
             android:textColor="@color/dark_ocean"
             android:theme="@style/StateCSwitch"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/CL_Feature_4"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toBottomOf="@+id/CL_Feature_Weather"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="TextContrastCheck" />
 
         <androidx.appcompat.widget.SwitchCompat
-            android:id="@+id/CL_Feature_6"
+            android:id="@+id/CL_Feature_RoomT_H"
             android:layout_width="371dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:minHeight="48dp"
-            android:text="@string/CL_Feature_Text_6"
+            android:text="@string/CL_Feature_Text_RoomT_H"
             android:textColor="@color/dark_ocean"
             android:theme="@style/StateCSwitch"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/CL_Feature_5"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toBottomOf="@+id/CL_Feature_ToDoList"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="TextContrastCheck" />
 
 
         <androidx.appcompat.widget.SwitchCompat
-            android:id="@+id/CL_Feature_7"
+            android:id="@+id/CL_Feature_Stocks"
             android:layout_width="371dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:minHeight="48dp"
-            android:text="@string/CL_Feature_Text_7"
+            android:text="@string/CL_Feature_Text_Stocks"
             android:textColor="@color/dark_ocean"
             android:theme="@style/StateCSwitch"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/CL_Feature_6"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toBottomOf="@+id/CL_Feature_RoomT_H"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="TextContrastCheck" />
 
         <androidx.appcompat.widget.SwitchCompat
-            android:id="@+id/CL_Feature_8"
+            android:id="@+id/CL_Feature_Youtube"
             android:layout_width="371dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:minHeight="48dp"
-            android:text="@string/CL_Feature_Text_8"
+            android:text="@string/CL_Feature_Text_Youtube"
             android:textColor="@color/dark_ocean"
             android:theme="@style/StateCSwitch"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/CL_Feature_7"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toBottomOf="@+id/CL_Feature_Stocks"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="TextContrastCheck" />
 
         <androidx.appcompat.widget.SwitchCompat
-            android:id="@+id/CL_Feature_9"
+            android:id="@+id/CL_Feature_SocialMediaNot"
             android:layout_width="371dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:minHeight="48dp"
-            android:text="@string/CL_Feature_Text_9"
+            android:text="@string/CL_Feature_Text_SocialMedNot"
             android:textColor="@color/dark_ocean"
             android:theme="@style/StateCSwitch"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/CL_Feature_8"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toBottomOf="@+id/CL_Feature_Youtube"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="TextContrastCheck" />
 
         <Button
             android:id="@+id/CL_SaveButton"
@@ -207,7 +217,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/CL_Feature_9"
+            app:layout_constraintTop_toBottomOf="@+id/CL_Feature_SocialMediaNot"
             app:layout_constraintVertical_bias="1.0"
             app:rippleColor="@color/lighter_oak"
             tools:ignore="TextContrastCheck" />
