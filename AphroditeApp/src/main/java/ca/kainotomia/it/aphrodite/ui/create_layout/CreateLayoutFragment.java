@@ -29,5 +29,4 @@ public class CreateLayoutFragment extends Fragment {
         return root;
     }
 
-
 }

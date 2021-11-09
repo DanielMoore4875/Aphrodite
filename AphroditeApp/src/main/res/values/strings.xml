@@ -155,5 +155,6 @@
     <string name="CL_Feature_Text_Youtube">Youtube</string>
     <string name="CL_Feature_Text_SocialMedNot">Social Media Notifications</string>
     <string name="CL_SaveButton_Text">Save</string>
+    <string name="SSL_ChosenLayout_Name">Layout Name</string>
 
 </resources>
