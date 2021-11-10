@@ -77,13 +77,16 @@ public class LoginActivity extends AppCompatActivity {
             // Get user
             FirebaseUser user = firebaseAuth.getCurrentUser();
             if (user != null) {
-                UpdateDBNode usersNode = new UpdateDBNode(FirebaseDatabase.getInstance().getReference("users"));
+                UpdateDBNode usersNode = new UpdateDBNode("users");
 
-                if (usersNode.addUser(user.getUid(),user.getDisplayName(),user.getEmail())) {
-                    Toast.makeText(LoginActivity.this, "User created",  Toast.LENGTH_SHORT).show();
+
+                if (usersNode.addUser(user.getUid(), user.getDisplayName(), user.getEmail())) {
+                    Toast.makeText(LoginActivity.this, "User created", Toast.LENGTH_SHORT).show();
                     Toast.makeText(LoginActivity.this, "Welcome " + user.getDisplayName() + "!", Toast.LENGTH_SHORT).show();
+                    System.out.println("FINISHED creating user");
                 } else {
-                    Toast.makeText(LoginActivity.this, "ERROR: user not created",  Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, "ERROR: user not created", Toast.LENGTH_SHORT).show();
+                    System.out.println("ERROR");
                 }
 
                 System.out.println("\nName: " + user.getDisplayName() +

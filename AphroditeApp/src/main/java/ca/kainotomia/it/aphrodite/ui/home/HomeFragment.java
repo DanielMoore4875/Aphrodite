@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -17,10 +18,30 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import ca.kainotomia.it.aphrodite.R;
+import ca.kainotomia.it.aphrodite.UpdateDBNode;
 
 public class HomeFragment extends Fragment {
 
     private HomeViewModel homeViewModel;
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        String[][] layoutsTest = {
+                {"weather", "top_left"},
+                {"mod2", "bottom_right"},
+                {"speed", "middle_center"}
+        };
+        Button addPlus = view.findViewById(R.id.H_AddButton_button);
+        addPlus.setOnClickListener(v -> {
+//            System.out.println("HEY THERE");
+//            UpdateDBNode layouts = new UpdateDBNode("layouts");
+//            layouts.addLayout(layouts.getCurrentUid(),"Test Name",layoutsTest);
+            UpdateDBNode modules = new UpdateDBNode("modules");
+            modules.addModule(modules.getCurrentUid(),"TESTING AGAIN", "ABC");
+        });
+    }
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -34,6 +55,8 @@ public class HomeFragment extends Fragment {
 //                textView.setText(s);
 //            }
 //        });
+
+
         return root;
     }
 }
