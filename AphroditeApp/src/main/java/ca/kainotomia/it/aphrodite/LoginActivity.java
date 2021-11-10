@@ -34,7 +34,6 @@ public class LoginActivity extends AppCompatActivity {
     private FirebaseAuth AphFBAuth;
     private FirebaseAuth.AuthStateListener authListen;
     private List<AuthUI.IdpConfig> providers;
-    private DatabaseReference usersTree;
 
 
     @Override
@@ -56,13 +55,12 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance(); // get the database
-        usersTree = firebaseDatabase.getReference("users"); // the users node of the database
 //        setContentView(R.layout.activity_login); //Firebase UI replaces this
         initAuth();
     }
 
     private void initAuth() {
+
         providers = Arrays.asList(
                 new AuthUI.IdpConfig.GoogleBuilder().build(),    // Google Sign In
                 new AuthUI.IdpConfig.EmailBuilder().build()     // Email Sign In
@@ -79,15 +77,14 @@ public class LoginActivity extends AppCompatActivity {
             // Get user
             FirebaseUser user = firebaseAuth.getCurrentUser();
             if (user != null) {
-                /*
-                How it should look in database
-                users
-                  |- Uid(user uid)
-                        |- email: ...
-                        |- name: ...
-                 */
-                usersTree.child(user.getUid()).child("name").setValue(user.getDisplayName());
-                usersTree.child(user.getUid()).child("email").setValue(user.getEmail());
+                UpdateDBNode usersNode = new UpdateDBNode(FirebaseDatabase.getInstance().getReference("users"));
+
+                if (usersNode.addUser(user.getUid(),user.getDisplayName(),user.getEmail())) {
+                    Toast.makeText(LoginActivity.this, "User created",  Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, "Welcome " + user.getDisplayName() + "!", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(LoginActivity.this, "ERROR: user not created",  Toast.LENGTH_SHORT).show();
+                }
 
                 System.out.println("\nName: " + user.getDisplayName() +
                         "\nUserID: " + user.getUid() +
@@ -96,7 +93,6 @@ public class LoginActivity extends AppCompatActivity {
                         "\nProvider ID: " + user.getProviderId() +
                         "\nTenant ID: " + user.getTenantId() +
                         "\nPhoto URL: " + user.getPhotoUrl());
-                Toast.makeText(LoginActivity.this, "Welcome " + user.getDisplayName() + "!", Toast.LENGTH_SHORT).show();
                 handler.postDelayed(() -> {
                     //Finished login, go to MainActivity
                     startActivity(new Intent(LoginActivity.this, MainActivity.class));
