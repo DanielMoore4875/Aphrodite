@@ -76,18 +76,18 @@ public class UpdateDBNode {
             return false;
         }
     }
-
-    public void addModule(String uid, String modName, String value) {
-        if (Objects.requireNonNull(getDatabaseReference().getKey()).equals("modules")) {
-            getDatabaseReference()
-                    .child(uid)
-                    .child(modName)
-                    .setValue(value);
-            System.out.println("YESSSSS");
-        } else {
-            System.out.println(" NO");
-        }
-    }
+//    // Cannot add modules except from database because they are premade
+//    public void addModule(String uid, String modName, String value) {
+//        if (Objects.requireNonNull(getDatabaseReference().getKey()).equals("modules")) {
+//            getDatabaseReference()
+//                    .child(uid)
+//                    .child(modName)
+//                    .setValue(value);
+//            System.out.println("YESSSSS");
+//        } else {
+//            System.out.println(" NO");
+//        }
+//    }
 
     public String getCurrentUid() {
         return getFirebaseUser().getUid();

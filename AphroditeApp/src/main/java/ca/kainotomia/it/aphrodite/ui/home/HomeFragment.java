@@ -38,8 +38,6 @@ public class HomeFragment extends Fragment {
 //            System.out.println("HEY THERE");
 //            UpdateDBNode layouts = new UpdateDBNode("layouts");
 //            layouts.addLayout(layouts.getCurrentUid(),"Test Name",layoutsTest);
-            UpdateDBNode modules = new UpdateDBNode("modules");
-            modules.addModule(modules.getCurrentUid(),"TESTING AGAIN", "ABC");
         });
     }
 
