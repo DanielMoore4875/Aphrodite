@@ -33,6 +33,22 @@ public class UpdateDBNode {
         }
     }
 
+    public boolean deleteUser(String uid, String email) {
+        if (Objects.requireNonNull(getDatabaseReference().getKey()).equals("users")) {
+            // need to remove all things associated with the user
+            getDatabaseReference().child(uid).removeValue();
+            System.out.println("Removed User from database");
+
+
+
+
+            return true;
+        } else {
+            System.out.println("Node Incorrect: User not removed");
+            return false;
+        }
+    }
+
     public FirebaseUser getFirebaseUser() {
         return this.firebaseUser;
     }
