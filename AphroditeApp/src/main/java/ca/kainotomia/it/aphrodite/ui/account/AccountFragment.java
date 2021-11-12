@@ -18,8 +18,7 @@ import ca.kainotomia.it.aphrodite.R;
 
 public class AccountFragment extends Fragment implements View.OnClickListener {
 
-    public AccountFragment() {
-    }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

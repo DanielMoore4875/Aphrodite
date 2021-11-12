@@ -48,7 +48,7 @@ public class AccountSettingsFragment extends Fragment implements View.OnClickLis
         Fragment fragment = null;
         switch (view.getId()) {
             case R.id.AFSS_Button_add:
-                fragment = new AccountProfileFragment();
+                //fragment = new AccountProfileFragment();
                 replaceFragment(fragment);
                 break;
 
