@@ -123,22 +123,6 @@
             tools:ignore="TextContrastCheck" />
 
         <androidx.appcompat.widget.SwitchCompat
-            android:id="@+id/CL_Feature_ToDoList"
-            android:layout_width="371dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:minHeight="48dp"
-            android:text="@string/CL_Feature_Text_ToDoList"
-            android:textColor="@color/dark_ocean"
-            android:theme="@style/StateCSwitch"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/CL_Feature_Weather"
-            app:layout_constraintVertical_bias="0.0"
-            tools:ignore="TextContrastCheck" />
-
-        <androidx.appcompat.widget.SwitchCompat
             android:id="@+id/CL_Feature_RoomT_H"
             android:layout_width="371dp"
             android:layout_height="wrap_content"
@@ -150,7 +134,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/CL_Feature_ToDoList"
+            app:layout_constraintTop_toBottomOf="@+id/CL_Feature_Weather"
             app:layout_constraintVertical_bias="0.0"
             tools:ignore="TextContrastCheck" />
 

@@ -52,8 +52,22 @@
     <string name="VC_mute_mic_txt">Mute Mic</string>
     <string name="VC_led_txt">LED Colour</string>
 
-<!--    <string name="AFP_EditText_name">Enter A Name</string>-->
-<!--    <string name="AFP_TextView_title">Create A Profile</string>-->
-<!--    <string name="AFP_TextView_Name">Profile Name</string>-->
-<!--    <string name="AFR_TextView_title">Review</string>-->
+    <string name="action_settings">Settings</string>
+    <string name="CL_LayoutName_Text">Layout Name</string>
+    <string name="CL_CreateLayout_Text">Create Layout</string>
+    <string name="CL_Feature_Text_Time">Time</string>
+    <string name="CL_Feature_Text_Date">Date</string>
+    <string name="CL_Feature_Text_Calendar">Calendar</string>
+    <string name="CL_Feature_Text_Weather">Weather</string>
+    <string name="CL_Feature_Text_ToDoList">To-Do List</string>
+    <string name="CL_Feature_Text_RoomT_H">Room Temp and Hum</string>
+    <string name="CL_Feature_Text_Stocks">Stocks</string>
+    <string name="CL_Feature_Text_Youtube">Youtube</string>
+    <string name="CL_Feature_Text_SocialMedNot">Social Media Notifications</string>
+    <string name="CL_SaveButton_Text">Next</string>
+    <string name="SSL_ChosenLayout_Name">Layout Name</string>
+    <string name="CM_ChooseModule_PageName">Choose Module Location</string>
+    <string name="ML_ChosenLayout_Name">Layout Name</string>
+    <string name="ML_SaveButton">Save</string>
+
 </resources>
