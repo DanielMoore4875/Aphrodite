@@ -24,33 +24,20 @@
             android:src="@drawable/aphrodite_logo"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
 
-
-        <Button
-            android:id="@+id/VC_muteMic_btnID"
-            android:backgroundTint="@color/peach"
-            android:layout_width="117dp"
-            android:layout_height="60dp"
-            android:layout_marginStart="36dp"
-            android:layout_marginTop="20dp"
-            android:text="@string/VC_mute_mic_txt"
-            android:textColor="@color/white"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/VC_logo_imgID" />
 
         <Button
             android:id="@+id/VC_changeLED_btnID"
+            android:layout_width="@dimen/VC_btn_width"
+            android:layout_height="@dimen/VC_btn_height"
+            android:layout_marginTop="@dimen/VC_btn_marginTop"
+            android:layout_marginEnd="@dimen/VC_btn_marginEnd"
             android:backgroundTint="@color/peach"
-            android:layout_width="117dp"
-            android:layout_height="60dp"
-            android:layout_marginStart="96dp"
-            android:layout_marginTop="20dp"
             android:text="@string/VC_led_txt"
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/VC_muteMic_btnID"
             app:layout_constraintTop_toBottomOf="@+id/VC_logo_imgID" />
 
         <TextView
@@ -213,6 +200,19 @@
             android:textSize="@dimen/VC_title_font_size"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/VC_cmdName1_txt" />
+
+        <ToggleButton
+            android:id="@+id/VC_muteMic_btnID"
+            android:layout_width="@dimen/VC_btn_width"
+            android:layout_height="@dimen/VC_btn_height"
+            android:layout_marginStart="@dimen/VC_btn_marginStart"
+            android:layout_marginTop="@dimen/VC_btn_marginTop"
+            android:backgroundTint="@color/peach"
+            android:textColor="@color/white"
+            android:textOff="@string/VC_micUnmuted_txt"
+            android:textOn="@string/VC_micMuted_txt"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/VC_logo_imgID" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

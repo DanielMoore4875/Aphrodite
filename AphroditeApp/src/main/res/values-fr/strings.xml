@@ -63,5 +63,21 @@
     <string name="CL_Feature_Text_SocialMedNot">" Notifications sur les réseaux sociaux"</string>
     <string name="CL_SaveButton_Text">"Sauvegarder "</string>
     <string name="SSL_ChosenLayout_Name">" Nom de la mise en page"</string>
+    <string name="VC_name_cmd1_txt">Commander #1</string>
+    <string name="VC_name_cmd2_txt">Commander #2</string>
+    <string name="VC_name_cmd3_txt">Commander #3</string>
+    <string name="VC_name_cmd4_txt">Commander #4</string>
+    <string name="VC_name_cmd5_txt">Commander #5</string>
+    <string name="VC_name_cmd6_txt">Commander #6</string>
+    <string name="VC_name_cmd7_txt">Commander #7</string>
+    <string name="VC_desc_cmd1_txt">Cmd 1 Desc placeholder</string>
+    <string name="VC_desc_cmd2_txt">Cmd 2 Desc placeholder</string>
+    <string name="VC_desc_cmd3_txt">Cmd 3 Desc placeholder</string>
+    <string name="VC_desc_cmd4_txt">Cmd 4 Desc placeholder</string>
+    <string name="VC_desc_cmd5_txt">Cmd 5 Desc placeholder</string>
+    <string name="VC_desc_cmd6_txt">Cmd 6 Desc placeholder</string>
+    <string name="VC_desc_cmd7_txt">Cmd 7 Desc placeholder</string>
+    <string name="VC_micUnmuted_txt">couper le micro</string>
+    <string name="VC_micMuted_txt">activer le micro</string>
 
 </resources>
