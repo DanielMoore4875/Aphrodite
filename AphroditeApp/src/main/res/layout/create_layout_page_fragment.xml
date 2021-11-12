@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lighter_oak"
+    android:fillViewport="true"
+    tools:layout_editor_absoluteX="1dp"
+    tools:layout_editor_absoluteY="159dp">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".ui.create_layout.CreateLayoutFragment">
+
+        <TextView
+            android:id="@+id/CL_CreateLayout_PT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="sans-serif-black"
+            android:text="@string/CL_CreateLayout_Text"
+            android:textColor="@color/dark_ocean"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.051"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <EditText
+            android:id="@+id/CL_LayoutName_User_Input_PT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:ems="10"
+            android:fontFamily="sans-serif-light"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:text="@string/CL_LayoutName_Text"
+            android:textAlignment="center"
+            android:textColor="@color/mid_ocean"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/CL_CreateLayout_PT"
+            app:layout_constraintVertical_bias="0.077"
+            tools:ignore="TextContrastCheck" />
+
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/CL_Feature_Time"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:minHeight="48dp"
+            android:text="@string/CL_Feature_Text_Time"
+            android:textColor="@color/dark_ocean"
+            android:theme="@style/StateCSwitch"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/CL_LayoutName_User_Input_PT"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="TextContrastCheck" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/CL_Feature_Date"
+            android:layout_width="371dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:minHeight="48dp"
+            android:text="@string/CL_Feature_Text_Date"
+            android:textColor="@color/dark_ocean"
+            android:theme="@style/StateCSwitch"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/CL_Feature_Time"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="TextContrastCheck" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/CL_Feature_Calendar"
+            android:layout_width="371dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:minHeight="48dp"
+            android:text="@string/CL_Feature_Text_Calendar"
+            android:textColor="@color/dark_ocean"
+            android:theme="@style/StateCSwitch"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/CL_Feature_Date"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="TextContrastCheck" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/CL_Feature_Weather"
+            android:layout_width="371dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:minHeight="48dp"
+            android:text="@string/CL_Feature_Text_Weather"
+            android:textColor="@color/dark_ocean"
+            android:theme="@style/StateCSwitch"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/CL_Feature_Calendar"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="TextContrastCheck" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/CL_Feature_ToDoList"
+            android:layout_width="371dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:minHeight="48dp"
+            android:text="@string/CL_Feature_Text_ToDoList"
+            android:textColor="@color/dark_ocean"
+            android:theme="@style/StateCSwitch"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/CL_Feature_Weather"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="TextContrastCheck" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/CL_Feature_RoomT_H"
+            android:layout_width="371dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:minHeight="48dp"
+            android:text="@string/CL_Feature_Text_RoomT_H"
+            android:textColor="@color/dark_ocean"
+            android:theme="@style/StateCSwitch"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/CL_Feature_ToDoList"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="TextContrastCheck" />
+
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/CL_Feature_Stocks"
+            android:layout_width="371dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:minHeight="48dp"
+            android:text="@string/CL_Feature_Text_Stocks"
+            android:textColor="@color/dark_ocean"
+            android:theme="@style/StateCSwitch"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/CL_Feature_RoomT_H"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="TextContrastCheck" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/CL_Feature_Youtube"
+            android:layout_width="371dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:minHeight="48dp"
+            android:text="@string/CL_Feature_Text_Youtube"
+            android:textColor="@color/dark_ocean"
+            android:theme="@style/StateCSwitch"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/CL_Feature_Stocks"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="TextContrastCheck" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/CL_Feature_SocialMediaNot"
+            android:layout_width="371dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:minHeight="48dp"
+            android:text="@string/CL_Feature_Text_SocialMedNot"
+            android:textColor="@color/dark_ocean"
+            android:theme="@style/StateCSwitch"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/CL_Feature_Youtube"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="TextContrastCheck" />
+
+        <Button
+            android:id="@+id/CL_SaveButton"
+            android:layout_width="0dp"
+            android:layout_height="65dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="10dp"
+            android:backgroundTint="@color/light_ocean"
+            android:text="@string/CL_SaveButton_Text"
+            android:textColor="@color/mid_ocean"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/CL_Feature_SocialMediaNot"
+            app:layout_constraintVertical_bias="1.0"
+            app:rippleColor="@color/lighter_oak"
+            tools:ignore="TextContrastCheck" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>
+
