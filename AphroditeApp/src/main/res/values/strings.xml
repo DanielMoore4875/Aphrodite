@@ -72,5 +72,8 @@
     <string name="AFP_Edit_Text_name">Enter A Name</string>
     <string name="AFP_TextView_title">Create A Profile</string>
     <string name="AFP_Button_submit">Create Profile</string>
+    <string name="AFR_TextView_title">Review</string>
+    <string name="AFR_TextView_review">Optional Please Give Your Response For The App:</string>
+    <string name="AFR_Button_submit">Submit</string>
 
 </resources>
