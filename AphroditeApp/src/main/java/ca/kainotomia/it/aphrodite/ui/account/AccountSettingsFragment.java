@@ -12,10 +12,11 @@ import android.widget.Button;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import ca.kainotomia.it.aphrodite.R;
 
-public class AccountSettingsFragment extends Fragment {
+public class AccountSettingsFragment extends Fragment implements View.OnClickListener{
 
     private AccountViewModel accountViewModel;
     private ViewGroup container;
@@ -44,9 +45,11 @@ public class AccountSettingsFragment extends Fragment {
     }
 
     public void onClick(View view) {
+        Fragment fragment = null;
         switch (view.getId()) {
             case R.id.AFSS_Button_add:
-
+                fragment = new AccountProfileFragment();
+                replaceFragment(fragment);
                 break;
 
             case R.id.AFSS_Button_remove:
@@ -57,5 +60,12 @@ public class AccountSettingsFragment extends Fragment {
 
                 break;
         }
+    }
+
+    public void replaceFragment(Fragment someFragment) {
+        FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+        transaction.replace(R.id.nav_host_fragment, someFragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
     }
 }
