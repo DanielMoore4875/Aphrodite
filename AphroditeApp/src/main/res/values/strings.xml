@@ -69,5 +69,8 @@
     <string name="CM_ChooseModule_PageName">Choose Module Location</string>
     <string name="ML_ChosenLayout_Name">Layout Name</string>
     <string name="ML_SaveButton">Save</string>
+    <string name="AFP_Edit_Text_name">Enter A Name</string>
+    <string name="AFP_TextView_title">Create A Profile</string>
+    <string name="AFP_Button_submit">Create Profile</string>
 
 </resources>

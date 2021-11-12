@@ -28,7 +28,7 @@
         app:srcCompat="@drawable/aphrodite_logot_trans_med" />
 
     <TextView
-        android:id="@+id/AFR_TextView_title"
+        android:id="@+id/AFP_TextView_title"
         android:layout_width="210dp"
         android:layout_height="39dp"
         android:background="@drawable/roundcorner_peach"
