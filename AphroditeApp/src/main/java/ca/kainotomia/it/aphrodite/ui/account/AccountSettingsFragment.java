@@ -4,18 +4,19 @@
 //Alyssa Gomez n01042777 Section B
 package ca.kainotomia.it.aphrodite.ui.account;
 
-import android.content.res.Configuration;
 import android.os.Bundle;
-import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+
 import ca.kainotomia.it.aphrodite.R;
 
-public class AccountSettingsFragment extends android.app.Fragment {
+public class AccountSettingsFragment extends Fragment implements View.OnClickListener{
 
     private AccountViewModel accountViewModel;
     private ViewGroup container;
@@ -23,63 +24,48 @@ public class AccountSettingsFragment extends android.app.Fragment {
     private TextView textView;
     private Button button;
 
-    public AccountSettingsFragment() {
-    }
-
-    public View initializeUserInterface() {
-        View view;
-
-        // If there is already a layout inflated, remove it.
-        if (container != null) {
-            container.removeAllViewsInLayout();
-        }
-
-        // Get the screen orientation.
-        int orientation = getActivity().getResources().getConfiguration().orientation;
-
-        if (orientation == Configuration.ORIENTATION_PORTRAIT) {
-            view = inflater.inflate(R.layout.fragment_account_settings, container, false);
-        }
-        else { // orientation == Configuration.ORIENTATION_LANDSCAPE
-            view = inflater.inflate(R.layout.fragment_account_settings_horizontal, container, false);
-        }
-
-        // Instantiate our widgets from the layout.
-
-        // Display the orientation in the text view.
-        if (orientation == Configuration.ORIENTATION_PORTRAIT) {
-            textView.setText("Portrait");
-        }
-        else {
-            textView.setText("Landscape");
-
-            // Get the width of the screen.
-            DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
-            int width = displayMetrics.widthPixels;
-
-            // If we have a small screen, adjust text size.
-            if (width < 793) {
-                textView.setTextSize(12);
-            }
-        }
-
-        return view;
-    }
-
-
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
+
+        View rootView = inflater.inflate(R.layout.fragment_account_settings, container, false);
+
+        Button AFSS_Button_add = (Button) rootView.findViewById(R.id.AFSS_Button_add);
+        Button AFSS_Button_remove = (Button) rootView.findViewById(R.id.AFSS_Button_remove);
+        Button AFSS_Button_terminate = (Button) rootView.findViewById(R.id.AFSS_Button_terminate);
+
+        AFSS_Button_add.setOnClickListener(this::onClick);
+        AFSS_Button_remove.setOnClickListener(this::onClick);
+        AFSS_Button_terminate.setOnClickListener(this::onClick);
+
         this.container = container;
         this.inflater = inflater;
-        return initializeUserInterface();
+
+        return rootView;
     }
 
-    @Override
-    public void onConfigurationChanged(Configuration newConfig) {
-        View view = initializeUserInterface();
-        container.addView(view);
-        super.onConfigurationChanged(newConfig);
+    public void onClick(View view) {
+        Fragment fragment = null;
+        switch (view.getId()) {
+            case R.id.AFSS_Button_add:
+                //fragment = new AccountProfileFragment();
+                replaceFragment(fragment);
+                break;
+
+            case R.id.AFSS_Button_remove:
+
+                break;
+
+            case R.id.AFSS_Button_terminate:
+
+                break;
+        }
     }
 
+    public void replaceFragment(Fragment someFragment) {
+        FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+        transaction.replace(R.id.nav_host_fragment, someFragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
+    }
 }
