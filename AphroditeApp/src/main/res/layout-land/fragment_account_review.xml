@@ -1,6 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--Jose Antonio Castro Teodoro n01384776 Section B-->
+<!--Daniel Moore n01354875 Section B-->
+<!--Ryan Black n01305403 Section B-->
+<!--Alyssa Gomez n01042777 Section B-->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/tan"
+    tools:context=".ui.account.AccountFragment"
+    tools:layout_editor_absoluteX="-28dp"
+    tools:layout_editor_absoluteY="160dp">
+
+    <ImageView
+        android:id="@+id/AFR_ImageView_logo"
+        android:layout_width="208dp"
+        android:layout_height="192dp"
+        android:background="@drawable/roundcorner_darkmodegrey"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.007"
+        app:srcCompat="@drawable/aphrodite_logot_trans_med" />
+
+    <TextView
+        android:id="@+id/AFR_TextView_title"
+        android:layout_width="189dp"
+        android:layout_height="40dp"
+        android:background="@drawable/roundcorner_peach"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:text="@string/AFR_TextView_title"
+        android:textColor="@color/light_oak"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.298" />
+
+    <TextView
+        android:id="@+id/AFR_TextView_review"
+        android:layout_width="335dp"
+        android:layout_height="155dp"
+        android:background="@drawable/roundcorner_lightocean"
+        android:gravity="center"
+        android:text="@string/AFR_TextView_review"
+        android:textColor="@color/mid_ocean"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.659" />
+
+    <RatingBar
+        android:id="@+id/AFR_RatingBar_ratebar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numStars="5"
+        android:stepSize=".5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.421" />
+
+    <Button
+        android:id="@+id/AFR_Button_submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/AFR_Button_submit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.35"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.888" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
