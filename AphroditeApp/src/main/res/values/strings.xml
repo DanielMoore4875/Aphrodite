@@ -51,9 +51,9 @@
     <string name="VC_placeholder_vcDesc_txt">Voice Command Description</string>
     <string name="VC_mute_mic_txt">Mute Mic</string>
     <string name="VC_led_txt">LED Colour</string>
-    <string name="AFP_EditText_name">Enter A Name</string>
-    <string name="AFP_TextView_title">Create A Profile</string>
-    <string name="AFP_TextView_Name">Profile Name</string>
-    <string name="AFR_TextView_title">Review</string>
 
+<!--    <string name="AFP_EditText_name">Enter A Name</string>-->
+<!--    <string name="AFP_TextView_title">Create A Profile</string>-->
+<!--    <string name="AFP_TextView_Name">Profile Name</string>-->
+<!--    <string name="AFR_TextView_title">Review</string>-->
 </resources>
