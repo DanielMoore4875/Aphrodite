@@ -4,87 +4,65 @@
 //Alyssa Gomez n01042777 Section B
 package ca.kainotomia.it.aphrodite.ui.account;
 
-import android.content.res.Configuration;
 import android.os.Bundle;
-import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import ca.kainotomia.it.aphrodite.R;
 
-public class AccountFragment extends Fragment {
 
-    private AccountViewModel accountViewModel;
-    private ViewGroup container;
-    private LayoutInflater inflater;
-    private TextView textView;
-    private Button button;
+public class AccountFragment extends Fragment implements View.OnClickListener {
 
     public AccountFragment() {
     }
 
-    public View initializeUserInterface() {
-        View view;
-
-        // If there is already a layout inflated, remove it.
-        if (container != null) {
-            container.removeAllViewsInLayout();
-        }
-
-        // Get the screen orientation.
-        int orientation = getActivity().getResources().getConfiguration().orientation;
-
-        if (orientation == Configuration.ORIENTATION_PORTRAIT) {
-            view = inflater.inflate(R.layout.fragment_account, container, false);
-        }
-        else { // orientation == Configuration.ORIENTATION_LANDSCAPE
-            view = inflater.inflate(R.layout.fragment_account_horizontal, container, false);
-        }
-
-        // Instantiate our widgets from the layout.
-        textView = view.findViewById(R.id.AF_TextView_username);
-        textView = view.findViewById(R.id.AF_TextView_version);
-        button = view.findViewById(R.id.AF_Button_support);
-
-        // Display the orientation in the text view.
-        if (orientation == Configuration.ORIENTATION_PORTRAIT) {
-            textView.setText("Portrait");
-        }
-        else {
-            textView.setText("Landscape");
-
-            // Get the width of the screen.
-            DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
-            int width = displayMetrics.widthPixels;
-
-            // If we have a small screen, adjust text size.
-            if (width < 793) {
-                textView.setTextSize(12);
-            }
-        }
-
-        return view;
-    }
-
-
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-        this.container = container;
-        this.inflater = inflater;
-        return initializeUserInterface();
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+
+        View rootView = inflater.inflate(R.layout.fragment_account, container, false);
+
+        Button AF_Button_about = (Button) rootView.findViewById(R.id.AF_Button_about);
+        Button AF_Button_support = (Button) rootView.findViewById(R.id.AF_Button_support);
+        Button AF_Button_settings = (Button) rootView.findViewById(R.id.AFSS_Button_add);
+
+        AF_Button_about.setOnClickListener(this);
+        AF_Button_settings.setOnClickListener(this);
+        AF_Button_support.setOnClickListener(this);
+
+        return rootView;
     }
 
     @Override
-    public void onConfigurationChanged(Configuration newConfig) {
-        View view = initializeUserInterface();
-        container.addView(view);
-        super.onConfigurationChanged(newConfig);
+    public void onClick(View view) {
+        Fragment fragment = null;
+        switch (view.getId()) {
+            case R.id.AF_Button_about:
+                fragment = new AccountFragment();
+                replaceFragment(fragment);
+                break;
+
+            case R.id.AF_Button_support:
+                fragment = new AccountSupportFragment();
+                replaceFragment(fragment);
+                break;
+            case R.id.AFSS_Button_add:
+                fragment = new Fragment();
+                replaceFragment(fragment);
+                break;
+        }
     }
+
+    public void replaceFragment(Fragment someFragment) {
+        FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+        transaction.replace(R.id.nav_host_fragment, someFragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
+    }
+
 }
