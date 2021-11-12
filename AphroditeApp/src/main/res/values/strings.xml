@@ -91,5 +91,8 @@
     <string name="Login_userCreated_txt">User created</string>
     <string name="Login_welcomeName_txt">\"Welcome \"</string>
     <string name="Login_userError_txt">ERROR: user not created</string>
+    <string name="AFR_TextView_title">Review</string>
+    <string name="AFR_TextView_review">Optional Please Give Your Response For The App:</string>
+    <string name="AFR_Button_submit">Submit</string>
 
 </resources>

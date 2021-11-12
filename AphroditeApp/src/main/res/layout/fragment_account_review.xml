@@ -27,7 +27,7 @@
         app:srcCompat="@drawable/aphrodite_logot_trans_med" />
 
     <TextView
-        android:id="@+id/AFP_TextView_title"
+        android:id="@+id/AFR_TextView_title"
         android:layout_width="189dp"
         android:layout_height="40dp"
         android:background="@drawable/roundcorner_peach"
@@ -48,13 +48,13 @@
         android:layout_height="155dp"
         android:background="@drawable/roundcorner_lightocean"
         android:gravity="center"
-        android:text="@string/AFA_TextView_aboutustext"
+        android:text="@string/AFR_TextView_review"
         android:textColor="@color/mid_ocean"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.73" />
+        app:layout_constraintVertical_bias="0.659" />
 
     <RatingBar
         android:id="@+id/AFR_RatingBar_ratebar"
@@ -64,14 +64,16 @@
         android:stepSize=".5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.421" />
 
     <Button
         android:id="@+id/AFR_Button_submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Submit"
+        android:text="@string/AFR_Button_submit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.35"
