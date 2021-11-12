@@ -81,21 +81,19 @@ public class LoginActivity extends AppCompatActivity {
 
 
                 if (usersNode.addUser(user.getUid(), user.getDisplayName(), user.getEmail())) {
-                    Toast.makeText(LoginActivity.this, "User created", Toast.LENGTH_SHORT).show();
-                    Toast.makeText(LoginActivity.this, "Welcome " + user.getDisplayName() + "!", Toast.LENGTH_SHORT).show();
-                    System.out.println("FINISHED creating user");
+                    Toast.makeText(LoginActivity.this, getString(R.string.Login_userCreated_txt), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, getString(R.string.Login_welcomeName_txt) + user.getDisplayName(), Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(LoginActivity.this, "ERROR: user not created", Toast.LENGTH_SHORT).show();
-                    System.out.println("ERROR");
+                    Toast.makeText(LoginActivity.this, getString(R.string.Login_userError_txt), Toast.LENGTH_SHORT).show();
                 }
 
-                System.out.println("\nName: " + user.getDisplayName() +
-                        "\nUserID: " + user.getUid() +
-                        "\nEmail: " + user.getEmail() +
-                        "\nPhone Number: " + user.getPhoneNumber() +
-                        "\nProvider ID: " + user.getProviderId() +
-                        "\nTenant ID: " + user.getTenantId() +
-                        "\nPhoto URL: " + user.getPhotoUrl());
+//                System.out.println("\nName: " + user.getDisplayName() +
+//                        "\nUserID: " + user.getUid() +
+//                        "\nEmail: " + user.getEmail() +
+//                        "\nPhone Number: " + user.getPhoneNumber() +
+//                        "\nProvider ID: " + user.getProviderId() +
+//                        "\nTenant ID: " + user.getTenantId() +
+//                        "\nPhoto URL: " + user.getPhotoUrl());
                 handler.postDelayed(() -> {
                     //Finished login, go to MainActivity
                     startActivity(new Intent(LoginActivity.this, MainActivity.class));
@@ -120,6 +118,5 @@ public class LoginActivity extends AppCompatActivity {
             // no request codes
             Intent data = result.getData();
         }
-        System.out.println("HELLO THIS WAS RUN");
     });
 }

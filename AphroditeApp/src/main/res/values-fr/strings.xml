@@ -79,5 +79,8 @@
     <string name="VC_desc_cmd7_txt">Cmd 7 Desc placeholder</string>
     <string name="VC_micUnmuted_txt">couper le micro</string>
     <string name="VC_micMuted_txt">activer le micro</string>
+    <string name="Login_userCreated_txt">User created</string>
+    <string name="Login_welcomeName_txt">\"Welcome \"</string>
+    <string name="Login_userError_txt">ERROR: user not created</string>
 
 </resources>
