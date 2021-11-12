@@ -14,24 +14,24 @@ import android.view.ViewGroup;
 
 import ca.kainotomia.it.aphrodite.R;
 
-public class ShowSavedLayoutFragment extends Fragment {
+public class ChooseLayoutLocFragment extends Fragment {
 
-    private ShowSavedLayoutViewModel mViewModel;
+    private ChooseLayoutLocViewModel mViewModel;
 
-    public static ShowSavedLayoutFragment newInstance() {
-        return new ShowSavedLayoutFragment();
+    public static ChooseLayoutLocFragment newInstance() {
+        return new ChooseLayoutLocFragment();
     }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.show_saved_layout_fragment, container, false);
+        return inflater.inflate(R.layout.choose_layout_loc_fragment, container, false);
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mViewModel = new ViewModelProvider(this).get(ShowSavedLayoutViewModel.class);
+        mViewModel = new ViewModelProvider(this).get(ChooseLayoutLocViewModel.class);
         // TODO: Use the ViewModel
     }
 
