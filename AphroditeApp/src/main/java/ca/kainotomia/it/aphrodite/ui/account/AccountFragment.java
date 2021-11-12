@@ -28,7 +28,7 @@ public class AccountFragment extends Fragment implements View.OnClickListener {
 
         Button AF_Button_about = (Button) rootView.findViewById(R.id.AF_Button_about);
         Button AF_Button_support = (Button) rootView.findViewById(R.id.AF_Button_support);
-        Button AF_Button_settings = (Button) rootView.findViewById(R.id.AFSS_Button_add);
+        Button AF_Button_settings = (Button) rootView.findViewById(R.id.AF_Button_settings);
 
         AF_Button_about.setOnClickListener(this);
         AF_Button_settings.setOnClickListener(this);
@@ -50,8 +50,8 @@ public class AccountFragment extends Fragment implements View.OnClickListener {
                 fragment = new AccountSupportFragment();
                 replaceFragment(fragment);
                 break;
-            case R.id.AFSS_Button_add:
-                fragment = new Fragment();
+            case R.id.AF_Button_settings:
+                fragment = new AccountSettingsFragment();
                 replaceFragment(fragment);
                 break;
         }

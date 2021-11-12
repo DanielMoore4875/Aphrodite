@@ -30,7 +30,7 @@ public class AccountSettingsFragment extends Fragment implements View.OnClickLis
 
         View rootView = inflater.inflate(R.layout.fragment_account_settings, container, false);
 
-        Button AFSS_Button_add = (Button) rootView.findViewById(R.id.AFSS_Button_add);
+        Button AFSS_Button_add = (Button) rootView.findViewById(R.id.AF_Button_settings);
         Button AFSS_Button_remove = (Button) rootView.findViewById(R.id.AFSS_Button_remove);
         Button AFSS_Button_terminate = (Button) rootView.findViewById(R.id.AFSS_Button_terminate);
 
@@ -47,7 +47,7 @@ public class AccountSettingsFragment extends Fragment implements View.OnClickLis
     public void onClick(View view) {
         Fragment fragment = null;
         switch (view.getId()) {
-            case R.id.AFSS_Button_add:
+            case R.id.AF_Button_settings:
                 //fragment = new AccountProfileFragment();
                 replaceFragment(fragment);
                 break;
