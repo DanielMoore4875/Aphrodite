@@ -66,7 +66,7 @@
     <string name="CL_Feature_Text_SocialMedNot">Social Media Notifications</string>
     <string name="CL_SaveButton_Text">Next</string>
     <string name="SSL_ChosenLayout_Name">Layout Name</string>
-    <string name="CM_ChooseModule_PageName">Choose Module Location</string>
+    <string name="ML_ChooseModule_PageName">Choose Module Location</string>
     <string name="ML_ChosenLayout_Name">Layout Name</string>
     <string name="ML_SaveButton">Save</string>
 
