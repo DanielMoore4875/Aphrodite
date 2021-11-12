@@ -13,7 +13,6 @@
         android:roundIcon="@mipmap/aphrodite_logo_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Aphrodite">
-
         <!-- SPLASH SCREEN ACTIVITY (FIRST/MAIN) -->
         <activity
             android:name=".SplashScreenActivity"
@@ -25,25 +24,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".LoginActivity"
+        <activity
+            android:name=".LoginActivity"
             tools:ignore="IntentFilterExportedReceiver">
             <intent-filter>
-                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-        </activity>
-
-        <!-- MAIN ACTIVITY (HOLDING BOTTOM NAV FRAGMENTS) -->
+        </activity> <!-- MAIN ACTIVITY (HOLDING BOTTOM NAV FRAGMENTS) -->
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name">
-        </activity>
-
-        <!-- ACCOUNT ACTIVITY -->
+            android:label="@string/app_name" /> <!-- ACCOUNT ACTIVITY -->
         <activity
             android:name=".AccountActivity"
-            android:configChanges="orientation|screenSize">
-        </activity>
+            android:configChanges="orientation|screenSize" />
 
         <meta-data
             android:name="preloaded_fonts"
