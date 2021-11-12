@@ -46,7 +46,7 @@
     <string name="VF_command_name_txt">Command Name</string>
     <string name="VF_record_help_txt">Enter Name then press Record</string>
     <string name="VF_spinner_help_txt">View Stored Commands</string>
-<!--    <string name="LA_webClientID_txt" translatable="false">862254589566-0cvfjpl3d7l16qh1v7rohm87t6cpg6ae.apps.googleusercontent.com</string>-->
+    <string name="LA_webClientID_txt" translatable="false">862254589566-0cvfjpl3d7l16qh1v7rohm87t6cpg6ae.apps.googleusercontent.com</string>
     <string name="VC_placeholder_vcName_txt">Voice Command Name</string>
     <string name="VC_placeholder_vcDesc_txt">Voice Command Description</string>
     <string name="VC_mute_mic_txt">Mute Mic</string>
@@ -69,6 +69,9 @@
     <string name="CM_ChooseModule_PageName">Choose Module Location</string>
     <string name="ML_ChosenLayout_Name">Layout Name</string>
     <string name="ML_SaveButton">Save</string>
+    <string name="AFP_Edit_Text_name">Enter A Name</string>
+    <string name="AFP_TextView_title">Create A Profile</string>
+    <string name="AFP_Button_submit">Create Profile</string>
     <string name="VC_name_cmd1_txt">Command #1</string>
     <string name="VC_name_cmd2_txt">Command #2</string>
     <string name="VC_name_cmd3_txt">Command #3</string>

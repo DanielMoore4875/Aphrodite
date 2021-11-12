@@ -27,7 +27,7 @@
         app:srcCompat="@drawable/aphrodite_logot_trans_med" />
 
     <TextView
-        android:id="@+id/AFR_TextView_title"
+        android:id="@+id/AFP_TextView_title"
         android:layout_width="210dp"
         android:layout_height="39dp"
         android:background="@drawable/roundcorner_peach"
@@ -41,18 +41,7 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.234" />
-
-    <FrameLayout
-        android:id="@+id/AFP_FrameLayout_orientation"
-        android:layout_width="60dp"
-        android:layout_height="145dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"></FrameLayout>
+        app:layout_constraintVertical_bias="0.413" />
 
     <ImageView
         android:id="@+id/AFP_ImageView_Profile"
@@ -65,7 +54,7 @@
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.34" />
+        app:layout_constraintVertical_bias="0.245" />
 
     <EditText
         android:id="@+id/AFP_EditText_name"
@@ -75,26 +64,26 @@
         android:ems="10"
         android:gravity="center"
         android:inputType="textPersonName"
-        android:text="@string/AFP_EditText_name"
+        android:text="@string/AFP_Edit_Text_name"
         android:textColor="@color/light_oak"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.535" />
+        app:layout_constraintVertical_bias="0.515" />
 
     <Button
         android:id="@+id/AFP_Button_Submit"
         android:layout_width="341dp"
         android:layout_height="46dp"
         android:backgroundTint="@color/light_ocean"
-        android:text="Create Profile"
+        android:text="@string/AFP_Button_submit"
         android:textColor="@color/mid_ocean"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.872" />
+        app:layout_constraintVertical_bias="0.823" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
