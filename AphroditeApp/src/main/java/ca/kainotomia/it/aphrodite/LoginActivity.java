@@ -87,13 +87,13 @@ public class LoginActivity extends AppCompatActivity {
                     Toast.makeText(LoginActivity.this, getString(R.string.Login_userError_txt), Toast.LENGTH_SHORT).show();
                 }
 
-//                System.out.println("\nName: " + user.getDisplayName() +
-//                        "\nUserID: " + user.getUid() +
-//                        "\nEmail: " + user.getEmail() +
-//                        "\nPhone Number: " + user.getPhoneNumber() +
-//                        "\nProvider ID: " + user.getProviderId() +
-//                        "\nTenant ID: " + user.getTenantId() +
-//                        "\nPhoto URL: " + user.getPhotoUrl());
+                System.out.println("\nName: " + user.getDisplayName() +
+                        "\nUserID: " + user.getUid() +
+                        "\nEmail: " + user.getEmail() +
+                        "\nPhone Number: " + user.getPhoneNumber() +
+                        "\nProvider ID: " + user.getProviderId() +
+                        "\nTenant ID: " + user.getTenantId() +
+                        "\nPhoto URL: " + user.getPhotoUrl());
                 handler.postDelayed(() -> {
                     //Finished login, go to MainActivity
                     startActivity(new Intent(LoginActivity.this, MainActivity.class));
