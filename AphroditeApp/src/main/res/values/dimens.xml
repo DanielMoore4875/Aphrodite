@@ -7,6 +7,11 @@
     <dimen name="VC_desc_marginTop">8dp</dimen>
     <dimen name="VC_name_marginStart">14dp</dimen>
     <dimen name="VC_name_marginTop">28dp</dimen>
+    <dimen name="VC_btn_marginStart">28dp</dimen>
+    <dimen name="VC_btn_marginEnd">28dp</dimen>
+    <dimen name="VC_btn_marginTop">14dp</dimen>
+    <dimen name="VC_btn_width">148dp</dimen>
+    <dimen name="VC_btn_height">65dp</dimen>
     <dimen name="app_bar_height">180dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="text_margin">16dp</dimen>

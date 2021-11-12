@@ -20,10 +20,10 @@
         android:background="@drawable/roundcorner_darkmodegrey"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.03"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.007"
+        app:layout_constraintVertical_bias="0.497"
         app:srcCompat="@drawable/aphrodite_logot_trans_med" />
 
     <TextView
@@ -38,22 +38,23 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.706"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.298" />
+        app:layout_constraintVertical_bias="0.043" />
 
     <TextView
         android:id="@+id/AFR_TextView_review"
-        android:layout_width="351dp"
-        android:layout_height="446dp"
+        android:layout_width="469dp"
+        android:layout_height="269dp"
         android:background="@drawable/roundcorner_lightocean"
-        android:gravity="center"
         android:text="@string/AFA_TextView_aboutustext"
+        android:gravity="center"
         android:textColor="@color/mid_ocean"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.938"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.912" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

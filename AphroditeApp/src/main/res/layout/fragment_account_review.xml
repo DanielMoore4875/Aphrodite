@@ -13,70 +13,72 @@
     tools:layout_editor_absoluteX="-28dp"
     tools:layout_editor_absoluteY="160dp">
 
+    <ImageView
+        android:id="@+id/AFR_ImageView_logo"
+        android:layout_width="208dp"
+        android:layout_height="192dp"
+        android:background="@drawable/roundcorner_darkmodegrey"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.007"
+        app:srcCompat="@drawable/aphrodite_logot_trans_med" />
+
     <TextView
-        android:id="@+id/AFSS_TextView_title"
+        android:id="@+id/AFR_TextView_title"
         android:layout_width="189dp"
         android:layout_height="40dp"
         android:background="@drawable/roundcorner_peach"
         android:fontFamily="sans-serif-medium"
         android:gravity="center"
-        android:text="@string/AFSS_TextView_title"
+        android:text="@string/AFR_TextView_title"
         android:textColor="@color/light_oak"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.043" />
+        app:layout_constraintVertical_bias="0.298" />
 
-    <Button
-        android:id="@+id/AF_Button_settings"
-        android:layout_width="370dp"
-        android:layout_height="151dp"
-        android:backgroundTint="@color/light_ocean"
-        android:text="@string/AFSS_Button_add"
+    <TextView
+        android:id="@+id/AFR_TextView_review"
+        android:layout_width="335dp"
+        android:layout_height="155dp"
+        android:background="@drawable/roundcorner_lightocean"
+        android:gravity="center"
+        android:text="@string/AFR_TextView_review"
         android:textColor="@color/mid_ocean"
-        app:icon="@drawable/add"
-        app:iconSize="22dp"
-        app:iconTint="@color/mid_ocean"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.182" />
+        app:layout_constraintVertical_bias="0.659" />
 
-    <Button
-        android:id="@+id/AFSS_Button_remove"
-        android:layout_width="370dp"
-        android:layout_height="151dp"
-        android:backgroundTint="@color/peach"
-        android:text="@string/AFSS_Button_remove"
-        android:textColor="@color/light_oak"
-        app:icon="@drawable/remove"
-        app:iconSize="22dp"
-        app:iconTint="@color/light_oak"
+    <RatingBar
+        android:id="@+id/AFR_RatingBar_ratebar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numStars="5"
+        android:stepSize=".5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.487"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/AFSS_Button_terminate"
-        android:layout_width="370dp"
-        android:layout_height="151dp"
-        android:backgroundTint="@color/peach"
-        android:text="@string/AFSS_Button_terminate"
-        android:textColor="@color/light_oak"
-        app:icon="@drawable/terminate"
-        app:iconSize="22dp"
-        app:iconTint="@color/light_oak"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.824" />
+        app:layout_constraintVertical_bias="0.421" />
+
+    <Button
+        android:id="@+id/AFR_Button_submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/AFR_Button_submit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.35"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.888" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

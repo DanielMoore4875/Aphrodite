@@ -6,6 +6,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/AFP_Plaintext_name"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/tan"
@@ -14,58 +15,75 @@
     tools:layout_editor_absoluteY="160dp">
 
     <ImageView
-        android:id="@+id/AFA_ImageView_logo"
-        android:layout_width="208dp"
-        android:layout_height="192dp"
+        android:id="@+id/AFP_ImageView_logo"
+        android:layout_width="125dp"
+        android:layout_height="123dp"
         android:background="@drawable/roundcorner_darkmodegrey"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.03"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.497"
+        app:layout_constraintVertical_bias="0.026"
         app:srcCompat="@drawable/aphrodite_logot_trans_med" />
 
     <TextView
-        android:id="@+id/AFA_TextView_title"
-        android:layout_width="189dp"
-        android:layout_height="40dp"
+        android:id="@+id/AFR_TextView_title"
+        android:layout_width="210dp"
+        android:layout_height="39dp"
         android:background="@drawable/roundcorner_peach"
         android:fontFamily="sans-serif-medium"
         android:gravity="center"
-        android:text="@string/AFA_TextView_title"
+        android:text="@string/AFP_TextView_title"
         android:textColor="@color/light_oak"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.706"
+        app:layout_constraintHorizontal_bias="0.821"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.043" />
+        app:layout_constraintVertical_bias="0.309" />
 
-    <TextView
-        android:id="@+id/AFA_TextView_aboutinfo"
-        android:layout_width="469dp"
-        android:layout_height="269dp"
+    <ImageView
+        android:id="@+id/AFP_ImageView_Profile"
+        android:layout_width="121dp"
+        android:layout_height="103dp"
         android:background="@drawable/roundcorner_lightocean"
-        android:text="@string/AFA_TextView_aboutustext"
+        android:src="@drawable/profile"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.168"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.165" />
+
+    <EditText
+        android:id="@+id/AFP_EditText_name"
+        android:layout_width="324dp"
+        android:layout_height="48dp"
+        android:background="@drawable/roundcorner_peach"
+        android:ems="10"
         android:gravity="center"
+        android:inputType="textPersonName"
+        android:text="@string/AFP_Edit_Text_name"
+        android:textColor="@color/light_oak"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.457"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.63" />
+
+    <Button
+        android:id="@+id/AFP_Button_Submit"
+        android:layout_width="341dp"
+        android:layout_height="46dp"
+        android:backgroundTint="@color/light_ocean"
+        android:text="@string/AFP_Button_submit"
         android:textColor="@color/mid_ocean"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.938"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <FrameLayout
-        android:id="@+id/AF_FrameLayout_orientation"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"></FrameLayout>
+        app:layout_constraintVertical_bias="0.823" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

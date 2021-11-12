@@ -16,20 +16,32 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
+import android.widget.ToggleButton;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.internal.zzx;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.Locale;
 
+import ca.kainotomia.it.aphrodite.LoginActivity;
+import ca.kainotomia.it.aphrodite.MainActivity;
 import ca.kainotomia.it.aphrodite.R;
+import ca.kainotomia.it.aphrodite.ui.account.AccountFragment;
 
 public class VoiceFragment extends Fragment {
 
@@ -37,22 +49,34 @@ public class VoiceFragment extends Fragment {
     TextView d1, d2, d3, d4, d5, d6, d7;
 
     private VoiceViewModel voiceViewModel;
+    ToggleButton muteMic;
+
+    // Write a message to the database
+    FirebaseDatabase database;
+    DatabaseReference myRef;
+
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         voiceViewModel =
                 new ViewModelProvider(this).get(VoiceViewModel.class);
-        View root = inflater.inflate(R.layout.voice_fragment, container, false);
 
-        return root;
+        return inflater.inflate(R.layout.voice_fragment, container, false);
+        // View root = inflater.inflate(R.layout.voice_fragment, container, false);
+        //        return root;
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-        String names = "placeholder command name";
-        String desc = "placeholder command desc";
+        muteMic = view.findViewById(R.id.VC_muteMic_btnID);
+        muteMic.setOnClickListener(v -> {
+           if (muteMic.isChecked()) {
+               Toast.makeText(getActivity(), "Mic is muted", Toast.LENGTH_SHORT).show();
+           } else {
+               Toast.makeText(getActivity(), "Mic is unmuted", Toast.LENGTH_SHORT).show();
+           }
+        });
 
         n1 = view.findViewById(R.id.VC_cmdName1_txt);
         n2 = view.findViewById(R.id.VC_cmdName2_txt);
@@ -61,13 +85,13 @@ public class VoiceFragment extends Fragment {
         n5 = view.findViewById(R.id.VC_cmdName5_txt);
         n6 = view.findViewById(R.id.VC_cmdName6_txt);
         n7 = view.findViewById(R.id.VC_cmdName7_txt);
-        n1.setText(names);
-        n2.setText(names);
-        n3.setText(names);
-        n4.setText(names);
-        n5.setText(names);
-        n6.setText(names);
-        n7.setText(names);
+        n1.setText(R.string.VC_name_cmd1_txt);
+        n2.setText(R.string.VC_name_cmd2_txt);
+        n3.setText(R.string.VC_name_cmd3_txt);
+        n4.setText(R.string.VC_name_cmd4_txt);
+        n5.setText(R.string.VC_name_cmd5_txt);
+        n6.setText(R.string.VC_name_cmd6_txt);
+        n7.setText(R.string.VC_name_cmd7_txt);
 
         d1 = view.findViewById(R.id.VC_cmdDesc1_txt);
         d2 = view.findViewById(R.id.VC_cmdDesc2_txt);
@@ -76,13 +100,13 @@ public class VoiceFragment extends Fragment {
         d5 = view.findViewById(R.id.VC_cmdDesc5_txt);
         d6 = view.findViewById(R.id.VC_cmdDesc6_txt);
         d7 = view.findViewById(R.id.VC_cmdDesc7_txt);
-        d1.setText(desc);
-        d2.setText(desc);
-        d3.setText(desc);
-        d4.setText(desc);
-        d5.setText(desc);
-        d6.setText(desc);
-        d7.setText(desc);
+        d1.setText(R.string.VC_desc_cmd1_txt);
+        d2.setText(R.string.VC_desc_cmd2_txt);
+        d3.setText(R.string.VC_desc_cmd3_txt);
+        d4.setText(R.string.VC_desc_cmd4_txt);
+        d5.setText(R.string.VC_desc_cmd5_txt);
+        d6.setText(R.string.VC_desc_cmd6_txt);
+        d7.setText(R.string.VC_desc_cmd7_txt);
 
 
     }
