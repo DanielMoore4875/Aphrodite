@@ -8,7 +8,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/tan"
+    android:background="@color/lighter_oak"
     tools:context=".ui.account.AccountFragment"
     tools:layout_editor_absoluteX="-28dp"
     tools:layout_editor_absoluteY="160dp">
@@ -17,7 +17,7 @@
         android:id="@+id/AFR_ImageView_logo"
         android:layout_width="208dp"
         android:layout_height="192dp"
-        android:background="@drawable/roundcorner_darkmodegrey"
+        android:background="@drawable/roundstyle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
