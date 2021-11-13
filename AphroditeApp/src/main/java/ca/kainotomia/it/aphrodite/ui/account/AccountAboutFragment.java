@@ -14,9 +14,11 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+
 import ca.kainotomia.it.aphrodite.R;
 
-public class AccountAboutFragment extends android.app.Fragment{
+public class AccountAboutFragment extends Fragment {
     private AccountViewModel accountViewModel;
     private ViewGroup container;
     private LayoutInflater inflater;

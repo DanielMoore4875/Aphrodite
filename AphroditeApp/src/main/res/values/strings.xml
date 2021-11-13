@@ -94,5 +94,27 @@
     <string name="AFR_TextView_title">Review</string>
     <string name="AFR_TextView_review">Optional Please Give Your Response For The App:</string>
     <string name="AFR_Button_submit">Submit</string>
-
+    <string name="CLF_TextView_time">Time</string>
+    <string name="CLF_TextView_date">Date</string>
+    <string name="CLF_TextView_calender">Calender</string>
+    <string name="CLF_TextView_weather">Weather</string>
+    <string name="CLF_TextView_temphum">Temperature/Humidity</string>
+    <string name="CLF_TextView_stocks">Stocks</string>
+    <string name="CLF_TextView_youtube">Youtube</string>
+    <string name="CLF_TextView_notifications">Notifications</string>
+    <string-array name="Layout_Values">
+        <item>top_bar</item>
+        <item>top_left</item>
+        <item>top_center</item>
+        <item>top_right</item>
+        <item>upper_third</item>
+        <item>middle_center</item>
+        <item>lower_third</item>
+        <item>bottom_left</item>
+        <item>bottom_center</item>
+        <item>bottom_right</item>
+        <item>bottom_bar</item>
+        <item>fullscreen_above</item>
+        <item>fullscreen_below</item>
+    </string-array>
 </resources>

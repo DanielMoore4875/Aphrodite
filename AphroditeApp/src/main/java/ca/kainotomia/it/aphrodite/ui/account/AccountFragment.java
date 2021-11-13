@@ -42,7 +42,7 @@ public class AccountFragment extends Fragment implements View.OnClickListener {
         Fragment fragment = null;
         switch (view.getId()) {
             case R.id.AF_Button_about:
-                fragment = new AccountFragment();
+                fragment = new AccountAboutFragment();
                 replaceFragment(fragment);
                 break;
 
