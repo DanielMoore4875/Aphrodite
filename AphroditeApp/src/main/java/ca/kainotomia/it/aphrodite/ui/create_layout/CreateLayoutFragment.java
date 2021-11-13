@@ -17,7 +17,7 @@ import android.widget.Toast;
 import ca.kainotomia.it.aphrodite.R;
 import ca.kainotomia.it.aphrodite.ui.home.HomeFragment;
 
-public class CreateLayoutFragment extends Fragment {
+public class CreateLayoutFragment extends Fragment implements View.OnClickListener{
 
     private CreateLayoutViewModel mViewModel;
 
@@ -30,27 +30,27 @@ public class CreateLayoutFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         View root=inflater.inflate(R.layout.create_layout_page_fragment, container, false);
 
-        Switch time = root.findViewById(R.id.CL_Feature_Time);
-        Switch date = root.findViewById(R.id.CL_Feature_Date);
-        Switch calender = root.findViewById(R.id.CL_Feature_Calendar);
-        Switch weather = root.findViewById(R.id.CL_Feature_Weather);
-        Switch temp_hum = root.findViewById(R.id.CL_Feature_RoomT_H);
-        Switch stocks = root.findViewById(R.id.CL_Feature_Stocks);
-        Switch youtube = root.findViewById(R.id.CL_Feature_Youtube);
-        Switch notif = root.findViewById(R.id.CL_Feature_SocialMediaNot);
+//        Switch time = root.findViewById(R.id.CL_Feature_Time);
+//        Switch date = root.findViewById(R.id.CL_Feature_Date);
+//        Switch calender = root.findViewById(R.id.CL_Feature_Calendar);
+//        Switch weather = root.findViewById(R.id.CL_Feature_Weather);
+//        Switch temp_hum = root.findViewById(R.id.CL_Feature_RoomT_H);
+//        Switch stocks = root.findViewById(R.id.CL_Feature_Stocks);
+//        Switch youtube = root.findViewById(R.id.CL_Feature_Youtube);
+//        Switch notif = root.findViewById(R.id.CL_Feature_SocialMediaNot);
 
         Button button = root.findViewById(R.id.CL_SaveButton);
 
-        time.setChecked(false);
-        date.setChecked(false);
-        calender.setChecked(false);
-        weather.setChecked(false);
-        temp_hum.setChecked(false);
-        stocks.setChecked(false);
-        youtube.setChecked(false);
-        notif.setChecked(false);
+//        time.setChecked(false);
+//        date.setChecked(false);
+//        calender.setChecked(false);
+//        weather.setChecked(false);
+//        temp_hum.setChecked(false);
+//        stocks.setChecked(false);
+//        youtube.setChecked(false);
+//        notif.setChecked(false);
 
-        button.setOnClickListener((View.OnClickListener) this);
+        button.setOnClickListener(this);
 
         return root;
     }
