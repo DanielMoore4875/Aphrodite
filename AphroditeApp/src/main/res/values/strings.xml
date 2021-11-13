@@ -22,7 +22,10 @@
     <string name="AF_TextView_username">Username</string>
     <string name="AF_TextView_version">Version Number</string>
     <string name="HO_HomePage_title" translatable="false">HOME</string>
-    <string name="AFA_TextView_aboutustext">Text</string>
+    <string name="AFA_TextView_aboutustext">
+        With our project Aphrodite, some goals include creating a smart mirror display capable of being controlled from an Android app, the ability to stream a video to the mirror, and the ability to have multiple accounts and profiles that are easy to switch between. As for the final vision, we want Aphrodite to be a simple display that is capable of displaying the temperature and humidity of the current room, weather, a personalized message and other dashboard modules that the user will be able to choose from. It should also be able to respond to voice commands and will be able to detect the proximity of a person and act accordingly.
+
+    </string>
     <string name="AFA_TextView_title">ABOUT US</string>
     <string name="AFS_TextView_Number">Phone Number</string>
     <string name="AF_Button_settings">Settings</string>
