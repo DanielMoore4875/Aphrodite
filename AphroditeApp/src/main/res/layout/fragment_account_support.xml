@@ -54,7 +54,7 @@
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="360dp"
         android:backgroundTint="@color/light_ocean"
-        android:text="Email"
+        android:text="@string/AF_EmailButton_text"
         android:textColor="@color/mid_ocean"
         android:textStyle="bold"
         app:cornerRadius="10dp"

@@ -39,7 +39,7 @@
     <string name="AFS_TextView_Email">Email</string>
     <string name="AFS_TextView_title">Support</string>
     <string name="H_MorningButton_text">morning</string>
-    <string name="H_ChildButton_text">child</string>
+    <string name="H_StockButton_text">Stock</string>
     <string name="H_AddButton_text">add</string>
     <string name="H_NightButton_text">night</string>
     <string name="VF_snackbar_add_txt">ADD COMMAND</string>
@@ -105,6 +105,7 @@
     <string name="CLF_TextView_stocks">Stocks</string>
     <string name="CLF_TextView_youtube">Youtube</string>
     <string name="CLF_TextView_notifications">Notifications</string>
+    <string name="AF_EmailButton_text">Email</string>
     <string-array name="Layout_Values">
         <item>top_bar</item>
         <item>top_left</item>
