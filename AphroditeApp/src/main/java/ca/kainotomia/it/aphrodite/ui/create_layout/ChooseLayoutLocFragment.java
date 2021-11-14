@@ -31,7 +31,7 @@ public class ChooseLayoutLocFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.choose_layout_loc_fragment, container, false);
 
-        Spinner time = rootView.findViewById(R.id.CLF_spinner_time);
+        //Spinner time = rootView.findViewById(R.id.CLF_spinner_time);
         Button button = rootView.findViewById(R.id.CLF_Button_submit);
 
 //        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity().getBaseContext(), R.array.Layout_Values, android.R.layout.simple_spinner_item);
@@ -60,9 +60,9 @@ public class ChooseLayoutLocFragment extends Fragment {
         }
     }
 
-    public void onNothingSelected(AdapterView<?> parent) {
-
-    }
+//    public void onNothingSelected(AdapterView<?> parent) {
+//
+//    }
 
     public void replaceFragment(Fragment someFragment) {
         FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
