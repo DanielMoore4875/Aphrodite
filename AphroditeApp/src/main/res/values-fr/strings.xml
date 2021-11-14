@@ -96,5 +96,6 @@
     <string name="LED_b_txt">B: 0</string>
     <string name="LED_btn">Change Colour</string>
     <string name="CLL_snackbar_error_txt">Enter a layout name</string>
+    <string name="AFR_EditText_review">Please Give Your Review:</string>
 
 </resources>
