@@ -99,9 +99,9 @@
     <string name="AFR_Button_submit">Submit</string>
     <string name="CLF_TextView_time">Time</string>
     <string name="CLF_TextView_date">Date</string>
-    <string name="CLF_TextView_calender">Calender</string>
+    <string name="CLF_TextView_calender">Calendar</string>
     <string name="CLF_TextView_weather">Weather</string>
-    <string name="CLF_TextView_temphum">Temperature/Humidity</string>
+    <string name="CLF_TextView_temphum">Temp/Humidity</string>
     <string name="CLF_TextView_stocks">Stocks</string>
     <string name="CLF_TextView_youtube">Youtube</string>
     <string name="CLF_TextView_notifications">Notifications</string>

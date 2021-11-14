@@ -21,4 +21,8 @@
     <dimen name="LED_slider_bot">30dp</dimen>
     <dimen name="LED_slider_width">370dp</dimen>
     <dimen name="LED_slider_height">50dp</dimen>
+<!--    ALL STUFF FOR CHOOSE LAYOUT LOC FRAGMENT-->
+    <dimen name="CLL_spinner_width">200dp</dimen>
+    <dimen name="CLL_txtView_width">100dp</dimen>
+
 </resources>
