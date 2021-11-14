@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--Jose Antonio Castro Teodoro n01384776 Section B-->
+<?xml version="1.0" encoding="utf-8"?><!--Jose Antonio Castro Teodoro n01384776 Section B-->
 <!--Daniel Moore n01354875 Section B-->
 <!--Ryan Black n01305403 Section B-->
 <!--Alyssa Gomez n01042777 Section B-->
@@ -8,118 +7,108 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/tan"
+    android:background="@color/lighter_oak"
     tools:context=".ui.account.AccountFragment"
     tools:layout_editor_absoluteX="-28dp"
     tools:layout_editor_absoluteY="160dp">
 
+
     <Button
         android:id="@+id/AF_Button_settings"
-        android:layout_width="711dp"
-        android:layout_height="49dp"
+        android:layout_width="404dp"
+        android:layout_height="61dp"
         android:backgroundTint="@color/light_ocean"
         android:text="@string/AF_Button_settings"
         android:textColor="@color/mid_ocean"
-        app:icon="@drawable/remove"
+        android:textStyle="bold"
+        app:cornerRadius="10dp"
+        app:icon="@drawable/manage"
+        app:iconGravity="textStart"
+        app:iconSize="22dp"
         app:iconTint="@color/mid_ocean"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.561"
+        app:layout_constraintStart_toEndOf="@+id/AF_ImageView_profilepicture"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.638" />
-
-    <Button
-        android:id="@+id/AF_Button_logout"
-        android:layout_width="711dp"
-        android:layout_height="49dp"
-        android:backgroundTint="@color/peach"
-        android:text="@string/AF_Button_logout"
-        android:textColor="@color/light_oak"
-        app:icon="@drawable/logout"
-        app:iconSize="25dp"
-        app:iconTint="@color/light_oak"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.795"
-        app:rippleColor="@color/dark_ocean" />
+        app:layout_constraintVertical_bias="0.722"
+        app:rippleColor="@color/lighter_oak"
+        tools:ignore="TextContrastCheck" />
 
     <Button
         android:id="@+id/AF_Button_about"
-        android:layout_width="711dp"
-        android:layout_height="49dp"
+        android:layout_width="404dp"
+        android:layout_height="61dp"
         android:backgroundTint="@color/light_ocean"
         android:text="@string/AF_Button_about"
         android:textColor="@color/mid_ocean"
+        android:textStyle="bold"
+        app:cornerRadius="10dp"
         app:icon="@drawable/about"
+        app:iconGravity="textStart"
         app:iconTint="@color/mid_ocean"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.561"
+        app:layout_constraintStart_toEndOf="@+id/AF_ImageView_profilepicture"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.364" />
+        app:layout_constraintVertical_bias="0.194"
+        app:rippleColor="@color/lighter_oak"
+        tools:ignore="TextContrastCheck" />
 
     <TextView
         android:id="@+id/AF_TextView_username"
-        android:layout_width="545dp"
-        android:layout_height="39dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:gravity="center"
-        android:background="@color/peach"
+        android:layout_width="221dp"
+        android:layout_height="28dp"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center|center_horizontal|center_vertical"
         android:text="@string/AF_TextView_username"
         android:textAlignment="center"
-        android:textColor="@color/light_oak"
-        android:textSize="20sp"
+        android:textColor="@color/dark_ocean"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.952"
+        app:layout_constraintEnd_toStartOf="@+id/AF_Button_settings"
+        app:layout_constraintHorizontal_bias="0.459"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.175" />
+        app:layout_constraintTop_toBottomOf="@+id/AF_ImageView_profilepicture"
+        app:layout_constraintVertical_bias="0.236" />
 
     <ImageView
         android:id="@+id/AF_ImageView_profilepicture"
-        android:layout_width="115dp"
-        android:layout_height="109dp"
+        android:layout_width="220dp"
+        android:layout_height="188dp"
         android:background="@color/light_ocean"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.051"
+        app:layout_constraintHorizontal_bias="0.066"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.052"
+        app:layout_constraintVertical_bias="0.304"
         app:srcCompat="@drawable/profile"
+        tools:ignore="ContentDescription"
         tools:src="@tools:sample/avatars" />
-
-    <TextView
-        android:id="@+id/AF_TextView_version"
-        android:layout_width="711dp"
-        android:layout_height="49dp"
-        android:background="@color/light_ocean"
-        android:gravity="center"
-        android:text="@string/AF_TextView_version"
-        android:textColor="@color/mid_ocean"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.955" />
 
     <Button
         android:id="@+id/AF_Button_support"
-        android:layout_width="711dp"
-        android:layout_height="49dp"
+        android:layout_width="404dp"
+        android:layout_height="61dp"
         android:backgroundTint="@color/light_ocean"
         android:text="@string/AF_Button_support"
         android:textColor="@color/mid_ocean"
+        android:textStyle="bold"
+        app:cornerRadius="10dp"
         app:icon="@drawable/support"
+        app:iconGravity="textStart"
+        app:iconSize="22dp"
         app:iconTint="@color/mid_ocean"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.561"
+        app:layout_constraintStart_toEndOf="@+id/AF_ImageView_profilepicture"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.448"
+        app:rippleColor="@color/lighter_oak"
+        tools:ignore="TextContrastCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
