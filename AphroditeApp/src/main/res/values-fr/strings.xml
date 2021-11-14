@@ -51,7 +51,7 @@
     <string name="VC_led_txt">LED Colour</string>
     <string name="action_settings">" Paramètres"</string>
     <string name="CL_LayoutName_Text">Nom de la mise en page</string>
-    <string name="CL_CreateLayout_Text">Créer une mise en page</string>
+    <string name="CL_CreateLayout_Text">basculer entre les modules et choisir les emplacements</string>
     <string name="CL_Feature_Text_Time">Temps</string>
     <string name="CL_Feature_Text_Date">"Date "</string>
     <string name="CL_Feature_Text_Calendar">Calendrier</string>

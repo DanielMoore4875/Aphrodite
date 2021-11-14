@@ -1,62 +1,156 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DesignSurface">
-    <option name="filePathToZoomLevelMap">
-      <map>
-        <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
-        <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/drawable/aphrodite_logo_background.xml" value="0.1" />
-        <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/drawable/bg_gradient.xml" value="0.1" />
-        <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.1" />
-        <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
-        <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.225" />
-        <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/layout/activity_main.xml" value="0.20833333333333334" />
-        <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/layout/activity_splash_screen.xml" value="0.20833333333333334" />
-        <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/layout/fragment_dashboard.xml" value="0.20833333333333334" />
-        <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/layout/fragment_home.xml" value="0.20833333333333334" />
-        <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/layout/fragment_notifications.xml" value="0.20833333333333334" />
-        <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/menu/bottom_nav_menu.xml" value="0.22395833333333334" />
-        <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/mipmap-anydpi-v26/aphrodite_logo.xml" value="0.1" />
-        <entry key="..\:/CollegeHomework/Year3,Semester1/SoftwareProject/Aphrodite/AphroditeApp/src/main/res/drawable/humidityandtemperature.xml" value="0.22135416666666666" />
-        <entry key="..\:/CollegeHomework/Year3,Semester1/SoftwareProject/Aphrodite/AphroditeApp/src/main/res/drawable/ic_baseline_wb_sunny_24.xml" value="0.23697916666666666" />
-        <entry key="..\:/CollegeHomework/Year3,Semester1/SoftwareProject/Aphrodite/AphroditeApp/src/main/res/drawable/ic_layouts_black_24dp.xml" value="0.23697916666666666" />
-        <entry key="..\:/CollegeHomework/Year3,Semester1/SoftwareProject/Aphrodite/AphroditeApp/src/main/res/drawable/roundcorner.xml" value="0.22135416666666666" />
-        <entry key="..\:/CollegeHomework/Year3,Semester1/SoftwareProject/Aphrodite/AphroditeApp/src/main/res/drawable/roundedcorners.xml" value="0.22135416666666666" />
-        <entry key="..\:/CollegeHomework/Year3,Semester1/SoftwareProject/Aphrodite/AphroditeApp/src/main/res/drawable/savedlayoutsimage.xml" value="0.22135416666666666" />
-        <entry key="..\:/CollegeHomework/Year3,Semester1/SoftwareProject/Aphrodite/AphroditeApp/src/main/res/drawable/weathermodule.xml" value="0.22135416666666666" />
-        <entry key="..\:/CollegeHomework/Year3,Semester1/SoftwareProject/Aphrodite/AphroditeApp/src/main/res/layout/fragment_home.xml" value="0.20520833333333333" />
-        <entry key="..\:/CollegeHomework/Year3,Semester1/SoftwareProject/Aphrodite/AphroditeApp/src/main/res/layout/fragment_layouts.xml" value="0.22" />
-        <entry key="..\:/CollegeHomework/Year3,Semester1/SoftwareProject/Aphrodite/AphroditeApp/src/main/res/menu/bottom_nav_menu.xml" value="0.36666666666666664" />
-        <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
-        <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/drawable/aphrodite_logo_background.xml" value="0.1" />
-        <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/drawable/bg_gradient.xml" value="0.1" />
-        <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.1" />
-        <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.1" />
-        <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
-        <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.225" />
-        <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/drawable/manage.xml" value="0.18333333333333332" />
-        <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/drawable/profile.xml" value="0.3255208333333333" />
-        <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/drawable/roundcorner.xml" value="0.3255208333333333" />
-        <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/drawable/voice_add.xml" value="0.20989583333333334" />
-        <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/layout/activity_login.xml" value="0.33" />
-        <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/layout/activity_main.xml" value="0.20833333333333334" />
-        <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/layout/activity_splash_screen.xml" value="0.20833333333333334" />
-        <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/layout/fragment_account.xml" value="0.24954710144927536" />
-        <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/layout/fragment_dashboard.xml" value="0.20833333333333334" />
-        <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/layout/fragment_home.xml" value="0.1" />
-        <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/layout/fragment_layouts.xml" value="0.24954710144927536" />
-        <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/layout/fragment_notifications.xml" value="0.20833333333333334" />
-        <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/layout/fragment_voice.xml" value="0.24954710144927536" />
-        <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/layout/voice_fragment.xml" value="0.25" />
-        <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/menu/bottom_nav_menu.xml" value="0.22395833333333334" />
-        <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/mipmap-anydpi-v26/aphrodite_logo.xml" value="0.1" />
-      </map>
-    </option>
-  </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
-    <output url="file://$PROJECT_DIR$/build/classes" />
-  </component>
-  <component name="ProjectType">
-    <option name="id" value="Android" />
-  </component>
+    <component name="DesignSurface">
+        <option name="filePathToZoomLevelMap">
+            <map>
+                <entry
+                    key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/drawable-v24/ic_launcher_foreground.xml"
+                    value="0.1" />
+                <entry
+                    key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/drawable/aphrodite_logo_background.xml"
+                    value="0.1" />
+                <entry
+                    key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/drawable/bg_gradient.xml"
+                    value="0.1" />
+                <entry
+                    key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/drawable/ic_dashboard_black_24dp.xml"
+                    value="0.1" />
+                <entry
+                    key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/drawable/ic_launcher_background.xml"
+                    value="0.1" />
+                <entry
+                    key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/drawable/ic_notifications_black_24dp.xml"
+                    value="0.225" />
+                <entry
+                    key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/layout/activity_main.xml"
+                    value="0.20833333333333334" />
+                <entry
+                    key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/layout/activity_splash_screen.xml"
+                    value="0.20833333333333334" />
+                <entry
+                    key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/layout/fragment_dashboard.xml"
+                    value="0.20833333333333334" />
+                <entry
+                    key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/layout/fragment_home.xml"
+                    value="0.20833333333333334" />
+                <entry
+                    key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/layout/fragment_notifications.xml"
+                    value="0.20833333333333334" />
+                <entry
+                    key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/menu/bottom_nav_menu.xml"
+                    value="0.22395833333333334" />
+                <entry
+                    key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/mipmap-anydpi-v26/aphrodite_logo.xml"
+                    value="0.1" />
+                <entry
+                    key="..\:/CollegeHomework/Year3,Semester1/SoftwareProject/Aphrodite/AphroditeApp/src/main/res/drawable/humidityandtemperature.xml"
+                    value="0.22135416666666666" />
+                <entry
+                    key="..\:/CollegeHomework/Year3,Semester1/SoftwareProject/Aphrodite/AphroditeApp/src/main/res/drawable/ic_baseline_wb_sunny_24.xml"
+                    value="0.23697916666666666" />
+                <entry
+                    key="..\:/CollegeHomework/Year3,Semester1/SoftwareProject/Aphrodite/AphroditeApp/src/main/res/drawable/ic_layouts_black_24dp.xml"
+                    value="0.23697916666666666" />
+                <entry
+                    key="..\:/CollegeHomework/Year3,Semester1/SoftwareProject/Aphrodite/AphroditeApp/src/main/res/drawable/roundcorner.xml"
+                    value="0.22135416666666666" />
+                <entry
+                    key="..\:/CollegeHomework/Year3,Semester1/SoftwareProject/Aphrodite/AphroditeApp/src/main/res/drawable/roundedcorners.xml"
+                    value="0.22135416666666666" />
+                <entry
+                    key="..\:/CollegeHomework/Year3,Semester1/SoftwareProject/Aphrodite/AphroditeApp/src/main/res/drawable/savedlayoutsimage.xml"
+                    value="0.22135416666666666" />
+                <entry
+                    key="..\:/CollegeHomework/Year3,Semester1/SoftwareProject/Aphrodite/AphroditeApp/src/main/res/drawable/weathermodule.xml"
+                    value="0.22135416666666666" />
+                <entry
+                    key="..\:/CollegeHomework/Year3,Semester1/SoftwareProject/Aphrodite/AphroditeApp/src/main/res/layout/fragment_home.xml"
+                    value="0.20520833333333333" />
+                <entry
+                    key="..\:/CollegeHomework/Year3,Semester1/SoftwareProject/Aphrodite/AphroditeApp/src/main/res/layout/fragment_layouts.xml"
+                    value="0.22" />
+                <entry
+                    key="..\:/CollegeHomework/Year3,Semester1/SoftwareProject/Aphrodite/AphroditeApp/src/main/res/menu/bottom_nav_menu.xml"
+                    value="0.36666666666666664" />
+                <entry
+                    key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/drawable-v24/ic_launcher_foreground.xml"
+                    value="0.1" />
+                <entry
+                    key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/drawable/aphrodite_logo_background.xml"
+                    value="0.1" />
+                <entry
+                    key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/drawable/bg_gradient.xml"
+                    value="0.1" />
+                <entry
+                    key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/drawable/ic_baseline_account_circle_24.xml"
+                    value="0.1" />
+                <entry
+                    key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/drawable/ic_dashboard_black_24dp.xml"
+                    value="0.1" />
+                <entry
+                    key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/drawable/ic_launcher_background.xml"
+                    value="0.1" />
+                <entry
+                    key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/drawable/ic_notifications_black_24dp.xml"
+                    value="0.225" />
+                <entry
+                    key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/drawable/manage.xml"
+                    value="0.18333333333333332" />
+                <entry
+                    key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/drawable/profile.xml"
+                    value="0.3255208333333333" />
+                <entry
+                    key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/drawable/roundcorner.xml"
+                    value="0.3255208333333333" />
+                <entry
+                    key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/drawable/voice_add.xml"
+                    value="0.20989583333333334" />
+                <entry
+                    key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/layout/activity_login.xml"
+                    value="0.33" />
+                <entry
+                    key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/layout/activity_main.xml"
+                    value="0.20833333333333334" />
+                <entry
+                    key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/layout/activity_splash_screen.xml"
+                    value="0.20833333333333334" />
+                <entry
+                    key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/layout/fragment_account.xml"
+                    value="0.24954710144927536" />
+                <entry
+                    key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/layout/fragment_dashboard.xml"
+                    value="0.20833333333333334" />
+                <entry
+                    key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/layout/fragment_home.xml"
+                    value="0.1" />
+                <entry
+                    key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/layout/fragment_layouts.xml"
+                    value="0.24954710144927536" />
+                <entry
+                    key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/layout/fragment_notifications.xml"
+                    value="0.20833333333333334" />
+                <entry
+                    key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/layout/fragment_voice.xml"
+                    value="0.24954710144927536" />
+                <entry
+                    key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/layout/voice_fragment.xml"
+                    value="0.25" />
+                <entry
+                    key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/menu/bottom_nav_menu.xml"
+                    value="0.22395833333333334" />
+                <entry
+                    key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/mipmap-anydpi-v26/aphrodite_logo.xml"
+                    value="0.1" />
+            </map>
+        </option>
+    </component>
+    <component name="ProjectRootManager" default="true" languageLevel="JDK_11" project-jdk-name="1.8"
+        project-jdk-type="JavaSDK" version="2"/>
+    <component name="ProjectRootManager" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK"
+        version="2">
+        <output url="file://$PROJECT_DIR$/build/classes" />
+    </component>
+    <component name="ProjectType">
+        <option name="id" value="Android" />
+    </component>
 </project>

@@ -179,7 +179,7 @@
         app:layout_constraintVertical_bias="0.289" />
 
     <Spinner
-        android:id="@+id/CLF_spinner_calender"
+        android:id="@+id/CLF_spinner_calendar"
         android:layout_width="@dimen/CLL_spinner_width"
         android:layout_height="26dp"
         app:layout_constraintBottom_toBottomOf="parent"
