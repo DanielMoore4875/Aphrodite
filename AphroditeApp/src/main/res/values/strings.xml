@@ -121,6 +121,9 @@
         <item>fullscreen_above</item>
         <item>fullscreen_below</item>
     </string-array>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="LED_r_txt">R: 0</string>
+    <string name="LED_g_txt">G: 0</string>
+    <string name="LED_b_txt">B: 0</string>
+    <string name="placeholder" translatable="false">place</string>
+    <string name="LED_btn">Change Colour</string>
 </resources>
