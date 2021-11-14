@@ -134,4 +134,5 @@
     <string name="LED_CustomizeLED_Text">Customize LED</string>
     <string name="VC_VoiceLED_Text">Void and LED</string>
     <string name="AFS_ReviewButton_Text">Review</string>
+    <string name="AFR_EditText_review">Please Give Your Review:</string>
 </resources>
