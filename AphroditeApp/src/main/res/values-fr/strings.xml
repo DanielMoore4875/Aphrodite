@@ -35,7 +35,7 @@
     <string name="AFS_TextView_Email">Email</string>
     <string name="AFS_TextView_title">Title</string>
     <string name="H_MorningButton_text">morning</string>
-    <string name="H_ChildButton_text">child</string>
+    <string name="H_StockButton_text">child</string>
     <string name="H_AddButton_text">add</string>
     <string name="H_NightButton_text">night</string>
     <string name="VF_snackbar_add_txt">ADD COMMAND</string>
@@ -88,5 +88,12 @@
     <string name="AFR_TextView_title">Review</string>
     <string name="AFR_TextView_review">Optional Please Give Your Response For The App:</string>
     <string name="AFR_Button_submit">Submit</string>
+    <string name="savedmodulesnack">Saved Module Layout</string>
+    <string name="reviewsnack">Thank You For Reviewing!</string>
+    <string name="CLF_time">Time</string>
+    <string name="LED_r_txt">R: 0</string>
+    <string name="LED_g_txt">G: 0</string>
+    <string name="LED_b_txt">B: 0</string>
+    <string name="LED_btn">Change Colour</string>
 
 </resources>

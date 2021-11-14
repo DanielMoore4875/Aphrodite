@@ -17,6 +17,7 @@ import androidx.fragment.app.FragmentTransaction;
 import com.google.android.material.snackbar.Snackbar;
 
 import ca.kainotomia.it.aphrodite.R;
+import ca.kainotomia.it.aphrodite.ui.home.HomeFragment;
 
 public class AccountReviewFragment extends Fragment implements View.OnClickListener{
 
@@ -39,8 +40,8 @@ public class AccountReviewFragment extends Fragment implements View.OnClickListe
         Fragment fragment = null;
         switch (view.getId()) {
             case R.id.AFR_Button_submit:
-                Snackbar.make(view, "Thank You For Reviewing!", Snackbar.LENGTH_LONG).show();
-                fragment = new AccountSettingsFragment();
+                Snackbar.make(view, (R.string.reviewsnack), Snackbar.LENGTH_LONG).show();
+                fragment = new HomeFragment();
                 replaceFragment(fragment);
                 break;
         }

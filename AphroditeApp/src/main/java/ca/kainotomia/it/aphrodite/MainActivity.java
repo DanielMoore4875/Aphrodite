@@ -5,23 +5,25 @@
 
 package ca.kainotomia.it.aphrodite;
 
-import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.PersistableBundle;
+import android.view.View;
 
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-
-import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+
+import java.util.Arrays;
+
+import ca.kainotomia.it.aphrodite.ui.home.HomeFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,14 +34,23 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStop() {
         super.onStop();
-        //When this activity is closed (when the app is closed), sign the current user out
-        FirebaseAuth.getInstance().signOut();
+        // IF THIS IS USED, user will be signed out when screen rotates
+        // DO NOT USE
+        // FirebaseAuth.getInstance().signOut();
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //Custom Action Bar
+        this.getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        getSupportActionBar().setDisplayShowCustomEnabled(true);
+        getSupportActionBar().setCustomView(R.layout.custom_action_bar);
+
+        //for setting orientation
+//        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
@@ -65,8 +76,16 @@ public class MainActivity extends AppCompatActivity {
                 .setTitle(R.string.MA_AlertDialogExitApp_title)
                 .setIcon(R.drawable.cancel_button)
                 .setMessage(R.string.MA_AlertDialogExitApp_msg)
-                .setPositiveButton(R.string.MA_AlertDialogExitApp_yes, (dialog, which) -> finish())
+                .setPositiveButton(R.string.MA_AlertDialogExitApp_yes, (dialog, which) -> {
+//                    FirebaseAuth.getInstance().signOut();
+                    finish();
+
+                })
                 .setNegativeButton(R.string.MA_AlertDialogExitApp_no, (dialog, which) -> dialog.dismiss())
                 .create();
+    }
+
+    public void handleButton(View view) {
+        super.onBackPressed();
     }
 }

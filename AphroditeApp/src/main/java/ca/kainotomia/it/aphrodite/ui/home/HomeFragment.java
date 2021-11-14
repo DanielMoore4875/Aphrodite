@@ -16,45 +16,45 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.google.android.material.snackbar.Snackbar;
+
 import ca.kainotomia.it.aphrodite.R;
+import ca.kainotomia.it.aphrodite.ui.account.AccountSettingsFragment;
 import ca.kainotomia.it.aphrodite.ui.create_layout.CreateLayoutFragment;
 
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment implements View.OnClickListener{
 
     private HomeViewModel homeViewModel;
-    Button goToCreateLayout_H;
+
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        homeViewModel =
-                new ViewModelProvider(this).get(HomeViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_home, container, false);
 
-        //HOME Page
-        //This is for the "add" button, to bring user to the Create Layout Page
-        goToCreateLayout_H = root.findViewById(R.id.H_AddButton_button);
-        goToCreateLayout_H.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View v) {
-               //CreateLayoutFragment is the name of the fragment class you are trying to go to
-               Fragment fragment = new CreateLayoutFragment();
-               //this is for declaring the transaction
-               FragmentTransaction ft = getParentFragmentManager().beginTransaction();
-               //nav_host_fragment is the id of the fragment in MainActivity
-               ft.replace(R.id.nav_host_fragment, fragment);
-               //this is for the back button but we have other functionality for that
-               //so it is just null
-               ft.addToBackStack(null);
-               //this commits the changes you've made to the fragment and updates the fragment
-               ft.commit();
-           }
-       });
+        View root = inflater.inflate(R.layout.fragment_home, container, false);
+        Button goToCreateLayout_H = (Button) root.findViewById(R.id.H_AddButton_button);
+
+        goToCreateLayout_H.setOnClickListener(this);
 
         return root;
     }
 
+    public void onClick(View view) {
+        Fragment fragment = null;
+        switch (view.getId()) {
+            case R.id.H_AddButton_button:
+                fragment = new CreateLayoutFragment();
+                replaceFragment(fragment);
+                break;
+        }
+    }
 
+    public void replaceFragment(Fragment someFragment) {
+        FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+        transaction.replace(R.id.nav_host_fragment, someFragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
+    }
 
 }
 

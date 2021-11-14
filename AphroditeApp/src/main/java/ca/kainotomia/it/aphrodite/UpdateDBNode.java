@@ -17,6 +17,11 @@ public class UpdateDBNode {
         this.firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
     }
 
+    public UpdateDBNode() {
+        databaseReference = null;
+        this.firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+    }
+
     public DatabaseReference getDatabaseReference() {
         return databaseReference;
     }
@@ -29,6 +34,20 @@ public class UpdateDBNode {
             return true;
         } else {
             System.out.println("Node Incorrect: User not created");
+            return false;
+        }
+    }
+
+    public boolean deleteUser(String uid, String email) {
+        if (Objects.requireNonNull(getDatabaseReference().getKey()).equals("users")) {
+            // need to remove all things associated with the user
+            getDatabaseReference().child(uid).removeValue();
+            System.out.println("Removed User from database");
+
+
+            return true;
+        } else {
+            System.out.println("Node Incorrect: User not removed");
             return false;
         }
     }
@@ -76,20 +95,24 @@ public class UpdateDBNode {
             return false;
         }
     }
-//    // Cannot add modules except from database because they are premade
-//    public void addModule(String uid, String modName, String value) {
-//        if (Objects.requireNonNull(getDatabaseReference().getKey()).equals("modules")) {
-//            getDatabaseReference()
-//                    .child(uid)
-//                    .child(modName)
-//                    .setValue(value);
-//            System.out.println("YESSSSS");
-//        } else {
-//            System.out.println(" NO");
-//        }
-//    }
 
     public String getCurrentUid() {
         return getFirebaseUser().getUid();
+    }
+
+    public String getCurrentUserName() {
+        return getFirebaseUser().getDisplayName();
+    }
+
+    public boolean changeLEDColour(String colour) {
+        if (Objects.requireNonNull(getDatabaseReference().getKey()).equals("led_colour")) {
+            getDatabaseReference()
+                    .child(getCurrentUid())
+                    .setValue(colour);
+            return true;
+        } else {
+            System.out.println("Node Incorrect: Colour not added");
+            return false;
+        }
     }
 }

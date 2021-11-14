@@ -20,7 +20,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import ca.kainotomia.it.aphrodite.R;
 
-public class AccountSupportFragment extends Fragment {
+public class AccountSupportFragment extends Fragment implements View.OnClickListener{
     private AccountViewModel accountViewModel;
     private ViewGroup container;
     private LayoutInflater inflater;
@@ -31,10 +31,34 @@ public class AccountSupportFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
+
         this.container = container;
         this.inflater = inflater;
+
         View view = inflater.inflate(R.layout.fragment_account_support, container, false);
+
+        Button AFS_Button_review = view.findViewById(R.id.AFS_Button_Review);
+
+        AFS_Button_review.setOnClickListener(this);
+
         return view;
     }
 
+    @Override
+    public void onClick(View view) {
+        Fragment fragment = null;
+        switch (view.getId()) {
+            case R.id.AFS_Button_Review:
+                fragment = new AccountReviewFragment();
+                replaceFragment(fragment);
+                break;
+        }
+    }
+
+    public void replaceFragment(Fragment someFragment) {
+        FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+        transaction.replace(R.id.nav_host_fragment, someFragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
+    }
 }
