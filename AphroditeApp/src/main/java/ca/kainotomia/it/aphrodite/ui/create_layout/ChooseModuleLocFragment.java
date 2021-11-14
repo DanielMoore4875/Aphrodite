@@ -2,8 +2,6 @@ package ca.kainotomia.it.aphrodite.ui.create_layout;
 
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -18,17 +16,14 @@ import android.widget.Spinner;
 import com.google.android.material.snackbar.Snackbar;
 
 import ca.kainotomia.it.aphrodite.R;
-import ca.kainotomia.it.aphrodite.ui.account.AccountAboutFragment;
-import ca.kainotomia.it.aphrodite.ui.account.AccountSettingsFragment;
-import ca.kainotomia.it.aphrodite.ui.account.AccountSupportFragment;
 import ca.kainotomia.it.aphrodite.ui.home.HomeFragment;
 
-public class ChooseLayoutLocFragment extends Fragment implements AdapterView.OnItemSelectedListener, View.OnClickListener{
+public class ChooseModuleLocFragment extends Fragment implements AdapterView.OnItemSelectedListener, View.OnClickListener{
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.choose_layout_loc_fragment, container, false);
+        View rootView = inflater.inflate(R.layout.choose_module_loc_fragment, container, false);
 
         Spinner time = rootView.findViewById(R.id.CLF_spinner_time);
         Spinner date = rootView.findViewById(R.id.CLF_spinner_date);

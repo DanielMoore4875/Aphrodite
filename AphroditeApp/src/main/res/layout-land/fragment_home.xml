@@ -50,7 +50,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/H_ChildButton_button"
+        app:layout_constraintStart_toEndOf="@+id/H_StockButton_button"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         app:rippleColor="@color/lighter_oak" />
@@ -78,13 +78,13 @@
         app:rippleColor="@color/lighter_oak" />
 
     <Button
-        android:id="@+id/H_ChildButton_button"
+        android:id="@+id/H_StockButton_button"
         android:layout_width="140dp"
         android:layout_height="140dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:backgroundTint="@color/light_ocean"
-        android:text="@string/H_ChildButton_text"
+        android:text="@string/H_StockButton_text"
         android:textColor="@color/mid_ocean"
         app:cornerRadius="10dp"
         app:icon="@drawable/child_button_peach"

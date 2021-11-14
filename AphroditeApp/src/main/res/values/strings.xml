@@ -18,7 +18,7 @@
     <string name="proximity">Proximity</string>
     <string name="voicerecognition">Voice Recognition</string>
     <string name="weather">Weather</string>
-    <string name="title_voice">Voice Commands</string>
+    <string name="title_voice">Voice/LED</string>
     <string name="AF_TextView_username">Username</string>
     <string name="AF_TextView_version">Version Number</string>
     <string name="HO_HomePage_title" translatable="false">HOME</string>
@@ -27,9 +27,9 @@
 
     </string>
     <string name="AFA_TextView_title">ABOUT US</string>
-    <string name="AFS_TextView_Number">Phone Number</string>
+    <string name="AFS_TextView_Number">Call Us: 123-456-7890</string>
     <string name="AF_Button_settings">Settings</string>
-    <string name="AF_Button_support">Support</string>
+    <string name="AF_Button_support">Review</string>
     <string name="AF_Button_about">About</string>
     <string name="AF_Button_logout">Log Out</string>
     <string name="AFSS_TextView_title">Settings</string>
@@ -39,7 +39,7 @@
     <string name="AFS_TextView_Email">Email</string>
     <string name="AFS_TextView_title">Support</string>
     <string name="H_MorningButton_text">morning</string>
-    <string name="H_ChildButton_text">child</string>
+    <string name="H_StockButton_text">Stock</string>
     <string name="H_AddButton_text">add</string>
     <string name="H_NightButton_text">night</string>
     <string name="VF_snackbar_add_txt">ADD COMMAND</string>
@@ -97,18 +97,17 @@
     <string name="AFR_TextView_title">Review</string>
     <string name="AFR_TextView_review">Optional Please Give Your Response For The App:</string>
     <string name="AFR_Button_submit">Submit</string>
-
-    <!--TRANSLATE TEXT-->
-    <string name="CLF_TextView_time" translatable="false">Time</string>
-    <string name="CLF_TextView_date" translatable="false">Date</string>
-    <string name="CLF_TextView_calender" translatable="false">Calender</string>
-    <string name="CLF_TextView_weather" translatable="false">Weather</string>
-    <string name="CLF_TextView_temphum" translatable="false">Temperature/Humidity</string>
-    <string name="CLF_TextView_stocks" translatable="false">Stocks</string>
-    <string name="CLF_TextView_youtube" translatable="false">Youtube</string>
-    <string name="CLF_TextView_notifications" translatable="false">Notifications</string>
-
+    <string name="CLF_TextView_time">Time</string>
+    <string name="CLF_TextView_date">Date</string>
+    <string name="CLF_TextView_calender">Calender</string>
+    <string name="CLF_TextView_weather">Weather</string>
+    <string name="CLF_TextView_temphum">Temperature/Humidity</string>
+    <string name="CLF_TextView_stocks">Stocks</string>
+    <string name="CLF_TextView_youtube">Youtube</string>
+    <string name="CLF_TextView_notifications">Notifications</string>
+    <string name="AF_EmailButton_text">Email</string>
     <string-array name="Layout_Values">
+        <item>Choose Location</item>
         <item>top_bar</item>
         <item>top_left</item>
         <item>top_center</item>
@@ -123,15 +122,15 @@
         <item>fullscreen_above</item>
         <item>fullscreen_below</item>
     </string-array>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="savedmodulesnack">Saved Module Layout</string>
-    <string name="reviewsnack">Thank You For Reviewing!</string>
-    <string name="CLF_time">Time</string>
     <string name="LED_r_txt">R: 0</string>
     <string name="LED_g_txt">G: 0</string>
     <string name="LED_b_txt">B: 0</string>
     <string name="placeholder" translatable="false">place</string>
     <string name="LED_btn">Change Colour</string>
+    <string name="savedmodulesnack">Saved New Layout</string>
+    <string name="reviewsnack">Thank You For Reviewing!</string>
+    <string name="CLF_time">Time</string>
+    <string name="LED_CustomizeLED_Text">Customize LED</string>
+    <string name="VC_VoiceLED_Text">Void and LED</string>
+    <string name="AFS_ReviewButton_Text">Review</string>
 </resources>
