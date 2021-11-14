@@ -24,7 +24,7 @@
 
     <TextView
         android:id="@+id/CLF_TextView_temphum"
-        android:layout_width="@dimen/CLL_txtView_width"
+        android:layout_width="49dp"
         android:layout_height="25dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
@@ -39,7 +39,7 @@
 
     <TextView
         android:id="@+id/CLF_TextView_stocks"
-        android:layout_width="@dimen/CLL_txtView_width"
+        android:layout_width="49dp"
         android:layout_height="25dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
@@ -54,7 +54,7 @@
 
     <TextView
         android:id="@+id/CLF_TextView_youtube"
-        android:layout_width="@dimen/CLL_txtView_width"
+        android:layout_width="49dp"
         android:layout_height="25dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
@@ -69,7 +69,7 @@
 
     <TextView
         android:id="@+id/CLF_TextView_notifs"
-        android:layout_width="@dimen/CLL_txtView_width"
+        android:layout_width="49dp"
         android:layout_height="25dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
@@ -84,7 +84,7 @@
 
     <TextView
         android:id="@+id/CLF_TextView_date"
-        android:layout_width="@dimen/CLL_txtView_width"
+        android:layout_width="49dp"
         android:layout_height="25dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
@@ -99,7 +99,7 @@
 
     <TextView
         android:id="@+id/CLF_TextView_calender"
-        android:layout_width="@dimen/CLL_txtView_width"
+        android:layout_width="49dp"
         android:layout_height="25dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
@@ -114,7 +114,7 @@
 
     <Spinner
         android:id="@+id/CLF_spinner_notif"
-        android:layout_width="@dimen/CLL_spinner_width"
+        android:layout_width="323dp"
         android:layout_height="26dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -125,8 +125,8 @@
 
     <Spinner
         android:id="@+id/CLF_spinner_weather"
-        android:layout_width="@dimen/CLL_spinner_width"
-        android:layout_height="27dp"
+        android:layout_width="323dp"
+        android:layout_height="26dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.818"
@@ -136,7 +136,7 @@
 
     <Spinner
         android:id="@+id/CLF_spinner_temp_hum"
-        android:layout_width="@dimen/CLL_spinner_width"
+        android:layout_width="323dp"
         android:layout_height="26dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -147,7 +147,7 @@
 
     <Spinner
         android:id="@+id/CLF_spinner_stocks"
-        android:layout_width="@dimen/CLL_spinner_width"
+        android:layout_width="323dp"
         android:layout_height="26dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -158,7 +158,7 @@
 
     <Spinner
         android:id="@+id/CLF_spinner_youtube"
-        android:layout_width="@dimen/CLL_spinner_width"
+        android:layout_width="323dp"
         android:layout_height="26dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -169,7 +169,7 @@
 
     <Spinner
         android:id="@+id/CLF_spinner_date"
-        android:layout_width="@dimen/CLL_spinner_width"
+        android:layout_width="323dp"
         android:layout_height="26dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -179,8 +179,8 @@
         app:layout_constraintVertical_bias="0.289" />
 
     <Spinner
-        android:id="@+id/CLF_spinner_calendar"
-        android:layout_width="@dimen/CLL_spinner_width"
+        android:id="@+id/CLF_spinner_calender"
+        android:layout_width="323dp"
         android:layout_height="26dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -212,7 +212,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:fontFamily="sans-serif-medium"
-        android:text="@string/placeholder"
+        android:text="@string/ML_ChosenLayout_Name"
         android:textColor="@color/dark_ocean"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -239,7 +239,7 @@
 
     <TextView
         android:id="@+id/CLF_TextView_time"
-        android:layout_width="@dimen/CLL_txtView_width"
+        android:layout_width="49dp"
         android:layout_height="25dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
@@ -254,7 +254,7 @@
 
     <Spinner
         android:id="@+id/CLF_spinner_time"
-        android:layout_width="@dimen/CLL_spinner_width"
+        android:layout_width="323dp"
         android:layout_height="26dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

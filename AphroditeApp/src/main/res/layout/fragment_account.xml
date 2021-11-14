@@ -111,7 +111,7 @@
         android:textColor="@color/mid_ocean"
         android:textStyle="bold"
         app:cornerRadius="10dp"
-        app:icon="@drawable/support"
+        app:icon="@drawable/ic_baseline_rate_review_24"
         app:iconGravity="textStart"
         app:iconSize="22dp"
         app:iconTint="@color/mid_ocean"

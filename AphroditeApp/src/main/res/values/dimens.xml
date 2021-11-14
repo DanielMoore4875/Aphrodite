@@ -31,4 +31,9 @@
     <dimen name="CLP_spinner_height">50dp</dimen>
 
 
+
+    <!--BUTTONS-->
+    <dimen name="Button_height">64dp</dimen>
+    <dimen name="Button_margin_StartEnd">10dp</dimen>
+    <dimen name="Button_radius">10dp</dimen>
 </resources>

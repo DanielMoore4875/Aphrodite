@@ -59,7 +59,7 @@ public class AccountFragment extends Fragment implements View.OnClickListener {
                 break;
 
             case R.id.AF_Button_support:
-                fragment = new AccountSupportFragment();
+                fragment = new AccountReviewFragment();
                 replaceFragment(fragment);
                 break;
             case R.id.AF_Button_settings:
