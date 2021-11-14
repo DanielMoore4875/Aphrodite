@@ -19,90 +19,98 @@
         <Spinner
             android:id="@+id/CLP_spinner_time"
             android:layout_width="@dimen/CLP_spinner_width"
-            android:layout_height="@dimen/CLP_spinner_height"
+            android:layout_height="@dimen/CLP_height"
+            android:layout_marginTop="@dimen/CLP_margin_top"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.245"
+            app:layout_constraintHorizontal_bias="0.238"
             app:layout_constraintStart_toEndOf="@+id/CLP_Feature_Time"
             app:layout_constraintTop_toBottomOf="@+id/CLP_LayoutName_User_Input_PT"
-            app:layout_constraintVertical_bias="0.017" />
+            app:layout_constraintVertical_bias="0.0" />
 
         <Spinner
             android:id="@+id/CLP_spinner_date"
             android:layout_width="@dimen/CLP_spinner_width"
-            android:layout_height="@dimen/CLP_spinner_height"
+            android:layout_height="@dimen/CLP_height"
+            android:layout_marginTop="@dimen/CLP_margin_top"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.956"
+            app:layout_constraintHorizontal_bias="0.238"
             app:layout_constraintStart_toEndOf="@+id/CLP_Feature_Date"
             app:layout_constraintTop_toBottomOf="@+id/CLP_spinner_time"
-            app:layout_constraintVertical_bias="0.015" />
+            app:layout_constraintVertical_bias="0.0" />
 
         <Spinner
             android:id="@+id/CLP_spinner_calendar"
             android:layout_width="@dimen/CLP_spinner_width"
-            android:layout_height="@dimen/CLP_spinner_height"
+            android:layout_height="@dimen/CLP_height"
+            android:layout_marginTop="@dimen/CLP_margin_top"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.956"
+            app:layout_constraintHorizontal_bias="0.238"
             app:layout_constraintStart_toEndOf="@+id/CLP_Feature_Calendar"
             app:layout_constraintTop_toBottomOf="@+id/CLP_spinner_date"
-            app:layout_constraintVertical_bias="0.02" />
+            app:layout_constraintVertical_bias="0.0" />
 
         <Spinner
             android:id="@+id/CLP_spinner_weather"
             android:layout_width="@dimen/CLP_spinner_width"
-            android:layout_height="@dimen/CLP_spinner_height"
+            android:layout_height="@dimen/CLP_height"
+            android:layout_marginTop="@dimen/CLP_margin_top"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.956"
+            app:layout_constraintHorizontal_bias="0.238"
             app:layout_constraintStart_toEndOf="@+id/CLP_Feature_Weather"
             app:layout_constraintTop_toBottomOf="@+id/CLP_spinner_calendar"
-            app:layout_constraintVertical_bias="0.02" />
+            app:layout_constraintVertical_bias="0.0" />
 
         <Spinner
             android:id="@+id/CLP_spinner_temp_hum"
             android:layout_width="@dimen/CLP_spinner_width"
-            android:layout_height="@dimen/CLP_spinner_height"
+            android:layout_height="@dimen/CLP_height"
+            android:layout_marginTop="@dimen/CLP_margin_top"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.956"
+            app:layout_constraintHorizontal_bias="0.238"
             app:layout_constraintStart_toEndOf="@+id/CLP_Feature_RoomT_H"
             app:layout_constraintTop_toBottomOf="@+id/CLP_spinner_weather"
-            app:layout_constraintVertical_bias="0.024" />
+            app:layout_constraintVertical_bias="0.0" />
 
         <Spinner
             android:id="@+id/CLP_spinner_stocks"
             android:layout_width="@dimen/CLP_spinner_width"
-            android:layout_height="@dimen/CLP_spinner_height"
+            android:layout_height="@dimen/CLP_height"
+            android:layout_marginTop="@dimen/CLP_margin_top"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.956"
+            app:layout_constraintHorizontal_bias="0.238"
             app:layout_constraintStart_toEndOf="@+id/CLP_Feature_Stocks"
             app:layout_constraintTop_toBottomOf="@+id/CLP_spinner_temp_hum"
-            app:layout_constraintVertical_bias="0.037" />
+            app:layout_constraintVertical_bias="0.0" />
 
         <Spinner
             android:id="@+id/CLP_spinner_youtube"
             android:layout_width="@dimen/CLP_spinner_width"
-            android:layout_height="@dimen/CLP_spinner_height"
+            android:layout_height="@dimen/CLP_height"
+            android:layout_marginTop="@dimen/CLP_margin_top"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.956"
+            app:layout_constraintHorizontal_bias="0.238"
             app:layout_constraintStart_toEndOf="@+id/CLP_Feature_Youtube"
             app:layout_constraintTop_toBottomOf="@+id/CLP_spinner_stocks"
-            app:layout_constraintVertical_bias="0.028" />
+            app:layout_constraintVertical_bias="0.0" />
 
         <Spinner
             android:id="@+id/CLP_spinner_notif"
             android:layout_width="@dimen/CLP_spinner_width"
-            android:layout_height="@dimen/CLP_spinner_height"
+            android:layout_height="@dimen/CLP_height"
+            android:layout_marginTop="@dimen/CLP_margin_top"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.956"
+            app:layout_constraintHorizontal_bias="0.238"
             app:layout_constraintStart_toEndOf="@+id/CLP_Feature_SocialMediaNot"
             app:layout_constraintTop_toBottomOf="@+id/CLP_spinner_youtube"
-            app:layout_constraintVertical_bias="0.064" />
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/CL_CreateLayout_PT"
@@ -117,7 +125,7 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.051"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0" />
@@ -128,28 +136,29 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:ems="10"
             android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            android:ems="10"
             android:fontFamily="sans-serif-light"
             android:hint="@string/CL_LayoutName_Text"
+            android:importantForAutofill="no"
             android:inputType="textPersonName"
             android:minHeight="48dp"
             android:textAlignment="center"
             android:textColor="@color/mid_ocean"
-            android:textSize="14sp"
+            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/CL_CreateLayout_PT"
             app:layout_constraintVertical_bias="0.0"
-            tools:ignore="TextContrastCheck"
-            android:importantForAutofill="no" />
+            tools:ignore="TextContrastCheck" />
 
         <androidx.appcompat.widget.SwitchCompat
             android:id="@+id/CLP_Feature_Time"
             android:layout_width="@dimen/CLP_switch_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/CLP_height"
+            android:layout_marginTop="@dimen/CLP_margin_top"
             android:layout_marginEnd="@dimen/CLP_switch_marginEnd"
             android:layoutDirection="rtl"
             android:minHeight="48dp"
@@ -161,14 +170,14 @@
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/CLP_LayoutName_User_Input_PT"
-            app:layout_constraintVertical_bias="0.017"
+            app:layout_constraintVertical_bias="0.0"
             tools:ignore="TextContrastCheck" />
 
         <androidx.appcompat.widget.SwitchCompat
             android:id="@+id/CLP_Feature_Date"
             android:layout_width="@dimen/CLP_switch_width"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_height="@dimen/CLP_height"
+            android:layout_marginTop="@dimen/CLP_margin_top"
             android:layout_marginEnd="@dimen/CLP_switch_marginEnd"
             android:layoutDirection="rtl"
             android:minHeight="48dp"
@@ -186,8 +195,8 @@
         <androidx.appcompat.widget.SwitchCompat
             android:id="@+id/CLP_Feature_Calendar"
             android:layout_width="@dimen/CLP_switch_width"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_height="@dimen/CLP_height"
+            android:layout_marginTop="@dimen/CLP_margin_top"
             android:layout_marginEnd="@dimen/CLP_switch_marginEnd"
             android:layoutDirection="rtl"
             android:minHeight="48dp"
@@ -205,8 +214,8 @@
         <androidx.appcompat.widget.SwitchCompat
             android:id="@+id/CLP_Feature_Weather"
             android:layout_width="@dimen/CLP_switch_width"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_height="@dimen/CLP_height"
+            android:layout_marginTop="@dimen/CLP_margin_top"
             android:layout_marginEnd="@dimen/CLP_switch_marginEnd"
             android:layoutDirection="rtl"
             android:minHeight="48dp"
@@ -224,8 +233,8 @@
         <androidx.appcompat.widget.SwitchCompat
             android:id="@+id/CLP_Feature_RoomT_H"
             android:layout_width="@dimen/CLP_switch_width"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_height="@dimen/CLP_height"
+            android:layout_marginTop="@dimen/CLP_margin_top"
             android:layout_marginEnd="@dimen/CLP_switch_marginEnd"
             android:layoutDirection="rtl"
             android:minHeight="48dp"
@@ -244,8 +253,8 @@
         <androidx.appcompat.widget.SwitchCompat
             android:id="@+id/CLP_Feature_Stocks"
             android:layout_width="@dimen/CLP_switch_width"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_height="@dimen/CLP_height"
+            android:layout_marginTop="@dimen/CLP_margin_top"
             android:layout_marginEnd="@dimen/CLP_switch_marginEnd"
             android:layoutDirection="rtl"
             android:minHeight="48dp"
@@ -263,8 +272,8 @@
         <androidx.appcompat.widget.SwitchCompat
             android:id="@+id/CLP_Feature_Youtube"
             android:layout_width="@dimen/CLP_switch_width"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_height="@dimen/CLP_height"
+            android:layout_marginTop="@dimen/CLP_margin_top"
 
             android:layout_marginEnd="@dimen/CLP_switch_marginEnd"
             android:layoutDirection="rtl"
@@ -283,8 +292,8 @@
         <androidx.appcompat.widget.SwitchCompat
             android:id="@+id/CLP_Feature_SocialMediaNot"
             android:layout_width="@dimen/CLP_switch_width"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_height="@dimen/CLP_height"
+            android:layout_marginTop="@dimen/CLP_margin_top"
             android:layout_marginEnd="@dimen/CLP_switch_marginEnd"
             android:layoutDirection="rtl"
             android:minHeight="48dp"

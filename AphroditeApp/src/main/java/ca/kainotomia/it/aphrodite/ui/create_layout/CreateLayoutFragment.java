@@ -124,24 +124,31 @@ public class CreateLayoutFragment extends Fragment implements View.OnClickListen
                 break;
             case 1:
                 //date
+                dateSp.setEnabled(v.isChecked());
                 break;
             case 2:
                 //calendar
+                calendarSp.setEnabled(v.isChecked());
                 break;
             case 3:
                 //weather
+                weatherSp.setEnabled(v.isChecked());
                 break;
             case 4:
                 //temp hum
+                temp_humSp.setEnabled(v.isChecked());
                 break;
             case 5:
                 //stocks
+                stocksSp.setEnabled(v.isChecked());
                 break;
             case 6:
                 //youtube
+                youtubeSp.setEnabled(v.isChecked());
                 break;
             case 7:
                 //notifs
+                notifSp.setEnabled(v.isChecked());
                 break;
         }
     }
