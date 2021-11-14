@@ -15,12 +15,16 @@ import android.widget.Button;
 import android.widget.EdgeEffect;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
+
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.Arrays;
 
 import ca.kainotomia.it.aphrodite.R;
+import ca.kainotomia.it.aphrodite.UpdateDBNode;
 
-public class CreateLayoutFragment extends Fragment implements View.OnClickListener {
+public class CreateLayoutFragment extends Fragment {
     SwitchCompat timeSw;
     SwitchCompat dateSw;
     SwitchCompat calendarSw;
@@ -40,9 +44,9 @@ public class CreateLayoutFragment extends Fragment implements View.OnClickListen
     Spinner notifSp;
 
     Button saveLayout;
-
-    String layoutName;
     EditText layoutNameEditText;
+
+    String[] modNamesFromLeft;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -50,7 +54,6 @@ public class CreateLayoutFragment extends Fragment implements View.OnClickListen
         View root = inflater.inflate(R.layout.create_layout_page_fragment, container, false);
 
         layoutNameEditText = root.findViewById(R.id.CLP_LayoutName_User_Input_PT);
-        layoutName = layoutNameEditText.getText().toString();
 
         timeSw = root.findViewById(R.id.CLP_Feature_Time);
         dateSw = root.findViewById(R.id.CLP_Feature_Date);
@@ -70,14 +73,14 @@ public class CreateLayoutFragment extends Fragment implements View.OnClickListen
         youtubeSw.setChecked(false);
         notifSw.setChecked(false);
 
-        timeSw.setOnClickListener(v -> handleSwitch(0, timeSw));
-//        dateSw.setOnClickListener(v -> handleSwitch(1));
-//        calendarSw.setOnClickListener(v -> handleSwitch(2));
-//        weatherSw.setOnClickListener(v -> handleSwitch(3));
-//        temp_humSw.setOnClickListener(v -> handleSwitch(4));
-//        stocksSw.setOnClickListener(v -> handleSwitch(5));
-//        youtubeSw.setOnClickListener(v -> handleSwitch(6));
-//        notifSw.setOnClickListener(v -> handleSwitch(7));
+        timeSw.setOnClickListener(v -> handleSwitch(timeSw, timeSp, 0));
+        dateSw.setOnClickListener(v -> handleSwitch(dateSw, dateSp, 1));
+        calendarSw.setOnClickListener(v -> handleSwitch(calendarSw, calendarSp, 2));
+        weatherSw.setOnClickListener(v -> handleSwitch(weatherSw, weatherSp, 3));
+        temp_humSw.setOnClickListener(v -> handleSwitch(temp_humSw, temp_humSp, 4));
+        stocksSw.setOnClickListener(v -> handleSwitch(stocksSw, stocksSp, 5));
+        youtubeSw.setOnClickListener(v -> handleSwitch(youtubeSw, youtubeSp, 6));
+        notifSw.setOnClickListener(v -> handleSwitch(notifSw, notifSp, 7));
 
 
         timeSp = root.findViewById(R.id.CLP_spinner_time);
@@ -111,72 +114,83 @@ public class CreateLayoutFragment extends Fragment implements View.OnClickListen
         notifSp.setAdapter(adapter);
 
         saveLayout = root.findViewById(R.id.CLP_SaveButton);
-        saveLayout.setOnClickListener(this);
+        saveLayout.setOnClickListener(v -> handleSaveBtn());
+
+        modNamesFromLeft = new String[8];
 
         return root;
     }
 
-    private void handleSwitch(int modNum, SwitchCompat v) {
-        switch (modNum) {
-            case 0:
-                //time
-                timeSp.setEnabled(v.isChecked());
-                break;
-            case 1:
-                //date
-                dateSp.setEnabled(v.isChecked());
-                break;
-            case 2:
-                //calendar
-                calendarSp.setEnabled(v.isChecked());
-                break;
-            case 3:
-                //weather
-                weatherSp.setEnabled(v.isChecked());
-                break;
-            case 4:
-                //temp hum
-                temp_humSp.setEnabled(v.isChecked());
-                break;
-            case 5:
-                //stocks
-                stocksSp.setEnabled(v.isChecked());
-                break;
-            case 6:
-                //youtube
-                youtubeSp.setEnabled(v.isChecked());
-                break;
-            case 7:
-                //notifs
-                notifSp.setEnabled(v.isChecked());
-                break;
+    private void handleSaveBtn() {
+        UpdateDBNode dbNode = new UpdateDBNode("layouts");
+        String[] moduleNames = getResources().getStringArray(R.array.Layout_Values);
+        String layoutName = layoutNameEditText.getText().toString();
+
+
+        boolean[] modulesIsChecked = {
+                timeSw.isChecked(),
+                dateSw.isChecked(),
+                calendarSw.isChecked(),
+                weatherSw.isChecked(),
+                temp_humSw.isChecked(),
+                stocksSw.isChecked(),
+                youtubeSw.isChecked(),
+                notifSw.isChecked()
+        };
+
+        String[] modulesLocation = {
+                timeSp.getSelectedItem().toString(),
+                dateSp.getSelectedItem().toString(),
+                calendarSp.getSelectedItem().toString(),
+                weatherSp.getSelectedItem().toString(),
+                temp_humSp.getSelectedItem().toString(),
+                stocksSp.getSelectedItem().toString(),
+                youtubeSp.getSelectedItem().toString(),
+                notifSp.getSelectedItem().toString()
+        };
+
+        if (!checkAllChosen(modulesIsChecked, modulesLocation, moduleNames)) {
+            //need to choose a location
+            //show alert dialog
+            Toast.makeText(getActivity(), getString(R.string.CL_noChosenLoc_error_txt), Toast.LENGTH_SHORT).show();
+        } else {
+            if (!layoutName.equals(getString(R.string.empty_string))) {
+                System.out.println(Arrays.toString(modulesIsChecked));
+                System.out.println(Arrays.toString(modulesLocation));
+                for (int i = 0; i < modulesLocation.length; i++) {
+                    if (modulesLocation[i].equals(moduleNames[0])) {
+                        modulesLocation[i] = "null";
+                    }
+                }
+                System.out.println("NAME: " + layoutName);
+                System.out.println("MOD NAMES:  " + Arrays.toString(modNamesFromLeft));
+                System.out.println("MOD LOC: " + Arrays.toString(modulesLocation));
+                dbNode.addLayout(layoutName, modulesIsChecked, modNamesFromLeft, modulesLocation);
+            } else {
+                Toast.makeText(getActivity(), getString(R.string.CL_enterName_txt), Toast.LENGTH_SHORT).show();
+            }
         }
     }
 
-    public void onClick(View view) {
-        if (view.getId() == R.id.CLP_SaveButton) {
-            boolean[] modulesIsChecked = {
-                    timeSw.isChecked(),
-                    dateSw.isChecked(),
-                    calendarSw.isChecked(),
-                    weatherSw.isChecked(),
-                    temp_humSw.isChecked(),
-                    stocksSw.isChecked(),
-                    youtubeSw.isChecked(),
-                    notifSw.isChecked()
-            };
-            System.out.println(Arrays.toString(modulesIsChecked));
-            // get all toggle values
-//            Bundle moduleInfo = new Bundle();
-//            moduleInfo.putBooleanArray("moduleCheckState", modulesIsChecked);
-//            getParentFragmentManager().setFragmentResult("moduleBoolArray", moduleInfo);
-//            frag_CLL.setArguments(moduleInfo);
-//            FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
-//            transaction.replace(R.id.nav_host_fragment, frag_CLL);
-////            transaction.addToBackStack(null);
-//            transaction.commit();
+    private boolean checkAllChosen(boolean[] checkedMods, String[] modsLoc, String[] modNames) {
+        for (int i = 0; i < 8; i++) {
+            if (checkedMods[i] && modsLoc[i].equals(modNames[0])) {
+                //havent chosen location for this module
+                return false;
+            }
+
         }
+        return true;
     }
 
-
+    private void handleSwitch(SwitchCompat v, Spinner sp, int position) {
+        //time
+        sp.setEnabled(v.isChecked());
+        if (!v.isChecked()) {
+            //reset spinner
+            sp.setSelection(0);
+        } else {
+            modNamesFromLeft[position] = v.getText().toString();
+        }
+    }
 }

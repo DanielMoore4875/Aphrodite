@@ -63,7 +63,7 @@
     <string name="CL_Feature_Text_Calendar">Calendar</string>
     <string name="CL_Feature_Text_Weather">Weather</string>
     <string name="CL_Feature_Text_ToDoList">To-Do List</string>
-    <string name="CL_Feature_Text_RoomT_H">Room Temp/Hum</string>
+    <string name="CL_Feature_Text_RoomT_H">Room Temp_Hum</string>
     <string name="CL_Feature_Text_Stocks">Stocks</string>
     <string name="CL_Feature_Text_Youtube">Youtube</string>
     <string name="CL_Feature_Text_SocialMedNot">Notifications</string>
@@ -135,4 +135,7 @@
     <string name="VC_VoiceLED_Text">Void and LED</string>
     <string name="AFS_ReviewButton_Text">Review</string>
     <string name="AFR_EditText_review">Please Give Your Review:</string>
+    <string name="CL_noChosenLoc_error_txt">Select location for all chosen modules</string>
+    <string name="CL_enterName_txt">Please enter a name</string>
+    <string name="empty_string" />
 </resources>

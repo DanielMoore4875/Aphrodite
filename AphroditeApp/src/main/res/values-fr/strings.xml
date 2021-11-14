@@ -97,5 +97,7 @@
     <string name="LED_btn">Change Colour</string>
     <string name="CLL_snackbar_error_txt">Enter a layout name</string>
     <string name="AFR_EditText_review">Please Give Your Review:</string>
+    <string name="CL_noChosenLoc_error_txt">Select location for all chosen modules</string>
+    <string name="empty_string" />
 
 </resources>

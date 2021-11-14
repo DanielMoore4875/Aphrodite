@@ -64,14 +64,18 @@ public class UpdateDBNode {
              1 modName2 location2
              2 ...      ...
          */
-    public boolean addLayout(String uid, String layoutName, String[][] modules) {
+    public boolean addLayout(String layoutName, boolean[] modIsChecked, String[] moduleName, String[] moduleLoc) {
         if (Objects.requireNonNull(getDatabaseReference().getKey()).equals("layouts")) {
-            for (String[] module : modules) {
-                getDatabaseReference()
-                        .child(uid)
-                        .child(layoutName)
-                        .child(module[0])
-                        .setValue(module[1]);
+            for (int i = 0; i < 7; i++) {
+                if (!modIsChecked[i]) {
+                    //if module isn't selected, skip it
+                } else {
+                    getDatabaseReference()
+                            .child(getCurrentUid())
+                            .child(layoutName)
+                            .child(moduleName[i])
+                            .setValue(moduleLoc[i]);
+                }
             }
             return true;
         } else {
@@ -79,6 +83,16 @@ public class UpdateDBNode {
             return false;
         }
     }
+
+//    public boolean layoutNameExists(String layoutName) {
+//        if (Objects.requireNonNull(getDatabaseReference().getKey()).equals("layouts")) {
+//           if (layoutName)
+//            return true;
+//        } else {
+//            System.out.println("Node Incorrect: nothing checked");
+//            return false;
+//        }
+//    }
 
     public boolean editLayout(String uid, String layoutName, String[][] modules) {
         if (Objects.requireNonNull(getDatabaseReference().getKey()).equals("layouts")) {
