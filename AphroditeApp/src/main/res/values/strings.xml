@@ -63,10 +63,10 @@
     <string name="CL_Feature_Text_Calendar">Calendar</string>
     <string name="CL_Feature_Text_Weather">Weather</string>
     <string name="CL_Feature_Text_ToDoList">To-Do List</string>
-    <string name="CL_Feature_Text_RoomT_H">Room Temp and Hum</string>
+    <string name="CL_Feature_Text_RoomT_H">Room Temp/Hum</string>
     <string name="CL_Feature_Text_Stocks">Stocks</string>
     <string name="CL_Feature_Text_Youtube">Youtube</string>
-    <string name="CL_Feature_Text_SocialMedNot">Social Media Notifications</string>
+    <string name="CL_Feature_Text_SocialMedNot">Notifications</string>
     <string name="CL_SaveButton_Text">Save</string>
     <string name="SSL_ChosenLayout_Name">Layout Name</string>
     <string name="ML_ChooseModule_PageName">Choose Module Location</string>

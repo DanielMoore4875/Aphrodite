@@ -60,7 +60,7 @@
     <string name="CL_Feature_Text_RoomT_H">" Température ambiante et bourdonnement"</string>
     <string name="CL_Feature_Text_Stocks">" Actions"</string>
     <string name="CL_Feature_Text_Youtube">" Youtube"</string>
-    <string name="CL_Feature_Text_SocialMedNot">" Notifications sur les réseaux sociaux"</string>
+    <string name="CL_Feature_Text_SocialMedNot">" Notifications"</string>
     <string name="CL_SaveButton_Text">"Sauvegarder "</string>
     <string name="SSL_ChosenLayout_Name">" Nom de la mise en page"</string>
     <string name="AFP_Edit_Text_name">Enter A Name</string>

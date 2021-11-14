@@ -22,10 +22,10 @@
             android:layout_height="@dimen/CLP_spinner_height"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.956"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.19" />
+            app:layout_constraintHorizontal_bias="0.245"
+            app:layout_constraintStart_toEndOf="@+id/CLP_Feature_Time"
+            app:layout_constraintTop_toBottomOf="@+id/CLP_LayoutName_User_Input_PT"
+            app:layout_constraintVertical_bias="0.017" />
 
         <Spinner
             android:id="@+id/CLP_spinner_date"
@@ -34,7 +34,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.956"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/CLP_Feature_Date"
             app:layout_constraintTop_toBottomOf="@+id/CLP_spinner_time"
             app:layout_constraintVertical_bias="0.015" />
 
@@ -45,7 +45,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.956"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/CLP_Feature_Calendar"
             app:layout_constraintTop_toBottomOf="@+id/CLP_spinner_date"
             app:layout_constraintVertical_bias="0.02" />
 
@@ -56,7 +56,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.956"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/CLP_Feature_Weather"
             app:layout_constraintTop_toBottomOf="@+id/CLP_spinner_calendar"
             app:layout_constraintVertical_bias="0.02" />
 
@@ -67,7 +67,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.956"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/CLP_Feature_RoomT_H"
             app:layout_constraintTop_toBottomOf="@+id/CLP_spinner_weather"
             app:layout_constraintVertical_bias="0.024" />
 
@@ -78,7 +78,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.956"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/CLP_Feature_Stocks"
             app:layout_constraintTop_toBottomOf="@+id/CLP_spinner_temp_hum"
             app:layout_constraintVertical_bias="0.037" />
 
@@ -89,7 +89,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.956"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/CLP_Feature_Youtube"
             app:layout_constraintTop_toBottomOf="@+id/CLP_spinner_stocks"
             app:layout_constraintVertical_bias="0.028" />
 
@@ -100,7 +100,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.956"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/CLP_Feature_SocialMediaNot"
             app:layout_constraintTop_toBottomOf="@+id/CLP_spinner_youtube"
             app:layout_constraintVertical_bias="0.064" />
 
@@ -150,7 +150,6 @@
             android:id="@+id/CLP_Feature_Time"
             android:layout_width="@dimen/CLP_switch_width"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
             android:layout_marginEnd="@dimen/CLP_switch_marginEnd"
             android:layoutDirection="rtl"
             android:minHeight="48dp"
@@ -162,7 +161,7 @@
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/CLP_LayoutName_User_Input_PT"
-            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintVertical_bias="0.017"
             tools:ignore="TextContrastCheck" />
 
         <androidx.appcompat.widget.SwitchCompat

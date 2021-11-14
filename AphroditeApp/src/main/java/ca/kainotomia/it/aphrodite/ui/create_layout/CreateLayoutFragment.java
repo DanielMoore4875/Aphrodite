@@ -120,7 +120,7 @@ public class CreateLayoutFragment extends Fragment implements View.OnClickListen
         switch (modNum) {
             case 0:
                 //time
-                timeSp.setEnabled(v.isEnabled());
+                timeSp.setEnabled(v.isChecked());
                 break;
             case 1:
                 //date
@@ -147,7 +147,6 @@ public class CreateLayoutFragment extends Fragment implements View.OnClickListen
     }
 
     public void onClick(View view) {
-        ChooseLayoutLocFragment frag_CLL = new ChooseLayoutLocFragment();
         if (view.getId() == R.id.CLP_SaveButton) {
             boolean[] modulesIsChecked = {
                     timeSw.isChecked(),
