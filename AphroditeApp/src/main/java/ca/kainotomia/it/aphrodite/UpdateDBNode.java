@@ -115,4 +115,16 @@ public class UpdateDBNode {
     public String getCurrentUserName() {
         return getFirebaseUser().getDisplayName();
     }
+
+    public boolean changeLEDColour(String colour) {
+        if (Objects.requireNonNull(getDatabaseReference().getKey()).equals("led_colour")) {
+            getDatabaseReference()
+                    .child(getCurrentUid())
+                    .setValue(colour);
+            return true;
+        } else {
+            System.out.println("Node Incorrect: Colour not added");
+            return false;
+        }
+    }
 }

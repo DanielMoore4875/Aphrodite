@@ -9,88 +9,99 @@
 
     <com.google.android.material.slider.Slider
         android:id="@+id/LED_Red_Slider"
-        android:layout_width="@dimen/LED_slider_width"
-        android:layout_height="@dimen/LED_slider_height"
-        android:layout_marginTop="44dp"
-        android:layout_marginEnd="@dimen/LED_slider_startEnd"
+        android:layout_width="630dp"
+        android:layout_height="20dp"
+
+        android:layout_marginTop="24dp"
         android:stepSize="1"
         android:valueFrom="0"
         android:valueTo="255"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.slider.Slider
         android:id="@+id/LED_Green_Slider"
-        android:layout_width="@dimen/LED_slider_width"
-        android:layout_height="@dimen/LED_slider_height"
-        android:layout_marginTop="52dp"
+        android:layout_width="630dp"
+        android:layout_height="35dp"
         android:stepSize="1"
         android:valueFrom="0"
         android:valueTo="255"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.39"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/LED_Red_Txt" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.231" />
 
     <com.google.android.material.slider.Slider
         android:id="@+id/LED_Blue_Slider"
-        android:layout_width="@dimen/LED_slider_width"
-        android:layout_height="@dimen/LED_slider_height"
-        android:layout_marginTop="60dp"
+        android:layout_width="630dp"
+        android:layout_height="35dp"
         android:stepSize="1"
         android:valueFrom="0"
         android:valueTo="255"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/LED_Green_Txt" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.404" />
 
     <TextView
         android:id="@+id/LED_Red_Txt"
-        android:layout_width="178dp"
-        android:layout_height="33dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="24dp"
+        android:layout_width="200dp"
+        android:layout_height="35dp"
         android:text="@string/placeholder"
         android:textAlignment="textStart"
         android:textSize="@dimen/LED_txt_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.094"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/LED_Red_Slider" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.611" />
 
     <TextView
         android:id="@+id/LED_Green_Txt"
-        android:layout_width="188dp"
-        android:layout_height="38dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="52dp"
+        android:layout_width="200dp"
+        android:layout_height="35dp"
         android:text="@string/placeholder"
         android:textSize="@dimen/LED_txt_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.499"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/LED_Green_Slider" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.611" />
 
     <TextView
         android:id="@+id/LED_Blue_Txt"
-        android:layout_width="190dp"
-        android:layout_height="39dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="200dp"
+        android:layout_height="35dp"
         android:text="@string/placeholder"
         android:textSize="@dimen/LED_txt_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.905"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/LED_Blue_Slider" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.611" />
 
     <Button
         android:id="@+id/LED_colour_btn"
         android:layout_width="187dp"
         android:layout_height="72dp"
         android:text="@string/LED_btn"
-        android:textSize="20sp"
         android:textColor="@color/white"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.459"
+        app:layout_constraintHorizontal_bias="0.511"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/LED_Blue_Txt" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.911" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
