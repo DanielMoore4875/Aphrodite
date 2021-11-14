@@ -91,5 +91,9 @@
     <string name="savedmodulesnack">Saved Module Layout</string>
     <string name="reviewsnack">Thank You For Reviewing!</string>
     <string name="CLF_time">Time</string>
+    <string name="LED_r_txt">R: 0</string>
+    <string name="LED_g_txt">G: 0</string>
+    <string name="LED_b_txt">B: 0</string>
+    <string name="LED_btn">Change Colour</string>
 
 </resources>

@@ -108,6 +108,15 @@ public class VoiceFragment extends Fragment {
         d6.setText(R.string.VC_desc_cmd6_txt);
         d7.setText(R.string.VC_desc_cmd7_txt);
 
+        Button goToLED = view.findViewById(R.id.VC_changeLED_btnID);
+        goToLED.setOnClickListener(v -> {
+            Fragment ledColour = new LEDColourFragment();
+            FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+            transaction.replace(R.id.nav_host_fragment, ledColour);
+            transaction.addToBackStack(null);
+            transaction.commit();
+        });
+
 
     }
 
