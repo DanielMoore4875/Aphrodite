@@ -70,7 +70,7 @@ public class CreateLayoutFragment extends Fragment implements View.OnClickListen
         youtubeSw.setChecked(false);
         notifSw.setChecked(false);
 
-        timeSw.setOnClickListener(v -> handleSwitch(0, v));
+        timeSw.setOnClickListener(v -> handleSwitch(0, timeSw));
 //        dateSw.setOnClickListener(v -> handleSwitch(1));
 //        calendarSw.setOnClickListener(v -> handleSwitch(2));
 //        weatherSw.setOnClickListener(v -> handleSwitch(3));
@@ -89,14 +89,14 @@ public class CreateLayoutFragment extends Fragment implements View.OnClickListen
         youtubeSp = root.findViewById(R.id.CLP_spinner_youtube);
         notifSp = root.findViewById(R.id.CLP_spinner_notif);
 
-//        timeSp
-//        dateSp
-//        calendarSp
-//        weatherSp
-//        temp_humSp
-//        stocksSp
-//        youtubeSp
-//        notifSp
+        timeSp.setEnabled(false);
+        dateSp.setEnabled(false);
+        calendarSp.setEnabled(false);
+        weatherSp.setEnabled(false);
+        temp_humSp.setEnabled(false);
+        stocksSp.setEnabled(false);
+        youtubeSp.setEnabled(false);
+        notifSp.setEnabled(false);
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity().getBaseContext(), R.array.Layout_Values, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -116,7 +116,7 @@ public class CreateLayoutFragment extends Fragment implements View.OnClickListen
         return root;
     }
 
-    private void handleSwitch(int modNum, View v) {
+    private void handleSwitch(int modNum, SwitchCompat v) {
         switch (modNum) {
             case 0:
                 //time
