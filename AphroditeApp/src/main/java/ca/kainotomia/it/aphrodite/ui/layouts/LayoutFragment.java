@@ -20,12 +20,8 @@ import ca.kainotomia.it.aphrodite.R;
 
 public class LayoutFragment extends Fragment {
 
-    private LayoutViewModel layoutViewModel;
-
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        layoutViewModel =
-                new ViewModelProvider(this).get(LayoutViewModel.class);
         View root = inflater.inflate(R.layout.fragment_layouts, container, false);
 
         return root;
