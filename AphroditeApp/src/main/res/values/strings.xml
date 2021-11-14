@@ -128,4 +128,5 @@
     <string name="savedmodulesnack">Saved Module Layout</string>
     <string name="reviewsnack">Thank You For Reviewing!</string>
     <string name="CLF_time">Time</string>
+    <string name="CLL_snackbar_error_txt">Enter a layout name</string>
 </resources>

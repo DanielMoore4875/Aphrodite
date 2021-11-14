@@ -42,7 +42,7 @@
             android:fontFamily="sans-serif-light"
             android:inputType="textPersonName"
             android:minHeight="48dp"
-            android:text="@string/CL_LayoutName_Text"
+            android:hint="@string/CL_LayoutName_Text"
             android:textAlignment="center"
             android:textColor="@color/mid_ocean"
             android:textSize="14sp"

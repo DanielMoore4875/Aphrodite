@@ -212,7 +212,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:fontFamily="sans-serif-medium"
-        android:text="@string/ML_ChosenLayout_Name"
+        android:text="@string/placeholder"
         android:textColor="@color/dark_ocean"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
