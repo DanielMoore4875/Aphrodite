@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.SwitchCompat;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,6 +24,7 @@ import java.util.Arrays;
 
 import ca.kainotomia.it.aphrodite.R;
 import ca.kainotomia.it.aphrodite.UpdateDBNode;
+import ca.kainotomia.it.aphrodite.ui.home.HomeFragment;
 
 public class CreateLayoutFragment extends Fragment {
     SwitchCompat timeSw;
@@ -166,6 +168,11 @@ public class CreateLayoutFragment extends Fragment {
                 System.out.println("MOD NAMES:  " + Arrays.toString(modNamesFromLeft));
                 System.out.println("MOD LOC: " + Arrays.toString(modulesLocation));
                 dbNode.addLayout(layoutName, modulesIsChecked, modNamesFromLeft, modulesLocation);
+                Fragment home = new HomeFragment();
+                FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+                transaction.replace(R.id.nav_host_fragment, home);
+                transaction.addToBackStack(null);
+                transaction.commit();
             } else {
                 Toast.makeText(getActivity(), getString(R.string.CL_enterName_txt), Toast.LENGTH_SHORT).show();
             }

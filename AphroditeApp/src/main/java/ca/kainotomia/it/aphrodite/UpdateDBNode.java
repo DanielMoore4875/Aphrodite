@@ -67,21 +67,36 @@ public class UpdateDBNode {
     public boolean addLayout(String layoutName, boolean[] modIsChecked, String[] moduleName, String[] moduleLoc) {
         if (Objects.requireNonNull(getDatabaseReference().getKey()).equals("layouts")) {
             for (int i = 0; i < 7; i++) {
-                if (!modIsChecked[i]) {
-                    //if module isn't selected, skip it
-                } else {
+                if (modIsChecked[i]) {
                     getDatabaseReference()
                             .child(getCurrentUid())
                             .child(layoutName)
                             .child(moduleName[i])
                             .setValue(moduleLoc[i]);
-                }
+                }  //if module isn't selected, skip it
+
             }
             return true;
         } else {
             System.out.println("Node Incorrect: Layout not Added");
             return false;
         }
+    }
+
+    public boolean saveRating(String review, float star) {
+        if (Objects.requireNonNull(getDatabaseReference().getKey()).equals("rating")) {
+            getDatabaseReference()
+                    .child(getCurrentUid())
+                    .child("Name")
+                    .setValue(review);
+
+            getDatabaseReference()
+                    .child(getCurrentUid())
+                    .child("Star")
+                    .setValue(star);
+            return true;
+        }
+        return false;
     }
 
 //    public boolean layoutNameExists(String layoutName) {

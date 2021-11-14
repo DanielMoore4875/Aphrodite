@@ -20,6 +20,7 @@ import androidx.fragment.app.FragmentTransaction;
 import com.google.android.material.snackbar.Snackbar;
 
 import ca.kainotomia.it.aphrodite.R;
+import ca.kainotomia.it.aphrodite.UpdateDBNode;
 import ca.kainotomia.it.aphrodite.ui.home.HomeFragment;
 
 public class AccountReviewFragment extends Fragment implements View.OnClickListener{
@@ -47,6 +48,7 @@ public class AccountReviewFragment extends Fragment implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
+        UpdateDBNode dbNode = new UpdateDBNode("rating");
         Fragment fragment = null;
         switch (view.getId()) {
             case R.id.AFR_Button_submit:
@@ -54,6 +56,7 @@ public class AccountReviewFragment extends Fragment implements View.OnClickListe
                 String review = AFR_EditText_input.getText().toString();
                 float rating = AFR_ratingBar_ratebar.getRating();
                 System.out.println(review + " " + rating);
+                System.out.println("SAVED: " + dbNode.saveRating(review, rating));
                 fragment = new HomeFragment();
                 replaceFragment(fragment);
                 break;
