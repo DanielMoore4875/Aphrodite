@@ -17,31 +17,43 @@
         tools:context=".ui.voice.VoiceFragment">
 
 
-        <ImageView
-            android:id="@+id/VC_logo_imgID"
+        <TextView
+            android:id="@+id/VC_PageName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/aphrodite_logo"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="sans-serif-black"
+            android:text="@string/VC_VoiceLED_Text"
+            android:textColor="@color/dark_ocean"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.051"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="ContentDescription" />
-
+            app:layout_constraintVertical_bias="0.0" />
 
         <Button
             android:id="@+id/VC_changeLED_btnID"
             android:layout_width="@dimen/VC_btn_width"
-            android:layout_height="76dp"
-            android:layout_marginEnd="10dp"
-            android:backgroundTint="@color/peach"
+            android:layout_height="@dimen/VC_btn_height"
+            android:layout_marginTop="52dp"
+            android:layout_marginEnd="30dp"
+            android:backgroundTint="@color/light_ocean"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
             android:text="@string/VC_led_txt"
-            android:textColor="@color/lighter_oak"
+            android:textColor="@color/mid_ocean"
             android:textStyle="bold"
             app:cornerRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="@+id/VC_muteMic_btnID"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.878"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/VC_logo_imgID"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"
             app:rippleColor="@color/lighter_oak" />
 
         <TextView
@@ -99,13 +111,15 @@
             android:id="@+id/VC_cmdDesc7_txt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/VC_desc_marginStart"
+            android:layout_marginStart="32dp"
             android:layout_marginTop="@dimen/VC_desc_marginTop"
             android:text="@string/VC_placeholder_vcDesc_txt"
             android:textColor="@color/mid_ocean"
             android:textSize="@dimen/VC_title_font_size"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/VC_cmdName7_txt" />
+            app:layout_constraintTop_toBottomOf="@+id/VC_cmdName7_txt"
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/VC_cmdDesc3_txt"
@@ -223,18 +237,20 @@
             android:id="@+id/VC_muteMic_btnID"
             android:layout_width="@dimen/VC_btn_width"
             android:layout_height="@dimen/VC_btn_height"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="65dp"
             android:background="@drawable/roundedcorner_button"
-            android:backgroundTint="@color/peach"
-            android:textColor="@color/lighter_oak"
+            android:backgroundTint="@color/light_ocean"
+            android:textColor="@color/mid_ocean"
             android:textOff="@string/VC_micUnmuted_txt"
             android:textOn="@string/VC_micMuted_txt"
             android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.106"
+            app:layout_constraintHorizontal_bias="0.023"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/VC_logo_imgID" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

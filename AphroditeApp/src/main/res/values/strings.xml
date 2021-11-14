@@ -107,6 +107,7 @@
     <string name="CLF_TextView_notifications">Notifications</string>
     <string name="AF_EmailButton_text">Email</string>
     <string-array name="Layout_Values">
+        <item>Choose Location</item>
         <item>top_bar</item>
         <item>top_left</item>
         <item>top_center</item>
@@ -129,4 +130,6 @@
     <string name="savedmodulesnack">Saved Module Layout</string>
     <string name="reviewsnack">Thank You For Reviewing!</string>
     <string name="CLF_time">Time</string>
+    <string name="LED_CustomizeLED_Text">Customize LED</string>
+    <string name="VC_VoiceLED_Text">Void and LED</string>
 </resources>
