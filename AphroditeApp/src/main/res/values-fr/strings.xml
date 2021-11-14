@@ -88,5 +88,8 @@
     <string name="AFR_TextView_title">Review</string>
     <string name="AFR_TextView_review">Optional Please Give Your Response For The App:</string>
     <string name="AFR_Button_submit">Submit</string>
+    <string name="savedmodulesnack">Saved Module Layout</string>
+    <string name="reviewsnack">Thank You For Reviewing!</string>
+    <string name="CLF_time">Time</string>
 
 </resources>

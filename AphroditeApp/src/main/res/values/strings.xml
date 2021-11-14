@@ -122,4 +122,7 @@
     </string-array>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="savedmodulesnack">Saved Module Layout</string>
+    <string name="reviewsnack">Thank You For Reviewing!</string>
+    <string name="CLF_time">Time</string>
 </resources>
