@@ -24,45 +24,30 @@ import ca.kainotomia.it.aphrodite.ui.account.AccountSettingsFragment;
 import ca.kainotomia.it.aphrodite.ui.account.AccountSupportFragment;
 import ca.kainotomia.it.aphrodite.ui.home.HomeFragment;
 
-public class ChooseLayoutLocFragment extends Fragment implements AdapterView.OnItemSelectedListener {
-
-    private ChooseLayoutLocViewModel mViewModel;
-
-    public static ChooseLayoutLocFragment newInstance() {
-        return new ChooseLayoutLocFragment();
-    }
+public class ChooseLayoutLocFragment extends Fragment {
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_account, container, false);
+        View rootView = inflater.inflate(R.layout.choose_layout_loc_fragment, container, false);
 
         Spinner time = rootView.findViewById(R.id.CLF_spinner_time);
         Button button = rootView.findViewById(R.id.CLF_Button_submit);
 
-//        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.Layout_Values, android.R.layout.simple_spinner_item);
-//        //^^need to fix
-//
+//        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity().getBaseContext(), R.array.Layout_Values, android.R.layout.simple_spinner_item);
 //        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//        time.setAdapter(adapter);
+        //time.setAdapter(adapter);
 
-        button.setOnClickListener((View.OnClickListener) this);
-        time.setOnItemClickListener((AdapterView.OnItemClickListener) this);
+       button.setOnClickListener((View.OnClickListener) this);
+       //time.setOnItemClickListener((AdapterView.OnItemClickListener) this);
         return rootView;
     }
 
 //    @Override
-//    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-//        super.onActivityCreated(savedInstanceState);
-//        mViewModel = new ViewModelProvider(this).get(ChooseLayoutLocViewModel.class);
-//        // TODO: Use the ViewModel
+//    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+//        String text = parent.getItemAtPosition(position).toString();
+//        Toast.makeText(parent.getContext(), text, Toast.LENGTH_SHORT);
 //    }
-
-    @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        String text = parent.getItemAtPosition(position).toString();
-        Toast.makeText(parent.getContext(), text, Toast.LENGTH_SHORT);
-    }
 
     public void onClick(View view) {
         Fragment fragment = null;
@@ -74,7 +59,7 @@ public class ChooseLayoutLocFragment extends Fragment implements AdapterView.OnI
                 break;
         }
     }
-    @Override
+
     public void onNothingSelected(AdapterView<?> parent) {
 
     }
