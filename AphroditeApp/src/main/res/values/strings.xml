@@ -132,7 +132,7 @@
     <string name="CLF_time">Time</string>
     <string name="CLL_snackbar_error_txt">Enter a layout name</string>
     <string name="LED_CustomizeLED_Text">Customize LED</string>
-    <string name="VC_VoiceLED_Text">Void and LED</string>
+    <string name="VC_VoiceLED_Text">Voice and LED</string>
     <string name="AFS_ReviewButton_Text">Review</string>
     <string name="AFR_EditText_review">Please Give Your Review:</string>
     <string name="CL_noChosenLoc_error_txt">Select location for all chosen modules</string>
