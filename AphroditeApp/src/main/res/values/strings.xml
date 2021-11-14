@@ -97,14 +97,17 @@
     <string name="AFR_TextView_title">Review</string>
     <string name="AFR_TextView_review">Optional Please Give Your Response For The App:</string>
     <string name="AFR_Button_submit">Submit</string>
-    <string name="CLF_TextView_time">Time</string>
-    <string name="CLF_TextView_date">Date</string>
-    <string name="CLF_TextView_calender">Calender</string>
-    <string name="CLF_TextView_weather">Weather</string>
-    <string name="CLF_TextView_temphum">Temperature/Humidity</string>
-    <string name="CLF_TextView_stocks">Stocks</string>
-    <string name="CLF_TextView_youtube">Youtube</string>
-    <string name="CLF_TextView_notifications">Notifications</string>
+
+    <!--TRANSLATE TEXT-->
+    <string name="CLF_TextView_time" translatable="false">Time</string>
+    <string name="CLF_TextView_date" translatable="false">Date</string>
+    <string name="CLF_TextView_calender" translatable="false">Calender</string>
+    <string name="CLF_TextView_weather" translatable="false">Weather</string>
+    <string name="CLF_TextView_temphum" translatable="false">Temperature/Humidity</string>
+    <string name="CLF_TextView_stocks" translatable="false">Stocks</string>
+    <string name="CLF_TextView_youtube" translatable="false">Youtube</string>
+    <string name="CLF_TextView_notifications" translatable="false">Notifications</string>
+
     <string-array name="Layout_Values">
         <item>top_bar</item>
         <item>top_left</item>
@@ -120,6 +123,7 @@
         <item>fullscreen_above</item>
         <item>fullscreen_below</item>
     </string-array>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="savedmodulesnack">Saved Module Layout</string>
