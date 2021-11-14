@@ -18,7 +18,7 @@ import com.google.android.material.snackbar.Snackbar;
 import ca.kainotomia.it.aphrodite.R;
 import ca.kainotomia.it.aphrodite.ui.home.HomeFragment;
 
-public class ChooseLayoutLocFragment extends Fragment implements AdapterView.OnItemSelectedListener, View.OnClickListener{
+public class ChooseModuleLocFragment extends Fragment implements AdapterView.OnItemSelectedListener, View.OnClickListener{
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

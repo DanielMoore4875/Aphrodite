@@ -11,11 +11,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.Switch;
-import android.widget.Toast;
 
 import ca.kainotomia.it.aphrodite.R;
-import ca.kainotomia.it.aphrodite.ui.home.HomeFragment;
 
 public class CreateLayoutFragment extends Fragment implements View.OnClickListener{
 
@@ -59,7 +56,7 @@ public class CreateLayoutFragment extends Fragment implements View.OnClickListen
         Fragment fragment = null;
         switch (view.getId()) {
             case R.id.CL_SaveButton:
-                fragment = new ChooseLayoutLocFragment();
+                fragment = new ChooseModuleLocFragment();
                 replaceFragment(fragment);
                 break;
         }

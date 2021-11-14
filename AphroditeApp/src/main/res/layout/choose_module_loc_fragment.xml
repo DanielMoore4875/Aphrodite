@@ -5,82 +5,82 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/lighter_oak"
-    tools:context=".ui.create_layout.ChooseLayoutLocFragment">
+    tools:context=".ui.create_layout.ChooseModuleLocFragment">
 
     <TextView
         android:id="@+id/CLF_TextView_weather"
         android:layout_width="wrap_content"
         android:layout_height="25dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:gravity="center"
         android:text="@string/CLF_TextView_weather"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ML_LayoutName"
-        app:layout_constraintVertical_bias="0.329" />
+        app:layout_constraintTop_toBottomOf="@+id/CLF_TextView_calender"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/CLF_TextView_temphum"
-        android:layout_width="49dp"
+        android:layout_width="wrap_content"
         android:layout_height="25dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:gravity="center"
         android:text="@string/CLF_TextView_temphum"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ML_LayoutName"
-        app:layout_constraintVertical_bias="0.419" />
+        app:layout_constraintTop_toBottomOf="@+id/CLF_TextView_weather"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/CLF_TextView_stocks"
-        android:layout_width="49dp"
+        android:layout_width="wrap_content"
         android:layout_height="25dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:gravity="center"
         android:text="@string/CLF_TextView_stocks"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ML_LayoutName"
-        app:layout_constraintVertical_bias="0.509" />
+        app:layout_constraintTop_toBottomOf="@+id/CLF_TextView_temphum"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/CLF_TextView_youtube"
-        android:layout_width="49dp"
+        android:layout_width="wrap_content"
         android:layout_height="25dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:gravity="center"
         android:text="@string/CLF_TextView_youtube"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ML_LayoutName"
-        app:layout_constraintVertical_bias="0.593" />
+        app:layout_constraintTop_toBottomOf="@+id/CLF_TextView_stocks"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/CLF_TextView_notifs"
-        android:layout_width="49dp"
+        android:layout_width="wrap_content"
         android:layout_height="25dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:gravity="center"
         android:text="@string/CLF_TextView_notifications"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ML_LayoutName"
-        app:layout_constraintVertical_bias="0.685" />
+        app:layout_constraintTop_toBottomOf="@+id/CLF_TextView_youtube"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/CLF_TextView_date"
@@ -114,85 +114,79 @@
 
     <Spinner
         android:id="@+id/CLF_spinner_weather"
-        android:layout_width="200dp"
-        android:layout_height="26dp"
+        android:layout_width="190dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/CLF_TextView_weather"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.438" />
+        app:layout_constraintTop_toBottomOf="@+id/CLF_spinner_calender"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Spinner
         android:id="@+id/CLF_spinner_stocks"
-        android:layout_width="200dp"
-        android:layout_height="26dp"
+        android:layout_width="190dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.59" />
+        app:layout_constraintStart_toEndOf="@+id/CLF_TextView_stocks"
+        app:layout_constraintTop_toBottomOf="@+id/CLF_spinner_temp_hum"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Spinner
         android:id="@+id/CLF_spinner_youtube"
-        android:layout_width="200dp"
-        android:layout_height="26dp"
+        android:layout_width="190dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.905"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.66" />
+        app:layout_constraintHorizontal_bias="0.866"
+        app:layout_constraintStart_toEndOf="@+id/CLF_TextView_youtube"
+        app:layout_constraintTop_toBottomOf="@+id/CLF_spinner_stocks"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Spinner
         android:id="@+id/CLF_spinner_notif"
-        android:layout_width="200dp"
-        android:layout_height="26dp"
+        android:layout_width="190dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.905"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.737" />
+        app:layout_constraintHorizontal_bias="0.834"
+        app:layout_constraintStart_toEndOf="@+id/CLF_TextView_notifs"
+        app:layout_constraintTop_toBottomOf="@+id/CLF_spinner_youtube"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Spinner
         android:id="@+id/CLF_spinner_temp_hum"
-        android:layout_width="200dp"
-        android:layout_height="26dp"
+        android:layout_width="190dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.514" />
+        app:layout_constraintStart_toEndOf="@+id/CLF_TextView_temphum"
+        app:layout_constraintTop_toBottomOf="@+id/CLF_spinner_weather"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Spinner
         android:id="@+id/CLF_spinner_date"
-        android:layout_width="200dp"
-        android:layout_height="26dp"
+        android:layout_width="190dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/CLF_TextView_date"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.292" />
-
-    <Spinner
-        android:id="@+id/CLF_spinner_calender"
-        android:layout_width="200dp"
-        android:layout_height="26dp"
-        android:layout_marginEnd="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/CLF_TextView_calender"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.371" />
+        app:layout_constraintTop_toBottomOf="@+id/CLF_spinner_time"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/ML_CreateLayout_PT"
@@ -216,32 +210,18 @@
         android:id="@+id/ML_LayoutName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="90dp"
         android:fontFamily="sans-serif-medium"
         android:text="@string/ML_ChosenLayout_Name"
         android:textColor="@color/dark_ocean"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.067" />
+        app:layout_constraintVertical_bias="0.0" />
 
-    <Button
-        android:id="@+id/CLF_Button_submit"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="4dp"
-        android:backgroundTint="@color/light_ocean"
-        android:text="@string/ML_SaveButton"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:rippleColor="@color/lighter_oak" />
 
     <TextView
         android:id="@+id/CLF_TextView_time"
@@ -249,19 +229,20 @@
         android:layout_height="25dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
-        android:text="@string/CLF_TextView_time"
         android:gravity="center"
+        android:text="@string/CLF_TextView_time"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ML_LayoutName"
-        app:layout_constraintVertical_bias="0.061" />
+        app:layout_constraintVertical_bias="0.001" />
 
     <Spinner
         android:id="@+id/CLF_spinner_time"
-        android:layout_width="200dp"
-        android:layout_height="26dp"
+        android:layout_width="190dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:dropDownWidth="wrap_content"
         android:spinnerMode="dropdown"
@@ -269,7 +250,40 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/CLF_TextView_time"
+        app:layout_constraintTop_toBottomOf="@+id/ML_LayoutName"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Spinner
+        android:id="@+id/CLF_spinner_calender"
+        android:layout_width="190dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/CLF_TextView_calender"
+        app:layout_constraintTop_toBottomOf="@+id/CLF_spinner_date"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/CLF_Button_submit"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/Button_height"
+        android:layout_marginStart="@dimen/LED_slider_startEnd"
+        android:layout_marginEnd="@dimen/LED_slider_startEnd"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="@color/light_ocean"
+        android:text="@string/ML_SaveButton"
+        android:textColor="@color/mid_ocean"
+        android:textStyle="bold"
+        app:cornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.215" />
+        app:layout_constraintVertical_bias="1.0"
+        app:rippleColor="@color/lighter_oak" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
