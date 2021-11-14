@@ -17,6 +17,11 @@ public class UpdateDBNode {
         this.firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
     }
 
+    public UpdateDBNode() {
+        databaseReference = null;
+        this.firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+    }
+
     public DatabaseReference getDatabaseReference() {
         return databaseReference;
     }
@@ -38,8 +43,6 @@ public class UpdateDBNode {
             // need to remove all things associated with the user
             getDatabaseReference().child(uid).removeValue();
             System.out.println("Removed User from database");
-
-
 
 
             return true;
@@ -107,5 +110,9 @@ public class UpdateDBNode {
 
     public String getCurrentUid() {
         return getFirebaseUser().getUid();
+    }
+
+    public String getCurrentUserName() {
+        return getFirebaseUser().getDisplayName();
     }
 }

@@ -9,30 +9,42 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import ca.kainotomia.it.aphrodite.R;
+import ca.kainotomia.it.aphrodite.UpdateDBNode;
 
 
 public class AccountFragment extends Fragment implements View.OnClickListener {
 
 
-
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
 
-        View rootView = inflater.inflate(R.layout.fragment_account, container, false);
+        Button AF_Button_about = view.findViewById(R.id.AF_Button_about);
+        Button AF_Button_support = view.findViewById(R.id.AF_Button_support);
+        Button AF_Button_settings = view.findViewById(R.id.AF_Button_settings);
 
-        Button AF_Button_about = (Button) rootView.findViewById(R.id.AF_Button_about);
-        Button AF_Button_support = (Button) rootView.findViewById(R.id.AF_Button_support);
-        Button AF_Button_settings = (Button) rootView.findViewById(R.id.AF_Button_settings);
+        //get current username and display it in the username textview
+        TextView usernameText = view.findViewById(R.id.AF_TextView_username);
+        UpdateDBNode dbNode = new UpdateDBNode();
+        usernameText.setText(dbNode.getCurrentUserName());
 
         AF_Button_about.setOnClickListener(this);
         AF_Button_settings.setOnClickListener(this);
         AF_Button_support.setOnClickListener(this);
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.fragment_account, container, false);
 
         return rootView;
     }

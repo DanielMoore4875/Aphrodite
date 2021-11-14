@@ -5,7 +5,6 @@
 
 package ca.kainotomia.it.aphrodite;
 
-import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
 
@@ -29,8 +28,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStop() {
         super.onStop();
-        //When this activity is closed (when the app is closed), sign the current user out
-        FirebaseAuth.getInstance().signOut();
+        // IF THIS IS USED, user will be signed out when screen rotates
+        // DO NOT USE
+        // FirebaseAuth.getInstance().signOut();
     }
 
     @Override
@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowCustomEnabled(true);
         getSupportActionBar().setCustomView(R.layout.custom_action_bar);
 
+        //for setting orientation
 //        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
@@ -69,7 +70,11 @@ public class MainActivity extends AppCompatActivity {
                 .setTitle(R.string.MA_AlertDialogExitApp_title)
                 .setIcon(R.drawable.cancel_button)
                 .setMessage(R.string.MA_AlertDialogExitApp_msg)
-                .setPositiveButton(R.string.MA_AlertDialogExitApp_yes, (dialog, which) -> finish())
+                .setPositiveButton(R.string.MA_AlertDialogExitApp_yes, (dialog, which) -> {
+//                    FirebaseAuth.getInstance().signOut();
+                    finish();
+
+                })
                 .setNegativeButton(R.string.MA_AlertDialogExitApp_no, (dialog, which) -> dialog.dismiss())
                 .create();
     }
