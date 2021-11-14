@@ -18,7 +18,7 @@
     <string name="proximity">Proximity</string>
     <string name="voicerecognition">Voice Recognition</string>
     <string name="weather">Weather</string>
-    <string name="title_voice">Voice Commands</string>
+    <string name="title_voice">Voice/LED</string>
     <string name="AF_TextView_username">Username</string>
     <string name="AF_TextView_version">Version Number</string>
     <string name="HO_HomePage_title" translatable="false">HOME</string>

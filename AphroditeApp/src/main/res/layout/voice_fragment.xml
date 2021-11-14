@@ -209,6 +209,7 @@
             android:layout_marginTop="@dimen/VC_btn_marginTop"
             android:backgroundTint="@color/peach"
             android:textColor="@color/white"
+            android:background="@drawable/roundedcorner_button"
             android:textOff="@string/VC_micUnmuted_txt"
             android:textOn="@string/VC_micMuted_txt"
             app:layout_constraintStart_toStartOf="parent"
