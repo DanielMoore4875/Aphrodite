@@ -11,7 +11,6 @@
         android:id="@+id/LED_Red_Slider"
         android:layout_width="630dp"
         android:layout_height="20dp"
-
         android:layout_marginTop="24dp"
         android:stepSize="1"
         android:valueFrom="0"
