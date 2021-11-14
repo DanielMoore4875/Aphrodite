@@ -3,98 +3,48 @@
 <!--Daniel Moore n01354875 Section B-->
 <!--Ryan Black n01305403 Section B-->
 <!--Alyssa Gomez n01042777 Section B-->
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/lighter_oak"
-    tools:context=".ui.layouts.LayoutFragment"
-    tools:ignore="UseSwitchCompatOrMaterialXml">
+    android:orientation="vertical"
+    tools:context=".MainActivity">
 
-    <ImageButton
-        android:id="@+id/savedlayoutmodulebutton"
-        android:layout_width="180dp"
-        android:layout_height="132dp"
-        android:contentDescription="@string/saved_layouts"
-        android:src="@drawable/savedlayoutsimage"
-        android:background="@drawable/roundcorner_peach"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.93"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.882"
-        tools:ignore="SpeakableTextPresentCheck" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-    <ImageButton
-        android:id="@+id/tempandhumiditylayoutbutton"
-        android:layout_width="180dp"
-        android:layout_height="132dp"
-        android:background="@drawable/roundcorner_peach"
-        android:src="@drawable/humidityandtemperature"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.93"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.113"
-        tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
 
-    <ImageButton
-        android:id="@+id/weatherlayoutbutton"
-        android:layout_width="180dp"
-        android:layout_height="132dp"
-        android:background="@drawable/roundcorner_peach"
-        android:src="@drawable/weathermodule"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.069"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.113"
-        tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
+        <EditText
+            android:id="@+id/et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:hint="Enter Title"
+            android:layout_gravity="center" />
 
-    <ImageButton
-        android:id="@+id/voicerecognitionlayoutbutton"
-        android:layout_width="180dp"
-        android:layout_height="132dp"
-        android:src="@drawable/voicerecolayoutimage"
-        android:background="@drawable/roundcorner_peach"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.069"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499"
-        tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
 
-    <ImageButton
-        android:id="@+id/savelayoutbutton"
-        android:layout_width="180dp"
-        android:layout_height="132dp"
-        android:src="@drawable/savebuttonmodule"
-        android:background="@drawable/roundcorner_peach"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.069"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.881"
-        tools:ignore="ContentDescription" />
+        <EditText
+            android:id="@+id/etd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:hint="Enter Description"
+            android:layout_gravity="center" />
+        <Button
+            android:id="@+id/btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add"/>
+    </LinearLayout>
 
-    <ImageButton
-        android:id="@+id/proximitysensorlayoutbutton"
-        android:layout_width="180dp"
-        android:layout_height="132dp"
-        android:src="@drawable/proximitymodule"
-        android:background="@drawable/roundcorner_peach"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.93"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499"
-        tools:ignore="ContentDescription" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list"
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </androidx.recyclerview.widget.RecyclerView>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
