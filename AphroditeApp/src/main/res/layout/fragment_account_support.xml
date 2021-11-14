@@ -53,7 +53,7 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="10dp"
-        android:layout_marginBottom="360dp"
+        android:layout_marginBottom="268dp"
         android:backgroundTint="@color/light_ocean"
         android:text="@string/AF_EmailButton_text"
         android:textColor="@color/mid_ocean"
@@ -67,8 +67,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/AFS_TextView_title"
-        app:layout_constraintVertical_bias="0.766"
+        app:layout_constraintTop_toBottomOf="@+id/AFS_Button_Review"
+        app:layout_constraintVertical_bias="0.0"
         app:rippleColor="@color/lighter_oak"
         tools:ignore="TextContrastCheck" />
 
@@ -76,27 +76,37 @@
         android:id="@+id/AFS_TextView_Number"
         android:layout_width="357dp"
         android:layout_height="104dp"
-        android:background="@drawable/roundcorner_lightocean"
+        android:layout_marginTop="76dp"
         android:gravity="center"
         android:text="@string/AFS_TextView_Number"
         android:textColor="@color/mid_ocean"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/AFS_Button_Email"
-        app:layout_constraintVertical_bias="0.301" />
+        app:layout_constraintTop_toBottomOf="@+id/AFS_Button_Review"
+        app:layout_constraintVertical_bias="0.804" />
 
     <Button
         android:id="@+id/AFS_Button_Review"
-        android:layout_width="362dp"
-        android:layout_height="48dp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/Button_height"
+        android:layout_marginStart="@dimen/Button_margin_StartEnd"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="@dimen/Button_margin_StartEnd"
         android:backgroundTint="@color/light_ocean"
-        android:text="Review"
+        android:text="@string/AFS_ReviewButton_Text"
+        android:textColor="@color/mid_ocean"
+        android:textStyle="bold"
+        app:cornerRadius="@dimen/Button_radius"
+        app:icon="@drawable/ic_baseline_rate_review_24"
+        app:iconGravity="textStart"
+        app:iconTint="@color/mid_ocean"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.556" />
+        app:layout_constraintTop_toBottomOf="@+id/AFS_TextView_title"
+        app:layout_constraintVertical_bias="0.0"
+        app:rippleColor="@color/lighter_oak" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
