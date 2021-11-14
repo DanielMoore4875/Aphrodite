@@ -17,6 +17,11 @@ public class UpdateDBNode {
         this.firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
     }
 
+    public UpdateDBNode() {
+        databaseReference = null;
+        this.firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+    }
+
     public DatabaseReference getDatabaseReference() {
         return databaseReference;
     }
@@ -29,6 +34,20 @@ public class UpdateDBNode {
             return true;
         } else {
             System.out.println("Node Incorrect: User not created");
+            return false;
+        }
+    }
+
+    public boolean deleteUser(String uid, String email) {
+        if (Objects.requireNonNull(getDatabaseReference().getKey()).equals("users")) {
+            // need to remove all things associated with the user
+            getDatabaseReference().child(uid).removeValue();
+            System.out.println("Removed User from database");
+
+
+            return true;
+        } else {
+            System.out.println("Node Incorrect: User not removed");
             return false;
         }
     }
@@ -91,5 +110,9 @@ public class UpdateDBNode {
 
     public String getCurrentUid() {
         return getFirebaseUser().getUid();
+    }
+
+    public String getCurrentUserName() {
+        return getFirebaseUser().getDisplayName();
     }
 }
