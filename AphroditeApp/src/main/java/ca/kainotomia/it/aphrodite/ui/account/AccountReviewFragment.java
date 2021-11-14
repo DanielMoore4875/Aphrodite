@@ -3,10 +3,13 @@ package ca.kainotomia.it.aphrodite.ui.account;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.InputType;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.RatingBar;
 
 import androidx.annotation.NonNull;
@@ -21,16 +24,23 @@ import ca.kainotomia.it.aphrodite.ui.home.HomeFragment;
 
 public class AccountReviewFragment extends Fragment implements View.OnClickListener{
 
+    EditText AFR_EditText_input;
+    Button AFR_Button_submit;
+    RatingBar AFR_ratingBar_ratebar;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_account_review, container, false);
-        Button AFR_Button_submit = (Button) view.findViewById(R.id.AFR_Button_submit);
-        final RatingBar AFR_ratingBar_ratebar = (RatingBar) view.findViewById(R.id.AFR_RatingBar_ratebar);
+        AFR_EditText_input= view.findViewById(R.id.AFR_EditText_input);
+        AFR_Button_submit = view.findViewById(R.id.AFR_Button_submit);
+        AFR_ratingBar_ratebar = view.findViewById(R.id.AFR_RatingBar_ratebar);
 
         AFR_ratingBar_ratebar.setOnClickListener(this);
         AFR_Button_submit.setOnClickListener(this);
+        AFR_EditText_input.setOnClickListener(this);
+        AFR_EditText_input.setInputType(InputType.TYPE_CLASS_TEXT);
 
         return view;
     }
@@ -41,6 +51,9 @@ public class AccountReviewFragment extends Fragment implements View.OnClickListe
         switch (view.getId()) {
             case R.id.AFR_Button_submit:
                 Snackbar.make(view, (R.string.reviewsnack), Snackbar.LENGTH_LONG).show();
+                String review = AFR_EditText_input.getText().toString();
+                float rating = AFR_ratingBar_ratebar.getRating();
+                System.out.println(review + " " + rating);
                 fragment = new HomeFragment();
                 replaceFragment(fragment);
                 break;
@@ -53,8 +66,5 @@ public class AccountReviewFragment extends Fragment implements View.OnClickListe
         transaction.addToBackStack(null);
         transaction.commit();
     }
-
-
-
 
 }
