@@ -9,6 +9,13 @@ import java.util.Objects;
 
 public class UpdateDBNode {
 
+    /*
+        Principle: Don't Repeat Yourself
+            This class is the interface between the app and the database. Each method corresponds to
+            some functionality that exists in the app that needs to store or retrieve data from the
+            database.
+     */
+
     private final DatabaseReference databaseReference;
     private final FirebaseUser firebaseUser;
 
@@ -87,7 +94,7 @@ public class UpdateDBNode {
         if (Objects.requireNonNull(getDatabaseReference().getKey()).equals("rating")) {
             getDatabaseReference()
                     .child(getCurrentUid())
-                    .child("Name")
+                    .child("Review")
                     .setValue(review);
 
             getDatabaseReference()

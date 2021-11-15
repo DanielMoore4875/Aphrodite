@@ -136,7 +136,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            android:digits="@string/alphabet"
             android:ems="10"
             android:fontFamily="sans-serif-light"
             android:hint="@string/CL_LayoutName_Text"

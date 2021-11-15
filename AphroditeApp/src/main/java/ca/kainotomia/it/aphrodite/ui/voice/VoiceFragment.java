@@ -68,9 +68,9 @@ public class VoiceFragment extends Fragment {
         muteMic = view.findViewById(R.id.VC_muteMic_btnID);
         muteMic.setOnClickListener(v -> {
            if (muteMic.isChecked()) {
-               Toast.makeText(getActivity(), "Mic is muted", Toast.LENGTH_SHORT).show();
+               Toast.makeText(getActivity(), getString(R.string.VC_mic_muted), Toast.LENGTH_SHORT).show();
            } else {
-               Toast.makeText(getActivity(), "Mic is unmuted", Toast.LENGTH_SHORT).show();
+               Toast.makeText(getActivity(), getString(R.string.VC_mic_unmuted), Toast.LENGTH_SHORT).show();
            }
         });
 
