@@ -123,6 +123,7 @@ public class CreateLayoutFragment extends Fragment {
         return root;
     }
 
+
     private void handleSaveBtn() {
         UpdateDBNode dbNode = new UpdateDBNode("layouts");
         String[] moduleNames = getResources().getStringArray(R.array.Layout_Values);
