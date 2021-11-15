@@ -64,14 +64,17 @@ public class UpdateDBNode {
              1 modName2 location2
              2 ...      ...
          */
-    public boolean addLayout(String uid, String layoutName, String[][] modules) {
+    public boolean addLayout(String layoutName, boolean[] modIsChecked, String[] moduleName, String[] moduleLoc) {
         if (Objects.requireNonNull(getDatabaseReference().getKey()).equals("layouts")) {
-            for (String[] module : modules) {
-                getDatabaseReference()
-                        .child(uid)
-                        .child(layoutName)
-                        .child(module[0])
-                        .setValue(module[1]);
+            for (int i = 0; i < 7; i++) {
+                if (modIsChecked[i]) {
+                    getDatabaseReference()
+                            .child(getCurrentUid())
+                            .child(layoutName)
+                            .child(moduleName[i])
+                            .setValue(moduleLoc[i]);
+                }  //if module isn't selected, skip it
+
             }
             return true;
         } else {
@@ -79,6 +82,32 @@ public class UpdateDBNode {
             return false;
         }
     }
+
+    public boolean saveRating(String review, float star) {
+        if (Objects.requireNonNull(getDatabaseReference().getKey()).equals("rating")) {
+            getDatabaseReference()
+                    .child(getCurrentUid())
+                    .child("Name")
+                    .setValue(review);
+
+            getDatabaseReference()
+                    .child(getCurrentUid())
+                    .child("Star")
+                    .setValue(star);
+            return true;
+        }
+        return false;
+    }
+
+//    public boolean layoutNameExists(String layoutName) {
+//        if (Objects.requireNonNull(getDatabaseReference().getKey()).equals("layouts")) {
+//           if (layoutName)
+//            return true;
+//        } else {
+//            System.out.println("Node Incorrect: nothing checked");
+//            return false;
+//        }
+//    }
 
     public boolean editLayout(String uid, String layoutName, String[][] modules) {
         if (Objects.requireNonNull(getDatabaseReference().getKey()).equals("layouts")) {

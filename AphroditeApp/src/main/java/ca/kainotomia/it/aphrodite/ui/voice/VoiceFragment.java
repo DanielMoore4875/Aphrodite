@@ -47,8 +47,6 @@ public class VoiceFragment extends Fragment {
 
     TextView n1, n2, n3, n4, n5, n6, n7;
     TextView d1, d2, d3, d4, d5, d6, d7;
-
-    private VoiceViewModel voiceViewModel;
     ToggleButton muteMic;
 
     // Write a message to the database
@@ -58,8 +56,6 @@ public class VoiceFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        voiceViewModel =
-                new ViewModelProvider(this).get(VoiceViewModel.class);
 
         return inflater.inflate(R.layout.voice_fragment, container, false);
         // View root = inflater.inflate(R.layout.voice_fragment, container, false);

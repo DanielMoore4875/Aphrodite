@@ -24,10 +24,6 @@ import ca.kainotomia.it.aphrodite.ui.create_layout.CreateLayoutFragment;
 
 public class HomeFragment extends Fragment implements View.OnClickListener{
 
-    private HomeViewModel homeViewModel;
-
-
-
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 

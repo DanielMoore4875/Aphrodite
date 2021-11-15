@@ -21,26 +21,14 @@ import androidx.fragment.app.FragmentTransaction;
 import ca.kainotomia.it.aphrodite.R;
 
 public class AccountSupportFragment extends Fragment implements View.OnClickListener{
-    private AccountViewModel accountViewModel;
-    private ViewGroup container;
-    private LayoutInflater inflater;
-    private TextView textView;
-    private ImageView imageView;
-    private Button button;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
-        this.container = container;
-        this.inflater = inflater;
-
         View view = inflater.inflate(R.layout.fragment_account_support, container, false);
-
         Button AFS_Button_review = view.findViewById(R.id.AFS_Button_Review);
-
         AFS_Button_review.setOnClickListener(this);
-
         return view;
     }
 

@@ -4,68 +4,200 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.SwitchCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EdgeEffect;
+import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.Toast;
+
+import com.google.android.material.snackbar.Snackbar;
+
+import java.util.Arrays;
 
 import ca.kainotomia.it.aphrodite.R;
+import ca.kainotomia.it.aphrodite.UpdateDBNode;
+import ca.kainotomia.it.aphrodite.ui.home.HomeFragment;
 
-public class CreateLayoutFragment extends Fragment implements View.OnClickListener{
+public class CreateLayoutFragment extends Fragment {
+    SwitchCompat timeSw;
+    SwitchCompat dateSw;
+    SwitchCompat calendarSw;
+    SwitchCompat weatherSw;
+    SwitchCompat temp_humSw;
+    SwitchCompat stocksSw;
+    SwitchCompat youtubeSw;
+    SwitchCompat notifSw;
 
-    private CreateLayoutViewModel mViewModel;
+    Spinner timeSp;
+    Spinner dateSp;
+    Spinner calendarSp;
+    Spinner weatherSp;
+    Spinner temp_humSp;
+    Spinner stocksSp;
+    Spinner youtubeSp;
+    Spinner notifSp;
 
-    public static CreateLayoutFragment newInstance() {
-        return new CreateLayoutFragment();
-    }
+    Button saveLayout;
+    EditText layoutNameEditText;
+
+    String[] modNamesFromLeft;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        View root=inflater.inflate(R.layout.create_layout_page_fragment, container, false);
+        View root = inflater.inflate(R.layout.create_layout_page_fragment, container, false);
 
-//        Switch time = root.findViewById(R.id.CL_Feature_Time);
-//        Switch date = root.findViewById(R.id.CL_Feature_Date);
-//        Switch calender = root.findViewById(R.id.CL_Feature_Calendar);
-//        Switch weather = root.findViewById(R.id.CL_Feature_Weather);
-//        Switch temp_hum = root.findViewById(R.id.CL_Feature_RoomT_H);
-//        Switch stocks = root.findViewById(R.id.CL_Feature_Stocks);
-//        Switch youtube = root.findViewById(R.id.CL_Feature_Youtube);
-//        Switch notif = root.findViewById(R.id.CL_Feature_SocialMediaNot);
+        layoutNameEditText = root.findViewById(R.id.CLP_LayoutName_User_Input_PT);
 
-        Button button = root.findViewById(R.id.CL_SaveButton);
+        timeSw = root.findViewById(R.id.CLP_Feature_Time);
+        dateSw = root.findViewById(R.id.CLP_Feature_Date);
+        calendarSw = root.findViewById(R.id.CLP_Feature_Calendar);
+        weatherSw = root.findViewById(R.id.CLP_Feature_Weather);
+        temp_humSw = root.findViewById(R.id.CLP_Feature_RoomT_H);
+        stocksSw = root.findViewById(R.id.CLP_Feature_Stocks);
+        youtubeSw = root.findViewById(R.id.CLP_Feature_Youtube);
+        notifSw = root.findViewById(R.id.CLP_Feature_SocialMediaNot);
 
-//        time.setChecked(false);
-//        date.setChecked(false);
-//        calender.setChecked(false);
-//        weather.setChecked(false);
-//        temp_hum.setChecked(false);
-//        stocks.setChecked(false);
-//        youtube.setChecked(false);
-//        notif.setChecked(false);
+        timeSw.setChecked(false);
+        dateSw.setChecked(false);
+        calendarSw.setChecked(false);
+        weatherSw.setChecked(false);
+        temp_humSw.setChecked(false);
+        stocksSw.setChecked(false);
+        youtubeSw.setChecked(false);
+        notifSw.setChecked(false);
 
-        button.setOnClickListener(this);
+        timeSw.setOnClickListener(v -> handleSwitch(timeSw, timeSp, 0));
+        dateSw.setOnClickListener(v -> handleSwitch(dateSw, dateSp, 1));
+        calendarSw.setOnClickListener(v -> handleSwitch(calendarSw, calendarSp, 2));
+        weatherSw.setOnClickListener(v -> handleSwitch(weatherSw, weatherSp, 3));
+        temp_humSw.setOnClickListener(v -> handleSwitch(temp_humSw, temp_humSp, 4));
+        stocksSw.setOnClickListener(v -> handleSwitch(stocksSw, stocksSp, 5));
+        youtubeSw.setOnClickListener(v -> handleSwitch(youtubeSw, youtubeSp, 6));
+        notifSw.setOnClickListener(v -> handleSwitch(notifSw, notifSp, 7));
+
+
+        timeSp = root.findViewById(R.id.CLP_spinner_time);
+        dateSp = root.findViewById(R.id.CLP_spinner_date);
+        calendarSp = root.findViewById(R.id.CLP_spinner_calendar);
+        weatherSp = root.findViewById(R.id.CLP_spinner_weather);
+        temp_humSp = root.findViewById(R.id.CLP_spinner_temp_hum);
+        stocksSp = root.findViewById(R.id.CLP_spinner_stocks);
+        youtubeSp = root.findViewById(R.id.CLP_spinner_youtube);
+        notifSp = root.findViewById(R.id.CLP_spinner_notif);
+
+        timeSp.setEnabled(false);
+        dateSp.setEnabled(false);
+        calendarSp.setEnabled(false);
+        weatherSp.setEnabled(false);
+        temp_humSp.setEnabled(false);
+        stocksSp.setEnabled(false);
+        youtubeSp.setEnabled(false);
+        notifSp.setEnabled(false);
+
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity().getBaseContext(), R.array.Layout_Values, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        timeSp.setAdapter(adapter);
+        dateSp.setAdapter(adapter);
+        calendarSp.setAdapter(adapter);
+        weatherSp.setAdapter(adapter);
+        temp_humSp.setAdapter(adapter);
+        stocksSp.setAdapter(adapter);
+        youtubeSp.setAdapter(adapter);
+        notifSp.setAdapter(adapter);
+
+        saveLayout = root.findViewById(R.id.CLP_SaveButton);
+        saveLayout.setOnClickListener(v -> handleSaveBtn());
+
+        modNamesFromLeft = new String[8];
 
         return root;
     }
 
-    public void onClick(View view) {
-        Fragment fragment = null;
-        switch (view.getId()) {
-            case R.id.CL_SaveButton:
-                fragment = new ChooseModuleLocFragment();
-                replaceFragment(fragment);
-                break;
+    private void handleSaveBtn() {
+        UpdateDBNode dbNode = new UpdateDBNode("layouts");
+        String[] moduleNames = getResources().getStringArray(R.array.Layout_Values);
+        String layoutName = layoutNameEditText.getText().toString();
+
+
+        boolean[] modulesIsChecked = {
+                timeSw.isChecked(),
+                dateSw.isChecked(),
+                calendarSw.isChecked(),
+                weatherSw.isChecked(),
+                temp_humSw.isChecked(),
+                stocksSw.isChecked(),
+                youtubeSw.isChecked(),
+                notifSw.isChecked()
+        };
+
+        String[] modulesLocation = {
+                timeSp.getSelectedItem().toString(),
+                dateSp.getSelectedItem().toString(),
+                calendarSp.getSelectedItem().toString(),
+                weatherSp.getSelectedItem().toString(),
+                temp_humSp.getSelectedItem().toString(),
+                stocksSp.getSelectedItem().toString(),
+                youtubeSp.getSelectedItem().toString(),
+                notifSp.getSelectedItem().toString()
+        };
+
+        if (!checkAllChosen(modulesIsChecked, modulesLocation, moduleNames)) {
+            //need to choose a location
+            //show alert dialog
+            Toast.makeText(getActivity(), getString(R.string.CL_noChosenLoc_error_txt), Toast.LENGTH_SHORT).show();
+        } else {
+            if (!layoutName.equals(getString(R.string.empty_string))) {
+                System.out.println(Arrays.toString(modulesIsChecked));
+                System.out.println(Arrays.toString(modulesLocation));
+                for (int i = 0; i < modulesLocation.length; i++) {
+                    if (modulesLocation[i].equals(moduleNames[0])) {
+                        modulesLocation[i] = "null";
+                    }
+                }
+                System.out.println("NAME: " + layoutName);
+                System.out.println("MOD NAMES:  " + Arrays.toString(modNamesFromLeft));
+                System.out.println("MOD LOC: " + Arrays.toString(modulesLocation));
+                dbNode.addLayout(layoutName, modulesIsChecked, modNamesFromLeft, modulesLocation);
+                Fragment home = new HomeFragment();
+                FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+                transaction.replace(R.id.nav_host_fragment, home);
+                transaction.addToBackStack(null);
+                transaction.commit();
+            } else {
+                Toast.makeText(getActivity(), getString(R.string.CL_enterName_txt), Toast.LENGTH_SHORT).show();
+            }
         }
     }
 
-    public void replaceFragment(Fragment someFragment) {
-        FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
-        transaction.replace(R.id.nav_host_fragment, someFragment);
-        transaction.addToBackStack(null);
-        transaction.commit();
+    private boolean checkAllChosen(boolean[] checkedMods, String[] modsLoc, String[] modNames) {
+        for (int i = 0; i < 8; i++) {
+            if (checkedMods[i] && modsLoc[i].equals(modNames[0])) {
+                //havent chosen location for this module
+                return false;
+            }
+
+        }
+        return true;
+    }
+
+    private void handleSwitch(SwitchCompat v, Spinner sp, int position) {
+        //time
+        sp.setEnabled(v.isChecked());
+        if (!v.isChecked()) {
+            //reset spinner
+            sp.setSelection(0);
+        } else {
+            modNamesFromLeft[position] = v.getText().toString();
+        }
     }
 }
