@@ -138,5 +138,5 @@
     <string name="CL_noChosenLoc_error_txt">Select location for all chosen modules</string>
     <string name="CL_enterName_txt">Please enter a name</string>
     <string name="empty_string" />
-    <string name="layoutbuttontxt">layoutbuttontxt</string>
+    <string name="layoutbuttontxt">Create Layout</string>
 </resources>
