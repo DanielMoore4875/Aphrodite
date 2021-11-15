@@ -134,7 +134,7 @@
     <string name="LED_CustomizeLED_Text">Customize LED</string>
     <string name="VC_VoiceLED_Text">Voice and LED</string>
     <string name="AFS_ReviewButton_Text">Review</string>
-    <string name="AFR_EditText_review">Please Give Your Review:</string>
+    <string name="AFR_EditText_review">Tap here to write your Review here!</string>
     <string name="CL_noChosenLoc_error_txt">Select location for all chosen modules</string>
     <string name="CL_enterName_txt">Please enter a name</string>
     <string name="empty_string" />
