@@ -157,7 +157,7 @@ public class CreateLayoutFragment extends Fragment {
             //show alert dialog
             Toast.makeText(getActivity(), getString(R.string.CL_noChosenLoc_error_txt), Toast.LENGTH_SHORT).show();
         } else {
-            if (!layoutName.equals(getString(R.string.empty_string))) {
+            if (!layoutName.isEmpty()) {
                 System.out.println(Arrays.toString(modulesIsChecked));
                 System.out.println(Arrays.toString(modulesLocation));
                 for (int i = 0; i < modulesLocation.length; i++) {

@@ -85,9 +85,8 @@
     <string name="Login_userCreated_txt">User created</string>
     <string name="Login_welcomeName_txt">\"Welcome \"</string>
     <string name="Login_userError_txt">ERROR: user not created</string>
-    <string name="AFR_TextView_title">Review</string>
+    <string name="AFR_TextView_title">Revoir</string>
     <string name="AFR_TextView_review">Optional Please Give Your Response For The App:</string>
-    <string name="AFR_Button_submit">Submit</string>
     <string name="savedmodulesnack">Saved Module Layout</string>
     <string name="reviewsnack">Thank You For Reviewing!</string>
     <string name="CLF_time">Time</string>
@@ -98,6 +97,12 @@
     <string name="CLL_snackbar_error_txt">Enter a layout name</string>
     <string name="AFR_EditText_review">Please Give Your Review:</string>
     <string name="CL_noChosenLoc_error_txt">Select location for all chosen modules</string>
-    <string name="empty_string" />
+    <string name="LED_CustomizeLED_Text">Personnaliser LED</string>
+    <string name="VC_VoiceLED_Text">Voix et LED</string>
+    <string name="AFS_ReviewButton_Text">Revoir</string>
+    <string name="VC_mic_muted">Le micro est coupé</string>
+    <string name="VC_mic_unmuted">Le micro n\'est pas coupé</string>
+    <string name="layoutbuttontxt">Créer une mise en page</string>
+    <string name="CL_enterName_txt">Veuillez saisir un nom</string>
 
 </resources>

@@ -46,20 +46,27 @@ public class LEDColourFragment extends Fragment {
         Slider green = view.findViewById(R.id.LED_Green_Slider);
         Slider blue = view.findViewById(R.id.LED_Blue_Slider);
 
+        /*
+            Principle: Keep It Simple and Stupid
+                Each slider updates the colour value in real time and has a separate listener to
+                clearly see where the data is being saved. The button then calls a method that
+                handles the saving of the data in the database.
+         */
+
         red.addOnChangeListener(((slider, value, fromUser) -> {
             int redI = (int) value;
-            redTxt.setText("R: " + redI);
+            redTxt.setText(getString(R.string.LED_R) + redI);
         }));
 
         green.addOnChangeListener((slider, value, fromUser) -> {
             int greenI = (int) value;
-            greenTxt.setText("G: " + greenI);
+            greenTxt.setText(getString(R.string.LED_G) + greenI);
 
         });
 
         blue.addOnChangeListener((slider, value, fromUser) -> {
             int blueI = (int) value;
-            blueTxt.setText("B: " + blueI);
+            blueTxt.setText(getString(R.string.LED_B) + blueI);
 
         });
 

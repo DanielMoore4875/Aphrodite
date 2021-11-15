@@ -4,11 +4,11 @@
 <!--Ryan Black n01305403 Section B-->
 <!--Alyssa Gomez n01042777 Section B-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/lighter_oak"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -23,7 +23,9 @@
             android:layout_height="wrap_content"
             android:padding="8dp"
             android:hint="Layout Title"
-            android:layout_gravity="center" />
+            android:layout_gravity="center"
+            android:importantForAutofill="no"
+            android:inputType="text"/>
 
 
         <EditText
