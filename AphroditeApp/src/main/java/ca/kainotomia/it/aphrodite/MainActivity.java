@@ -71,6 +71,11 @@ public class MainActivity extends AppCompatActivity {
         areYouSureExit.show();
     }
 
+    /*
+    Pattern: Builder
+        Using the Alert Dialog Builder to for the back button press
+     */
+
     private AlertDialog AskExit() {
         return new AlertDialog.Builder(this)
                 .setTitle(R.string.MA_AlertDialogExitApp_title)

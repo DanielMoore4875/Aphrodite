@@ -103,6 +103,11 @@ public class CreateLayoutFragment extends Fragment {
         youtubeSp.setEnabled(false);
         notifSp.setEnabled(false);
 
+        /*
+            Pattern: Adapter
+                Using this array adapter to store strings to be used in the dropdown without changing the code
+         */
+
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity().getBaseContext(), R.array.Layout_Values, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
