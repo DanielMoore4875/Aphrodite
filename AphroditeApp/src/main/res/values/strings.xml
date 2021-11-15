@@ -132,4 +132,7 @@
     <string name="LED_G" translatable="false">G:\ </string>
     <string name="LED_B" translatable="false">B:\ </string>
     <string name="alphabet" translatable="false">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
+    <string name="kainotomia_email">kainotomia.aphrodite@gmail.com</string>
+    <string name="Home_def_morn">default morning layout loaded</string>
+    <string name="Home_def_stocks">default stocks layout loaded</string>
 </resources>

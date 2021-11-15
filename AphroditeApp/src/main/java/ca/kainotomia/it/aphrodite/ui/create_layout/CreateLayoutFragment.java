@@ -165,10 +165,12 @@ public class CreateLayoutFragment extends Fragment {
                         modulesLocation[i] = "null";
                     }
                 }
-                System.out.println("NAME: " + layoutName);
-                System.out.println("MOD NAMES:  " + Arrays.toString(modNamesFromLeft));
-                System.out.println("MOD LOC: " + Arrays.toString(modulesLocation));
+//                System.out.println("NAME: " + layoutName);
+//                System.out.println("MOD NAMES:  " + Arrays.toString(modNamesFromLeft));
+//                System.out.println("MOD LOC: " + Arrays.toString(modulesLocation));
                 dbNode.addLayout(layoutName, modulesIsChecked, modNamesFromLeft, modulesLocation);
+                //cant be put in strings.xml
+                Toast.makeText(getActivity(), "Layout created: " + layoutName + "\nFor: " + dbNode.getCurrentUserName(), Toast.LENGTH_SHORT).show();
                 Fragment home = new HomeFragment();
                 FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
                 transaction.replace(R.id.nav_host_fragment, home);

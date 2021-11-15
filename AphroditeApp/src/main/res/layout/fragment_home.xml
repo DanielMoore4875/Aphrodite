@@ -60,9 +60,6 @@
         android:id="@+id/H_AddButton_button"
         android:layout_width="140dp"
         android:layout_height="140dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginBottom="204dp"
         android:backgroundTint="@color/peach"
         android:text="@string/H_AddButton_text"
         android:textColor="@color/lighter_oak"
@@ -72,10 +69,10 @@
         app:iconTint="@color/lighter_oak"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/H_StockButton_button"
+        app:layout_constraintHorizontal_bias="0.184"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/H_MorningButton_button"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="0.061"
         app:rippleColor="@color/lighter_oak" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
