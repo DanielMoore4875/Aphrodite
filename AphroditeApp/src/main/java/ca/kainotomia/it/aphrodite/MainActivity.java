@@ -53,8 +53,8 @@ public class MainActivity extends AppCompatActivity {
 //        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
-        // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
+        // Passing each menu ID as a set of Ids because each
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.navigation_home, R.id.navigation_layout, R.id.navigation_account, R.id.navigation_voice)
                 .build();
