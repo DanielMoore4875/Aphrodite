@@ -10,6 +10,8 @@
         <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.1" />
         <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
         <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.225" />
+        <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/drawable/ic_voice_icon.xml" value="0.284375" />
+        <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/drawable/layout_btn.xml" value="0.284375" />
         <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/drawable/logout.xml" value="0.2375" />
         <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/drawable/manage.xml" value="0.18333333333333332" />
         <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/drawable/profile.xml" value="0.3255208333333333" />
@@ -33,6 +35,9 @@
         <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/layout/fragment_dashboard.xml" value="0.20833333333333334" />
         <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/layout/fragment_home.xml" value="0.25" />
         <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/layout/fragment_layouts.xml" value="0.24954710144927536" />
+        <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/layout/fragment_layouts_grid.xml" value="0.21" />
+        <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/layout/fragment_layouts_recyclerview_item.xml" value="0.371875" />
+        <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/layout/fragment_layouts_recylerview_item.xml" value="0.2682291666666667" />
         <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/layout/fragment_notifications.xml" value="0.20833333333333334" />
         <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/layout/fragment_voice.xml" value="0.24954710144927536" />
         <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/layout/list_item.xml" value="0.22135416666666666" />
@@ -52,7 +57,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_X" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
