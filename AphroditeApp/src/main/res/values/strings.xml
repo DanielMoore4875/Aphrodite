@@ -23,8 +23,7 @@
     <string name="AF_TextView_version">Version Number</string>
     <string name="HO_HomePage_title" translatable="false">HOME</string>
     <string name="AFA_TextView_aboutustext">
-        With our project Aphrodite, some goals include creating a smart mirror display capable of being controlled from an Android app, the ability to stream a video to the mirror, and the ability to have multiple accounts and profiles that are easy to switch between. As for the final vision, we want Aphrodite to be a simple display that is capable of displaying the temperature and humidity of the current room, weather, a personalized message and other dashboard modules that the user will be able to choose from. It should also be able to respond to voice commands and will be able to detect the proximity of a person and act accordingly.
-
+        The Aphrodite app controls the Aphrodite smart mirror display. The layouts contain modules that can show different information in many locations around the mirror. Some of these include, time, date, stocks and sensor data read from the temperature-humidity module. In the future we hope to add video streaming as a module as well. Once the user is logged in, the layouts are saved to their account and can be accessed from the app at any time. Aphrodite also has a voice command feature with 7 preset actions that the user can customize the sound for.
     </string>
     <string name="AFA_TextView_title">ABOUT US</string>
     <string name="AFS_TextView_Number">Call Us: 123–456–7890</string>
@@ -123,7 +122,7 @@
     <string name="LED_CustomizeLED_Text">Customize LED</string>
     <string name="VC_VoiceLED_Text">Voice and LED</string>
     <string name="AFS_ReviewButton_Text">Review</string>
-    <string name="AFR_EditText_review">Please Give Your Review:</string>
+    <string name="AFR_EditText_review">Tap here to write your Review here!</string>
     <string name="CL_noChosenLoc_error_txt">Select location for all chosen modules</string>
     <string name="CL_enterName_txt">Please enter a name</string>
     <string name="layoutbuttontxt">Create Layout</string>
@@ -133,6 +132,7 @@
     <string name="LED_G" translatable="false">G:\ </string>
     <string name="LED_B" translatable="false">B:\ </string>
     <string name="alphabet" translatable="false">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="kainotomia_email">kainotomia.aphrodite@gmail.com</string>
+    <string name="Home_def_morn">default morning layout loaded</string>
+    <string name="Home_def_stocks">default stocks layout loaded</string>
 </resources>

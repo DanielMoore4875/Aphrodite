@@ -101,6 +101,11 @@ public class CreateLayoutFragment extends Fragment {
         youtubeSp.setEnabled(false);
         notifSp.setEnabled(false);
 
+        /*
+            Pattern: Adapter
+                Using this array adapter to store strings to be used in the dropdown without changing the code
+         */
+
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity().getBaseContext(), R.array.Layout_Values, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
@@ -121,6 +126,7 @@ public class CreateLayoutFragment extends Fragment {
 
         return root;
     }
+
 
     private void handleSaveBtn() {
         UpdateDBNode dbNode = new UpdateDBNode("layouts");
@@ -163,10 +169,12 @@ public class CreateLayoutFragment extends Fragment {
                         modulesLocation[i] = "null";
                     }
                 }
-                System.out.println("NAME: " + layoutName);
-                System.out.println("MOD NAMES:  " + Arrays.toString(modNamesFromLeft));
-                System.out.println("MOD LOC: " + Arrays.toString(modulesLocation));
+//                System.out.println("NAME: " + layoutName);
+//                System.out.println("MOD NAMES:  " + Arrays.toString(modNamesFromLeft));
+//                System.out.println("MOD LOC: " + Arrays.toString(modulesLocation));
                 dbNode.addLayout(layoutName, modulesIsChecked, modNamesFromLeft, modulesLocation);
+                //cant be put in strings.xml
+                Toast.makeText(getActivity(), "Layout created: " + layoutName + "\nFor: " + dbNode.getCurrentUserName(), Toast.LENGTH_SHORT).show();
                 Fragment home = new HomeFragment();
                 FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
                 transaction.replace(R.id.nav_host_fragment, home);

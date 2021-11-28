@@ -1,10 +1,22 @@
 package ca.kainotomia.it.aphrodite;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Objects;
 
 public class UpdateDBNode {
@@ -131,6 +143,57 @@ public class UpdateDBNode {
             return false;
         }
     }
+//    ArrayList<String> userLayoutNamesIN = new ArrayList<>();
+//    public FirebaseRecyclerAdapter getCurrentUserLayouts(FirebaseRecyclerAdapter adapter, RecyclerView recyclerView) {
+//
+//        if (Objects.requireNonNull(getDatabaseReference().getKey()).equals("layouts")) {
+//
+//            //Call interface
+//            getLayoutData(new LayoutsCallback() {
+//                @Override
+//                public void onCallback(ArrayList<String> layoutNamesList) {
+//                    userLayoutNamesIN = new ArrayList<>(layoutNamesList);
+////                    Collections.copy(userLayoutNamesIN,layoutNamesList);
+//                }
+//            });
+//
+//            System.out.println("DB NODE: " + userLayoutNamesIN);
+//
+////            return userLayoutNamesIN;
+//
+//        } else {
+//            System.out.println("Incorrect Data Node");
+//            return null;
+//
+//        }
+//        return null; // must return the adapter
+//    }
+
+//    //only called when layouts is the database reference
+//    private void getLayoutData(LayoutsCallback myCallBack) {
+//        getDatabaseReference().child(getCurrentUid()).addListenerForSingleValueEvent(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot snapshot) {
+//                ArrayList<String> userLayoutNames = new ArrayList<>();
+//                for (DataSnapshot child : snapshot.getChildren()) {
+//                    System.out.println("KEY: " + child.getKey());
+//                    userLayoutNames.add(child.getKey());
+//                    System.out.println("IN DATA UPDATE: " + userLayoutNames);
+//                    myCallBack.onCallback(userLayoutNames);
+//                }
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError error) {
+//
+//            }
+//        });
+//    }
+
+//    //for getting data from on data change
+//    private interface LayoutsCallback {
+//        void onCallback(ArrayList<String> layoutNamesList);
+//    }
 
     public String getCurrentUid() {
         return getFirebaseUser().getUid();

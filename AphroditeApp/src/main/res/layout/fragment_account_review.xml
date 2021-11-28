@@ -85,19 +85,22 @@
     <EditText
         android:id="@+id/AFR_EditText_input"
         android:layout_width="336dp"
-        android:layout_height="48dp"
-        android:gravity="center"
+        android:layout_height="100dp"
         android:layout_centerInParent="true"
-        android:background="@color/light_ocean"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/roundedcorner_button"
+        android:backgroundTint="@color/peach"
+        android:gravity="center"
         android:hint="@string/AFR_EditText_review"
         android:padding="15dp"
+        android:textColor="@color/dark_ocean"
         android:textColorHint="@color/dark_ocean"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.516" />
+        app:layout_constraintTop_toBottomOf="@+id/AFR_RatingBar_ratebar"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
