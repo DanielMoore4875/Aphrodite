@@ -13,18 +13,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EdgeEffect;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
-
-import com.google.android.material.snackbar.Snackbar;
 
 import java.util.Arrays;
 
 import ca.kainotomia.it.aphrodite.R;
 import ca.kainotomia.it.aphrodite.UpdateDBNode;
 import ca.kainotomia.it.aphrodite.ui.home.HomeFragment;
+import ca.kainotomia.it.aphrodite.ui.layouts.LayoutFragment;
 
 public class CreateLayoutFragment extends Fragment {
     SwitchCompat timeSw;
@@ -117,6 +115,7 @@ public class CreateLayoutFragment extends Fragment {
 
         saveLayout = root.findViewById(R.id.CLP_SaveButton);
         saveLayout.setOnClickListener(v -> handleSaveBtn());
+
 
         modNamesFromLeft = new String[8];
 

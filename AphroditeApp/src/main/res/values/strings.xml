@@ -133,4 +133,6 @@
     <string name="LED_G" translatable="false">G:\ </string>
     <string name="LED_B" translatable="false">B:\ </string>
     <string name="alphabet" translatable="false">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
