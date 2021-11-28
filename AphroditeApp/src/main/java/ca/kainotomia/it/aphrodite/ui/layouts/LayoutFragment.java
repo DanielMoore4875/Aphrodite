@@ -90,6 +90,7 @@ public class LayoutFragment extends Fragment {
 
             @Override
             protected void onBindViewHolder(@NonNull ViewHolder holder, int position, @NonNull Model model) {
+
                 holder.getBtn().setText(model.getTitle());
 
                 holder.getBtn().setOnClickListener(v -> {

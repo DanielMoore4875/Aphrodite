@@ -3,15 +3,9 @@ package ca.kainotomia.it.aphrodite.ui.layouts;
 import android.view.View;
 import android.widget.Button;
 import android.widget.GridLayout;
-import android.widget.GridView;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
-import org.w3c.dom.Text;
 
 import ca.kainotomia.it.aphrodite.R;
 
@@ -20,7 +14,7 @@ public class ViewHolder extends RecyclerView.ViewHolder {
 //    private TextView title;
 //    private ImageView img;
     private Button btn;
-private GridLayout test;
+private GridLayout gridLayout;
 
 //    public LinearLayout root;
 //    public TextView txtTitle;
@@ -32,7 +26,7 @@ private GridLayout test;
 //        this.title = itemView.findViewById(R.id.FLRVI_textView);
 //        this.img = itemView.findViewById(R.id.FLRVI_imageView);
         this.btn = itemView.findViewById(R.id.FLRVI_btn);
-        this.test = itemView.findViewById(R.id.temp_GRIDLAY);
+        this.gridLayout = itemView.findViewById(R.id.temp_GRIDLAY);
 
 //        root = itemView.findViewById(R.id.root);
 //        txtTitle = itemView.findViewById(R.id.list_title);
@@ -49,8 +43,8 @@ private GridLayout test;
 //    }
 
 
-    public GridLayout getTest() {
-        return test;
+    public GridLayout getGridLayout() {
+        return gridLayout;
     }
 
     public Button getBtn() {
