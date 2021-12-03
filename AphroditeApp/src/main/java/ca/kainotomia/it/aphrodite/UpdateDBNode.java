@@ -5,6 +5,8 @@ import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.ChildEventListener;
@@ -256,11 +258,21 @@ public class UpdateDBNode {
     // Add a voice command title and description
     public void addVoiceCommand(String title, String desc) {
         if (Objects.requireNonNull(getDatabaseReference().getKey()).equals("user_voice_commands")) {
-            getDatabaseReference()
-                    .child(getCurrentUid())
-                    .child(title)
-                    .setValue(desc);
-
+            getDatabaseReference().child(getCurrentUid()).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<DataSnapshot> task) {
+                    if (task.isSuccessful()) {
+                        int numOfCommands;
+                        numOfCommands = (int) task.getResult().getChildrenCount();
+                        if (title != null && desc != null && numOfCommands < 3) {
+                            getDatabaseReference()
+                                    .child(getCurrentUid())
+                                    .child(title)
+                                    .setValue(desc);
+                        }
+                    }
+                }
+            });
         }
     }
 
@@ -273,8 +285,6 @@ public class UpdateDBNode {
                     .removeValue();
         }
     }
-
-
 
 
 }

@@ -24,6 +24,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentContainerView;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -50,6 +51,7 @@ public class VoiceFragment extends Fragment {
     private FirebaseRecyclerAdapter<VoiceModel, VoiceHolder> voiceFBRA;
     private FirebaseRecyclerAdapter<VoiceModel, VoiceHolder> voiceUserFBRA;
     private FragmentContainerView newCmdFragment;
+    private int numUserCommands;
 
 
 
@@ -69,7 +71,7 @@ public class VoiceFragment extends Fragment {
         networkInfo = connectivityManager.getActiveNetworkInfo();
 
         voiceDefRV = root.findViewById(R.id.voice_defRecyclerView);
-        voiceDefRV.setLayoutManager(new LinearLayoutManager(root.getContext()));
+        voiceDefRV.setLayoutManager(new GridLayoutManager(root.getContext(),2));
         voiceDefRV.setHasFixedSize(false);
 
         voiceUserRV = root.findViewById(R.id.voice_userRecyclerView);
@@ -131,7 +133,7 @@ public class VoiceFragment extends Fragment {
                     @NonNull
                     @Override
                     public VoiceModel parseSnapshot(@NonNull DataSnapshot snapshot) {
-                        System.out.println(snapshot.getKey() + " " +  snapshot.getValue().toString());
+                        numUserCommands++;
                         return new VoiceModel(snapshot.getKey(), snapshot.getValue().toString());
                     }
                 })
@@ -169,6 +171,7 @@ public class VoiceFragment extends Fragment {
 
         voiceFBRA.startListening();
         voiceUserFBRA.startListening();
+//        voiceUserFBRA.getItemCount();
 
         muteMic = view.findViewById(R.id.VC_muteMic_btnID);
         newVoiceCommand = view.findViewById(R.id.voice_fab);
@@ -198,7 +201,7 @@ public class VoiceFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 //TODO user can only create 3 commands, check that 3 have been created, if 3 no more
-
+                System.out.println(voiceUserFBRA.getItemCount());
                 VoiceNewCmd voiceNewCmd = new VoiceNewCmd();
                 FragmentTransaction fragmentTransaction = getChildFragmentManager().beginTransaction();
                 fragmentTransaction.add(R.id.voice_nestedFragment, voiceNewCmd).commit();
@@ -222,4 +225,7 @@ public class VoiceFragment extends Fragment {
 
     }
 
+    public int getNumUserCommands() {
+        return numUserCommands;
+    }
 }

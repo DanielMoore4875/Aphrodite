@@ -28,9 +28,12 @@ public class VoiceNewCmd extends Fragment {
         desc = view.findViewById(R.id.voice_newCmdDesc);
         submit = view.findViewById(R.id.voice_newCmdBtn);
 
+
+
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 String titleTxt = title.getText().toString();
                 String descTxt = desc.getText().toString();
                 UpdateDBNode dbNode = new UpdateDBNode("user_voice_commands");
