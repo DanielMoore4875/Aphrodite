@@ -27,6 +27,7 @@
         <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/layout/activity_main.xml" value="0.20833333333333334" />
         <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/layout/activity_splash_screen.xml" value="0.20833333333333334" />
         <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/layout/create_layout_page_fragment.xml" value="0.24728260869565216" />
+        <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/layout/custom_action_bar.xml" value="0.23324275362318841" />
         <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/layout/fragment_account.xml" value="0.24954710144927536" />
         <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/layout/fragment_account_about.xml" value="0.33" />
         <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/layout/fragment_account_profile.xml" value="0.371875" />
@@ -41,7 +42,9 @@
         <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/layout/fragment_notifications.xml" value="0.20833333333333334" />
         <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/layout/fragment_voice.xml" value="0.24954710144927536" />
         <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/layout/list_item.xml" value="0.22135416666666666" />
+        <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/layout/voice_fab_btn.xml" value="0.371875" />
         <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/layout/voice_fragment.xml" value="0.25" />
+        <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/layout/voice_no_connection.xml" value="0.371875" />
         <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/menu/bottom_nav_menu.xml" value="0.22395833333333334" />
         <entry key="..\:/AndroidStudioProjects/Aphrodite/AphroditeApp/src/main/res/mipmap-anydpi-v26/aphrodite_logo.xml" value="0.1" />
         <entry key="..\:/CollegeHomework/Year3,Semester1/SoftwareProject/Aphrodite/AphroditeApp/src/main/res/drawable/humidityandtemperature.xml" value="0.22135416666666666" />

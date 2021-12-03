@@ -19,6 +19,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -33,6 +34,7 @@ import java.util.ArrayList;
 
 import ca.kainotomia.it.aphrodite.R;
 import ca.kainotomia.it.aphrodite.UpdateDBNode;
+import ca.kainotomia.it.aphrodite.ui.create_layout.CreateLayoutFragment;
 
 public class LayoutFragment extends Fragment {
 
@@ -78,7 +80,7 @@ public class LayoutFragment extends Fragment {
             @Override
             public int getItemViewType(int position) {
 //                return super.getItemViewType(position);
-                return R.layout.fragment_layouts_recyclerview_item; //TODO maybe change viewtpe in oncreateviewhodler
+                return R.layout.fragment_layouts_recyclerview_item;
             }
 
             @NonNull
@@ -94,12 +96,25 @@ public class LayoutFragment extends Fragment {
                 holder.getBtn().setText(model.getTitle());
 
                 holder.getBtn().setOnClickListener(v -> {
-                    Toast.makeText(getActivity(),"HELLOOOO", Toast.LENGTH_SHORT).show();
-                    //TODO Save position and title of button to refence it again when the create/edit layouts page is created
+                    //Send the user to the edit layouts page
+                    String btnName = holder.getBtn().getText().toString();
+                    System.out.println(btnName);
+                    Fragment createLayoutFragment = new CreateLayoutFragment();
+                    Bundle layoutNameBundle = new Bundle();
+                    layoutNameBundle.putString("layoutName",btnName);
+                    createLayoutFragment.setArguments(layoutNameBundle);
+
+
+//                    FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+//                    transaction.replace(R.id.nav_host_fragment, createLayoutFragment);
+//                    transaction.addToBackStack(null);
+//                    transaction.commit();
+                    Toast.makeText(getActivity(), btnName, Toast.LENGTH_SHORT).show();
+                    //TODO Save position and title of button to reference it again when the create/edit layouts page is created
                 });
             }
 
-            //TODO If user is disconencted rom netowrkm, show notificaiotn that list will not be populated correctly
+            //TODO If user is disconnected from network, show notification that list will not be populated correctly
             //TODO also store the current layout offline somehow
 
 
@@ -121,5 +136,9 @@ public class LayoutFragment extends Fragment {
     public void onDestroy() {
         super.onDestroy();
         firebaseRecyclerAdapter.stopListening();
+    }
+
+    public void replaceFragment(Fragment someFragment) {
+
     }
 }

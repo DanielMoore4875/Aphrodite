@@ -71,17 +71,17 @@
     <string name="AFP_Edit_Text_name">Enter A Name</string>
     <string name="AFP_TextView_title">Create A Profile</string>
     <string name="AFP_Button_submit">Create Profile</string>
-    <string name="VC_name_cmd1_txt">Command #1</string>
-    <string name="VC_name_cmd2_txt">Command #2</string>
-    <string name="VC_name_cmd3_txt">Command #3</string>
-    <string name="VC_name_cmd4_txt">Command #4</string>
-    <string name="VC_name_cmd5_txt">Command #5</string>
-    <string name="VC_name_cmd6_txt">Command #6</string>
-    <string name="VC_name_cmd7_txt">Command #7</string>
-    <string name="VC_desc_cmd1_txt">Cmd 1 Desc placeholder</string>
-    <string name="VC_desc_cmd2_txt">Cmd 2 Desc placeholder</string>
-    <string name="VC_desc_cmd3_txt">Cmd 3 Desc placeholder</string>
-    <string name="VC_desc_cmd4_txt">Cmd 4 Desc placeholder</string>
+    <string name="VC_name_cmd1_txt">Mirror ON</string>
+    <string name="VC_name_cmd2_txt">Mirror OFF</string>
+    <string name="VC_name_cmd3_txt">LED ON</string>
+    <string name="VC_name_cmd4_txt">LED OFF</string>
+    <string name="VC_name_cmd5_txt">Cmd #5</string>
+    <string name="VC_name_cmd6_txt">Cmd #6</string>
+    <string name="VC_name_cmd7_txt">Cmd #7</string>
+    <string name="VC_desc_cmd1_txt">Turn the mirror on</string>
+    <string name="VC_desc_cmd2_txt">Put the mirror to sleep</string>
+    <string name="VC_desc_cmd3_txt">Turn the LEDS on (last colour you set)</string>
+    <string name="VC_desc_cmd4_txt">Turn the LEDS off</string>
     <string name="VC_desc_cmd5_txt">Cmd 5 Desc placeholder</string>
     <string name="VC_desc_cmd6_txt">Cmd 6 Desc placeholder</string>
     <string name="VC_desc_cmd7_txt">Cmd 7 Desc placeholder</string>
@@ -132,7 +132,10 @@
     <string name="LED_G" translatable="false">G:\ </string>
     <string name="LED_B" translatable="false">B:\ </string>
     <string name="alphabet" translatable="false">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
-    <string name="kainotomia_email">kainotomia.aphrodite@gmail.com</string>
+    <string name="kainotomia_email" translatable="false">kainotomia.aphrodite@gmail.com</string>
     <string name="Home_def_morn">default morning layout loaded</string>
     <string name="Home_def_stocks">default stocks layout loaded</string>
+    <string name="voice_noConnection">CONNECTION NEEDED, NO CONNECTION</string>
+    <string name="voice_fab_desc">New Voice Command</string>
+    <string name="voice_new_command">New Command</string>
 </resources>

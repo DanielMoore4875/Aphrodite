@@ -81,7 +81,6 @@ public class LoginActivity extends AppCompatActivity {
 
 
                 if (usersNode.addUser(user.getUid(), user.getDisplayName(), user.getEmail())) {
-                    Toast.makeText(LoginActivity.this, getString(R.string.Login_userCreated_txt), Toast.LENGTH_SHORT).show();
                     Toast.makeText(LoginActivity.this, getString(R.string.Login_welcomeName_txt) + user.getDisplayName(), Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(LoginActivity.this, getString(R.string.Login_userError_txt), Toast.LENGTH_SHORT).show();
@@ -96,6 +95,7 @@ public class LoginActivity extends AppCompatActivity {
                         "\nPhoto URL: " + user.getPhotoUrl());
                 handler.postDelayed(() -> {
                     //Finished login, go to MainActivity
+
                     startActivity(new Intent(LoginActivity.this, MainActivity.class));
                     finish();
                 }, 500);
