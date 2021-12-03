@@ -132,10 +132,17 @@
     <string name="LED_G" translatable="false">G:\ </string>
     <string name="LED_B" translatable="false">B:\ </string>
     <string name="alphabet" translatable="false">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
+    <string name="alphabetAndUnderscore" translatable="false">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_</string>
+    <string name="alphabetAndSpace" translatable="false">abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
     <string name="kainotomia_email" translatable="false">kainotomia.aphrodite@gmail.com</string>
     <string name="Home_def_morn">default morning layout loaded</string>
     <string name="Home_def_stocks">default stocks layout loaded</string>
     <string name="voice_noConnection">CONNECTION NEEDED, NO CONNECTION</string>
     <string name="voice_fab_desc">New Voice Command</string>
     <string name="voice_new_command">New Command</string>
+    <string name="voice_desc_editTxt">Description</string>
+    <string name="voice_title_editTxt">Title_here</string>
+    <string name="voice_submit_cmd_txt">Submit Command</string>
+    <string name="voice_default_commands">Default Commands</string>
+    <string name="voice_user_commands">User Commands</string>
 </resources>

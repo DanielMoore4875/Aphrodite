@@ -252,4 +252,29 @@ public class UpdateDBNode {
 
         }
     }
+
+    // Add a voice command title and description
+    public void addVoiceCommand(String title, String desc) {
+        if (Objects.requireNonNull(getDatabaseReference().getKey()).equals("user_voice_commands")) {
+            getDatabaseReference()
+                    .child(getCurrentUid())
+                    .child(title)
+                    .setValue(desc);
+
+        }
+    }
+
+    // Remove a voice command by giving the title of it
+    public void removeVoiceCommand(String title) {
+        if (Objects.requireNonNull(getDatabaseReference().getKey()).equals("user_voice_commands")) {
+            getDatabaseReference()
+                    .child(getCurrentUid())
+                    .child(title)
+                    .removeValue();
+        }
+    }
+
+
+
+
 }
