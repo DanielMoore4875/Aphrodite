@@ -145,6 +145,7 @@
             android:contentDescription="@string/voice_fab_desc"
             android:text="@string/voice_new_command"
             android:textColor="@color/lighter_oak"
+            app:backgroundTint="@color/peach"
             app:icon="@drawable/voice_add"
             app:iconTint="@color/lighter_oak"
             app:rippleColor="@color/lighter_oak" />
