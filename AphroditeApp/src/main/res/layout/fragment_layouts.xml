@@ -58,14 +58,27 @@
     <!--        android:layout_height="match_parent">-->
     <!--    </androidx.recyclerview.widget.RecyclerView>-->
 
+    <TextView
+        android:id="@+id/FL_TextView_Text_Top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="10dp"
+        android:text="Click on a Layout to edit"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/dark_ocean"
+        android:textSize="16sp"
+        android:textStyle="bold" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/FL_recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center_horizontal"
-        android:visibility="visible"/>
-<!--    app:spanCount="2"
-        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        -->
+        android:visibility="visible" />
+    <!--    app:spanCount="2"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            -->
 </LinearLayout>
