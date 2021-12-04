@@ -5,9 +5,13 @@
 
 package ca.kainotomia.it.aphrodite;
 
+import android.content.Context;
 import android.os.Bundle;
+import android.util.AttributeSet;
 import android.view.View;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,6 +31,8 @@ import ca.kainotomia.it.aphrodite.ui.home.HomeFragment;
 
 public class MainActivity extends AppCompatActivity {
 
+    BottomNavigationView bottomNavigationView;
+
     private static final String TAG = "MainActivity";
 
 
@@ -37,6 +43,12 @@ public class MainActivity extends AppCompatActivity {
         // IF THIS IS USED, user will be signed out when screen rotates
         // DO NOT USE
         // FirebaseAuth.getInstance().signOut();
+    }
+
+    @Nullable
+    @Override
+    public View onCreateView(@Nullable View parent, @NonNull String name, @NonNull Context context, @NonNull AttributeSet attrs) {
+        return super.onCreateView(parent, name, context, attrs);
     }
 
     @Override
@@ -54,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
         //for setting orientation
 //        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
-        BottomNavigationView navView = findViewById(R.id.nav_view);
+        bottomNavigationView = findViewById(R.id.nav_view);
         // menu should be considered as top level destinations.
         // Passing each menu ID as a set of Ids because each
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
@@ -62,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
-        NavigationUI.setupWithNavController(navView, navController);
+        NavigationUI.setupWithNavController(bottomNavigationView, navController);
 
     }
 

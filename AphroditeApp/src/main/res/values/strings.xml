@@ -134,7 +134,7 @@
     <string name="alphabet" translatable="false">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
     <string name="alphabetAndUnderscore" translatable="false">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_</string>
     <string name="alphabetAndSpace" translatable="false">abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
-    <string name="passwordDigits" translatable="false">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789!?</string>
+    <string name="passwordDigits" translatable="false">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!?</string>
     <string name="kainotomia_email" translatable="false">kainotomia.aphrodite@gmail.com</string>
     <string name="Home_def_morn" translatable="false">default morning layout loaded</string>
     <string name="Home_def_stocks" translatable="false">default stocks layout loaded</string>
@@ -158,6 +158,18 @@
     <string name="CP_PlainText_ConfirmPass_input">Confirm Password</string>
     <string name="CP_Button_Save_text">Save</string>
     <string name="password_updated_txt">Password Updated</string>
+    <string name="password_error_txt">Password could not be updated</string>
+    <string name="no_user_txxt">No user signed in</string>
+    <string name="field_cannot_be_empty_txt">Field cannot be empty</string>
+    <string name="FSU_register_txt">Register</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="FSU_name_hint">Name</string>
+    <string name="FSU_email_hint">Email</string>
+    <string name="FSU_pass_hint">Password</string>
+    <string name="FSI_login_txt">Login</string>
+    <string name="FSU_already_registered_txt">Already Registered?</string>
+    <string name="FSU_gotologin_txt">Go To Login</string>
 
 
 </resources>

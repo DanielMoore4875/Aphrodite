@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lighter_oak"
+    tools:context=".ui.login.SignUpFragment">
+
+    <Button
+        android:id="@+id/FSU_signup"
+        style="@style/RegisterPageItems"
+        android:layout_width="220dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="84dp"
+        android:backgroundTint="@color/oak"
+        android:text="@string/FSU_register_txt"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/FSU_passEditTXT" />
+
+    <EditText
+        android:id="@+id/FSU_nameEditTXT"
+        style="@style/RegisterPageItems"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:hint="@string/FSU_name_hint"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/FSU_logo"
+        android:autofillHints="name" />
+
+    <EditText
+        android:id="@+id/FSU_emailEditTXT"
+        style="@style/RegisterPageItems"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:hint="@string/FSU_email_hint"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/FSU_nameEditTXT"
+        android:autofillHints="emailAddress" />
+
+<!--    TODO Set password criteria-->
+    <EditText
+        android:id="@+id/FSU_passEditTXT"
+        style="@style/RegisterPageItems"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:hint="@string/FSU_pass_hint"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/FSU_emailEditTXT"
+        app:layout_constraintVertical_bias="0.0"
+        android:importantForAutofill="no" />
+
+    <ImageView
+        android:id="@+id/FSU_logo"
+        android:layout_width="173dp"
+        android:layout_height="155dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/aphrodite_logo"
+        tools:layout_editor_absoluteY="38dp"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/FSU_goToLoginTXT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:text="@string/FSU_already_registered_txt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/FSU_signup" />
+
+    <Button
+        android:id="@+id/FSU_goToLoginBtn"
+        style="@style/RegisterPageItems"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/oak"
+        android:text="@string/FSU_gotologin_txt"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/FSU_goToLoginTXT" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
