@@ -87,7 +87,7 @@
     <EditText
         android:id="@+id/AFR_EditText_input"
         android:layout_width="336dp"
-        android:layout_height="150dp"
+        android:layout_height="200dp"
         android:layout_centerInParent="true"
         android:layout_marginTop="40dp"
         android:background="@drawable/roundedcorner_button"
