@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="ca.kainotomia.it.aphrodite">
+    package="ca.kainotomia.it.aphrodite"
+    android:versionCode="1"
+    android:versionName="1.0">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
-        android:allowBackup="true"
+        android:allowBackup="false"
         android:icon="@mipmap/aphrodite_logo"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/aphrodite_logo_round"
@@ -31,10 +33,14 @@
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-        </activity> <!-- MAIN ACTIVITY (HOLDING BOTTOM NAV FRAGMENTS) -->
+        </activity>
+
+        <!-- MAIN ACTIVITY (HOLDING BOTTOM NAV FRAGMENTS) -->
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name" /> <!-- ACCOUNT ACTIVITY -->
+            android:label="@string/app_name" />
+
+        <!-- ACCOUNT ACTIVITY -->
         <activity
             android:name=".AccountActivity"
             android:configChanges="orientation|screenSize" />

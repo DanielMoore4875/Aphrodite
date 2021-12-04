@@ -4,20 +4,14 @@
 //Alyssa Gomez n01042777 Section B
 package ca.kainotomia.it.aphrodite.ui.layouts;
 
-import android.app.DownloadManager;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -25,9 +19,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
-import com.firebase.ui.database.SnapshotParser;
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.Query;
 
 import java.util.ArrayList;
@@ -39,35 +33,22 @@ import ca.kainotomia.it.aphrodite.ui.create_layout.CreateLayoutFragment;
 public class LayoutFragment extends Fragment {
 
     private RecyclerView recyclerView;
-    private FirebaseRecyclerAdapter firebaseRecyclerAdapter;
-    private ArrayList<String> layoutNames;
+    private FirebaseRecyclerAdapter<Model, ViewHolder> firebaseRecyclerAdapter;
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_layouts, container, false);
 
-//        layoutNames = new ArrayList<String>();
-
-
-        //Get the layout names that the user has created from Firebase
-//        UpdateDBNode db = new UpdateDBNode("layouts");
-        System.out.println("LAYOUT FRAG: " + layoutNames);
-
 
         //Create the recyclerview
         recyclerView = root.findViewById(R.id.FL_recyclerView);
         recyclerView.setHasFixedSize(false); //TODO CHANGE LATER
+        recyclerView.setMotionEventSplittingEnabled(false);
         recyclerView.setLayoutManager(new GridLayoutManager(root.getContext(), 2));
-        Drawable img = ResourcesCompat.getDrawable(root.getContext().getResources(), R.drawable.sun_button_oak, null); //TODO
 
+        // Get firebase layout data
         fetch();
-
-//        recyclerView.setAdapter(db.getCurrentUserLayouts(firebaseRecyclerAdapter, recyclerView));
-
-//        recyclerView.setAdapter(new UserLayoutsAdapter(layoutNames,img, layoutNames.size())); //TODO
-
-
         return root;
     }
 
@@ -79,7 +60,6 @@ public class LayoutFragment extends Fragment {
         firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Model, ViewHolder>(options) {
             @Override
             public int getItemViewType(int position) {
-//                return super.getItemViewType(position);
                 return R.layout.fragment_layouts_recyclerview_item;
             }
 
@@ -95,29 +75,49 @@ public class LayoutFragment extends Fragment {
 
                 holder.getBtn().setText(model.getTitle());
 
-                holder.getBtn().setOnClickListener(v -> {
-                    //Send the user to the edit layouts page
-                    String btnName = holder.getBtn().getText().toString();
-                    System.out.println(btnName);
-                    Fragment createLayoutFragment = new CreateLayoutFragment();
-                    Bundle layoutNameBundle = new Bundle();
-                    layoutNameBundle.putString("layoutName",btnName);
-                    createLayoutFragment.setArguments(layoutNameBundle);
+                UpdateDBNode db = new UpdateDBNode("layouts");
+                ArrayList<String> moduleNameData = new ArrayList<>();
+                ArrayList<String> moduleLocData = new ArrayList<>();
+                holder.getBtn().setOnClickListener(v -> db.getDatabaseReference().child(db.getCurrentUid()).child(model.getTitle()).addChildEventListener(new ChildEventListener() {
+                    @Override
+                    public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+                        String btnName = holder.getBtn().getText().toString();
+                        if (model.getTitle().equals(btnName)) {
+                            String modVal = (String) snapshot.getValue(true);
+                            moduleNameData.add(snapshot.getKey());
+                            moduleLocData.add(modVal);
+                        }
+                        CreateLayoutFragment createLayoutFragment = new CreateLayoutFragment();
+                        Bundle createLayoutBundle = new Bundle();
+                        createLayoutBundle.putString("layoutName", model.getTitle());
+                        createLayoutBundle.putStringArrayList("layoutNameData", moduleNameData);
+                        createLayoutBundle.putStringArrayList("layoutLocData", moduleLocData);
+                        createLayoutFragment.setArguments(createLayoutBundle);
 
+                        FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+                        transaction.replace(R.id.nav_host_fragment, createLayoutFragment);
+                        transaction.addToBackStack(null);
+                        transaction.commit();
+                        Toast.makeText(getActivity(), btnName, Toast.LENGTH_SHORT).show();
+                    }
 
-//                    FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
-//                    transaction.replace(R.id.nav_host_fragment, createLayoutFragment);
-//                    transaction.addToBackStack(null);
-//                    transaction.commit();
-                    Toast.makeText(getActivity(), btnName, Toast.LENGTH_SHORT).show();
-                    //TODO Save position and title of button to reference it again when the create/edit layouts page is created
-                });
+                    @Override
+                    public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+                    }
+
+                    @Override
+                    public void onChildRemoved(@NonNull DataSnapshot snapshot) {
+                    }
+
+                    @Override
+                    public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+                    }
+                }));
             }
-
-            //TODO If user is disconnected from network, show notification that list will not be populated correctly
-            //TODO also store the current layout offline somehow
-
-
         };
         recyclerView.setAdapter(firebaseRecyclerAdapter);
     }
@@ -126,19 +126,15 @@ public class LayoutFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
         firebaseRecyclerAdapter.startListening();
 
 
     }
 
+
     @Override
     public void onDestroy() {
         super.onDestroy();
         firebaseRecyclerAdapter.stopListening();
-    }
-
-    public void replaceFragment(Fragment someFragment) {
-
     }
 }

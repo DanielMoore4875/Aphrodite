@@ -1,5 +1,6 @@
 package ca.kainotomia.it.aphrodite.ui.create_layout;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -20,6 +21,7 @@ import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 import ca.kainotomia.it.aphrodite.R;
@@ -50,27 +52,21 @@ public class CreateLayoutFragment extends Fragment {
 
     String[] modNamesFromLeft;
 
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+    }
+
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.create_layout_page_fragment, container, false);
-
+        modNamesFromLeft = new String[8];
         layoutNameEditText = root.findViewById(R.id.CLP_LayoutName_User_Input_PT);
 
         // If this fragment is called from the LayoutFragment page, this Bundle will contain the name of
         // the layout that needs to be edited. Use this name to the get its data from Firebase
-        // TODO
-        Bundle layoutNameBun = getArguments();
-        UpdateDBNode dbNode;
-        if (layoutNameBun != null) {
-            String layoutName = layoutNameBun.getString("layoutName");
-            System.out.println(layoutName);
-            System.out.println(layoutNameBun.toString());
-            layoutNameEditText.setText(layoutName);
-//            layoutNameEditText.setEnabled(false); //user can't edit name
-            dbNode = new UpdateDBNode("layouts");
-//            dbNode.se
-        }
 
         timeSw = root.findViewById(R.id.CLP_Feature_Time);
         dateSw = root.findViewById(R.id.CLP_Feature_Date);
@@ -81,25 +77,6 @@ public class CreateLayoutFragment extends Fragment {
         youtubeSw = root.findViewById(R.id.CLP_Feature_Youtube);
         notifSw = root.findViewById(R.id.CLP_Feature_SocialMediaNot);
 
-        timeSw.setChecked(false);
-        dateSw.setChecked(false);
-        calendarSw.setChecked(false);
-        weatherSw.setChecked(false);
-        temp_humSw.setChecked(false);
-        stocksSw.setChecked(false);
-        youtubeSw.setChecked(false);
-        notifSw.setChecked(false);
-
-        timeSw.setOnClickListener(v -> handleSwitch(timeSw, timeSp, 0));
-        dateSw.setOnClickListener(v -> handleSwitch(dateSw, dateSp, 1));
-        calendarSw.setOnClickListener(v -> handleSwitch(calendarSw, calendarSp, 2));
-        weatherSw.setOnClickListener(v -> handleSwitch(weatherSw, weatherSp, 3));
-        temp_humSw.setOnClickListener(v -> handleSwitch(temp_humSw, temp_humSp, 4));
-        stocksSw.setOnClickListener(v -> handleSwitch(stocksSw, stocksSp, 5));
-        youtubeSw.setOnClickListener(v -> handleSwitch(youtubeSw, youtubeSp, 6));
-        notifSw.setOnClickListener(v -> handleSwitch(notifSw, notifSp, 7));
-
-
         timeSp = root.findViewById(R.id.CLP_spinner_time);
         dateSp = root.findViewById(R.id.CLP_spinner_date);
         calendarSp = root.findViewById(R.id.CLP_spinner_calendar);
@@ -109,20 +86,7 @@ public class CreateLayoutFragment extends Fragment {
         youtubeSp = root.findViewById(R.id.CLP_spinner_youtube);
         notifSp = root.findViewById(R.id.CLP_spinner_notif);
 
-        timeSp.setEnabled(false);
-        dateSp.setEnabled(false);
-        calendarSp.setEnabled(false);
-        weatherSp.setEnabled(false);
-        temp_humSp.setEnabled(false);
-        stocksSp.setEnabled(false);
-        youtubeSp.setEnabled(false);
-        notifSp.setEnabled(false);
-
-        /*
-            Pattern: Adapter
-                Using this array adapter to store strings to be used in the dropdown without changing the code
-         */
-
+        //Pattern: Adapter. Using this array adapter to store strings to be used in the dropdown without changing the code
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity().getBaseContext(), R.array.Layout_Values, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
@@ -135,10 +99,141 @@ public class CreateLayoutFragment extends Fragment {
         youtubeSp.setAdapter(adapter);
         notifSp.setAdapter(adapter);
 
+        timeSp.setEnabled(false);
+        dateSp.setEnabled(false);
+        calendarSp.setEnabled(false);
+        weatherSp.setEnabled(false);
+        temp_humSp.setEnabled(false);
+        stocksSp.setEnabled(false);
+        youtubeSp.setEnabled(false);
+        notifSp.setEnabled(false);
+
+        // TODO
+        Bundle layoutNameBun = getArguments();
+        if (layoutNameBun != null) {
+            String layoutName = layoutNameBun.getString("layoutName");
+            ArrayList<String> layoutNameData = layoutNameBun.getStringArrayList("layoutNameData");
+            ArrayList<String> layoutLocData = layoutNameBun.getStringArrayList("layoutLocData");
+            layoutNameEditText.setText(layoutName); // set layout name from previous screen
+
+
+            for (int i = 0; i < layoutNameData.size(); i++) {
+                switch (layoutNameData.get(i)) {
+                    case "Time":
+                        timeSw.setChecked(true);
+                        for (int j = 0; j < adapter.getCount(); j++) {
+                            if (timeSp.getItemAtPosition(j).equals(layoutLocData.get(i))) {
+                                timeSp.setSelection(j);
+                                break;
+                            }
+                        }
+                        timeSp.setEnabled(true);
+                        handleSwitch(timeSw, timeSp, 0);
+                        break;
+                    case "Date":
+                        dateSw.setChecked(true);
+                        for (int j = 0; j < adapter.getCount(); j++) {
+                            if (dateSp.getItemAtPosition(j).equals(layoutLocData.get(i))) {
+                                dateSp.setSelection(j);
+                                break;
+                            }
+                        }
+                        dateSp.setEnabled(true);
+                        handleSwitch(dateSw, dateSp, 1);
+                        break;
+                    case "Calendar":
+                        calendarSw.setChecked(true);
+                        for (int j = 0; j < adapter.getCount(); j++) {
+                            if (calendarSp.getItemAtPosition(j).equals(layoutLocData.get(i))) {
+                                calendarSp.setSelection(j);
+                                break;
+                            }
+                        }
+                        calendarSp.setEnabled(true);
+                        handleSwitch(calendarSw, calendarSp, 2);
+                        break;
+                    case "Weather":
+                        weatherSw.setChecked(true);
+                        for (int j = 0; j < adapter.getCount(); j++) {
+                            if (weatherSp.getItemAtPosition(j).equals(layoutLocData.get(i))) {
+                                weatherSp.setSelection(j);
+                                break;
+                            }
+                        }
+                        weatherSp.setEnabled(true);
+                        handleSwitch(weatherSw, weatherSp, 3);
+                        break;
+                    case "Room_Temp_Hum":
+                        temp_humSw.setChecked(true);
+                        for (int j = 0; j < adapter.getCount(); j++) {
+                            if (temp_humSp.getItemAtPosition(j).equals(layoutLocData.get(i))) {
+                                temp_humSp.setSelection(j);
+                                break;
+                            }
+                        }
+                        temp_humSp.setEnabled(true);
+                        handleSwitch(temp_humSw, temp_humSp, 4);
+                        break;
+                    case "Stocks":
+                        stocksSw.setChecked(true);
+                        for (int j = 0; j < adapter.getCount(); j++) {
+                            if (stocksSp.getItemAtPosition(j).equals(layoutLocData.get(i))) {
+                                stocksSp.setSelection(j);
+                                break;
+                            }
+                        }
+                        stocksSp.setEnabled(true);
+                        handleSwitch(stocksSw, stocksSp, 5);
+                        break;
+                    case "Youtube":
+                        youtubeSw.setChecked(true);
+                        for (int j = 0; j < adapter.getCount(); j++) {
+                            if (youtubeSp.getItemAtPosition(j).equals(layoutLocData.get(i))) {
+                                youtubeSp.setSelection(j);
+                                break;
+                            }
+                        }
+                        youtubeSp.setEnabled(true);
+                        handleSwitch(youtubeSw, youtubeSp, 6);
+                        break;
+                    case "Notifications":
+                        notifSw.setChecked(true);
+                        for (int j = 0; j < adapter.getCount(); j++) {
+                            if (notifSp.getItemAtPosition(j).equals(layoutLocData.get(i))) {
+                                notifSp.setSelection(j);
+                                break;
+                            }
+                        }
+                        notifSp.setEnabled(true);
+                        handleSwitch(notifSw, notifSp, 7);
+                        break;
+                }
+            }
+
+        }
+
+        timeSw.setOnClickListener(v -> handleSwitch(timeSw, timeSp, 0));
+        dateSw.setOnClickListener(v -> handleSwitch(dateSw, dateSp, 1));
+        calendarSw.setOnClickListener(v -> handleSwitch(calendarSw, calendarSp, 2));
+        weatherSw.setOnClickListener(v -> handleSwitch(weatherSw, weatherSp, 3));
+        temp_humSw.setOnClickListener(v -> handleSwitch(temp_humSw, temp_humSp, 4));
+        stocksSw.setOnClickListener(v -> handleSwitch(stocksSw, stocksSp, 5));
+        youtubeSw.setOnClickListener(v -> handleSwitch(youtubeSw, youtubeSp, 6));
+        notifSw.setOnClickListener(v -> handleSwitch(notifSw, notifSp, 7));
+
+        if (layoutNameBun == null) {
+            timeSp.setEnabled(false);
+            dateSp.setEnabled(false);
+            calendarSp.setEnabled(false);
+            weatherSp.setEnabled(false);
+            temp_humSp.setEnabled(false);
+            stocksSp.setEnabled(false);
+            youtubeSp.setEnabled(false);
+            notifSp.setEnabled(false);
+        }
+
         saveLayout = root.findViewById(R.id.CLP_SaveButton);
         saveLayout.setOnClickListener(v -> handleSaveBtn());
-
-        modNamesFromLeft = new String[8];
 
         return root;
     }

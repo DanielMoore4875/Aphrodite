@@ -52,15 +52,14 @@
     <string name="action_settings">" Paramètres"</string>
     <string name="CL_LayoutName_Text">Nom de la mise en page</string>
     <string name="CL_CreateLayout_Text">basculer entre les modules et choisir les emplacements</string>
-    <string name="CL_Feature_Text_Time">Temps</string>
-    <string name="CL_Feature_Text_Date">"Date "</string>
-    <string name="CL_Feature_Text_Calendar">Calendrier</string>
-    <string name="CL_Feature_Text_Weather">Temps</string>
-    <string name="CL_Feature_Text_ToDoList">Liste de choses à faire</string>
-    <string name="CL_Feature_Text_RoomT_H">" Température ambiante et bourdonnement"</string>
-    <string name="CL_Feature_Text_Stocks">" Actions"</string>
-    <string name="CL_Feature_Text_Youtube">" Youtube"</string>
-    <string name="CL_Feature_Text_SocialMedNot">" Notifications"</string>
+<!--    <string name="CL_Feature_Text_Time">Temps</string>-->
+<!--    <string name="CL_Feature_Text_Date">"Date "</string>-->
+<!--    <string name="CL_Feature_Text_Calendar">Calendrier</string>-->
+<!--    <string name="CL_Feature_Text_Weather">Temps</string>-->
+<!--    <string name="CL_Feature_Text_RoomT_H">" Température ambiante et bourdonnement"</string>-->
+<!--    <string name="CL_Feature_Text_Stocks">" Actions"</string>-->
+<!--    <string name="CL_Feature_Text_Youtube">" Youtube"</string>-->
+<!--    <string name="CL_Feature_Text_SocialMedNot">" Notifications"</string>-->
     <string name="CL_SaveButton_Text">"Sauvegarder "</string>
     <string name="SSL_ChosenLayout_Name">" Nom de la mise en page"</string>
     <string name="AFP_Edit_Text_name">Enter A Name</string>
@@ -104,5 +103,14 @@
     <string name="VC_mic_unmuted">Le micro n\'est pas coupé</string>
     <string name="layoutbuttontxt">Créer une mise en page</string>
     <string name="CL_enterName_txt">Veuillez saisir un nom</string>
+
+    <string name="voice_noConnection">CONNEXION NÉCESSAIRE, PAS DE CONNEXION</string>
+    <string name="voice_fab_desc">Nouvelle commande vocale</string>
+    <string name="voice_new_command">Nouvelle commande</string>
+    <string name="voice_desc_editTxt">La description</string>
+    <string name="voice_title_editTxt">Titre_ici</string>
+    <string name="voice_submit_cmd_txt">Soumettre la commande</string>
+    <string name="voice_default_commands">Commandes par défaut</string>
+    <string name="voice_user_commands">Commandes utilisateur (Max 3)</string>
 
 </resources>
