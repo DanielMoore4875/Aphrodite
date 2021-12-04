@@ -152,9 +152,10 @@
 
     <!--Change Password-->
     <string name="CP_TextView_changePass">Change Password</string>
-    <string name="CP_PlainText_Password_input">Name</string>
+    <string name="CP_PlainText_Password_input">Current Password</string>
     <string name="CP_PlainText_NewPass_input">New Password</string>
     <string name="CP_PlainText_ConfirmPass_input">Confirm Password</string>
+    <string name="CP_Button_Save_text">Save</string>
 
 
 </resources>
