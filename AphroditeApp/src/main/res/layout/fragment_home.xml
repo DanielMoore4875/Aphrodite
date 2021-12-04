@@ -17,19 +17,18 @@
         android:layout_width="140dp"
         android:layout_height="140dp"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="40dp"
         android:backgroundTint="@color/light_ocean"
         android:text="@string/H_MorningButton_text"
         android:textColor="@color/mid_ocean"
         app:cornerRadius="10dp"
-        app:icon="@drawable/sun_button_oak"
         app:iconGravity="textTop"
         app:iconTint="@color/mid_ocean"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/H_TextView_Text_Top"
         app:layout_constraintVertical_bias="0.0"
         app:rippleColor="@color/lighter_oak" />
 
@@ -38,13 +37,12 @@
         android:layout_width="140dp"
         android:layout_height="140dp"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="50dp"
         android:backgroundTint="@color/light_ocean"
         android:text="@string/H_StockButton_text"
         android:textColor="@color/mid_ocean"
         app:cornerRadius="10dp"
-        app:icon="@drawable/ic_baseline_trending_up_24"
         app:iconGravity="textTop"
         app:iconSize="55dp"
         app:iconTint="@color/mid_ocean"
@@ -52,8 +50,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintTop_toBottomOf="@+id/H_TextView_Text_Top"
+        app:layout_constraintVertical_bias="0.002"
         app:rippleColor="@color/lighter_oak" />
 
     <Button
@@ -74,5 +72,22 @@
         app:layout_constraintTop_toBottomOf="@+id/H_MorningButton_button"
         app:layout_constraintVertical_bias="0.061"
         app:rippleColor="@color/lighter_oak" />
+
+    <TextView
+        android:id="@+id/H_TextView_Text_Top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="@string/H_TextView_text"
+        android:textAllCaps="true"
+        android:textColor="@color/dark_ocean"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

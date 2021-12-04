@@ -6,7 +6,7 @@
     <string name="app_name">Aphrodite</string>
     <string name="title_home">Home</string>
     <string name="title_layouts">Layouts</string>
-    <string name="title_account">Account</string>
+    <string name="title_settings">Settings</string>
     <string name="MA_AlertDialogExitApp_title">Exit App</string>
     <string name="MA_AlertDialogExitApp_msg">Are you sure you want to exit?</string>
     <string name="MA_AlertDialogExitApp_yes">Yes, exit app</string>
@@ -20,21 +20,21 @@
     <string name="weather">Weather</string>
     <string name="title_voice">Voice/LED</string>
     <string name="AF_TextView_username">Username</string>
-    <string name="AF_TextView_version">Version Number</string>
+    <!--<string name="AF_TextView_version">Version Number</string>-->
     <string name="HO_HomePage_title" translatable="false">HOME</string>
     <string name="AFA_TextView_aboutustext">
         The Aphrodite app controls the Aphrodite smart mirror display. The layouts contain modules that can show different information in many locations around the mirror. Some of these include, time, date, stocks and sensor data read from the temperature-humidity module. In the future we hope to add video streaming as a module as well. Once the user is logged in, the layouts are saved to their account and can be accessed from the app at any time. Aphrodite also has a voice command feature with 7 preset actions that the user can customize the sound for.
     </string>
     <string name="AFA_TextView_title">ABOUT US</string>
     <string name="AFS_TextView_Number">Call Us: 123–456–7890</string>
-    <string name="AF_Button_settings">Settings</string>
+    <string name="AF_Button_settings">Advanced Settings</string>
     <string name="AF_Button_support">Review</string>
     <string name="AF_Button_about">About</string>
     <string name="AF_Button_logout">Log Out</string>
-    <string name="AFSS_TextView_title">Settings</string>
-    <string name="AFSS_Button_add">Add New Profile</string>
+    <string name="AFSS_TextView_title">Advanced Settings</string>
+    <!--<string name="AFSS_Button_add">Add New Profile</string>-->
     <string name="AFSS_Button_terminate">Terminate Aphrodite Account</string>
-    <string name="AFSS_Button_remove">Remove Profile</string>
+    <!--<string name="AFSS_Button_remove">Remove Profile</string>-->
     <string name="AFS_TextView_Email">Email</string>
     <string name="AFS_TextView_title">Support</string>
     <string name="H_MorningButton_text">morning</string>
@@ -93,6 +93,7 @@
     <string name="AFR_TextView_review">Optional Please Give Your Response For The App:</string>
     <string name="AFR_Button_submit" translatable="false">Submit</string>
     <string name="AF_EmailButton_text" translatable="false">Email</string>
+
     <string-array name="Layout_Values">
         <item>Choose Location</item>
         <item>top_bar</item>
@@ -121,7 +122,7 @@
     <string name="LED_CustomizeLED_Text">Customize LED</string>
     <string name="VC_VoiceLED_Text">Voice and LED</string>
     <string name="AFS_ReviewButton_Text">Review</string>
-    <string name="AFR_EditText_review">Tap here to write your Review here!</string>
+    <string name="AFR_EditText_review">Tap here to write your Review!</string>
     <string name="CL_noChosenLoc_error_txt">Select location for all chosen modules</string>
     <string name="CL_enterName_txt">Please enter a name</string>
     <string name="layoutbuttontxt">Create Layout</string>
@@ -144,4 +145,17 @@
     <string name="voice_submit_cmd_txt">Submit Command</string>
     <string name="voice_default_commands">Default Commands</string>
     <string name="voice_user_commands">User Commands (Max 3)</string>
+    <string name="AFR_TextView_text">Give us a review! Let us know how we did and how we can improve Aphrodite.</string>
+    <string name="H_TextView_text">What would be your layout today?</string>
+    <string name="AF_Button_ChangePassword_text">Change Password</string>
+    <!-- TODO: Remove or change this placeholder text -->
+
+    <!--Change Password-->
+    <string name="CP_TextView_changePass">Change Password</string>
+    <string name="CP_PlainText_Password_input">Current Password</string>
+    <string name="CP_PlainText_NewPass_input">New Password</string>
+    <string name="CP_PlainText_ConfirmPass_input">Confirm Password</string>
+    <string name="CP_Button_Save_text">Save</string>
+
+
 </resources>

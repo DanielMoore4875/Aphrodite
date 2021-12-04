@@ -43,6 +43,8 @@ public class AccountSettingsFragment extends Fragment{
             getActivity().finish();
         });
 
+
+
         return view;
     }
 

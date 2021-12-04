@@ -1,0 +1,26 @@
+//Jose Antonio Castro Teodoro n01384776 Section B
+//Daniel Moore n01354875 Section B
+//Ryan Black n01305403 Section B
+//Alyssa Gomez n01042777 Section B
+package ca.kainotomia.it.aphrodite.ui.account;
+
+import android.os.Bundle;
+
+import androidx.fragment.app.Fragment;
+
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import ca.kainotomia.it.aphrodite.R;
+
+public class SettingsChangePassFragment extends Fragment {
+
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_settings_change_pass, container, false);
+    }
+}
