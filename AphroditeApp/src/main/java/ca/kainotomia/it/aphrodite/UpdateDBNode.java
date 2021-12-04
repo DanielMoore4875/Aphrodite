@@ -1,6 +1,7 @@
 package ca.kainotomia.it.aphrodite;
 
 import android.os.Bundle;
+import android.provider.ContactsContract;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -176,18 +177,24 @@ public class UpdateDBNode {
     // Add a voice command title and description
     public void addVoiceCommand(String title, String desc) {
         if (Objects.requireNonNull(getDatabaseReference().getKey()).equals("user_voice_commands")) {
-            getDatabaseReference().child(getCurrentUid()).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
-                @Override
-                public void onComplete(@NonNull Task<DataSnapshot> task) {
-                    if (task.isSuccessful()) {
-                        int numOfCommands;
-                        numOfCommands = (int) task.getResult().getChildrenCount();
-                        if (title != null && desc != null && numOfCommands < 3) {
-                            getDatabaseReference()
-                                    .child(getCurrentUid())
-                                    .child(title)
-                                    .setValue(desc);
-                        }
+            System.out.println(title);
+            System.out.println(desc);
+            getDatabaseReference().child(getCurrentUid()).get().addOnCompleteListener(task -> {
+                if (task.isSuccessful()) {
+                    DataSnapshot data = task.getResult();
+                    int numOfCommands;
+                    numOfCommands = (int) Objects.requireNonNull(task.getResult()).getChildrenCount();
+                    if (numOfCommands < 3) {
+                        UpdateDBNode.this.getDatabaseReference()
+                                .child(UpdateDBNode.this.getCurrentUid())
+                                .child(title)
+                                .setValue(desc);
+                    } else if (Objects.requireNonNull(data).hasChild(title)) {
+                        //edit voice command that exists
+                        UpdateDBNode.this.getDatabaseReference()
+                                .child(UpdateDBNode.this.getCurrentUid())
+                                .child(title)
+                                .setValue(desc);
                     }
                 }
             });
