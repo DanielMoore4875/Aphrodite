@@ -17,48 +17,40 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
 import ca.kainotomia.it.aphrodite.R;
 import ca.kainotomia.it.aphrodite.ui.account.AccountSettingsFragment;
 import ca.kainotomia.it.aphrodite.ui.create_layout.CreateLayoutFragment;
 
-public class HomeFragment extends Fragment implements View.OnClickListener{
+public class HomeFragment extends Fragment{
 
     Button morning;
     Button stocks;
+
+    ExtendedFloatingActionButton addLayoutFAB;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
         View root = inflater.inflate(R.layout.fragment_home, container, false);
-        Button goToCreateLayout_H = (Button) root.findViewById(R.id.H_AddButton_button);
+        addLayoutFAB = root.findViewById(R.id.home_fab);
 
         morning = root.findViewById(R.id.H_MorningButton_button);
         stocks = root.findViewById(R.id.H_StockButton_button);
 
-        goToCreateLayout_H.setOnClickListener(this);
-
-        morning.setOnClickListener(v -> {
-            Toast.makeText(getActivity(), getString(R.string.Home_def_morn), Toast.LENGTH_SHORT).show();
+        addLayoutFAB.setOnClickListener(v -> {
+            CreateLayoutFragment createLayoutFragment = new CreateLayoutFragment();
+            replaceFragment(createLayoutFragment);
         });
 
-        stocks.setOnClickListener(v -> {
-            Toast.makeText(getActivity(), getString(R.string.Home_def_stocks), Toast.LENGTH_SHORT).show();
-        });
+        morning.setOnClickListener(v -> Toast.makeText(getActivity(), getString(R.string.Home_def_morn), Toast.LENGTH_SHORT).show());
+
+        stocks.setOnClickListener(v -> Toast.makeText(getActivity(), getString(R.string.Home_def_stocks), Toast.LENGTH_SHORT).show());
 
 
         return root;
-    }
-
-    public void onClick(View view) {
-        Fragment fragment = null;
-        switch (view.getId()) {
-            case R.id.H_AddButton_button:
-                fragment = new CreateLayoutFragment();
-                replaceFragment(fragment);
-                break;
-        }
     }
 
     public void replaceFragment(Fragment someFragment) {

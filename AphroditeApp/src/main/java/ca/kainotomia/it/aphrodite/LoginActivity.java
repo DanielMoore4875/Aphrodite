@@ -1,6 +1,7 @@
 package ca.kainotomia.it.aphrodite;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.AttributeSet;
 import android.view.View;
@@ -12,6 +13,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 import ca.kainotomia.it.aphrodite.ui.login.SignInFragment;
 import ca.kainotomia.it.aphrodite.ui.login.SignUpFragment;
 
@@ -20,10 +23,18 @@ public class LoginActivity extends AppCompatActivity {
     SignInFragment signInFragment;
     SignUpFragment signUpFragment;
 
+    FirebaseAuth firebaseAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        firebaseAuth = FirebaseAuth.getInstance();
+        // if user is logged in, skip this page
+        if (firebaseAuth.getCurrentUser() != null) {
+            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+            this.finish();
+        }
         signInFragment = new SignInFragment();
         signUpFragment = new SignUpFragment();
 

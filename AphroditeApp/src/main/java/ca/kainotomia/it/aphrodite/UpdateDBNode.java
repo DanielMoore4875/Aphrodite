@@ -43,29 +43,30 @@ public class UpdateDBNode {
         return databaseReference;
     }
 
-    public boolean addUser(String uid, String name, String email) {
-        if (Objects.requireNonNull(getDatabaseReference().getKey()).equals("users")) {
-            getDatabaseReference().child(uid).child("name").setValue(name);
-            getDatabaseReference().child(uid).child("email").setValue(email);
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    public boolean terminateUser() {
-        if (Objects.requireNonNull(getDatabaseReference().getKey()).equals("users")) {
-            // need to remove all things associated with the user
-            getDatabaseReference().child(getCurrentUid()).removeValue();
-            return true;
-        } else {
-            return false;
-        }
-    }
-
     public FirebaseUser getFirebaseUser() {
         return this.firebaseUser;
     }
+
+    public String getCurrentUid() {
+        return getFirebaseUser().getUid();
+    }
+
+    public String getCurrentUserName() {
+        return getFirebaseUser().getDisplayName();
+    }
+
+    // Add user is handled by Firebase Auth
+
+//    public boolean terminateUser() {
+//        if (Objects.requireNonNull(getDatabaseReference().getKey()).equals("users")) {
+//            // need to remove all things associated with the user
+//            getDatabaseReference().child(getCurrentUid()).removeValue();
+//            return true;
+//        } else {
+//            return false;
+//        }
+//    }
+
 
     /*
         Will store the uid and its children will be the modules (key) with their locations (value)
@@ -95,8 +96,6 @@ public class UpdateDBNode {
     }
 
     public boolean editLayout(String layoutName, boolean[] modIsChecked, String[] moduleName, String[] moduleLoc) {
-        printarr(moduleName);
-        printarr(moduleLoc);
         if (Objects.requireNonNull(getDatabaseReference().getKey()).equals("layouts")) {
             for (int i = 0; i < 8; i++) {
                 if (modIsChecked[i]) {
@@ -120,13 +119,13 @@ public class UpdateDBNode {
         }
     }
 
-    public void printarr(String[] arr) {
-        System.out.println("THIS ARRAY: [");
-        for (String s : arr) {
-            System.out.print(s + " ");
-        }
-        System.out.println("]");
-    }
+//    public void printarr(String[] arr) {
+//        System.out.println("THIS ARRAY: [");
+//        for (String s : arr) {
+//            System.out.print(s + " ");
+//        }
+//        System.out.println("]");
+//    }
 
     public boolean saveRating(String review, float star) {
         if (Objects.requireNonNull(getDatabaseReference().getKey()).equals("rating")) {
@@ -145,14 +144,6 @@ public class UpdateDBNode {
     }
 
 
-    public String getCurrentUid() {
-        return getFirebaseUser().getUid();
-    }
-
-    public String getCurrentUserName() {
-        return getFirebaseUser().getDisplayName();
-    }
-
     public boolean changeLEDColour(String colour) {
         if (Objects.requireNonNull(getDatabaseReference().getKey()).equals("led_colour")) {
             getDatabaseReference()
@@ -160,7 +151,6 @@ public class UpdateDBNode {
                     .setValue(colour);
             return true;
         } else {
-            System.out.println("Node Incorrect: Colour not added");
             return false;
         }
     }

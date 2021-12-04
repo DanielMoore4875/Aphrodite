@@ -170,6 +170,11 @@
     <string name="FSI_login_txt">Login</string>
     <string name="FSU_already_registered_txt">Already Registered?</string>
     <string name="FSU_gotologin_txt">Go To Login</string>
+    <string name="FSU_userExistsError">User already created</string>
+    <string name="FSU_emptyFieldsError">Fields cannot be empty</string>
+    <string name="FSU_welcome">\"Welcome \"</string>
+    <string name="FSI_fieldEmptyError">Please fill both fields</string>
+    <string name="HF_add_layout_fab">Add Layout</string>
 
 
 </resources>

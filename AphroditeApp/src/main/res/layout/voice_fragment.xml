@@ -146,9 +146,10 @@
             android:layout_margin="16dp"
             android:contentDescription="@string/voice_fab_desc"
             android:text="@string/voice_new_command"
-            android:textColor="@color/lighter_oak"
+            android:textColor="@color/dark_ocean"
             app:icon="@drawable/voice_add"
-            app:iconTint="@color/lighter_oak"
+            android:backgroundTint="@color/peach"
+            app:iconTint="@color/dark_ocean"
             app:rippleColor="@color/lighter_oak" />
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

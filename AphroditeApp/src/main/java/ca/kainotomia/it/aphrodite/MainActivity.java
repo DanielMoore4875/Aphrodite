@@ -26,16 +26,17 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.Arrays;
+import java.util.Objects;
 
 import ca.kainotomia.it.aphrodite.ui.home.HomeFragment;
 
 public class MainActivity extends AppCompatActivity {
 
+    FirebaseAuth firebaseAuthMAIN;
+
     BottomNavigationView bottomNavigationView;
 
     private static final String TAG = "MainActivity";
-
-
 
     @Override
     protected void onStop() {
@@ -59,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         //Custom Action Bar
-        this.getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        Objects.requireNonNull(this.getSupportActionBar()).setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setDisplayShowCustomEnabled(true);
         getSupportActionBar().setCustomView(R.layout.custom_action_bar);
 
