@@ -73,7 +73,7 @@ public class AccountFragment extends Fragment implements View.OnClickListener {
                 replaceFragment(fragment);
                 break;
             case R.id.AF_Button_changePass:
-                fragment = new AccountSettingsFragment();
+                fragment = new SettingsChangePassFragment();
                 replaceFragment(fragment);
                 break;
         }

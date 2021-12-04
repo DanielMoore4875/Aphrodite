@@ -93,6 +93,7 @@
     <string name="AFR_TextView_review">Optional Please Give Your Response For The App:</string>
     <string name="AFR_Button_submit" translatable="false">Submit</string>
     <string name="AF_EmailButton_text" translatable="false">Email</string>
+
     <string-array name="Layout_Values">
         <item>Choose Location</item>
         <item>top_bar</item>
@@ -147,4 +148,13 @@
     <string name="AFR_TextView_text">Give us a review! Let us know how we did and how we can improve Aphrodite.</string>
     <string name="H_TextView_text">What would be your layout today?</string>
     <string name="AF_Button_ChangePassword_text">Change Password</string>
+    <!-- TODO: Remove or change this placeholder text -->
+
+    <!--Change Password-->
+    <string name="CP_TextView_changePass">Change Password</string>
+    <string name="CP_PlainText_Password_input">Name</string>
+    <string name="CP_PlainText_NewPass_input">New Password</string>
+    <string name="CP_PlainText_ConfirmPass_input">Confirm Password</string>
+
+
 </resources>
