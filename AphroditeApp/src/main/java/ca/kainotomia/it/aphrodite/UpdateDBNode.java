@@ -1,12 +1,16 @@
 package ca.kainotomia.it.aphrodite;
 
+import android.os.Bundle;
+
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -73,7 +77,7 @@ public class UpdateDBNode {
          */
     public boolean addLayout(String layoutName, boolean[] modIsChecked, String[] moduleName, String[] moduleLoc) {
         if (Objects.requireNonNull(getDatabaseReference().getKey()).equals("layouts")) {
-            for (int i = 0; i < 7; i++) {
+            for (int i = 0; i < 8; i++) {
                 if (modIsChecked[i]) {
                     getDatabaseReference()
                             .child(getCurrentUid())
@@ -87,6 +91,40 @@ public class UpdateDBNode {
         } else {
             return false;
         }
+    }
+
+    public boolean editLayout(String layoutName, boolean[] modIsChecked, String[] moduleName, String[] moduleLoc) {
+        printarr(moduleName);
+        printarr(moduleLoc);
+        if (Objects.requireNonNull(getDatabaseReference().getKey()).equals("layouts")) {
+            for (int i = 0; i < 8; i++) {
+                if (modIsChecked[i]) {
+                    getDatabaseReference()
+                            .child(getCurrentUid())
+                            .child(layoutName)
+                            .child(moduleName[i])
+                            .setValue(moduleLoc[i]);
+                } else {
+                    //if not checked remove the value
+                    getDatabaseReference()
+                            .child(getCurrentUid())
+                            .child(layoutName)
+                            .child(moduleName[i])
+                            .removeValue();
+                }
+            }
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public void printarr(String[] arr) {
+        System.out.println("THIS ARRAY: [");
+        for (String s : arr) {
+            System.out.print(s + " ");
+        }
+        System.out.println("]");
     }
 
     public boolean saveRating(String review, float star) {

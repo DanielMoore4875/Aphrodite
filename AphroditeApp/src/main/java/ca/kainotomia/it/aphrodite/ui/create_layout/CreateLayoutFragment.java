@@ -38,6 +38,8 @@ public class CreateLayoutFragment extends Fragment {
     SwitchCompat youtubeSw;
     SwitchCompat notifSw;
 
+    Bundle layoutNameBun;
+
     Spinner timeSp;
     Spinner dateSp;
     Spinner calendarSp;
@@ -51,6 +53,7 @@ public class CreateLayoutFragment extends Fragment {
     EditText layoutNameEditText;
 
     String[] modNamesFromLeft;
+    String[] modNamesFromLeftEdit;
 
 
     @Override
@@ -63,19 +66,28 @@ public class CreateLayoutFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.create_layout_page_fragment, container, false);
         modNamesFromLeft = new String[8];
+        modNamesFromLeftEdit = new String[8];
         layoutNameEditText = root.findViewById(R.id.CLP_LayoutName_User_Input_PT);
 
         // If this fragment is called from the LayoutFragment page, this Bundle will contain the name of
         // the layout that needs to be edited. Use this name to the get its data from Firebase
 
         timeSw = root.findViewById(R.id.CLP_Feature_Time);
+        modNamesFromLeftEdit[0] = timeSw.getText().toString();
         dateSw = root.findViewById(R.id.CLP_Feature_Date);
+        modNamesFromLeftEdit[1] = dateSw.getText().toString();
         calendarSw = root.findViewById(R.id.CLP_Feature_Calendar);
+        modNamesFromLeftEdit[2] = calendarSw.getText().toString();
         weatherSw = root.findViewById(R.id.CLP_Feature_Weather);
+        modNamesFromLeftEdit[3] = weatherSw.getText().toString();
         temp_humSw = root.findViewById(R.id.CLP_Feature_RoomT_H);
+        modNamesFromLeftEdit[4] = temp_humSw.getText().toString();
         stocksSw = root.findViewById(R.id.CLP_Feature_Stocks);
+        modNamesFromLeftEdit[5] = stocksSw.getText().toString();
         youtubeSw = root.findViewById(R.id.CLP_Feature_Youtube);
+        modNamesFromLeftEdit[6] = youtubeSw.getText().toString();
         notifSw = root.findViewById(R.id.CLP_Feature_SocialMediaNot);
+        modNamesFromLeftEdit[7] = notifSw.getText().toString();
 
         timeSp = root.findViewById(R.id.CLP_spinner_time);
         dateSp = root.findViewById(R.id.CLP_spinner_date);
@@ -109,7 +121,7 @@ public class CreateLayoutFragment extends Fragment {
         notifSp.setEnabled(false);
 
         // TODO
-        Bundle layoutNameBun = getArguments();
+        layoutNameBun = getArguments();
         if (layoutNameBun != null) {
             String layoutName = layoutNameBun.getString("layoutName");
             ArrayList<String> layoutNameData = layoutNameBun.getStringArrayList("layoutNameData");
@@ -283,11 +295,20 @@ public class CreateLayoutFragment extends Fragment {
 //                System.out.println("NAME: " + layoutName);
 //                System.out.println("MOD NAMES:  " + Arrays.toString(modNamesFromLeft));
 //                System.out.println("MOD LOC: " + Arrays.toString(modulesLocation));
-                dbNode.addLayout(layoutName, modulesIsChecked, modNamesFromLeft, modulesLocation);
+                if (layoutNameBun == null) {
+                    dbNode.addLayout(layoutName, modulesIsChecked, modNamesFromLeft, modulesLocation);
+                    Toast.makeText(getActivity(), "Layout created: " + layoutName + "\nFor: " + dbNode.getCurrentUserName(), Toast.LENGTH_SHORT).show();
+                } else {
+                    dbNode.editLayout(layoutName, modulesIsChecked, modNamesFromLeftEdit, modulesLocation);
+                    Toast.makeText(getActivity(), "Layout Edited: " + layoutName + "\nFor: " + dbNode.getCurrentUserName(), Toast.LENGTH_SHORT).show();
+                }
                 //cant be put in strings.xml
-                Toast.makeText(getActivity(), "Layout created: " + layoutName + "\nFor: " + dbNode.getCurrentUserName(), Toast.LENGTH_SHORT).show();
-                Fragment home = new HomeFragment();
+
+                HomeFragment home = new HomeFragment();
                 FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+//                if(home.isAdded()) {
+//                    return;
+//                }
                 transaction.replace(R.id.nav_host_fragment, home);
                 transaction.addToBackStack(null);
                 transaction.commit();

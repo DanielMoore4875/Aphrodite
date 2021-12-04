@@ -19,10 +19,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
@@ -78,45 +81,103 @@ public class LayoutFragment extends Fragment {
                 UpdateDBNode db = new UpdateDBNode("layouts");
                 ArrayList<String> moduleNameData = new ArrayList<>();
                 ArrayList<String> moduleLocData = new ArrayList<>();
-                holder.getBtn().setOnClickListener(v -> db.getDatabaseReference().child(db.getCurrentUid()).child(model.getTitle()).addChildEventListener(new ChildEventListener() {
-                    @Override
-                    public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                        String btnName = holder.getBtn().getText().toString();
-                        if (model.getTitle().equals(btnName)) {
-                            String modVal = (String) snapshot.getValue(true);
-                            moduleNameData.add(snapshot.getKey());
-                            moduleLocData.add(modVal);
+
+                holder.getBtn().setOnClickListener(v -> {
+
+//                    db.getDatabaseReference().child(db.getCurrentUid()).child(model.getTitle()).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+//                        @Override
+//                        public void onComplete(@NonNull Task<DataSnapshot> task) {
+//                            if (task.isSuccessful()) {
+//                                DataSnapshot snapshot = task.getResult();
+//                                System.out.println(snapshot.getChildrenCount());
+////                                snapshot.getChildrenCount();
+//                            }
+//                        }
+//                    });
+
+                    db.getDatabaseReference().child(db.getCurrentUid()).child(model.getTitle()).addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            String btnName = holder.getBtn().getText().toString();
+                            System.out.println(snapshot.getChildrenCount());
+                            for (DataSnapshot dataSnapshot: snapshot.getChildren()) {
+                                String modVal = (String) dataSnapshot.getValue(true);
+                                moduleNameData.add(dataSnapshot.getKey());
+                                moduleLocData.add(modVal);
+                            }
+                            System.out.println(moduleNameData);
+                            System.out.println(moduleLocData);
+                            CreateLayoutFragment createLayoutFragment = new CreateLayoutFragment();
+                            Bundle createLayoutBundle = new Bundle();
+                            createLayoutBundle.putString("layoutName", model.getTitle());
+                            createLayoutBundle.putStringArrayList("layoutNameData", moduleNameData);
+                            createLayoutBundle.putStringArrayList("layoutLocData", moduleLocData);
+                            createLayoutFragment.setArguments(createLayoutBundle);
+
+                            FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+                            transaction.replace(R.id.nav_host_fragment, createLayoutFragment);
+                            transaction.addToBackStack(null);
+                            transaction.commit();
+                            Toast.makeText(getActivity(), btnName, Toast.LENGTH_SHORT).show();
                         }
-                        CreateLayoutFragment createLayoutFragment = new CreateLayoutFragment();
-                        Bundle createLayoutBundle = new Bundle();
-                        createLayoutBundle.putString("layoutName", model.getTitle());
-                        createLayoutBundle.putStringArrayList("layoutNameData", moduleNameData);
-                        createLayoutBundle.putStringArrayList("layoutLocData", moduleLocData);
-                        createLayoutFragment.setArguments(createLayoutBundle);
 
-                        FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
-                        transaction.replace(R.id.nav_host_fragment, createLayoutFragment);
-                        transaction.addToBackStack(null);
-                        transaction.commit();
-                        Toast.makeText(getActivity(), btnName, Toast.LENGTH_SHORT).show();
-                    }
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
 
-                    @Override
-                    public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                    }
+                        }
+                    });
 
-                    @Override
-                    public void onChildRemoved(@NonNull DataSnapshot snapshot) {
-                    }
 
-                    @Override
-                    public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                    }
 
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-                    }
-                }));
+//
+//                    db.getDatabaseReference().child(db.getCurrentUid()).child(model.getTitle()).addChildEventListener(new ChildEventListener() {
+//                        @Override
+//                        public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+//                            int count = (int) snapshot.getChildrenCount();
+//                            System.out.println(count + " CHILDREN");
+//                            String btnName = holder.getBtn().getText().toString();
+//                            if (model.getTitle().equals(btnName)) {
+//                                String modVal = (String) snapshot.getValue(true);
+//                                moduleNameData.add(snapshot.getKey());
+//                                moduleLocData.add(modVal);
+//                                count--;
+//                                System.out.println(count);
+//
+//                            }
+//                            System.out.println(count);
+////                            CreateLayoutFragment createLayoutFragment = new CreateLayoutFragment();
+////                            Bundle createLayoutBundle = new Bundle();
+////                            createLayoutBundle.putString("layoutName", model.getTitle());
+////                            createLayoutBundle.putStringArrayList("layoutNameData", moduleNameData);
+////                            createLayoutBundle.putStringArrayList("layoutLocData", moduleLocData);
+////                            createLayoutFragment.setArguments(createLayoutBundle);
+////
+////                            FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+////                            transaction.replace(R.id.nav_host_fragment, createLayoutFragment);
+////                            transaction.addToBackStack(null);
+////                            transaction.commit();
+////                            Toast.makeText(getActivity(), btnName, Toast.LENGTH_SHORT).show();
+//                        }
+//
+//                        @Override
+//                        public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+//                            System.out.println("CHANGED");
+//                        }
+//
+//                        @Override
+//                        public void onChildRemoved(@NonNull DataSnapshot snapshot) {
+//                        }
+//
+//                        @Override
+//                        public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+//                            System.out.println("MOVED");
+//                        }
+//
+//                        @Override
+//                        public void onCancelled(@NonNull DatabaseError error) {
+//                        }
+//                    });
+                });
             }
         };
         recyclerView.setAdapter(firebaseRecyclerAdapter);
