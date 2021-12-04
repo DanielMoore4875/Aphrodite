@@ -34,6 +34,7 @@ public class AccountFragment extends Fragment implements View.OnClickListener {
         Button AF_Button_about = view.findViewById(R.id.AF_Button_about);
         Button AF_Button_support = view.findViewById(R.id.AF_Button_support);
         Button AF_Button_settings = view.findViewById(R.id.AF_Button_settings);
+        Button AF_Button_changePass = view.findViewById(R.id.AF_Button_changePass);
 
         //get current username and display it in the username textview
         TextView usernameText = view.findViewById(R.id.AF_TextView_username);
@@ -43,21 +44,13 @@ public class AccountFragment extends Fragment implements View.OnClickListener {
         AF_Button_about.setOnClickListener(this);
         AF_Button_settings.setOnClickListener(this);
         AF_Button_support.setOnClickListener(this);
+        AF_Button_changePass.setOnClickListener(this);
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_account, container, false);
-        Button logoutAccount = rootView.findViewById(R.id.AFSS_Button_logout);
-
-        logoutAccount.setOnClickListener(v -> {
-            System.out.println("LOGOUT");
-            FirebaseAuth.getInstance().signOut();
-            Intent intent = new Intent(getActivity(), LoginActivity.class);
-            startActivity(intent);
-            getActivity().finish();
-        });
 
         return rootView;
     }
@@ -76,6 +69,10 @@ public class AccountFragment extends Fragment implements View.OnClickListener {
                 replaceFragment(fragment);
                 break;
             case R.id.AF_Button_settings:
+                fragment = new AccountSettingsFragment();
+                replaceFragment(fragment);
+                break;
+            case R.id.AF_Button_changePass:
                 fragment = new AccountSettingsFragment();
                 replaceFragment(fragment);
                 break;

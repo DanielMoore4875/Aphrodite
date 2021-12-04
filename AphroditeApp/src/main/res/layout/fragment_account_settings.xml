@@ -49,13 +49,37 @@
         app:layout_constraintVertical_bias="0.035" />
 
     <Button
+        android:id="@+id/AFSS_Button_logout"
+        android:layout_width="0dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="10dp"
+        android:backgroundTint="@color/peach"
+        android:text="@string/AF_Button_logout"
+        android:textColor="@color/lighter_oak"
+        android:textStyle="bold"
+        app:cornerRadius="10dp"
+        app:icon="@drawable/ic_baseline_logout_24"
+        app:iconGravity="textStart"
+        app:iconSize="25dp"
+        app:iconTint="@color/lighter_oak"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/AFSS_TextView_title"
+        app:layout_constraintVertical_bias="0.0"
+        app:rippleColor="@color/lighter_oak"
+        tools:ignore="TextContrastCheck" />
+
+    <Button
         android:id="@+id/AFSS_Button_terminate"
         android:layout_width="0dp"
         android:layout_height="65dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="10dp"
-        android:layout_marginBottom="308dp"
         android:backgroundTint="#E44867"
         android:text="@string/AFSS_Button_terminate"
         android:textColor="@color/lighter_oak"
@@ -67,12 +91,11 @@
         app:iconTint="@color/lighter_oak"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/AFSS_TextView_title"
+        app:layout_constraintTop_toBottomOf="@+id/AFSS_Button_logout"
         app:layout_constraintVertical_bias="0.0"
         app:rippleColor="@color/lighter_oak" />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
