@@ -55,6 +55,21 @@ public class CreateLayoutFragment extends Fragment {
 
         layoutNameEditText = root.findViewById(R.id.CLP_LayoutName_User_Input_PT);
 
+        // If this fragment is called from the LayoutFragment page, this Bundle will contain the name of
+        // the layout that needs to be edited. Use this name to the get its data from Firebase
+        // TODO
+        Bundle layoutNameBun = getArguments();
+        UpdateDBNode dbNode;
+        if (layoutNameBun != null) {
+            String layoutName = layoutNameBun.getString("layoutName");
+            System.out.println(layoutName);
+            System.out.println(layoutNameBun.toString());
+            layoutNameEditText.setText(layoutName);
+//            layoutNameEditText.setEnabled(false); //user can't edit name
+            dbNode = new UpdateDBNode("layouts");
+//            dbNode.se
+        }
+
         timeSw = root.findViewById(R.id.CLP_Feature_Time);
         dateSw = root.findViewById(R.id.CLP_Feature_Date);
         calendarSw = root.findViewById(R.id.CLP_Feature_Calendar);

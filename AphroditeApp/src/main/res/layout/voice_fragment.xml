@@ -2,38 +2,61 @@
 <!--Daniel Moore n01354875 Section B-->
 <!--Ryan Black n01305403 Section B-->
 <!--Alyssa Gomez n01042777 Section B-->
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true">
+    android:background="@drawable/rounded_lighter_oak"
+    android:fillViewport="true"
+    tools:ignore="RtlSymmetry">
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/voice_nestedFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/translucent_black"
+        android:clickable="true"
+        android:elevation="10dp"
+        android:focusable="true"
+        android:padding="20dp"
+        android:visibility="invisible">
+
+    </androidx.fragment.app.FragmentContainerView>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/lighter_oak"
-        android:orientation="vertical"
-        tools:context=".ui.voice.VoiceFragment">
-
+        android:layout_height="match_parent">
 
         <TextView
             android:id="@+id/VC_PageName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
             android:fontFamily="sans-serif-black"
             android:text="@string/VC_VoiceLED_Text"
             android:textColor="@color/dark_ocean"
             android:textSize="20sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.051"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ToggleButton
+            android:id="@+id/VC_muteMic_btnID"
+            android:layout_width="@dimen/VC_btn_width"
+            android:layout_height="@dimen/VC_btn_height"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/roundedcorner_button"
+            android:backgroundTint="@color/light_ocean"
+            android:textColor="@color/mid_ocean"
+            android:textOff="@string/VC_micUnmuted_txt"
+            android:textOn="@string/VC_micMuted_txt"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/VC_PageName" />
+
 
         <Button
             android:id="@+id/VC_changeLED_btnID"
@@ -50,208 +73,82 @@
             app:cornerRadius="10dp"
             app:layout_constraintBottom_toBottomOf="@+id/VC_muteMic_btnID"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.983"
+            app:layout_constraintStart_toEndOf="@+id/VC_muteMic_btnID"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1.0"
             app:rippleColor="@color/lighter_oak" />
 
-        <TextView
-            android:id="@+id/VC_cmdName1_txt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/VC_name_marginStart"
-            android:layout_marginTop="@dimen/VC_name_marginTop"
-            android:text="@string/VC_placeholder_vcName_txt"
-            android:textColor="@color/dark_ocean"
-            android:textSize="@dimen/VC_title_font_size"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/VC_muteMic_btnID" />
-
-        <TextView
-            android:id="@+id/VC_cmdDesc2_txt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/VC_desc_marginStart"
-            android:layout_marginTop="@dimen/VC_desc_marginTop"
-            android:text="@string/VC_placeholder_vcDesc_txt"
-            android:textColor="@color/mid_ocean"
-            android:textSize="@dimen/VC_title_font_size"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/VC_cmdName2_txt" />
-
-        <TextView
-            android:id="@+id/VC_cmdName5_txt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/VC_name_marginStart"
-            android:layout_marginTop="@dimen/VC_name_marginTop"
-            android:text="@string/VC_placeholder_vcName_txt"
-            android:textColor="@color/dark_ocean"
-            android:textSize="@dimen/VC_title_font_size"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/VC_cmdDesc4_txt" />
-
-        <TextView
-            android:id="@+id/VC_cmdName7_txt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/VC_name_marginStart"
-            android:layout_marginTop="@dimen/VC_name_marginTop"
-            android:text="@string/VC_placeholder_vcName_txt"
-            android:textColor="@color/dark_ocean"
-            android:textSize="@dimen/VC_title_font_size"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/VC_cmdDesc6_txt" />
-
-        <TextView
-            android:id="@+id/VC_cmdDesc7_txt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="@dimen/VC_desc_marginTop"
-            android:text="@string/VC_placeholder_vcDesc_txt"
-            android:textColor="@color/mid_ocean"
-            android:textSize="@dimen/VC_title_font_size"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/VC_cmdName7_txt"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <TextView
-            android:id="@+id/VC_cmdDesc3_txt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/VC_desc_marginStart"
-            android:layout_marginTop="@dimen/VC_desc_marginTop"
-            android:text="@string/VC_placeholder_vcDesc_txt"
-            android:textColor="@color/mid_ocean"
-            android:textSize="@dimen/VC_title_font_size"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/VC_cmdName3_txt" />
-
-        <TextView
-            android:id="@+id/VC_cmdDesc6_txt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/VC_desc_marginStart"
-            android:layout_marginTop="@dimen/VC_desc_marginTop"
-            android:text="@string/VC_placeholder_vcDesc_txt"
-            android:textColor="@color/mid_ocean"
-            android:textSize="@dimen/VC_title_font_size"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/VC_cmdName6_txt" />
-
-        <TextView
-            android:id="@+id/VC_cmdName2_txt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/VC_name_marginStart"
-            android:layout_marginTop="@dimen/VC_name_marginTop"
-            android:text="@string/VC_placeholder_vcName_txt"
-            android:textColor="@color/dark_ocean"
-            android:textSize="@dimen/VC_title_font_size"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/VC_cmdDesc1_txt" />
-
-        <TextView
-            android:id="@+id/VC_cmdName3_txt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/VC_name_marginStart"
-            android:layout_marginTop="@dimen/VC_name_marginTop"
-            android:text="@string/VC_placeholder_vcName_txt"
-            android:textColor="@color/dark_ocean"
-            android:textSize="@dimen/VC_title_font_size"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/VC_cmdDesc2_txt" />
-
-        <TextView
-            android:id="@+id/VC_cmdDesc4_txt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/VC_desc_marginStart"
-            android:layout_marginTop="@dimen/VC_desc_marginTop"
-            android:text="@string/VC_placeholder_vcDesc_txt"
-            android:textColor="@color/mid_ocean"
-            android:textSize="@dimen/VC_title_font_size"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/VC_cmdName4_txt" />
-
-        <TextView
-            android:id="@+id/VC_cmdName4_txt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/VC_name_marginStart"
-            android:layout_marginTop="@dimen/VC_name_marginTop"
-            android:text="@string/VC_placeholder_vcName_txt"
-            android:textColor="@color/dark_ocean"
-            android:textSize="@dimen/VC_title_font_size"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/VC_cmdDesc3_txt" />
-
-        <TextView
-            android:id="@+id/VC_cmdDesc5_txt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/VC_desc_marginStart"
-            android:layout_marginTop="@dimen/VC_desc_marginTop"
-            android:text="@string/VC_placeholder_vcDesc_txt"
-            android:textColor="@color/mid_ocean"
-            android:textSize="@dimen/VC_title_font_size"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/VC_cmdName5_txt" />
-
-        <TextView
-            android:id="@+id/VC_cmdName6_txt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/VC_name_marginStart"
-            android:layout_marginTop="@dimen/VC_name_marginTop"
-            android:text="@string/VC_placeholder_vcName_txt"
-            android:textColor="@color/dark_ocean"
-            android:textSize="@dimen/VC_title_font_size"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/VC_cmdDesc5_txt" />
-
-        <TextView
-            android:id="@+id/VC_cmdDesc1_txt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/VC_desc_marginStart"
-            android:layout_marginTop="@dimen/VC_desc_marginTop"
-            android:text="@string/VC_placeholder_vcDesc_txt"
-            android:textColor="@color/mid_ocean"
-            android:textSize="@dimen/VC_title_font_size"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/VC_cmdName1_txt" />
-
-        <ToggleButton
-            android:id="@+id/VC_muteMic_btnID"
-            android:layout_width="@dimen/VC_btn_width"
-            android:layout_height="@dimen/VC_btn_height"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="65dp"
-            android:background="@drawable/roundedcorner_button"
-            android:backgroundTint="@color/light_ocean"
-            android:textColor="@color/mid_ocean"
-            android:textOff="@string/VC_micUnmuted_txt"
-            android:textOn="@string/VC_micMuted_txt"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="140dp"
+            android:fillViewport="false"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.023"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toBottomOf="@+id/VC_changeLED_btnID">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/lighter_oak"
+                android:orientation="vertical">
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="5dp"
+                    android:text="@string/voice_default_commands"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <!--Default Commands-->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/voice_defRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp">
+
+                    <!--User Commands-->
+                </androidx.recyclerview.widget.RecyclerView>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:paddingStart="5dp"
+                    android:text="@string/voice_user_commands"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/voice_userRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp">
+
+                </androidx.recyclerview.widget.RecyclerView>
+            </LinearLayout>
+        </ScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/voice_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="16dp"
+            android:contentDescription="@string/voice_fab_desc"
+            android:text="@string/voice_new_command"
+            android:textColor="@color/lighter_oak"
+            app:icon="@drawable/voice_add"
+            app:iconTint="@color/lighter_oak"
+            app:rippleColor="@color/lighter_oak" />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+</RelativeLayout>

@@ -5,6 +5,8 @@ import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.ChildEventListener;
@@ -128,6 +130,35 @@ public class UpdateDBNode {
 //        }
 //    }
 
+    //EDITING THE LAYOUT METHODS
+
+    private boolean layoutHasModule(String layoutName, String modName) {
+        if (Objects.requireNonNull(getDatabaseReference().getKey()).equals("layouts")) {
+            DatabaseReference modRef = getDatabaseReference().child(getCurrentUid()).child(layoutName);
+            boolean hasModule = false;
+//            modRef.get
+
+
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean editLayout(String layName) {
+        if (Objects.requireNonNull(getDatabaseReference().getKey()).equals("layouts")) {
+//            String cal
+//            getDatabaseReference().child(getCurrentUid()).child(layName).
+
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+
+    //DONE EDITING LAYOUT METHODS
+
     public boolean editLayout(String uid, String layoutName, String[][] modules) {
         if (Objects.requireNonNull(getDatabaseReference().getKey()).equals("layouts")) {
             for (String[] module : modules) {
@@ -214,4 +245,46 @@ public class UpdateDBNode {
             return false;
         }
     }
+
+    public void setMicState(boolean b) {
+        if (Objects.requireNonNull(getDatabaseReference().getKey()).equals("mic_state")) {
+            getDatabaseReference()
+                    .child(getCurrentUid())
+                    .setValue(b);
+
+        }
+    }
+
+    // Add a voice command title and description
+    public void addVoiceCommand(String title, String desc) {
+        if (Objects.requireNonNull(getDatabaseReference().getKey()).equals("user_voice_commands")) {
+            getDatabaseReference().child(getCurrentUid()).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<DataSnapshot> task) {
+                    if (task.isSuccessful()) {
+                        int numOfCommands;
+                        numOfCommands = (int) task.getResult().getChildrenCount();
+                        if (title != null && desc != null && numOfCommands < 3) {
+                            getDatabaseReference()
+                                    .child(getCurrentUid())
+                                    .child(title)
+                                    .setValue(desc);
+                        }
+                    }
+                }
+            });
+        }
+    }
+
+    // Remove a voice command by giving the title of it
+    public void removeVoiceCommand(String title) {
+        if (Objects.requireNonNull(getDatabaseReference().getKey()).equals("user_voice_commands")) {
+            getDatabaseReference()
+                    .child(getCurrentUid())
+                    .child(title)
+                    .removeValue();
+        }
+    }
+
+
 }
