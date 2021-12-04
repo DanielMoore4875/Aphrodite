@@ -13,27 +13,11 @@
     tools:layout_editor_absoluteX="-28dp"
     tools:layout_editor_absoluteY="160dp">
 
-    <ImageView
-        android:id="@+id/AFR_ImageView_logo"
-        android:layout_width="175dp"
-        android:layout_height="156dp"
-        android:layout_marginTop="20dp"
-        android:adjustViewBounds="false"
-        android:background="@drawable/roundstyle"
-        android:cropToPadding="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/aphrodite_logot_trans_med"
-        tools:ignore="ContentDescription" />
-
     <TextView
         android:id="@+id/AFR_TextView_title"
         android:layout_width="189dp"
         android:layout_height="40dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="60dp"
         android:fontFamily="sans-serif-medium"
         android:gravity="center"
         android:text="@string/AFR_TextView_title"
@@ -44,21 +28,39 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/AFR_ImageView_logo"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/AFR_TextView_text_"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:text="@string/AFR_TextView_text"
+        android:textAllCaps="true"
+        android:textColor="@color/dark_ocean"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/AFR_TextView_title"
         app:layout_constraintVertical_bias="0.0" />
 
     <RatingBar
         android:id="@+id/AFR_RatingBar_ratebar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:numStars="5"
         android:stepSize=".5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/AFR_TextView_title"
+        app:layout_constraintTop_toBottomOf="@+id/AFR_TextView_text_"
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
@@ -75,7 +77,7 @@
         app:cornerRadius="@dimen/Button_radius"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
@@ -85,11 +87,11 @@
     <EditText
         android:id="@+id/AFR_EditText_input"
         android:layout_width="336dp"
-        android:layout_height="100dp"
+        android:layout_height="150dp"
         android:layout_centerInParent="true"
         android:layout_marginTop="40dp"
         android:background="@drawable/roundedcorner_button"
-        android:backgroundTint="@color/peach"
+        android:backgroundTint="@color/light_oak"
         android:gravity="center"
         android:hint="@string/AFR_EditText_review"
         android:padding="15dp"

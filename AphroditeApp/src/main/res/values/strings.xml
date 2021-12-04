@@ -6,7 +6,7 @@
     <string name="app_name">Aphrodite</string>
     <string name="title_home">Home</string>
     <string name="title_layouts">Layouts</string>
-    <string name="title_account">Account</string>
+    <string name="title_settings">Settings</string>
     <string name="MA_AlertDialogExitApp_title">Exit App</string>
     <string name="MA_AlertDialogExitApp_msg">Are you sure you want to exit?</string>
     <string name="MA_AlertDialogExitApp_yes">Yes, exit app</string>
@@ -122,7 +122,7 @@
     <string name="LED_CustomizeLED_Text">Customize LED</string>
     <string name="VC_VoiceLED_Text">Voice and LED</string>
     <string name="AFS_ReviewButton_Text">Review</string>
-    <string name="AFR_EditText_review">Tap here to write your Review here!</string>
+    <string name="AFR_EditText_review">Tap here to write your Review!</string>
     <string name="CL_noChosenLoc_error_txt">Select location for all chosen modules</string>
     <string name="CL_enterName_txt">Please enter a name</string>
     <string name="layoutbuttontxt">Create Layout</string>
@@ -145,4 +145,5 @@
     <string name="voice_submit_cmd_txt">Submit Command</string>
     <string name="voice_default_commands">Default Commands</string>
     <string name="voice_user_commands">User Commands (Max 3)</string>
+    <string name="AFR_TextView_text">Give us a review! Let us know how we did and how we can improve Aphrodite.</string>
 </resources>
