@@ -57,15 +57,14 @@
     <string name="action_settings">Settings</string>
     <string name="CL_LayoutName_Text">Layout Name</string>
     <string name="CL_CreateLayout_Text">Toggle Modules and Choose Locations</string>
-    <string name="CL_Feature_Text_Time">Time</string>
-    <string name="CL_Feature_Text_Date">Date</string>
-    <string name="CL_Feature_Text_Calendar">Calendar</string>
-    <string name="CL_Feature_Text_Weather">Weather</string>
-    <string name="CL_Feature_Text_ToDoList">To-Do List</string>
-    <string name="CL_Feature_Text_RoomT_H">Room Temp_Hum</string>
-    <string name="CL_Feature_Text_Stocks">Stocks</string>
-    <string name="CL_Feature_Text_Youtube">Youtube</string>
-    <string name="CL_Feature_Text_SocialMedNot">Notifications</string>
+    <string name="CL_Feature_Text_Time" translatable="false">Time</string>
+    <string name="CL_Feature_Text_Date" translatable="false">Date</string>
+    <string name="CL_Feature_Text_Calendar" translatable="false">Calendar</string>
+    <string name="CL_Feature_Text_Weather" translatable="false">Weather</string>
+    <string name="CL_Feature_Text_RoomT_H" translatable="false">Room_Temp_Hum</string>
+    <string name="CL_Feature_Text_Stocks" translatable="false">Stocks</string>
+    <string name="CL_Feature_Text_Youtube" translatable="false">Youtube</string>
+    <string name="CL_Feature_Text_SocialMedNot" translatable="false">Notifications</string>
     <string name="CL_SaveButton_Text">Save</string>
     <string name="SSL_ChosenLayout_Name">Layout Name</string>
     <string name="AFP_Edit_Text_name">Enter A Name</string>
@@ -135,8 +134,8 @@
     <string name="alphabetAndUnderscore" translatable="false">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_</string>
     <string name="alphabetAndSpace" translatable="false">abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
     <string name="kainotomia_email" translatable="false">kainotomia.aphrodite@gmail.com</string>
-    <string name="Home_def_morn">default morning layout loaded</string>
-    <string name="Home_def_stocks">default stocks layout loaded</string>
+    <string name="Home_def_morn" translatable="false">default morning layout loaded</string>
+    <string name="Home_def_stocks" translatable="false">default stocks layout loaded</string>
     <string name="voice_noConnection">CONNECTION NEEDED, NO CONNECTION</string>
     <string name="voice_fab_desc">New Voice Command</string>
     <string name="voice_new_command">New Command</string>
