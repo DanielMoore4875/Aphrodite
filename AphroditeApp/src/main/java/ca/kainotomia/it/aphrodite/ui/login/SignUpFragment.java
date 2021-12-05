@@ -6,6 +6,8 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.text.TextUtils;
+import android.util.Patterns;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,6 +28,7 @@ import com.google.firebase.auth.UserProfileChangeRequest;
 import java.util.Objects;
 
 import ca.kainotomia.it.aphrodite.R;
+import kotlin.text.Regex;
 
 
 public class SignUpFragment extends Fragment {
@@ -33,6 +36,8 @@ public class SignUpFragment extends Fragment {
     private EditText nameET_R;
     private EditText emailET_R;
     private EditText passwordET_R;
+
+    private EditText confirmPassET_R;
 
     private Button registerBtn_R;
 
@@ -60,6 +65,8 @@ public class SignUpFragment extends Fragment {
         emailET_R = root.findViewById(R.id.FSU_emailEditTXT);
         passwordET_R = root.findViewById(R.id.FSU_passEditTXT);
 
+        confirmPassET_R = root.findViewById(R.id.FSU_confrimPassEditTXT);
+
         registerBtn_R = root.findViewById(R.id.FSU_signup);
         registerBtn_R.setOnClickListener(v -> checkUserExists());
 
@@ -78,21 +85,25 @@ public class SignUpFragment extends Fragment {
 
 
     public void createUser() {
-        if (!nameET_R.getText().toString().isEmpty() && !emailET_R.getText().toString().isEmpty() && !passwordET_R.getText().toString().isEmpty()) {
+        if (!nameET_R.getText().toString().isEmpty() && !emailET_R.getText().toString().isEmpty()
+                && !passwordET_R.getText().toString().isEmpty() && !confirmPassET_R.getText().toString().isEmpty()) {
 
-            UserProfileChangeRequest addUserName = new UserProfileChangeRequest.Builder()
-                    .setDisplayName(nameET_R.getText().toString())
-                    .build();
+            if (passwordET_R.getText().toString().matches(confirmPassET_R.getText().toString())) {
+                //8 chars, one lower, one upper, one digit, one special char (not '+' or '~' )
+                if (passwordET_R.getText().toString().matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$")) {
 
 
-            signUpProgress.setVisibility(View.VISIBLE);
-            registerBtn_R.setEnabled(false);
-            goToLoginBtn.setEnabled(false);
-            firebaseAuthSignUp.createUserWithEmailAndPassword(emailET_R.getText().toString(),
-                    passwordET_R.getText().toString()).addOnSuccessListener(authResult -> {
-                        signUpProgress.setVisibility(View.INVISIBLE);
-                        registerBtn_R.setEnabled(true);
-                        goToLoginBtn.setEnabled(true);
+                    UserProfileChangeRequest addUserName = new UserProfileChangeRequest.Builder()
+                            .setDisplayName(nameET_R.getText().toString())
+                            .build();
+
+
+                    signUpProgress.setVisibility(View.VISIBLE);
+                    registerBtn_R.setEnabled(false);
+                    goToLoginBtn.setEnabled(false);
+                    firebaseAuthSignUp.createUserWithEmailAndPassword(emailET_R.getText().toString(),
+                            passwordET_R.getText().toString()).addOnSuccessListener(authResult -> {
+                        setPBInvisibleAndEnableButtons();
                         emailET_R.setText("");
                         nameET_R.setText("");
                         passwordET_R.setText("");
@@ -102,6 +113,7 @@ public class SignUpFragment extends Fragment {
 
                         if (firebaseAuthSignUp.getCurrentUser() != null) {
                             firebaseAuthSignUp.signOut();
+                            Toast.makeText(getActivity(), getString(R.string.Login_userCreated_txt), Toast.LENGTH_SHORT).show();
                             SignInFragment signInFragment = new SignInFragment();
                             FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
                             transaction.replace(R.id.login_frag_host, signInFragment);
@@ -109,42 +121,66 @@ public class SignUpFragment extends Fragment {
                             transaction.commit();
                         }
                     }).addOnFailureListener(e -> {
-                        signUpProgress.setVisibility(View.INVISIBLE);
-                        registerBtn_R.setEnabled(true);
-                        goToLoginBtn.setEnabled(true);
+                        setPBInvisibleAndEnableButtons();
                         Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_SHORT).show();
                     });
+                } else {
+                    setPBInvisibleAndEnableButtons();
+                    Toast.makeText(getActivity(), "Pass must be:\n - 8 chars\nAt least one\n - digit\n - lowercase letter\n - uppercase letter", Toast.LENGTH_LONG).show();
+                }
+            } else {
+                setPBInvisibleAndEnableButtons();
+                Toast.makeText(getActivity(), getString(R.string.FSU_matchPasswordsError), Toast.LENGTH_SHORT).show();
+            }
+//            if (passwordET_R.getText().toString().matches(confirmPassET_R.getText().toString())) {
+//            } else {
+//                Toast.makeText(getActivity(), getString(R.string.FSU_matchPasswordsError), Toast.LENGTH_SHORT).show();
+//            }
+        } else {
+            setPBInvisibleAndEnableButtons();
+            Toast.makeText(getActivity(), getString(R.string.FSU_emptyFieldsError), Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public void setPBInvisibleAndEnableButtons() {
+        signUpProgress.setVisibility(View.INVISIBLE);
+        registerBtn_R.setEnabled(true);
+        goToLoginBtn.setEnabled(true);
+    }
+
+    private void checkUserExists() {
+        if (firebaseAuthSignUp != null && !emailET_R.getText().toString().isEmpty() && !passwordET_R.getText().toString().isEmpty()) {
+            if (isValidEmail(emailET_R.getText())) {
+                signUpProgress.setVisibility(View.VISIBLE);
+                registerBtn_R.setEnabled(false);
+                goToLoginBtn.setEnabled(false);
+
+                firebaseAuthSignUp.fetchSignInMethodsForEmail(emailET_R.getText().toString())
+                        .addOnCompleteListener(task -> {
+                            boolean checkResult = !Objects.requireNonNull(Objects.requireNonNull(task.getResult()).getSignInMethods()).isEmpty();
+
+                            if (!checkResult) {
+                                createUser();
+                            } else {
+                                Toast.makeText(getActivity(), getString(R.string.FSU_userExistsError), Toast.LENGTH_LONG).show();
+                                setPBInvisibleAndEnableButtons();
+                            }
+
+                        })
+                        .addOnFailureListener(e -> {
+                            setPBInvisibleAndEnableButtons();
+                            Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_SHORT).show();
+                        });
+            } else {
+                Toast.makeText(getActivity(), getString(R.string.FSU_SI_email_incorrectERROR), Toast.LENGTH_LONG).show();
+            }
         } else {
             Toast.makeText(getActivity(), getString(R.string.FSU_emptyFieldsError), Toast.LENGTH_SHORT).show();
         }
     }
 
-    private void checkUserExists() {
-        if (firebaseAuthSignUp != null && !emailET_R.getText().toString().isEmpty() && !passwordET_R.getText().toString().isEmpty()) {
-            signUpProgress.setVisibility(View.VISIBLE);
-            registerBtn_R.setEnabled(false);
-            goToLoginBtn.setEnabled(false);
-
-            firebaseAuthSignUp.fetchSignInMethodsForEmail(emailET_R.getText().toString())
-                    .addOnCompleteListener(task -> {
-                        boolean checkResult = !Objects.requireNonNull(Objects.requireNonNull(task.getResult()).getSignInMethods()).isEmpty();
-
-                        if (!checkResult) {
-                            createUser();
-                        } else {
-                            Toast.makeText(getActivity(), getString(R.string.FSU_userExistsError), Toast.LENGTH_LONG).show();
-                            signUpProgress.setVisibility(View.INVISIBLE);
-                            registerBtn_R.setEnabled(true);
-                            goToLoginBtn.setEnabled(true);
-                        }
-
-                    })
-                    .addOnFailureListener(e -> {
-                        signUpProgress.setVisibility(View.INVISIBLE);
-                        registerBtn_R.setEnabled(true);
-                        goToLoginBtn.setEnabled(true);
-                        Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_SHORT).show();
-                    });
-        }
+    //regex valid email
+    public static boolean isValidEmail(CharSequence email) {
+        return (!TextUtils.isEmpty(email) && Patterns.EMAIL_ADDRESS.matcher(email).matches());
     }
 }

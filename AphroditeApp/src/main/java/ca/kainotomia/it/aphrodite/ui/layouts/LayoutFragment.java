@@ -126,6 +126,10 @@ public class LayoutFragment extends Fragment {
                 layoutsPB.setVisibility(View.INVISIBLE);
             }
         };
+        //if the user has no layouts
+        if (firebaseRecyclerAdapter.getItemCount() <=0) {
+            layoutsPB.setVisibility(View.INVISIBLE);
+        }
         recyclerView.setAdapter(firebaseRecyclerAdapter);
     }
 
@@ -142,6 +146,8 @@ public class LayoutFragment extends Fragment {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        firebaseRecyclerAdapter.stopListening();
+        if (firebaseRecyclerAdapter != null) {
+            firebaseRecyclerAdapter.stopListening();
+        }
     }
 }

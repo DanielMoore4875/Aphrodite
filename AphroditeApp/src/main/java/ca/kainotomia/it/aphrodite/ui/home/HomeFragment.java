@@ -79,7 +79,9 @@ public class HomeFragment extends Fragment {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        firebaseRecyclerAdapterHome.stopListening();
+        if (firebaseRecyclerAdapterHome != null) {
+            firebaseRecyclerAdapterHome.stopListening();
+        }
     }
 
     private void getLayouts() {
@@ -124,6 +126,9 @@ public class HomeFragment extends Fragment {
 
         };
 
+        if (firebaseRecyclerAdapterHome.getItemCount() <= 0) {
+            homePB.setVisibility(View.INVISIBLE);
+        }
         recyclerViewHome.setAdapter(firebaseRecyclerAdapterHome);
 
     }

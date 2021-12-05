@@ -12,7 +12,7 @@
         style="@style/RegisterPageItems"
         android:layout_width="220dp"
         android:layout_height="80dp"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="24dp"
         android:backgroundTint="@color/oak"
         android:text="@string/FSU_register_txt"
         android:textAllCaps="true"
@@ -20,7 +20,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/FSU_passEditTXT" />
+        app:layout_constraintTop_toBottomOf="@+id/FSU_confrimPassEditTXT" />
 
     <EditText
         android:id="@+id/FSU_nameEditTXT"
@@ -68,6 +68,21 @@
         app:layout_constraintTop_toBottomOf="@+id/FSU_emailEditTXT"
         app:layout_constraintVertical_bias="0.0"
         android:importantForAutofill="no" />
+
+    <EditText
+        android:id="@+id/FSU_confrimPassEditTXT"
+        style="@style/RegisterPageItems"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="108dp"
+        android:ems="10"
+        android:hint="@string/FSU_confirmPass_hint"
+        android:importantForAutofill="no"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/FSU_emailEditTXT" />
 
     <ImageView
         android:id="@+id/FSU_logo"

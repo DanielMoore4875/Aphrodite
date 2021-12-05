@@ -134,6 +134,18 @@
     <string name="HF_add_layout_fab">Ajouter une mise en page</string>
     <string name="FL_clicktoedit_txt">Cliquez sur une mise en page pour la modifier</string>
     <string name="HF_updateCurrentLayoutError">La mise en page n\'a pas pu être définie</string>
+    <string name="word_created">créé</string>
+    <string name="word_edited">édité</string>
+    <string name="FSU_confirmPass_hint">Confirmez le mot de passe</string>
+    <string name="FSU_matchPasswordsError">Les mots de passe ne correspondent pas</string>
+    <string name="FSU_SI_email_incorrectERROR">L\'e-mail a un formatage incorrect</string>
+    <string name="ACF_user_signin_error">Mot de passe utilisateur requis</string>
+    <string name="ASF_AD_title">Es-tu sûr?</string>
+    <string name="ASF_AD_msg">Toutes les données seront perdues, c\'est irréversible</string>
+    <string name="ASF_AD_yes">Oui, supprimer mon compte</string>
+    <string name="ASF_AD_no">Non, reviens</string>
+    <string name="ASF_password_here_to_terminate">Mot de passe ici pour terminer</string>
+    <string name="user_deleted_txt">Utilisateur supprimé</string>
 
 
 

@@ -20,7 +20,6 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Objects;
 
 import ca.kainotomia.it.aphrodite.R;
 import ca.kainotomia.it.aphrodite.UpdateDBNode;
@@ -52,6 +51,7 @@ public class CreateLayoutFragment extends Fragment {
 
     String[] modNamesFromLeft;
     String[] modNamesFromLeftEdit;
+    String[] masterModules;
 
 
     @Override
@@ -63,29 +63,40 @@ public class CreateLayoutFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.create_layout_page_fragment, container, false);
-        modNamesFromLeft = new String[8];
-        modNamesFromLeftEdit = new String[8];
+        // master array of the names of the modules
+        masterModules = new String[]{getString(R.string.MASTER_Mod0), getString(R.string.MASTER_Mod1),
+                getString(R.string.MASTER_Mod2), getString(R.string.MASTER_Mod3),
+                getString(R.string.MASTER_Mod4), getString(R.string.MASTER_Mod5),
+                getString(R.string.MASTER_Mod6), getString(R.string.MASTER_Mod7)};
+        modNamesFromLeft = new String[]{getString(R.string.MASTER_Mod0), getString(R.string.MASTER_Mod1),
+                getString(R.string.MASTER_Mod2), getString(R.string.MASTER_Mod3),
+                getString(R.string.MASTER_Mod4), getString(R.string.MASTER_Mod5),
+                getString(R.string.MASTER_Mod6), getString(R.string.MASTER_Mod7)};
+        modNamesFromLeftEdit = new String[]{getString(R.string.MASTER_Mod0), getString(R.string.MASTER_Mod1),
+                getString(R.string.MASTER_Mod2), getString(R.string.MASTER_Mod3),
+                getString(R.string.MASTER_Mod4), getString(R.string.MASTER_Mod5),
+                getString(R.string.MASTER_Mod6), getString(R.string.MASTER_Mod7)};
         layoutNameEditText = root.findViewById(R.id.CLP_LayoutName_User_Input_PT);
 
         // If this fragment is called from the LayoutFragment page, this Bundle will contain the name of
         // the layout that needs to be edited. Use this name to the get its data from Firebase
 
         timeSw = root.findViewById(R.id.CLP_Feature_Time);
-        modNamesFromLeftEdit[0] = timeSw.getText().toString();
+//        modNamesFromLeftEdit[0] = timeSw.getText().toString();
         dateSw = root.findViewById(R.id.CLP_Feature_Date);
-        modNamesFromLeftEdit[1] = dateSw.getText().toString();
+//        modNamesFromLeftEdit[1] = dateSw.getText().toString();
         calendarSw = root.findViewById(R.id.CLP_Feature_Calendar);
-        modNamesFromLeftEdit[2] = calendarSw.getText().toString();
+//        modNamesFromLeftEdit[2] = calendarSw.getText().toString();
         weatherSw = root.findViewById(R.id.CLP_Feature_Weather);
-        modNamesFromLeftEdit[3] = weatherSw.getText().toString();
+//        modNamesFromLeftEdit[3] = weatherSw.getText().toString();
         temp_humSw = root.findViewById(R.id.CLP_Feature_RoomT_H);
-        modNamesFromLeftEdit[4] = temp_humSw.getText().toString();
+//        modNamesFromLeftEdit[4] = temp_humSw.getText().toString();
         stocksSw = root.findViewById(R.id.CLP_Feature_Stocks);
-        modNamesFromLeftEdit[5] = stocksSw.getText().toString();
+//        modNamesFromLeftEdit[5] = stocksSw.getText().toString();
         youtubeSw = root.findViewById(R.id.CLP_Feature_Youtube);
-        modNamesFromLeftEdit[6] = youtubeSw.getText().toString();
+//        modNamesFromLeftEdit[6] = youtubeSw.getText().toString();
         notifSw = root.findViewById(R.id.CLP_Feature_SocialMediaNot);
-        modNamesFromLeftEdit[7] = notifSw.getText().toString();
+//        modNamesFromLeftEdit[7] = notifSw.getText().toString();
 
         timeSp = root.findViewById(R.id.CLP_spinner_time);
         dateSp = root.findViewById(R.id.CLP_spinner_date);
@@ -295,18 +306,15 @@ public class CreateLayoutFragment extends Fragment {
 //                System.out.println("MOD LOC: " + Arrays.toString(modulesLocation));
                 if (layoutNameBun == null) {
                     dbNode.addLayout(layoutName, modulesIsChecked, modNamesFromLeft, modulesLocation);
-                    Toast.makeText(getActivity(), "Layout created: " + layoutName + "\nFor: " + dbNode.getCurrentUserName(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), layoutName + " " + getString(R.string.word_created), Toast.LENGTH_SHORT).show();
                 } else {
                     dbNode.editLayout(layoutName, modulesIsChecked, modNamesFromLeftEdit, modulesLocation);
-                    Toast.makeText(getActivity(), "Layout Edited: " + layoutName + "\nFor: " + dbNode.getCurrentUserName(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), layoutName +  " " + getString(R.string.word_edited), Toast.LENGTH_SHORT).show();
                 }
                 //cant be put in strings.xml
 
                 HomeFragment home = new HomeFragment();
                 FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
-//                if(home.isAdded()) {
-//                    return;
-//                }
                 transaction.replace(R.id.nav_host_fragment, home);
                 transaction.addToBackStack(null);
                 transaction.commit();
@@ -316,13 +324,13 @@ public class CreateLayoutFragment extends Fragment {
         }
     }
 
+    // check if all chosen modules have a location selected
     private boolean checkAllChosen(boolean[] checkedMods, String[] modsLoc, String[] modNames) {
         for (int i = 0; i < 8; i++) {
             if (checkedMods[i] && modsLoc[i].equals(modNames[0])) {
-                //havent chosen location for this module
+
                 return false;
             }
-
         }
         return true;
     }
@@ -333,8 +341,6 @@ public class CreateLayoutFragment extends Fragment {
         if (!v.isChecked()) {
             //reset spinner
             sp.setSelection(0);
-        } else {
-            modNamesFromLeft[position] = v.getText().toString();
         }
     }
 }

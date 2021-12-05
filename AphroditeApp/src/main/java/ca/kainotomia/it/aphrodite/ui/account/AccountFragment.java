@@ -38,8 +38,11 @@ public class AccountFragment extends Fragment implements View.OnClickListener {
         Button AF_Button_settings = view.findViewById(R.id.AF_Button_settings);
         Button AF_Button_changePass = view.findViewById(R.id.AF_Button_changePass);
 
-        //get current username and display it in the username textview
-        Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getDisplayName();
+        //if user not signed in send to sign in page
+        if (FirebaseAuth.getInstance().getCurrentUser()== null) {
+            startActivity(new Intent(getActivity(), LoginActivity.class));
+            requireActivity().finish();
+        }
         TextView usernameText = view.findViewById(R.id.AF_TextView_username);
         UpdateDBNode dbNode = new UpdateDBNode();
         final String nameDisplay = dbNode.getCurrentUserName() +  "\n" + dbNode.getFirebaseUser().getEmail();

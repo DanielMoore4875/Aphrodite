@@ -173,5 +173,27 @@
     <string name="FL_clicktoedit_txt">Click on a Layout to edit</string>
     <string name="HF_updateCurrentLayoutError">Layout couldn\'t be set</string>
 
+    <!-- Master Module Names (English Only) -->
+    <string name="MASTER_Mod0" translatable="false">Time</string>
+    <string name="MASTER_Mod1" translatable="false">Date</string>
+    <string name="MASTER_Mod2" translatable="false">Calendar</string>
+    <string name="MASTER_Mod3" translatable="false">Weather</string>
+    <string name="MASTER_Mod4" translatable="false">Room_Temp_Hum</string>
+    <string name="MASTER_Mod5" translatable="false">Stocks</string>
+    <string name="MASTER_Mod6" translatable="false">Youtube</string>
+    <string name="MASTER_Mod7" translatable="false">Notifications</string>
+    <string name="word_created">created</string>
+    <string name="word_edited">edited</string>
+    <string name="FSU_confirmPass_hint">Confirm Password</string>
+    <string name="FSU_matchPasswordsError">Passwords do not match</string>
+    <string name="FSU_SI_email_incorrectERROR">Email has incorrect formatting</string>
+    <string name="ACF_user_signin_error">User password needed</string>
+    <string name="ASF_AD_title">Are you sure?</string>
+    <string name="ASF_AD_msg">All data will be lost, this is irreversible</string>
+    <string name="ASF_AD_yes">Yes, delete my account</string>
+    <string name="ASF_AD_no">No, go back</string>
+    <string name="ASF_password_here_to_terminate">Password here to terminate</string>
+    <string name="user_deleted_txt">User Deleted</string>
+
 
 </resources>
