@@ -37,6 +37,7 @@ public class AccountReviewFragment extends Fragment implements View.OnClickListe
         AFR_Button_submit = view.findViewById(R.id.AFR_Button_submit);
         AFR_ratingBar_ratebar = view.findViewById(R.id.AFR_RatingBar_ratebar);
 
+        //sets widgets to OnClickListener
         AFR_ratingBar_ratebar.setOnClickListener(this);
         AFR_Button_submit.setOnClickListener(this);
         AFR_EditText_input.setOnClickListener(this);
