@@ -14,15 +14,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EdgeEffect;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.google.android.material.snackbar.Snackbar;
-
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Objects;
 
 import ca.kainotomia.it.aphrodite.R;
 import ca.kainotomia.it.aphrodite.UpdateDBNode;
@@ -99,7 +97,7 @@ public class CreateLayoutFragment extends Fragment {
         notifSp = root.findViewById(R.id.CLP_spinner_notif);
 
         //Pattern: Adapter. Using this array adapter to store strings to be used in the dropdown without changing the code
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity().getBaseContext(), R.array.Layout_Values, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(requireActivity().getBaseContext(), R.array.Layout_Values, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         timeSp.setAdapter(adapter);
@@ -120,7 +118,7 @@ public class CreateLayoutFragment extends Fragment {
         youtubeSp.setEnabled(false);
         notifSp.setEnabled(false);
 
-        // TODO
+
         layoutNameBun = getArguments();
         if (layoutNameBun != null) {
             String layoutName = layoutNameBun.getString("layoutName");

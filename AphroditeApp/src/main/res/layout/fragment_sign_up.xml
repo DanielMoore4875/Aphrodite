@@ -109,7 +109,7 @@
     <ProgressBar
         android:id="@+id/FSU_progressBar"
         android:layout_width="90dp"
-        android:layout_height="76dp"
+        android:layout_height="90dp"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

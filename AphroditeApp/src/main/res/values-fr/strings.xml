@@ -13,14 +13,9 @@
     <string name="MA_AlertDialogExitApp_no">Non, restez dans l\'application</string>
     <string name="on_off">AU/ODÉSACTIVÉ</string>
     <string name="saved_layouts">Mises en page enregistrées</string>
-    <string name="savebutton">bouton enregistrer</string>
-    <string name="humidtemperature">Humidité Température</string>
-    <string name="proximity">Proximité</string>
-    <string name="voicerecognition">Reconnaissance vocale</string>
     <string name="weather">Temps</string>
     <string name="title_voice">Voice Commands</string>
     <string name="AF_TextView_username">Username</string>
-    <string name="AF_TextView_version">Version Number</string>
     <string name="AFA_TextView_aboutustext">Text</string>
     <string name="AFA_TextView_title">ABOUT US</string>
     <string name="AFS_TextView_Number">Phone Number</string>
@@ -29,9 +24,7 @@
     <string name="AF_Button_about">About</string>
     <string name="AF_Button_logout">Log Out</string>
     <string name="AFSS_TextView_title">Settings</string>
-    <string name="AFSS_Button_add">Add New Profile</string>
     <string name="AFSS_Button_terminate">Terminate Aphrodite Account</string>
-    <string name="AFSS_Button_remove">Remove Profile</string>
     <string name="AFS_TextView_Email">Email</string>
     <string name="AFS_TextView_title">Title</string>
     <string name="H_MorningButton_text">morning</string>
@@ -112,5 +105,35 @@
     <string name="voice_submit_cmd_txt">Soumettre la commande</string>
     <string name="voice_default_commands">Commandes par défaut</string>
     <string name="voice_user_commands">Commandes utilisateur (Max 3)</string>
+
+    <string name="AFR_TextView_text">Donnez-nous un avis ! Faites-nous savoir comment nous avons fait et comment nous pouvons améliorer Aphrodite.</string>
+    <string name="H_TextView_text">Quel sera votre aménagement aujourd\'hui ?</string>
+    <string name="AF_Button_ChangePassword_text">Changer le mot de passe</string>
+    <!--Change Password-->
+    <string name="CP_TextView_changePass">Changer le mot de passe</string>
+    <string name="CP_PlainText_Password_input">Mot de passe actuel</string>
+    <string name="CP_PlainText_NewPass_input">nouveau mot de passe</string>
+    <string name="CP_PlainText_ConfirmPass_input">Confirmez le mot de passe</string>
+    <string name="CP_Button_Save_text">sauvegarder</string>
+    <string name="password_updated_txt">Mot de passe mis à jour</string>
+    <string name="password_error_txt">Le mot de passe n\'a pas pu être mis à jour</string>
+    <string name="no_user_txxt">Aucun utilisateur connecté</string>
+    <string name="field_cannot_be_empty_txt">Le champ ne peut pas être vide</string>
+    <string name="FSU_register_txt">S\'inscrire</string>
+    <!--  Fragment Sign in and Fragment Sign Up  -->
+    <string name="FSU_name_hint">Nom</string>
+    <string name="FSU_email_hint">Email</string>
+    <string name="FSU_pass_hint">Mot de passe</string>
+    <string name="FSI_login_txt">Connexion</string>
+    <string name="FSU_already_registered_txt">Déjà enregistré?</string>
+    <string name="FSU_gotologin_txt">Aller à la connexion</string>
+    <string name="FSU_userExistsError">Utilisateur déjà créé</string>
+    <string name="FSU_emptyFieldsError">Les champs ne peuvent pas être vides</string>
+    <string name="FSU_welcome">Bienvenue \:</string>
+    <string name="FSI_fieldEmptyError">Veuillez remplir les deux champs</string>
+    <string name="HF_add_layout_fab">Ajouter une mise en page</string>
+    <string name="FL_clicktoedit_txt">Cliquez sur une mise en page pour la modifier</string>
+
+
 
 </resources>

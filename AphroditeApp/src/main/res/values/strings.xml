@@ -13,10 +13,6 @@
     <string name="MA_AlertDialogExitApp_no">No, stay in app</string>
     <string name="on_off">ON/OFF</string>
     <string name="saved_layouts">Saved Layouts</string>
-    <string name="savebutton">Save button</string>
-    <string name="humidtemperature">Humidity Temperature</string>
-    <string name="proximity">Proximity</string>
-    <string name="voicerecognition">Voice Recognition</string>
     <string name="weather">Weather</string>
     <string name="title_voice">Voice/LED</string>
     <string name="AF_TextView_username">Username</string>
@@ -147,9 +143,8 @@
     <string name="voice_default_commands">Default Commands</string>
     <string name="voice_user_commands">User Commands (Max 3)</string>
     <string name="AFR_TextView_text">Give us a review! Let us know how we did and how we can improve Aphrodite.</string>
-    <string name="H_TextView_text">What would be your layout today?</string>
+    <string name="H_TextView_text">What will be your layout today?</string>
     <string name="AF_Button_ChangePassword_text">Change Password</string>
-    <!-- TODO: Remove or change this placeholder text -->
 
     <!--Change Password-->
     <string name="CP_TextView_changePass">Change Password</string>
@@ -162,8 +157,8 @@
     <string name="no_user_txxt">No user signed in</string>
     <string name="field_cannot_be_empty_txt">Field cannot be empty</string>
     <string name="FSU_register_txt">Register</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--  Fragment Sign in and Fragment Sign Up  -->
     <string name="FSU_name_hint">Name</string>
     <string name="FSU_email_hint">Email</string>
     <string name="FSU_pass_hint">Password</string>
@@ -175,6 +170,7 @@
     <string name="FSU_welcome">\"Welcome \"</string>
     <string name="FSI_fieldEmptyError">Please fill both fields</string>
     <string name="HF_add_layout_fab">Add Layout</string>
+    <string name="FL_clicktoedit_txt">Click on a Layout to edit</string>
 
 
 </resources>
