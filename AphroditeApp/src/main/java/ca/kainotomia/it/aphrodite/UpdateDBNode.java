@@ -191,4 +191,11 @@ public class UpdateDBNode {
         }
     }
 
+    public boolean setCurrentLayout(String currentLayout) {
+        if (Objects.requireNonNull(getDatabaseReference().getKey()).equals("user_curr_layout")) {
+            getDatabaseReference().child(getCurrentUid()).setValue(currentLayout);
+            return true;
+        }
+        return false;
+    }
 }

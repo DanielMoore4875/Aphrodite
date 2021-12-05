@@ -133,6 +133,7 @@
     <string name="FSI_fieldEmptyError">Veuillez remplir les deux champs</string>
     <string name="HF_add_layout_fab">Ajouter une mise en page</string>
     <string name="FL_clicktoedit_txt">Cliquez sur une mise en page pour la modifier</string>
+    <string name="HF_updateCurrentLayoutError">La mise en page n\'a pas pu être définie</string>
 
 
 

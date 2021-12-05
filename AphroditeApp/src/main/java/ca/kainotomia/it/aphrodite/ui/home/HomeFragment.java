@@ -108,9 +108,15 @@ public class HomeFragment extends Fragment {
             protected void onBindViewHolder(@NonNull HomeViewHolder holder, int position, @NonNull HomeModel model) {
                 holder.getBtn().setText(model.getTitle());
 
-//                UpdateDBNode getLayoutsNode = new UpdateDBNode("layouts");
-//                ArrayList<String> moduleNameData = new ArrayList<>();
-//                ArrayList<String> moduleLocData = new ArrayList<>();
+                holder.getBtn().setOnClickListener(v -> {
+                    UpdateDBNode updateDBNode = new UpdateDBNode("user_curr_layout");
+                    boolean currLayoutUpdated = updateDBNode.setCurrentLayout(holder.getBtn().getText().toString());
+                    if (currLayoutUpdated) {
+                        Toast.makeText(getActivity(), holder.getBtn().getText().toString(), Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(getActivity(), getString(R.string.HF_updateCurrentLayoutError), Toast.LENGTH_SHORT).show();
+                    }
+                });
 
                 homePB.setVisibility(View.INVISIBLE);
             }

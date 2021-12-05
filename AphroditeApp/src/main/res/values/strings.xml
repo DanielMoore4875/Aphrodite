@@ -171,6 +171,7 @@
     <string name="FSI_fieldEmptyError">Please fill both fields</string>
     <string name="HF_add_layout_fab">Add Layout</string>
     <string name="FL_clicktoedit_txt">Click on a Layout to edit</string>
+    <string name="HF_updateCurrentLayoutError">Layout couldn\'t be set</string>
 
 
 </resources>
