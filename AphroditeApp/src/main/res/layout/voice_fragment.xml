@@ -11,6 +11,8 @@
     android:fillViewport="true"
     tools:ignore="RtlSymmetry">
 
+<!--    TODO landscape view-->
+
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/voice_nestedFragment"
         android:layout_width="match_parent"
