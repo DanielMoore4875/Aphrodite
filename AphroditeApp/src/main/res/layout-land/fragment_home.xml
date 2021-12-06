@@ -39,25 +39,6 @@
             android:padding="10dp"
             android:visibility="visible" />
 
-        <androidx.coordinatorlayout.widget.CoordinatorLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-                android:id="@+id/home_fab"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom|end"
-                android:layout_margin="16dp"
-                android:backgroundTint="@color/peach"
-                android:contentDescription="@string/HF_add_layout_fab"
-                android:text="@string/HF_add_layout_fab"
-                android:textColor="@color/dark_ocean"
-                app:icon="@drawable/voice_add"
-                app:iconTint="@color/dark_ocean"
-                app:rippleColor="@color/lighter_oak" />
-        </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
     </LinearLayout>
 
     <ProgressBar
@@ -69,5 +50,24 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/home_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="16dp"
+            android:backgroundTint="@color/peach"
+            android:contentDescription="@string/HF_add_layout_fab"
+            android:text="@string/HF_add_layout_fab"
+            android:textColor="@color/dark_ocean"
+            app:icon="@drawable/voice_add"
+            app:iconTint="@color/dark_ocean"
+            app:rippleColor="@color/lighter_oak" />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

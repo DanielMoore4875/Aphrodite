@@ -19,8 +19,6 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.google.firebase.auth.FirebaseAuth;
 
-import java.util.Objects;
-
 import ca.kainotomia.it.aphrodite.LoginActivity;
 import ca.kainotomia.it.aphrodite.R;
 import ca.kainotomia.it.aphrodite.UpdateDBNode;
@@ -36,47 +34,53 @@ public class AccountFragment extends Fragment implements View.OnClickListener {
         Button AF_Button_about = view.findViewById(R.id.AF_Button_about);
         Button AF_Button_support = view.findViewById(R.id.AF_Button_support);
         Button AF_Button_settings = view.findViewById(R.id.AF_Button_settings);
-        Button AF_Button_changePass = view.findViewById(R.id.AF_Button_changePass);
+        //Button AF_Button_changePass = view.findViewById(R.id.AF_Button_changePass);
 
-        //if user not signed in send to sign in page
-        if (FirebaseAuth.getInstance().getCurrentUser()== null) {
-            startActivity(new Intent(getActivity(), LoginActivity.class));
-            requireActivity().finish();
-        }
+        //get current username and display it in the username textview
         TextView usernameText = view.findViewById(R.id.AF_TextView_username);
         UpdateDBNode dbNode = new UpdateDBNode();
-        final String nameDisplay = dbNode.getCurrentUserName() +  "\n" + dbNode.getFirebaseUser().getEmail();
-        usernameText.setText(nameDisplay);
+        usernameText.setText(dbNode.getCurrentUserName());
 
         AF_Button_about.setOnClickListener(this);
         AF_Button_settings.setOnClickListener(this);
         AF_Button_support.setOnClickListener(this);
-        AF_Button_changePass.setOnClickListener(this);
+        //AF_Button_changePass.setOnClickListener(this);
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.fragment_account, container, false);
+        Button logoutAccount = rootView.findViewById(R.id.AFSS_Button_logout);
 
-        return inflater.inflate(R.layout.fragment_account, container, false);
+        logoutAccount.setOnClickListener(v -> {
+            System.out.println("LOGOUT");
+            FirebaseAuth.getInstance().signOut();
+            Intent intent = new Intent(getActivity(), LoginActivity.class);
+            startActivity(intent);
+            getActivity().finish();
+        });
+
+        return rootView;
     }
 
     @Override
     public void onClick(View view) {
-        Fragment fragment;
-        int id = view.getId();
-        if (id == R.id.AF_Button_about) {
-            fragment = new AccountAboutFragment();
-            replaceFragment(fragment);
-        } else if (id == R.id.AF_Button_support) {
-            fragment = new AccountReviewFragment();
-            replaceFragment(fragment);
-        } else if (id == R.id.AF_Button_settings) {
-            fragment = new AccountSettingsFragment();
-            replaceFragment(fragment);
-        } else if (id == R.id.AF_Button_changePass) {
-            fragment = new SettingsChangePassFragment();
-            replaceFragment(fragment);
+        Fragment fragment = null;
+        switch (view.getId()) {
+            case R.id.AF_Button_about:
+                fragment = new AccountAboutFragment();
+                replaceFragment(fragment);
+                break;
+
+            case R.id.AF_Button_support:
+                fragment = new AccountReviewFragment();
+                replaceFragment(fragment);
+                break;
+            case R.id.AF_Button_settings:
+                fragment = new AccountSettingsFragment();
+                replaceFragment(fragment);
+                break;
         }
     }
 

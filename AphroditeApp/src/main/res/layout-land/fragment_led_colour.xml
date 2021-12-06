@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lighter_oak"
+    android:fillViewport="true"
+    tools:layout_editor_absoluteX="1dp"
+    tools:layout_editor_absoluteY="159dp">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lighter_oak"
+    tools:context=".ui.voice.LEDColourFragment">
+
+<!--    TODO landscape view-->
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/LED_Red_Slider"
+            android:layout_width="500dp"
+            android:layout_height="49dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginEnd="@dimen/LED_slider_startEnd"
+            android:stepSize="1"
+            android:valueFrom="0"
+            android:valueTo="255"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.52"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:thumbColor="#D32F2F"
+            app:trackColorActive="#C2185B" />
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/LED_Green_Slider"
+            android:layout_width="500dp"
+            android:layout_height="@dimen/LED_slider_height"
+            android:layout_marginTop="40dp"
+            android:stepSize="1"
+            android:valueFrom="0"
+            android:valueTo="255"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/LED_Red_Txt"
+            app:thumbColor="#689F38"
+            app:trackColorActive="#388E3C" />
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/LED_Blue_Slider"
+            android:layout_width="500dp"
+            android:layout_height="@dimen/LED_slider_height"
+            android:layout_marginTop="40dp"
+            android:stepSize="1"
+            android:valueFrom="0"
+            android:valueTo="255"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/LED_Green_Txt"
+            app:thumbColor="#1976D2"
+            app:trackColorActive="#0288D1" />
+
+        <TextView
+        android:id="@+id/LED_PageName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/LED_CustomizeLED_Text"
+        android:textColor="@color/dark_ocean"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.051"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/LED_Blue_Txt"
+            android:layout_width="190dp"
+            android:layout_height="39dp"
+            android:layout_marginStart="152dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/placeholder"
+            android:textColor="@color/dark_ocean"
+            android:textSize="@dimen/LED_txt_size"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/LED_Blue_Slider" />
+
+        <TextView
+            android:id="@+id/LED_Green_Txt"
+            android:layout_width="188dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="152dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/placeholder"
+            android:textColor="@color/dark_ocean"
+            android:textSize="@dimen/LED_txt_size"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/LED_Green_Slider" />
+
+        <TextView
+            android:id="@+id/LED_Red_Txt"
+            android:layout_width="178dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="152dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/placeholder"
+            android:textAlignment="textStart"
+            android:textColor="@color/dark_ocean"
+            android:textSize="@dimen/LED_txt_size"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/LED_Red_Slider" />
+
+        <Button
+            android:id="@+id/LED_colour_btn"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/Button_height"
+            android:layout_marginStart="@dimen/Button_margin_StartEnd"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="@dimen/Button_margin_StartEnd"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="@color/light_ocean"
+            android:text="@string/LED_btn"
+            android:textColor="@color/mid_ocean"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:cornerRadius="@dimen/Button_radius"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/LED_Blue_Txt"
+            app:layout_constraintVertical_bias="1.0"
+            app:rippleColor="@color/lighter_oak" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>
