@@ -69,6 +69,8 @@
             android:hint="@string/ASF_password_here_to_terminate"
             android:importantForAutofill="no"
             android:inputType="textPassword"
+            android:textAlignment="center"
+            android:textColor="@color/mid_ocean"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
