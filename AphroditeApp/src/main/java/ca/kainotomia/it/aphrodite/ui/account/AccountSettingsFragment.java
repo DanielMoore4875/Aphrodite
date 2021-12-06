@@ -29,12 +29,13 @@ public class AccountSettingsFragment extends Fragment{
         View view = inflater.inflate(R.layout.fragment_account_settings, container, false);
 
         Button terminateAccount = view.findViewById(R.id.AFSS_Button_terminate);
-        Button logoutAccount = view.findViewById(R.id.AFSS_Button_logout);
+        //Button logoutAccount = view.findViewById(R.id.AFSS_Button_logout);
 
         terminateAccount.setOnClickListener(v -> {
             System.out.println("TERMINATE");
         });
 
+        /*
         logoutAccount.setOnClickListener(v -> {
             System.out.println("LOGOUT");
             FirebaseAuth.getInstance().signOut();
@@ -42,7 +43,7 @@ public class AccountSettingsFragment extends Fragment{
             startActivity(intent);
             getActivity().finish();
         });
-
+        */
 
 
         return view;
