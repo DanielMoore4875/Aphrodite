@@ -1,12 +1,12 @@
-package ca.kainotomia.it.aphrodite.ui.layouts;
+package ca.kainotomia.it.aphrodite.ui.home;
 
-public class Model {
+public class HomeModel {
     public String title;
 
-    public Model() {
+    public HomeModel() {
     }
 
-    public Model(String title) {
+    public HomeModel(String title) {
         this.title = title;
     }
 
@@ -17,5 +17,4 @@ public class Model {
     public String getTitle() {
         return this.title;
     }
-
 }

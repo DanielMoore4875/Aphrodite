@@ -5,14 +5,16 @@
 
 package ca.kainotomia.it.aphrodite;
 
+import android.content.Context;
 import android.os.Bundle;
+import android.util.AttributeSet;
 import android.view.View;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -21,15 +23,15 @@ import androidx.navigation.ui.NavigationUI;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
-import java.util.Arrays;
-
-import ca.kainotomia.it.aphrodite.ui.home.HomeFragment;
+import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
 
+    FirebaseAuth firebaseAuthMAIN;
+
+    BottomNavigationView bottomNavigationView;
+
     private static final String TAG = "MainActivity";
-
-
 
     @Override
     protected void onStop() {
@@ -37,6 +39,12 @@ public class MainActivity extends AppCompatActivity {
         // IF THIS IS USED, user will be signed out when screen rotates
         // DO NOT USE
         // FirebaseAuth.getInstance().signOut();
+    }
+
+    @Nullable
+    @Override
+    public View onCreateView(@Nullable View parent, @NonNull String name, @NonNull Context context, @NonNull AttributeSet attrs) {
+        return super.onCreateView(parent, name, context, attrs);
     }
 
     @Override
@@ -47,14 +55,14 @@ public class MainActivity extends AppCompatActivity {
 
 
         //Custom Action Bar
-        this.getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        Objects.requireNonNull(this.getSupportActionBar()).setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setDisplayShowCustomEnabled(true);
         getSupportActionBar().setCustomView(R.layout.custom_action_bar);
 
         //for setting orientation
 //        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
-        BottomNavigationView navView = findViewById(R.id.nav_view);
+        bottomNavigationView = findViewById(R.id.nav_view);
         // menu should be considered as top level destinations.
         // Passing each menu ID as a set of Ids because each
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
@@ -62,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
-        NavigationUI.setupWithNavController(navView, navController);
+        NavigationUI.setupWithNavController(bottomNavigationView, navController);
 
     }
 

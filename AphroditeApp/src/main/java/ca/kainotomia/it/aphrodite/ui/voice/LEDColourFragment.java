@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.slider.Slider;
 
@@ -24,7 +25,6 @@ public class LEDColourFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     @SuppressLint("SetTextI18n")
@@ -61,22 +61,23 @@ public class LEDColourFragment extends Fragment {
         green.addOnChangeListener((slider, value, fromUser) -> {
             int greenI = (int) value;
             greenTxt.setText(getString(R.string.LED_G) + greenI);
-
         });
 
         blue.addOnChangeListener((slider, value, fromUser) -> {
             int blueI = (int) value;
             blueTxt.setText(getString(R.string.LED_B) + blueI);
-
         });
 
         changeColour.setOnClickListener(v -> {
+            // cannot be put in strings.xml
             String colour = (int) red.getValue() + "," + (int) green.getValue() + "," + (int) blue.getValue();
             boolean added = dbNode.changeLEDColour(colour);
-            System.out.println("Colour changed: " + added);
+            if (added) {
+                Toast.makeText(getActivity(), "Colour Added", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(getActivity(), "Colour Couldn't Be Added", Toast.LENGTH_SHORT).show();
+            }
         });
-
-
     }
 
     @Override

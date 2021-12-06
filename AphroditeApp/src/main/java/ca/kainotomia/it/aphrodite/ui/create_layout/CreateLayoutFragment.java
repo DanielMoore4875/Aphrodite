@@ -14,12 +14,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EdgeEffect;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
-
-import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -38,6 +35,8 @@ public class CreateLayoutFragment extends Fragment {
     SwitchCompat youtubeSw;
     SwitchCompat notifSw;
 
+    Bundle layoutNameBun;
+
     Spinner timeSp;
     Spinner dateSp;
     Spinner calendarSp;
@@ -51,6 +50,8 @@ public class CreateLayoutFragment extends Fragment {
     EditText layoutNameEditText;
 
     String[] modNamesFromLeft;
+    String[] modNamesFromLeftEdit;
+    String[] masterModules;
 
 
     @Override
@@ -62,20 +63,40 @@ public class CreateLayoutFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.create_layout_page_fragment, container, false);
-        modNamesFromLeft = new String[8];
+        // master array of the names of the modules
+        masterModules = new String[]{getString(R.string.MASTER_Mod0), getString(R.string.MASTER_Mod1),
+                getString(R.string.MASTER_Mod2), getString(R.string.MASTER_Mod3),
+                getString(R.string.MASTER_Mod4), getString(R.string.MASTER_Mod5),
+                getString(R.string.MASTER_Mod6), getString(R.string.MASTER_Mod7)};
+        modNamesFromLeft = new String[]{getString(R.string.MASTER_Mod0), getString(R.string.MASTER_Mod1),
+                getString(R.string.MASTER_Mod2), getString(R.string.MASTER_Mod3),
+                getString(R.string.MASTER_Mod4), getString(R.string.MASTER_Mod5),
+                getString(R.string.MASTER_Mod6), getString(R.string.MASTER_Mod7)};
+        modNamesFromLeftEdit = new String[]{getString(R.string.MASTER_Mod0), getString(R.string.MASTER_Mod1),
+                getString(R.string.MASTER_Mod2), getString(R.string.MASTER_Mod3),
+                getString(R.string.MASTER_Mod4), getString(R.string.MASTER_Mod5),
+                getString(R.string.MASTER_Mod6), getString(R.string.MASTER_Mod7)};
         layoutNameEditText = root.findViewById(R.id.CLP_LayoutName_User_Input_PT);
 
         // If this fragment is called from the LayoutFragment page, this Bundle will contain the name of
         // the layout that needs to be edited. Use this name to the get its data from Firebase
 
         timeSw = root.findViewById(R.id.CLP_Feature_Time);
+//        modNamesFromLeftEdit[0] = timeSw.getText().toString();
         dateSw = root.findViewById(R.id.CLP_Feature_Date);
+//        modNamesFromLeftEdit[1] = dateSw.getText().toString();
         calendarSw = root.findViewById(R.id.CLP_Feature_Calendar);
+//        modNamesFromLeftEdit[2] = calendarSw.getText().toString();
         weatherSw = root.findViewById(R.id.CLP_Feature_Weather);
+//        modNamesFromLeftEdit[3] = weatherSw.getText().toString();
         temp_humSw = root.findViewById(R.id.CLP_Feature_RoomT_H);
+//        modNamesFromLeftEdit[4] = temp_humSw.getText().toString();
         stocksSw = root.findViewById(R.id.CLP_Feature_Stocks);
+//        modNamesFromLeftEdit[5] = stocksSw.getText().toString();
         youtubeSw = root.findViewById(R.id.CLP_Feature_Youtube);
+//        modNamesFromLeftEdit[6] = youtubeSw.getText().toString();
         notifSw = root.findViewById(R.id.CLP_Feature_SocialMediaNot);
+//        modNamesFromLeftEdit[7] = notifSw.getText().toString();
 
         timeSp = root.findViewById(R.id.CLP_spinner_time);
         dateSp = root.findViewById(R.id.CLP_spinner_date);
@@ -87,7 +108,7 @@ public class CreateLayoutFragment extends Fragment {
         notifSp = root.findViewById(R.id.CLP_spinner_notif);
 
         //Pattern: Adapter. Using this array adapter to store strings to be used in the dropdown without changing the code
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity().getBaseContext(), R.array.Layout_Values, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(requireActivity().getBaseContext(), R.array.Layout_Values, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         timeSp.setAdapter(adapter);
@@ -108,8 +129,8 @@ public class CreateLayoutFragment extends Fragment {
         youtubeSp.setEnabled(false);
         notifSp.setEnabled(false);
 
-        // TODO
-        Bundle layoutNameBun = getArguments();
+
+        layoutNameBun = getArguments();
         if (layoutNameBun != null) {
             String layoutName = layoutNameBun.getString("layoutName");
             ArrayList<String> layoutNameData = layoutNameBun.getStringArrayList("layoutNameData");
@@ -283,10 +304,16 @@ public class CreateLayoutFragment extends Fragment {
 //                System.out.println("NAME: " + layoutName);
 //                System.out.println("MOD NAMES:  " + Arrays.toString(modNamesFromLeft));
 //                System.out.println("MOD LOC: " + Arrays.toString(modulesLocation));
-                dbNode.addLayout(layoutName, modulesIsChecked, modNamesFromLeft, modulesLocation);
+                if (layoutNameBun == null) {
+                    dbNode.addLayout(layoutName, modulesIsChecked, modNamesFromLeft, modulesLocation);
+                    Toast.makeText(getActivity(), layoutName + " " + getString(R.string.word_created), Toast.LENGTH_SHORT).show();
+                } else {
+                    dbNode.editLayout(layoutName, modulesIsChecked, modNamesFromLeftEdit, modulesLocation);
+                    Toast.makeText(getActivity(), layoutName +  " " + getString(R.string.word_edited), Toast.LENGTH_SHORT).show();
+                }
                 //cant be put in strings.xml
-                Toast.makeText(getActivity(), "Layout created: " + layoutName + "\nFor: " + dbNode.getCurrentUserName(), Toast.LENGTH_SHORT).show();
-                Fragment home = new HomeFragment();
+
+                HomeFragment home = new HomeFragment();
                 FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
                 transaction.replace(R.id.nav_host_fragment, home);
                 transaction.addToBackStack(null);
@@ -297,13 +324,13 @@ public class CreateLayoutFragment extends Fragment {
         }
     }
 
+    // check if all chosen modules have a location selected
     private boolean checkAllChosen(boolean[] checkedMods, String[] modsLoc, String[] modNames) {
         for (int i = 0; i < 8; i++) {
             if (checkedMods[i] && modsLoc[i].equals(modNames[0])) {
-                //havent chosen location for this module
+
                 return false;
             }
-
         }
         return true;
     }
@@ -314,8 +341,6 @@ public class CreateLayoutFragment extends Fragment {
         if (!v.isChecked()) {
             //reset spinner
             sp.setSelection(0);
-        } else {
-            modNamesFromLeft[position] = v.getText().toString();
         }
     }
 }

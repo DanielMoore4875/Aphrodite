@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--Jose Antonio Castro Teodoro n01384776 Section B-->
+<?xml version="1.0" encoding="utf-8"?><!--Jose Antonio Castro Teodoro n01384776 Section B-->
 <!--Daniel Moore n01354875 Section B-->
 <!--Ryan Black n01305403 Section B-->
 <!--Alyssa Gomez n01042777 Section B-->
@@ -37,9 +36,11 @@
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
+        android:digits="@string/passwordDigits"
         android:ems="10"
         android:fontFamily="sans-serif-light"
-        android:text="@string/CP_PlainText_Password_input"
+        android:hint="@string/CP_PlainText_Password_input"
+        android:inputType="textPassword"
         android:textAlignment="center"
         android:textColor="@color/mid_ocean"
         android:textSize="16sp"
@@ -48,16 +49,19 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/CP_TextView_title"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="Autofill" />
 
     <EditText
         android:id="@+id/CP_PlainText_title_NewPasswordInput"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
+        android:digits="@string/passwordDigits"
         android:ems="10"
         android:fontFamily="sans-serif-light"
-        android:text="@string/CP_PlainText_NewPass_input"
+        android:hint="@string/CP_PlainText_NewPass_input"
+        android:inputType="textPassword"
         android:textAlignment="center"
         android:textColor="@color/mid_ocean"
         android:textSize="16sp"
@@ -66,16 +70,19 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/CP_PlainText_title_PasswordInput"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="Autofill" />
 
     <EditText
         android:id="@+id/CP_PlainText_title_ConfirmPasswordInput"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
+        android:digits="@string/passwordDigits"
         android:ems="10"
         android:fontFamily="sans-serif-light"
-        android:text="@string/CP_PlainText_ConfirmPass_input"
+        android:hint="@string/CP_PlainText_ConfirmPass_input"
+        android:inputType="textPassword"
         android:textAlignment="center"
         android:textColor="@color/mid_ocean"
         android:textSize="16sp"
@@ -84,7 +91,8 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/CP_PlainText_title_NewPasswordInput"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="Autofill" />
 
     <Button
         android:id="@+id/CP_Button_Save"

@@ -13,10 +13,6 @@
     <string name="MA_AlertDialogExitApp_no">No, stay in app</string>
     <string name="on_off">ON/OFF</string>
     <string name="saved_layouts">Saved Layouts</string>
-    <string name="savebutton">Save button</string>
-    <string name="humidtemperature">Humidity Temperature</string>
-    <string name="proximity">Proximity</string>
-    <string name="voicerecognition">Voice Recognition</string>
     <string name="weather">Weather</string>
     <string name="title_voice">Voice/LED</string>
     <string name="AF_TextView_username">Username</string>
@@ -134,6 +130,7 @@
     <string name="alphabet" translatable="false">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
     <string name="alphabetAndUnderscore" translatable="false">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_</string>
     <string name="alphabetAndSpace" translatable="false">abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
+    <string name="passwordDigits" translatable="false">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!?</string>
     <string name="kainotomia_email" translatable="false">kainotomia.aphrodite@gmail.com</string>
     <string name="Home_def_morn" translatable="false">default morning layout loaded</string>
     <string name="Home_def_stocks" translatable="false">default stocks layout loaded</string>
@@ -146,9 +143,8 @@
     <string name="voice_default_commands">Default Commands</string>
     <string name="voice_user_commands">User Commands (Max 3)</string>
     <string name="AFR_TextView_text">Give us a review! Let us know how we did and how we can improve Aphrodite.</string>
-    <string name="H_TextView_text">What would be your layout today?</string>
+    <string name="H_TextView_text">What will be your layout today?</string>
     <string name="AF_Button_ChangePassword_text">Change Password</string>
-    <!-- TODO: Remove or change this placeholder text -->
 
     <!--Change Password-->
     <string name="CP_TextView_changePass">Change Password</string>
@@ -156,6 +152,48 @@
     <string name="CP_PlainText_NewPass_input">New Password</string>
     <string name="CP_PlainText_ConfirmPass_input">Confirm Password</string>
     <string name="CP_Button_Save_text">Save</string>
+    <string name="password_updated_txt">Password Updated</string>
+    <string name="password_error_txt">Password could not be updated</string>
+    <string name="no_user_txxt">No user signed in</string>
+    <string name="field_cannot_be_empty_txt">Field cannot be empty</string>
+    <string name="FSU_register_txt">Register</string>
+
+    <!--  Fragment Sign in and Fragment Sign Up  -->
+    <string name="FSU_name_hint">Name</string>
+    <string name="FSU_email_hint">Email</string>
+    <string name="FSU_pass_hint">Password</string>
+    <string name="FSI_login_txt">Login</string>
+    <string name="FSU_already_registered_txt">Already Registered?</string>
+    <string name="FSU_gotologin_txt">Go To Login</string>
+    <string name="FSU_userExistsError">User already created</string>
+    <string name="FSU_emptyFieldsError">Fields cannot be empty</string>
+    <string name="FSU_welcome">\"Welcome \"</string>
+    <string name="FSI_fieldEmptyError">Please fill both fields</string>
+    <string name="HF_add_layout_fab">Add Layout</string>
+    <string name="FL_clicktoedit_txt">Click on a Layout to edit</string>
+    <string name="HF_updateCurrentLayoutError">Layout couldn\'t be set</string>
+
+    <!-- Master Module Names (English Only) -->
+    <string name="MASTER_Mod0" translatable="false">Time</string>
+    <string name="MASTER_Mod1" translatable="false">Date</string>
+    <string name="MASTER_Mod2" translatable="false">Calendar</string>
+    <string name="MASTER_Mod3" translatable="false">Weather</string>
+    <string name="MASTER_Mod4" translatable="false">Room_Temp_Hum</string>
+    <string name="MASTER_Mod5" translatable="false">Stocks</string>
+    <string name="MASTER_Mod6" translatable="false">Youtube</string>
+    <string name="MASTER_Mod7" translatable="false">Notifications</string>
+    <string name="word_created">created</string>
+    <string name="word_edited">edited</string>
+    <string name="FSU_confirmPass_hint">Confirm Password</string>
+    <string name="FSU_matchPasswordsError">Passwords do not match</string>
+    <string name="FSU_SI_email_incorrectERROR">Email has incorrect formatting</string>
+    <string name="ACF_user_signin_error">User password needed</string>
+    <string name="ASF_AD_title">Are you sure?</string>
+    <string name="ASF_AD_msg">All data will be lost, this is irreversible</string>
+    <string name="ASF_AD_yes">Yes, delete my account</string>
+    <string name="ASF_AD_no">No, go back</string>
+    <string name="ASF_password_here_to_terminate">Password here to terminate</string>
+    <string name="user_deleted_txt">User Deleted</string>
 
 
 </resources>

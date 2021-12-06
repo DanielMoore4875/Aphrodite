@@ -11,16 +11,15 @@
     android:fillViewport="true"
     tools:ignore="RtlSymmetry">
 
+<!--    TODO landscape view-->
+
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/voice_nestedFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/translucent_black"
-        android:clickable="true"
         android:elevation="10dp"
-        android:focusable="true"
         android:padding="20dp"
-        android:visibility="invisible">
+        android:visibility="visible">
 
     </androidx.fragment.app.FragmentContainerView>
 
@@ -149,9 +148,10 @@
             android:layout_margin="16dp"
             android:contentDescription="@string/voice_fab_desc"
             android:text="@string/voice_new_command"
-            android:textColor="@color/lighter_oak"
+            android:textColor="@color/dark_ocean"
             app:icon="@drawable/voice_add"
-            app:iconTint="@color/lighter_oak"
+            android:backgroundTint="@color/peach"
+            app:iconTint="@color/dark_ocean"
             app:rippleColor="@color/lighter_oak" />
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

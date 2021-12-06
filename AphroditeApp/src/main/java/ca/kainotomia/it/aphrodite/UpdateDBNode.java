@@ -1,12 +1,17 @@
 package ca.kainotomia.it.aphrodite;
 
+import android.os.Bundle;
+import android.provider.ContactsContract;
+
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -38,29 +43,30 @@ public class UpdateDBNode {
         return databaseReference;
     }
 
-    public boolean addUser(String uid, String name, String email) {
-        if (Objects.requireNonNull(getDatabaseReference().getKey()).equals("users")) {
-            getDatabaseReference().child(uid).child("name").setValue(name);
-            getDatabaseReference().child(uid).child("email").setValue(email);
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    public boolean terminateUser() {
-        if (Objects.requireNonNull(getDatabaseReference().getKey()).equals("users")) {
-            // need to remove all things associated with the user
-            getDatabaseReference().child(getCurrentUid()).removeValue();
-            return true;
-        } else {
-            return false;
-        }
-    }
-
     public FirebaseUser getFirebaseUser() {
         return this.firebaseUser;
     }
+
+    public String getCurrentUid() {
+        return getFirebaseUser().getUid();
+    }
+
+    public String getCurrentUserName() {
+        return getFirebaseUser().getDisplayName();
+    }
+
+    // Add user is handled by Firebase Auth
+
+//    public boolean terminateUser() {
+//        if (Objects.requireNonNull(getDatabaseReference().getKey()).equals("users")) {
+//            // need to remove all things associated with the user
+//            getDatabaseReference().child(getCurrentUid()).removeValue();
+//            return true;
+//        } else {
+//            return false;
+//        }
+//    }
+
 
     /*
         Will store the uid and its children will be the modules (key) with their locations (value)
@@ -73,7 +79,7 @@ public class UpdateDBNode {
          */
     public boolean addLayout(String layoutName, boolean[] modIsChecked, String[] moduleName, String[] moduleLoc) {
         if (Objects.requireNonNull(getDatabaseReference().getKey()).equals("layouts")) {
-            for (int i = 0; i < 7; i++) {
+            for (int i = 0; i < 8; i++) {
                 if (modIsChecked[i]) {
                     getDatabaseReference()
                             .child(getCurrentUid())
@@ -88,6 +94,38 @@ public class UpdateDBNode {
             return false;
         }
     }
+
+    public boolean editLayout(String layoutName, boolean[] modIsChecked, String[] moduleName, String[] moduleLoc) {
+        if (Objects.requireNonNull(getDatabaseReference().getKey()).equals("layouts")) {
+            for (int i = 0; i < 8; i++) {
+                if (modIsChecked[i]) {
+                    getDatabaseReference()
+                            .child(getCurrentUid())
+                            .child(layoutName)
+                            .child(moduleName[i])
+                            .setValue(moduleLoc[i]);
+                } else {
+                    //if not checked remove the value
+                    getDatabaseReference()
+                            .child(getCurrentUid())
+                            .child(layoutName)
+                            .child(moduleName[i])
+                            .removeValue();
+                }
+            }
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+//    public void printarr(String[] arr) {
+//        System.out.println("THIS ARRAY: [");
+//        for (String s : arr) {
+//            System.out.print(s + " ");
+//        }
+//        System.out.println("]");
+//    }
 
     public boolean saveRating(String review, float star) {
         if (Objects.requireNonNull(getDatabaseReference().getKey()).equals("rating")) {
@@ -106,14 +144,6 @@ public class UpdateDBNode {
     }
 
 
-    public String getCurrentUid() {
-        return getFirebaseUser().getUid();
-    }
-
-    public String getCurrentUserName() {
-        return getFirebaseUser().getDisplayName();
-    }
-
     public boolean changeLEDColour(String colour) {
         if (Objects.requireNonNull(getDatabaseReference().getKey()).equals("led_colour")) {
             getDatabaseReference()
@@ -121,7 +151,6 @@ public class UpdateDBNode {
                     .setValue(colour);
             return true;
         } else {
-            System.out.println("Node Incorrect: Colour not added");
             return false;
         }
     }
@@ -138,22 +167,35 @@ public class UpdateDBNode {
     // Add a voice command title and description
     public void addVoiceCommand(String title, String desc) {
         if (Objects.requireNonNull(getDatabaseReference().getKey()).equals("user_voice_commands")) {
-            getDatabaseReference().child(getCurrentUid()).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
-                @Override
-                public void onComplete(@NonNull Task<DataSnapshot> task) {
-                    if (task.isSuccessful()) {
-                        int numOfCommands;
-                        numOfCommands = (int) task.getResult().getChildrenCount();
-                        if (title != null && desc != null && numOfCommands < 3) {
-                            getDatabaseReference()
-                                    .child(getCurrentUid())
-                                    .child(title)
-                                    .setValue(desc);
-                        }
+            System.out.println(title);
+            System.out.println(desc);
+            getDatabaseReference().child(getCurrentUid()).get().addOnCompleteListener(task -> {
+                if (task.isSuccessful()) {
+                    DataSnapshot data = task.getResult();
+                    int numOfCommands;
+                    numOfCommands = (int) Objects.requireNonNull(task.getResult()).getChildrenCount();
+                    if (numOfCommands < 3) {
+                        UpdateDBNode.this.getDatabaseReference()
+                                .child(UpdateDBNode.this.getCurrentUid())
+                                .child(title)
+                                .setValue(desc);
+                    } else if (Objects.requireNonNull(data).hasChild(title)) {
+                        //edit voice command that exists
+                        UpdateDBNode.this.getDatabaseReference()
+                                .child(UpdateDBNode.this.getCurrentUid())
+                                .child(title)
+                                .setValue(desc);
                     }
                 }
             });
         }
     }
 
+    public boolean setCurrentLayout(String currentLayout) {
+        if (Objects.requireNonNull(getDatabaseReference().getKey()).equals("user_curr_layout")) {
+            getDatabaseReference().child(getCurrentUid()).setValue(currentLayout);
+            return true;
+        }
+        return false;
+    }
 }

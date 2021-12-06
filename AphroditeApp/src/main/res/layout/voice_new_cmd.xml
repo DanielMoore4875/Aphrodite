@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@drawable/rounded_lighter_oak"
+    android:background="@drawable/voice_rounded_backgrnd"
     android:padding="5dp"
     app:circularflow_radiusInDP="10dp"
     android:id="@+id/voice_newCmdFragment"
@@ -41,13 +41,13 @@
 
     <Button
         android:id="@+id/voice_newCmdBtn"
-        android:layout_width="wrap_content"
+        android:layout_width="249dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:textSize="15sp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/dark_ocean"
         android:text="@string/voice_submit_cmd_txt"
-        android:backgroundTint="@color/light_ocean"
-        android:textColor="@color/dark_ocean"
+        android:textColor="@color/light_ocean"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/voice_newCmdDesc" />

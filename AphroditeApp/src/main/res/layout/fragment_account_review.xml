@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--Jose Antonio Castro Teodoro n01384776 Section B-->
+<?xml version="1.0" encoding="utf-8"?><!--Jose Antonio Castro Teodoro n01384776 Section B-->
 <!--Daniel Moore n01354875 Section B-->
 <!--Ryan Black n01305403 Section B-->
 <!--Alyssa Gomez n01042777 Section B-->
@@ -94,6 +93,8 @@
         android:backgroundTint="@color/light_oak"
         android:gravity="center"
         android:hint="@string/AFR_EditText_review"
+        android:importantForAutofill="no"
+        android:inputType="textAutoCorrect"
         android:padding="15dp"
         android:textColor="@color/dark_ocean"
         android:textColorHint="@color/dark_ocean"
