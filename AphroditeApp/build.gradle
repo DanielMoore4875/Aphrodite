@@ -36,6 +36,8 @@ android {
 }
 
 dependencies {
+    implementation 'androidx.test.espresso:espresso-accessibility:3.4.0'
+
 
     // Required for local unit tests (JUnit 4 framework)
     testImplementation 'junit:junit:4.13.2'
@@ -84,4 +86,15 @@ dependencies {
     // FirebaseUI for Firebase Realtime Database & Auth
     implementation 'com.firebaseui:firebase-ui-database:8.0.0'
     implementation 'com.firebaseui:firebase-ui-auth:8.0.0'
+
+//    // dependencies for local unit tests
+//    // junit 4 | robolectric
+//    testImplementation "junit:junit:$junitVersion"
+//    testImplementation "org.robolectric:robolectric:$robolectricVersion"
+//    testImplementation('androidx.test:core:1.4.0')
+//
+//    // AndroidX Test - Instrumented testing
+//    // espresso
+//    androidTestImplementation "androidx.test.ext:junit:$androidXTestExtKotlinRunnerVersion"
+//    androidTestImplementation "androidx.test.espresso:espresso-core:$espressoVersion"
 }
