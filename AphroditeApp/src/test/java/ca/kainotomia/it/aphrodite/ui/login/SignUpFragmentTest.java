@@ -16,6 +16,7 @@ public class SignUpFragmentTest {
 
     @Test
     public void createUser() {
+      //  assertThat(SignUpFragment.isValidEmail("name@gmail.com")).isTrue);
     }
 
     @Test
