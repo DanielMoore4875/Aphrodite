@@ -20,12 +20,15 @@ import java.util.Objects;
 
 import ca.kainotomia.it.aphrodite.R;
 import ca.kainotomia.it.aphrodite.UpdateDBNode;
+import ca.kainotomia.it.aphrodite.ui.home.HomeFragment;
+import ca.kainotomia.it.aphrodite.ui.layouts.LayoutFragment;
 
 public class VoiceNewCmd extends Fragment {
 
     private EditText title;
     private EditText desc;
     private Button submit;
+    public Button cancel;
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -33,8 +36,15 @@ public class VoiceNewCmd extends Fragment {
         title = view.findViewById(R.id.voice_newCmdTitle);
         desc = view.findViewById(R.id.voice_newCmdDesc);
         submit = view.findViewById(R.id.voice_newCmdBtn);
+        cancel = view.findViewById(R.id.voice_newCmdBtn_cancel);
 
-
+        cancel.setOnClickListener(v -> {
+            Fragment newCmD = new VoiceFragment();
+            FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+            transaction.replace(R.id.voice_nestedFragment, newCmD);
+            transaction.addToBackStack(null);
+            transaction.commit();
+        });
 
         submit.setOnClickListener(v -> {
             String titleTxt = title.getText().toString();
@@ -53,7 +63,9 @@ public class VoiceNewCmd extends Fragment {
 
             System.out.println("HERE");
         });
+
     }
+
 
 
 
@@ -62,5 +74,6 @@ public class VoiceNewCmd extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.voice_new_cmd, container, false);
+
     }
 }
