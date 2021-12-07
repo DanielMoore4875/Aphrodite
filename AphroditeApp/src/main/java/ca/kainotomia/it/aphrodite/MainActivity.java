@@ -6,6 +6,7 @@
 package ca.kainotomia.it.aphrodite;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.AttributeSet;
 import android.view.View;
@@ -27,6 +28,8 @@ import java.util.Objects;
 public class MainActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
+
+    SharedPreferences sp;
 
     @Nullable
     @Override
