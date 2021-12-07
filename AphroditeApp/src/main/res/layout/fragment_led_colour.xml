@@ -122,7 +122,7 @@
         android:backgroundTint="@color/light_ocean"
         android:text="@string/LED_btn"
         android:textColor="@color/mid_ocean"
-        android:textSize="14sp"
+        android:textSize="14dp"
         android:textStyle="bold"
         app:cornerRadius="@dimen/Button_radius"
         app:layout_constraintBottom_toBottomOf="parent"
