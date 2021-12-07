@@ -194,6 +194,7 @@
     <string name="ASF_AD_no">No, go back</string>
     <string name="ASF_password_here_to_terminate">Password here to terminate</string>
     <string name="user_deleted_txt">User Deleted</string>
+    <string name="voice_cancel_cmd_txt">Cancel</string>
 
 
 </resources>

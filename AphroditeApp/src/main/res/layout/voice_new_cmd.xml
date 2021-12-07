@@ -21,7 +21,7 @@
         android:importantForAutofill="no"
         android:inputType="text"
         android:textAlignment="center"
-        android:textColor="@color/mid_ocean"
+        android:textColor="@color/dark_ocean"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -67,6 +67,22 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/voice_newCmdDesc"
+        app:layout_constraintVertical_bias="0.0"
+        app:rippleColor="@color/lighter_oak" />
+
+    <Button
+        android:id="@+id/voice_newCmdBtn_cancel"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/Button_height"
+        android:backgroundTint="@color/mid_ocean"
+        android:text="@string/voice_cancel_cmd_txt"
+        android:textColor="@color/lighter_oak"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:cornerRadius="@dimen/Button_radius"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/voice_newCmdBtn"
         app:layout_constraintVertical_bias="0.0"
         app:rippleColor="@color/lighter_oak" />
 
