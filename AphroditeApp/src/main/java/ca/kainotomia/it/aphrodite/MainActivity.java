@@ -31,6 +31,10 @@ public class MainActivity extends AppCompatActivity {
 
     SharedPreferences sp;
 
+    SharedPreferences.Editor editor = sp.edit();
+
+
+
 
 
     @Nullable
