@@ -42,8 +42,10 @@ public class MainActivity extends AppCompatActivity {
     @Nullable
     @Override
     public View onCreateView(@Nullable View parent, @NonNull String name, @NonNull Context context, @NonNull AttributeSet attrs) {
+
         //getSharedPreferences mode
         sp = getSharedPreferences("UserLayoutPrefs",Context.MODE_PRIVATE);
+
         return super.onCreateView(parent, name, context, attrs);
     }
 

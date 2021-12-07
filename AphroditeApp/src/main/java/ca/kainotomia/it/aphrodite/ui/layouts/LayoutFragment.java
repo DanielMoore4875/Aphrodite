@@ -4,6 +4,8 @@
 //Alyssa Gomez n01042777 Section B
 package ca.kainotomia.it.aphrodite.ui.layouts;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -132,6 +134,8 @@ public class LayoutFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         firebaseRecyclerAdapter.startListening();
+
+        SharedPreferences sp = getActivity().getSharedPreferences("UserLayoutPrefs",Context.MODE_PRIVATE);
 
 
     }
