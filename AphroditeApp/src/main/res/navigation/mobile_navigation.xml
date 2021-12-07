@@ -8,24 +8,24 @@
     <fragment
         android:id="@+id/navigation_home"
         android:name="ca.kainotomia.it.aphrodite.ui.home.HomeFragment"
-        android:label="@string/title_home"
+        android:label="@string/nav_title_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/navigation_layout"
         android:name="ca.kainotomia.it.aphrodite.ui.layouts.LayoutFragment"
-        android:label="@string/title_layouts"
+        android:label="@string/nav_title_layouts"
         tools:layout="@layout/fragment_layouts" />
 
     <fragment
         android:id="@+id/navigation_account"
         android:name="ca.kainotomia.it.aphrodite.ui.account.AccountFragment"
-        android:label="@string/title_settings"
+        android:label="@string/nav_title_settings"
         tools:layout="@layout/fragment_account" />
 
     <fragment
         android:id="@+id/navigation_voice"
         android:name="ca.kainotomia.it.aphrodite.ui.voice.VoiceFragment"
-        android:label="@string/title_voice"
+        android:label="@string/nav_title_voice"
         tools:layout="@layout/voice_fragment" />
 </navigation>
