@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class SignUpFragmentTest {
     @Test
-    public void registerNameTest() throws Exception {
+    public void registerNameTest() {
         assertTrue("",true);
     }
 }

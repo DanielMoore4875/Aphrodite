@@ -5,8 +5,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,21 +13,14 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentContainerView;
-import androidx.fragment.app.FragmentTransaction;
-
-import java.util.Objects;
 
 import ca.kainotomia.it.aphrodite.R;
 import ca.kainotomia.it.aphrodite.UpdateDBNode;
-import ca.kainotomia.it.aphrodite.ui.home.HomeFragment;
-import ca.kainotomia.it.aphrodite.ui.layouts.LayoutFragment;
 
 public class VoiceNewCmd extends Fragment {
 
     private EditText title;
     private EditText desc;
-    private Button submit;
     public Button cancel;
 
     @Override
@@ -37,7 +28,7 @@ public class VoiceNewCmd extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         title = view.findViewById(R.id.voice_newCmdTitle);
         desc = view.findViewById(R.id.voice_newCmdDesc);
-        submit = view.findViewById(R.id.voice_newCmdBtn);
+        Button submit = view.findViewById(R.id.voice_newCmdBtn);
         cancel = view.findViewById(R.id.voice_newCmdBtn_cancel);
 
         cancel.setOnClickListener(v -> {

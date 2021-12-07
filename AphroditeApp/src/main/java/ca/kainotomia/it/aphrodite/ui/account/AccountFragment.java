@@ -19,8 +19,6 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.google.firebase.auth.FirebaseAuth;
 
-import java.util.Objects;
-
 import ca.kainotomia.it.aphrodite.LoginActivity;
 import ca.kainotomia.it.aphrodite.R;
 import ca.kainotomia.it.aphrodite.UpdateDBNode;

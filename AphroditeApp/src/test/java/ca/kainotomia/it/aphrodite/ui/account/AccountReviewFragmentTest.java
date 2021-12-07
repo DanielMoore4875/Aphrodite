@@ -7,13 +7,13 @@ import org.junit.Test;
 public class AccountReviewFragmentTest {
 
     @Test
-    public void reviewInputNullTest() throws Exception {
+    public void reviewInputNullTest() {
         String test = "";
         assertTrue(test, true);
     }
 
     @Test
-    public void reviewFloatTest() throws Exception {
+    public void reviewFloatTest() {
         float extraStar = 6;
         assertNotEquals(extraStar, 5 );
         assertNotEquals(extraStar, 4 );
@@ -28,7 +28,7 @@ public class AccountReviewFragmentTest {
     }
 
     @Test
-    public void reviewInputFloatTest() throws Exception {
+    public void reviewInputFloatTest() {
         float extraStar = 0;
         assertNotEquals(extraStar, 5 );
         assertNotEquals(extraStar, 4 );

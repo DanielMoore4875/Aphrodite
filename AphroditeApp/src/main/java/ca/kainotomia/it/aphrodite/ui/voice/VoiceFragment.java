@@ -11,9 +11,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
-import android.view.animation.AnimationSet;
-import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.Toast;
 import android.widget.ToggleButton;
@@ -22,7 +19,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentContainerView;
-import androidx.fragment.app.FragmentResultListener;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -30,10 +26,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
-import com.firebase.ui.database.SnapshotParser;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
-import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.Query;
 
 import java.util.Objects;
@@ -52,9 +45,6 @@ public class VoiceFragment extends Fragment {
     private FirebaseRecyclerAdapter<VoiceModel, VoiceHolder> voiceFBRA;
     private FirebaseRecyclerAdapter<VoiceModel, VoiceHolder> voiceUserFBRA;
     private FragmentContainerView newCmdFragment;
-    private int numUserCommands;
-
-    private BottomNavigationView bottomNavigationView;
 
     ConnectivityManager connectivityManager;
     NetworkInfo networkInfo;
@@ -135,10 +125,7 @@ public class VoiceFragment extends Fragment {
         Query query = dbNode.getDatabaseReference().child(dbNode.getCurrentUid());
 
         FirebaseRecyclerOptions<VoiceModel> options = new FirebaseRecyclerOptions.Builder<VoiceModel>()
-                .setQuery(query, snapshot -> {
-                    numUserCommands++;
-                    return new VoiceModel(snapshot.getKey(), Objects.requireNonNull(snapshot.getValue()).toString());
-                })
+                .setQuery(query, snapshot -> new VoiceModel(snapshot.getKey(), Objects.requireNonNull(snapshot.getValue()).toString()))
                 .build();
 
         voiceUserFBRA = new FirebaseRecyclerAdapter<VoiceModel, VoiceHolder>(options) {
@@ -169,13 +156,6 @@ public class VoiceFragment extends Fragment {
         if (voiceUserFBRA != null) {
             voiceUserFBRA.stopListening();
         }
-    }
-
-
-    @Override
-    public void onResume() {
-        super.onResume();
-//        newCmdFragment.setVisibility(View.INVISIBLE);
     }
 
     @Override
@@ -228,7 +208,4 @@ public class VoiceFragment extends Fragment {
 
     }
 
-    public int getNumUserCommands() {
-        return numUserCommands;
-    }
 }

@@ -4,35 +4,27 @@
 //Alyssa Gomez n01042777 Section B
 package ca.kainotomia.it.aphrodite.ui.home;
 
-import android.app.DownloadManager;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.database.Query;
-
-import java.util.ArrayList;
 
 import ca.kainotomia.it.aphrodite.R;
 import ca.kainotomia.it.aphrodite.UpdateDBNode;
-import ca.kainotomia.it.aphrodite.ui.account.AccountSettingsFragment;
 import ca.kainotomia.it.aphrodite.ui.create_layout.CreateLayoutFragment;
 
 public class HomeFragment extends Fragment {

@@ -4,12 +4,9 @@
 //Alyssa Gomez n01042777 Section B
 package ca.kainotomia.it.aphrodite;
 
-import android.app.FragmentManager;
 import android.os.Bundle;
-import android.widget.FrameLayout;
+
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import ca.kainotomia.it.aphrodite.ui.account.AccountFragment;
 
 public class AccountActivity extends AppCompatActivity {
 

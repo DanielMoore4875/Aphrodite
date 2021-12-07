@@ -212,7 +212,7 @@ public class EspressoTest {
         materialButton3.perform(click());
 
         ViewInteraction viewGroup = onView(
-                allOf(withParent(withParent(IsInstanceOf.<View>instanceOf(android.view.ViewGroup.class))),
+                allOf(withParent(withParent(IsInstanceOf.instanceOf(android.view.ViewGroup.class))),
                         isDisplayed()));
         viewGroup.check(matches(isDisplayed()));
 
@@ -289,7 +289,7 @@ public class EspressoTest {
 
         ViewInteraction switch_ = onView(
                 allOf(withId(R.id.CLP_Feature_Time), withText("Time"),
-                        withParent(withParent(IsInstanceOf.<View>instanceOf(android.widget.ScrollView.class))),
+                        withParent(withParent(IsInstanceOf.instanceOf(android.widget.ScrollView.class))),
                         isDisplayed()));
         switch_.check(matches(isDisplayed()));
 

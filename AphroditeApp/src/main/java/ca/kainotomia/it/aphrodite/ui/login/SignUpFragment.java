@@ -1,11 +1,6 @@
 package ca.kainotomia.it.aphrodite.ui.login;
 
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
-
 import android.text.TextUtils;
 import android.util.Patterns;
 import android.view.LayoutInflater;
@@ -16,19 +11,15 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.SignInMethodQueryResult;
 import com.google.firebase.auth.UserProfileChangeRequest;
 
 import java.util.Objects;
 
 import ca.kainotomia.it.aphrodite.R;
-import kotlin.text.Regex;
 
 
 public class SignUpFragment extends Fragment {
@@ -132,10 +123,6 @@ public class SignUpFragment extends Fragment {
                 setPBInvisibleAndEnableButtons();
                 Toast.makeText(getActivity(), getString(R.string.FSU_matchPasswordsError), Toast.LENGTH_SHORT).show();
             }
-//            if (passwordET_R.getText().toString().matches(confirmPassET_R.getText().toString())) {
-//            } else {
-//                Toast.makeText(getActivity(), getString(R.string.FSU_matchPasswordsError), Toast.LENGTH_SHORT).show();
-//            }
         } else {
             setPBInvisibleAndEnableButtons();
             Toast.makeText(getActivity(), getString(R.string.FSU_emptyFieldsError), Toast.LENGTH_SHORT).show();

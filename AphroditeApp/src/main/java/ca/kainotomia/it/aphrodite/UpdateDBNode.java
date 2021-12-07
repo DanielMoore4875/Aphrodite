@@ -1,17 +1,8 @@
 package ca.kainotomia.it.aphrodite;
 
-import android.os.Bundle;
-import android.provider.ContactsContract;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -54,19 +45,6 @@ public class UpdateDBNode {
     public String getCurrentUserName() {
         return getFirebaseUser().getDisplayName();
     }
-
-    // Add user is handled by Firebase Auth
-
-//    public boolean terminateUser() {
-//        if (Objects.requireNonNull(getDatabaseReference().getKey()).equals("users")) {
-//            // need to remove all things associated with the user
-//            getDatabaseReference().child(getCurrentUid()).removeValue();
-//            return true;
-//        } else {
-//            return false;
-//        }
-//    }
-
 
     /*
         Will store the uid and its children will be the modules (key) with their locations (value)

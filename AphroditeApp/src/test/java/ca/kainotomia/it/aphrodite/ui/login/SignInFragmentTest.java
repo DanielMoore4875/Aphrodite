@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class SignInFragmentTest {
     @Test
-    public void loginNameTest() throws Exception {
+    public void loginNameTest() {
         assertTrue("",true);
     }
 

@@ -2,10 +2,6 @@ package ca.kainotomia.it.aphrodite.ui.login;
 
 import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,13 +10,9 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.UserProfileChangeRequest;
+import androidx.fragment.app.Fragment;
 
-import java.util.Objects;
+import com.google.firebase.auth.FirebaseAuth;
 
 import ca.kainotomia.it.aphrodite.MainActivity;
 import ca.kainotomia.it.aphrodite.R;
@@ -73,14 +65,6 @@ public class SignInFragment extends Fragment {
                             startActivity(new Intent(requireActivity().getApplicationContext(), MainActivity.class));
                             signInProgress.setVisibility(View.INVISIBLE);
                             loginBtn_L.setEnabled(true);
-
-//                            System.out.println("\nName: " + Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getDisplayName() +
-//                                    "\nUserID: " + FirebaseAuth.getInstance().getCurrentUser().getUid() +
-//                                    "\nEmail: " + FirebaseAuth.getInstance().getCurrentUser().getEmail() +
-//                                    "\nPhone Number: " + FirebaseAuth.getInstance().getCurrentUser().getPhoneNumber() +
-//                                    "\nProvider ID: " + FirebaseAuth.getInstance().getCurrentUser().getProviderId() +
-//                                    "\nTenant ID: " + FirebaseAuth.getInstance().getCurrentUser().getTenantId() +
-//                                    "\nPhoto URL: " + FirebaseAuth.getInstance().getCurrentUser().getPhotoUrl());
                             requireActivity().finish();
                         })
                         .addOnFailureListener(e -> {

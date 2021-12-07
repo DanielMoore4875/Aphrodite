@@ -3,6 +3,7 @@ package ca.kainotomia.it.aphrodite.ui.home;
 public class HomeModel {
     public String title;
 
+    // THIS IS NEEDED FOR FIREBASE, DO NOT DELETE
     public HomeModel() {
     }
 

@@ -4,7 +4,6 @@
 //Alyssa Gomez n01042777 Section B
 package ca.kainotomia.it.aphrodite.ui.account;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,30 +13,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 
-import com.google.android.gms.auth.api.Auth;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.EmailAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-
-import java.util.HashMap;
-import java.util.Objects;
 
 import ca.kainotomia.it.aphrodite.LoginActivity;
-import ca.kainotomia.it.aphrodite.MainActivity;
 import ca.kainotomia.it.aphrodite.R;
-import ca.kainotomia.it.aphrodite.UpdateDBNode;
 
 public class AccountSettingsFragment extends Fragment {
 
@@ -68,7 +53,7 @@ public class AccountSettingsFragment extends Fragment {
                 .setMessage(getString(R.string.ASF_AD_msg))
                 .setPositiveButton(getString(R.string.ASF_AD_yes), (dialog, which) -> {
                     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                    if (user != null && !confirmPass.getText().toString().isEmpty()) {
+                    if (user != null && !confirmPass.getText().toString().isEmpty() && user.getEmail() != null) {
                         AuthCredential credential = EmailAuthProvider.getCredential(user.getEmail(), confirmPass.getText().toString());
                         user.reauthenticate(credential)
                                 .addOnSuccessListener(unused -> user.delete()

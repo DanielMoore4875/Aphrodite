@@ -33,7 +33,6 @@
     <string name="AFSS_Button_terminate">Terminate Aphrodite Account</string>
     <string name="VC_placeholder_vcName_txt">Voice Command Name</string>
     <string name="VC_placeholder_vcDesc_txt">Voice Command Description</string>
-    <string name="VC_mute_mic_txt">Mute Mic</string>
     <string name="VC_led_txt">LED Colour</string>
 
     <string name="CL_LayoutName_Text">Layout Name</string>
@@ -52,9 +51,7 @@
     <string name="VC_micUnMuted_txt">Mic Un-Muted</string>
     <string name="VC_micMuted_txt">Mic Muted</string>
     <string name="Login_userCreated_txt">User created</string>
-    <string name="Login_userError_txt">ERROR: user not created</string>
     <string name="AFR_TextView_title">Review</string>
-    <string name="AFR_TextView_review">Optional Please Give Your Response For The App:</string>
     <string name="AFR_Button_submit">Submit</string>
 
     <!--MODULE LOCATIONS-->
@@ -157,6 +154,10 @@
     <string name="number_zero" translatable="false">0</string>
     <string name="word_created">created</string>
     <string name="word_edited">edited</string>
+    <string name="word_error_creating">error creating</string>
+    <string name="word_error_editing">error editing</string>
+    <string name="word_error_saving_review">Error saving review</string>
+    <string name="aphrodite_logo_desc">Aphrodite Logo</string>
 
 
 </resources>

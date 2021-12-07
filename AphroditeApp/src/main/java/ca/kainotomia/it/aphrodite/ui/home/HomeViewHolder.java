@@ -11,7 +11,7 @@ import ca.kainotomia.it.aphrodite.R;
 public class HomeViewHolder  extends RecyclerView.ViewHolder {
 
     //Refactored and removed old code
-    private Button btn;
+    private final Button btn;
 
     public HomeViewHolder(@NonNull View itemView) {
         super(itemView);

@@ -16,7 +16,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="@color/lighter_oak"
     tools:context=".ui.account.AccountFragment"
     tools:layout_editor_absoluteX="-28dp"

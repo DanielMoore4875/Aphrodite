@@ -26,7 +26,6 @@
     <string name="AFSS_Button_terminate">Résilier le compte Aphrodite</string>
     <string name="VC_placeholder_vcName_txt">" Nom de la commande vocale"</string>
     <string name="VC_placeholder_vcDesc_txt">" Description de la commande vocale"</string>
-    <string name="VC_mute_mic_txt">" Couper le micro"</string>
     <string name="VC_led_txt">" Couleur des DEL"</string>
 
     <string name="CL_LayoutName_Text">Nom de la mise en page</string>
@@ -45,9 +44,7 @@
     <string name="VC_micUnMuted_txt">couper le micro</string>
     <string name="VC_micMuted_txt">activer le micro</string>
     <string name="Login_userCreated_txt">" Utilisateur créé"</string>
-    <string name="Login_userError_txt">" ERREUR : utilisateur non créé"</string>
     <string name="AFR_TextView_title">Revoir</string>
-    <string name="AFR_TextView_review">Facultatif Veuillez donner votre réponse pour l\'application :</string>
     <string name="AFR_Button_submit">Soumettre</string>
 
     <string name="reviewsnack">Merci d\'avoir évalué !</string>
@@ -102,6 +99,11 @@
     <string name="voice_cancel_cmd_txt">Annuler</string>
     <string name="voice_colourAdded">Couleur changée</string>
     <string name="voice_colourAddedError">La couleur n\'a pas pu être modifiée</string>
+
+    <string name="word_error_creating">erreur de création</string>
+    <string name="word_error_editing">erreur d\'édition</string>
+    <string name="word_error_saving_review">Erreur lors de l\'enregistrement de l\'avis</string>
+    <string name="aphrodite_logo_desc">Logo Aphrodite</string>
 
 
 </resources>

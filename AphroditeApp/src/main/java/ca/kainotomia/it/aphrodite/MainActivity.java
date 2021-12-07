@@ -21,25 +21,12 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
 
-    FirebaseAuth firebaseAuthMAIN;
-
     BottomNavigationView bottomNavigationView;
-
-    private static final String TAG = "MainActivity";
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        // IF THIS IS USED, user will be signed out when screen rotates
-        // DO NOT USE
-        // FirebaseAuth.getInstance().signOut();
-    }
 
     @Nullable
     @Override
@@ -98,9 +85,5 @@ public class MainActivity extends AppCompatActivity {
                 })
                 .setNegativeButton(R.string.MA_AlertDialogExitApp_no, (dialog, which) -> dialog.dismiss())
                 .create();
-    }
-
-    public void handleButton(View view) {
-        super.onBackPressed();
     }
 }

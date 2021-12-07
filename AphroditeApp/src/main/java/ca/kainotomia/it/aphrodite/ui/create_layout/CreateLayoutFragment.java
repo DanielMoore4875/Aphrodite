@@ -2,14 +2,6 @@ package ca.kainotomia.it.aphrodite.ui.create_layout;
 
 import android.content.Context;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.widget.SwitchCompat;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.navigation.Navigation;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,12 +11,16 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.widget.SwitchCompat;
+import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
+
 import java.util.ArrayList;
-import java.util.Arrays;
 
 import ca.kainotomia.it.aphrodite.R;
 import ca.kainotomia.it.aphrodite.UpdateDBNode;
-import ca.kainotomia.it.aphrodite.ui.home.HomeFragment;
 
 public class CreateLayoutFragment extends Fragment {
     SwitchCompat timeSw;
@@ -150,7 +146,7 @@ public class CreateLayoutFragment extends Fragment {
                             }
                         }
                         timeSp.setEnabled(true);
-                        handleSwitch(timeSw, timeSp, 0);
+                        handleSwitch(timeSw, timeSp);
                         break;
                     case "Date":
                         dateSw.setChecked(true);
@@ -161,7 +157,7 @@ public class CreateLayoutFragment extends Fragment {
                             }
                         }
                         dateSp.setEnabled(true);
-                        handleSwitch(dateSw, dateSp, 1);
+                        handleSwitch(dateSw, dateSp);
                         break;
                     case "Calendar":
                         calendarSw.setChecked(true);
@@ -172,7 +168,7 @@ public class CreateLayoutFragment extends Fragment {
                             }
                         }
                         calendarSp.setEnabled(true);
-                        handleSwitch(calendarSw, calendarSp, 2);
+                        handleSwitch(calendarSw, calendarSp);
                         break;
                     case "Weather":
                         weatherSw.setChecked(true);
@@ -183,7 +179,7 @@ public class CreateLayoutFragment extends Fragment {
                             }
                         }
                         weatherSp.setEnabled(true);
-                        handleSwitch(weatherSw, weatherSp, 3);
+                        handleSwitch(weatherSw, weatherSp);
                         break;
                     case "Room_Temp_Hum":
                         temp_humSw.setChecked(true);
@@ -194,7 +190,7 @@ public class CreateLayoutFragment extends Fragment {
                             }
                         }
                         temp_humSp.setEnabled(true);
-                        handleSwitch(temp_humSw, temp_humSp, 4);
+                        handleSwitch(temp_humSw, temp_humSp);
                         break;
                     case "Stocks":
                         stocksSw.setChecked(true);
@@ -205,7 +201,7 @@ public class CreateLayoutFragment extends Fragment {
                             }
                         }
                         stocksSp.setEnabled(true);
-                        handleSwitch(stocksSw, stocksSp, 5);
+                        handleSwitch(stocksSw, stocksSp);
                         break;
                     case "Youtube":
                         youtubeSw.setChecked(true);
@@ -216,7 +212,7 @@ public class CreateLayoutFragment extends Fragment {
                             }
                         }
                         youtubeSp.setEnabled(true);
-                        handleSwitch(youtubeSw, youtubeSp, 6);
+                        handleSwitch(youtubeSw, youtubeSp);
                         break;
                     case "Notifications":
                         notifSw.setChecked(true);
@@ -227,21 +223,21 @@ public class CreateLayoutFragment extends Fragment {
                             }
                         }
                         notifSp.setEnabled(true);
-                        handleSwitch(notifSw, notifSp, 7);
+                        handleSwitch(notifSw, notifSp);
                         break;
                 }
             }
 
         }
 
-        timeSw.setOnClickListener(v -> handleSwitch(timeSw, timeSp, 0));
-        dateSw.setOnClickListener(v -> handleSwitch(dateSw, dateSp, 1));
-        calendarSw.setOnClickListener(v -> handleSwitch(calendarSw, calendarSp, 2));
-        weatherSw.setOnClickListener(v -> handleSwitch(weatherSw, weatherSp, 3));
-        temp_humSw.setOnClickListener(v -> handleSwitch(temp_humSw, temp_humSp, 4));
-        stocksSw.setOnClickListener(v -> handleSwitch(stocksSw, stocksSp, 5));
-        youtubeSw.setOnClickListener(v -> handleSwitch(youtubeSw, youtubeSp, 6));
-        notifSw.setOnClickListener(v -> handleSwitch(notifSw, notifSp, 7));
+        timeSw.setOnClickListener(v -> handleSwitch(timeSw, timeSp));
+        dateSw.setOnClickListener(v -> handleSwitch(dateSw, dateSp));
+        calendarSw.setOnClickListener(v -> handleSwitch(calendarSw, calendarSp));
+        weatherSw.setOnClickListener(v -> handleSwitch(weatherSw, weatherSp));
+        temp_humSw.setOnClickListener(v -> handleSwitch(temp_humSw, temp_humSp));
+        stocksSw.setOnClickListener(v -> handleSwitch(stocksSw, stocksSp));
+        youtubeSw.setOnClickListener(v -> handleSwitch(youtubeSw, youtubeSp));
+        notifSw.setOnClickListener(v -> handleSwitch(notifSw, notifSp));
 
         if (layoutNameBun == null) {
             timeSp.setEnabled(false);
@@ -295,24 +291,25 @@ public class CreateLayoutFragment extends Fragment {
             Toast.makeText(getActivity(), getString(R.string.CL_noChosenLoc_error_txt), Toast.LENGTH_SHORT).show();
         } else {
             if (!layoutName.isEmpty()) {
-//                System.out.println(Arrays.toString(modulesIsChecked));
-//                System.out.println(Arrays.toString(modulesLocation));
                 for (int i = 0; i < modulesLocation.length; i++) {
                     if (modulesLocation[i].equals(moduleNames[0])) {
                         modulesLocation[i] = "null";
                     }
                 }
-//                System.out.println("NAME: " + layoutName);
-//                System.out.println("MOD NAMES:  " + Arrays.toString(modNamesFromLeft));
-//                System.out.println("MOD LOC: " + Arrays.toString(modulesLocation));
                 if (layoutNameBun == null) {
-                    dbNode.addLayout(layoutName, modulesIsChecked, modNamesFromLeft, modulesLocation);
-                    Toast.makeText(getActivity(), layoutName + " " + getString(R.string.word_created), Toast.LENGTH_SHORT).show();
+                    if (dbNode.addLayout(layoutName, modulesIsChecked, modNamesFromLeft, modulesLocation)) {
+                        Toast.makeText(getActivity(), layoutName + " " + getString(R.string.word_created), Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(getActivity(), layoutName + " " + getString(R.string.word_error_creating), Toast.LENGTH_SHORT).show();
+                    }
                     // Uses the bottom navigation instead of fragment transaction to move places
                     Navigation.findNavController(view).navigate(R.id.navigation_home);
                 } else {
-                    dbNode.editLayout(layoutName, modulesIsChecked, modNamesFromLeftEdit, modulesLocation);
-                    Toast.makeText(getActivity(), layoutName +  " " + getString(R.string.word_edited), Toast.LENGTH_SHORT).show();
+                    if (dbNode.editLayout(layoutName, modulesIsChecked, modNamesFromLeftEdit, modulesLocation)) {
+                        Toast.makeText(getActivity(), layoutName + " " + getString(R.string.word_edited), Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(getActivity(), layoutName + " " + getString(R.string.word_error_editing), Toast.LENGTH_SHORT).show();
+                    }
                     // Uses the bottom navigation instead of fragment transaction to move places
                     Navigation.findNavController(view).navigate(R.id.navigation_layout);
                 }
@@ -333,7 +330,7 @@ public class CreateLayoutFragment extends Fragment {
         return true;
     }
 
-    private void handleSwitch(SwitchCompat v, Spinner sp, int position) {
+    private void handleSwitch(SwitchCompat v, Spinner sp) {
         //time
         sp.setEnabled(v.isChecked());
         if (!v.isChecked()) {
