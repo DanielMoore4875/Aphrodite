@@ -51,7 +51,8 @@ public class VoiceNewCmd extends Fragment {
             String titleTxt = title.getText().toString();
             String descTxt = desc.getText().toString();
             UpdateDBNode dbNode = new UpdateDBNode("user_voice_commands");
-            if (!titleTxt.equals("") && !descTxt.equals("")) {
+            // if description is null the command will be removed
+            if (!titleTxt.equals("")) {
                 dbNode.addVoiceCommand(titleTxt, descTxt);
                 requireActivity().getSupportFragmentManager().setFragmentResult("submit_pressed", new Bundle());
                 clearKeyboard();

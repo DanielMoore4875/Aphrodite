@@ -159,6 +159,11 @@ public class UpdateDBNode {
     // Add a voice command title and description
     public void addVoiceCommand(String title, String desc) {
         if (Objects.requireNonNull(getDatabaseReference().getKey()).equals("user_voice_commands")) {
+            // no description = delete command
+            if (desc.equals("")) {
+                desc = null;
+            }
+            String finalDesc = desc;
             getDatabaseReference().child(getCurrentUid()).get().addOnCompleteListener(task -> {
                 if (task.isSuccessful()) {
                     DataSnapshot data = task.getResult();
@@ -168,13 +173,13 @@ public class UpdateDBNode {
                         UpdateDBNode.this.getDatabaseReference()
                                 .child(UpdateDBNode.this.getCurrentUid())
                                 .child(title)
-                                .setValue(desc);
+                                .setValue(finalDesc);
                     } else if (Objects.requireNonNull(data).hasChild(title)) {
                         //edit voice command that exists
                         UpdateDBNode.this.getDatabaseReference()
                                 .child(UpdateDBNode.this.getCurrentUid())
                                 .child(title)
-                                .setValue(desc);
+                                .setValue(finalDesc);
                     }
                 }
             });
