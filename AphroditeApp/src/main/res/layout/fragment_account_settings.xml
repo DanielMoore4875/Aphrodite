@@ -33,30 +33,6 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
-        android:id="@+id/AFSS_Button_logout"
-        android:layout_width="0dp"
-        android:layout_height="65dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="10dp"
-        android:backgroundTint="@color/peach"
-        android:text="@string/AF_Button_logout"
-        android:textColor="@color/lighter_oak"
-        android:textStyle="bold"
-        app:cornerRadius="10dp"
-        app:iconGravity="textStart"
-        app:iconSize="25dp"
-        app:iconTint="@color/lighter_oak"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/AFSS_TextView_title"
-        app:layout_constraintVertical_bias="0.0"
-        app:rippleColor="@color/lighter_oak"
-        tools:ignore="TextContrastCheck" />
-
-    <Button
         android:id="@+id/AFSS_Button_terminate"
         android:layout_width="0dp"
         android:layout_height="65dp"
@@ -73,9 +49,9 @@
         app:iconTint="@color/lighter_oak"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/AFSS_Button_logout"
+        app:layout_constraintTop_toBottomOf="@+id/AFSS_confirmPassET"
         app:layout_constraintVertical_bias="0.0"
         app:rippleColor="@color/lighter_oak" />
 
@@ -83,16 +59,19 @@
         android:id="@+id/AFSS_confirmPassET"
         android:layout_width="282dp"
         android:layout_height="52dp"
+        android:layout_marginTop="50dp"
         android:ems="10"
         android:hint="@string/ASF_password_here_to_terminate"
+        android:importantForAutofill="no"
         android:inputType="textPassword"
+        android:textAlignment="center"
+        android:textColor="@color/mid_ocean"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/AFSS_Button_terminate"
-        app:layout_constraintVertical_bias="0.109"
-        android:importantForAutofill="no" />
+        app:layout_constraintTop_toBottomOf="@+id/AFSS_TextView_title"
+        app:layout_constraintVertical_bias="0.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
