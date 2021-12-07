@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
@@ -39,11 +41,10 @@ public class VoiceNewCmd extends Fragment {
         cancel = view.findViewById(R.id.voice_newCmdBtn_cancel);
 
         cancel.setOnClickListener(v -> {
-            Fragment newCmD = new VoiceFragment();
-            FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
-            transaction.replace(R.id.voice_nestedFragment, newCmD);
-            transaction.addToBackStack(null);
-            transaction.commit();
+            title.setText("");
+            desc.setText("");
+            requireActivity().getSupportFragmentManager().setFragmentResult("cancel_pressed", new Bundle());
+            clearKeyboard();
         });
 
         submit.setOnClickListener(v -> {
@@ -52,22 +53,14 @@ public class VoiceNewCmd extends Fragment {
             UpdateDBNode dbNode = new UpdateDBNode("user_voice_commands");
             if (!titleTxt.equals("") && !descTxt.equals("")) {
                 dbNode.addVoiceCommand(titleTxt, descTxt);
-                FragmentTransaction fragmentTransaction = getParentFragmentManager().beginTransaction();
-                fragmentTransaction.remove(VoiceNewCmd.this).commit();
-                //remove the keyboard if it is out
-                InputMethodManager inputMethodManager = (InputMethodManager) requireActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
-                inputMethodManager.hideSoftInputFromWindow(requireView().getWindowToken(), 0);
+                requireActivity().getSupportFragmentManager().setFragmentResult("submit_pressed", new Bundle());
+                clearKeyboard();
             } else {
-                Toast.makeText(getActivity(), "Cannot be empty", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), getString(R.string.field_cannot_be_empty_txt), Toast.LENGTH_SHORT).show();
             }
-
-            System.out.println("HERE");
         });
 
     }
-
-
-
 
     @Nullable
     @Override
@@ -75,5 +68,10 @@ public class VoiceNewCmd extends Fragment {
                              @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.voice_new_cmd, container, false);
 
+    }
+
+    private void clearKeyboard() {
+        InputMethodManager inputMethodManager = (InputMethodManager) requireActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+        inputMethodManager.hideSoftInputFromWindow(requireView().getWindowToken(), 0);
     }
 }

@@ -16,10 +16,11 @@
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/voice_nestedFragment"
         android:layout_width="match_parent"
+        android:name="ca.kainotomia.it.aphrodite.ui.voice.VoiceNewCmd"
         android:layout_height="match_parent"
         android:elevation="10dp"
         android:padding="20dp"
-        android:visibility="visible">
+        android:visibility="invisible">
 
     </androidx.fragment.app.FragmentContainerView>
 
