@@ -3,9 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/voice_newCmdFragment"
-    android:layout_width="match_parent"
+    android:layout_width="500dp"
     android:layout_height="wrap_content"
-    android:layout_gravity="center_vertical"
+    android:layout_gravity="center_horizontal|center_vertical"
     android:background="@drawable/voice_rounded_backgrnd"
     android:padding="5dp"
     app:circularflow_radiusInDP="10dp">
@@ -14,7 +14,7 @@
         android:id="@+id/voice_newCmdTitle"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:digits="@string/alphabetAndUnderscore"
         android:fontFamily="sans-serif-light"
         android:hint="@string/voice_title_editTxt"
@@ -30,11 +30,12 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
+
     <EditText
         android:id="@+id/voice_newCmdDesc"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="30dp"
         android:digits="@string/alphabetAndSpace"
         android:fontFamily="sans-serif-light"
         android:hint="@string/voice_desc_editTxt"
@@ -43,18 +44,19 @@
         android:textAlignment="center"
         android:textColor="@color/mid_ocean"
         android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/voice_newCmdTitle" />
-
+        app:layout_constraintTop_toBottomOf="@+id/voice_newCmdTitle"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/voice_newCmdBtn"
         android:layout_width="150dp"
         android:layout_height="@dimen/Button_height"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginBottom="10dp"
         android:backgroundTint="@color/mid_ocean"
         android:text="@string/voice_submit_cmd_txt"
         android:textColor="@color/lighter_oak"
@@ -63,7 +65,7 @@
         app:cornerRadius="@dimen/Button_radius"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.675"
         app:layout_constraintStart_toEndOf="@+id/voice_newCmdBtn_cancel"
         app:layout_constraintTop_toBottomOf="@+id/voice_newCmdDesc"
         app:layout_constraintVertical_bias="0.0"
@@ -74,7 +76,7 @@
         android:layout_width="150dp"
         android:layout_height="@dimen/Button_height"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="@dimen/Button_margin_StartEnd"
         android:layout_marginBottom="20dp"
         android:backgroundTint="@color/peach"
@@ -85,10 +87,10 @@
         app:cornerRadius="@dimen/Button_radius"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.024"
+        app:layout_constraintHorizontal_bias="0.14"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/voice_newCmdDesc"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintVertical_bias="0.0"
         app:rippleColor="@color/lighter_oak" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

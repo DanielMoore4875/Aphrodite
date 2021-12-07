@@ -22,6 +22,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentContainerView;
+import androidx.fragment.app.FragmentResultListener;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -39,8 +40,9 @@ import ca.kainotomia.it.aphrodite.UpdateDBNode;
 
 public class VoiceFragment extends Fragment {
 
-    ToggleButton muteMic;
-    ExtendedFloatingActionButton newVoiceCommand;
+    private ToggleButton muteMic;
+    private ExtendedFloatingActionButton newVoiceCommand;
+    private Button goToLED;
 
     private RecyclerView voiceDefRV;
     private RecyclerView voiceUserRV;
@@ -59,6 +61,21 @@ public class VoiceFragment extends Fragment {
 
         connectivityManager = (ConnectivityManager) requireActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
         networkInfo = connectivityManager.getActiveNetworkInfo();
+        newCmdFragment = root.findViewById(R.id.voice_nestedFragment);
+        requireActivity().getSupportFragmentManager().setFragmentResultListener("cancel_pressed", getViewLifecycleOwner(), (requestKey, result) -> {
+            // When the cancel button on the popup is pressed, set fragment container view invisible again
+            newCmdFragment.setVisibility(View.INVISIBLE);
+            muteMic.setEnabled(true);
+            goToLED.setEnabled(true);
+            newVoiceCommand.setEnabled(true);
+        });
+
+        requireActivity().getSupportFragmentManager().setFragmentResultListener("submit_pressed", getViewLifecycleOwner(), (requestKey, result) -> {
+            newCmdFragment.setVisibility(View.INVISIBLE);
+            muteMic.setEnabled(true);
+            goToLED.setEnabled(true);
+            newVoiceCommand.setEnabled(true);
+        });
 
         voiceDefRV = root.findViewById(R.id.voice_defRecyclerView);
         voiceDefRV.setLayoutManager(new GridLayoutManager(root.getContext(), 2));
@@ -160,7 +177,7 @@ public class VoiceFragment extends Fragment {
 
         muteMic = view.findViewById(R.id.VC_muteMic_btnID);
         newVoiceCommand = view.findViewById(R.id.voice_fab);
-        newCmdFragment = view.findViewById(R.id.voice_nestedFragment);
+
 
         //Update DB with mic state
         muteMic.setOnClickListener(v -> {
@@ -185,22 +202,13 @@ public class VoiceFragment extends Fragment {
 
         newVoiceCommand.setOnClickListener(v -> {
             System.out.println(voiceUserFBRA.getItemCount());
-            VoiceNewCmd voiceNewCmd = new VoiceNewCmd();
-            FragmentTransaction fragmentTransaction = getChildFragmentManager().beginTransaction();
-            fragmentTransaction.add(R.id.voice_nestedFragment, voiceNewCmd).commit();
-            Animation fadeIn = AnimationUtils.loadAnimation(getContext(), R.anim.fade_in);
-            Animation bottomUp = AnimationUtils.loadAnimation(getContext(),R.anim.bottom_up);
-            AnimationSet set = new AnimationSet(false);
-            set.addAnimation(fadeIn);
-            set.addAnimation(bottomUp);
-            newCmdFragment.startAnimation(fadeIn);
-
-
-
-
+            newCmdFragment.setVisibility(View.VISIBLE);
+            muteMic.setEnabled(false);
+            goToLED.setEnabled(false);
+            newVoiceCommand.setEnabled(false);
         });
 
-        Button goToLED = view.findViewById(R.id.VC_changeLED_btnID);
+        goToLED = view.findViewById(R.id.VC_changeLED_btnID);
         goToLED.setOnClickListener(v -> {
             Fragment ledColour = new LEDColourFragment();
             FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
@@ -208,6 +216,7 @@ public class VoiceFragment extends Fragment {
             transaction.addToBackStack(null);
             transaction.commit();
         });
+
 
 
     }

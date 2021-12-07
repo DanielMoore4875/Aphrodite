@@ -19,6 +19,8 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.google.firebase.auth.FirebaseAuth;
 
+import java.util.Objects;
+
 import ca.kainotomia.it.aphrodite.LoginActivity;
 import ca.kainotomia.it.aphrodite.R;
 import ca.kainotomia.it.aphrodite.UpdateDBNode;
@@ -39,7 +41,8 @@ public class AccountFragment extends Fragment implements View.OnClickListener {
         //get current username and display it in the username textview
         TextView usernameText = view.findViewById(R.id.AF_TextView_username);
         UpdateDBNode dbNode = new UpdateDBNode();
-        usernameText.setText(dbNode.getCurrentUserName());
+        String userText = dbNode.getCurrentUserName() + "\n" + dbNode.getFirebaseUser().getEmail();
+        usernameText.setText(userText);
 
         AF_Button_about.setOnClickListener(this);
         AF_Button_settings.setOnClickListener(this);
@@ -58,7 +61,7 @@ public class AccountFragment extends Fragment implements View.OnClickListener {
             FirebaseAuth.getInstance().signOut();
             Intent intent = new Intent(getActivity(), LoginActivity.class);
             startActivity(intent);
-            getActivity().finish();
+            requireActivity().finish();
         });
 
         return rootView;
@@ -66,21 +69,17 @@ public class AccountFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
-        Fragment fragment = null;
-        switch (view.getId()) {
-            case R.id.AF_Button_about:
-                fragment = new AccountAboutFragment();
-                replaceFragment(fragment);
-                break;
-
-            case R.id.AF_Button_support:
-                fragment = new AccountReviewFragment();
-                replaceFragment(fragment);
-                break;
-            case R.id.AF_Button_settings:
-                fragment = new AccountSettingsFragment();
-                replaceFragment(fragment);
-                break;
+        Fragment fragment;
+        int id = view.getId();
+        if (id == R.id.AF_Button_about) {
+            fragment = new AccountAboutFragment();
+            replaceFragment(fragment);
+        } else if (id == R.id.AF_Button_support) {
+            fragment = new AccountReviewFragment();
+            replaceFragment(fragment);
+        } else if (id == R.id.AF_Button_settings) {
+            fragment = new AccountSettingsFragment();
+            replaceFragment(fragment);
         }
     }
 
