@@ -4,9 +4,10 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-public class SignUpFragmentTest {
+public class SignInFragmentTest {
     @Test
-    public void registerNameTest() throws Exception {
+    public void loginNameTest() throws Exception {
         assertTrue("",true);
     }
+
 }

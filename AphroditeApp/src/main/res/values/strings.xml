@@ -116,8 +116,8 @@
     <string name="voice_fab_desc">New Voice Command</string>
     <string name="voice_new_command">New Command</string>
     <string name="voice_desc_editTxt">Description</string>
-    <string name="voice_title_editTxt">Title_here</string>
-    <string name="voice_submit_cmd_txt">Submit Command</string>
+    <string name="voice_title_editTxt">Title</string>
+    <string name="voice_submit_cmd_txt">Save</string>
     <string name="voice_default_commands">Default Commands</string>
     <string name="voice_user_commands">User Commands (Max 3)</string>
     <string name="AFR_TextView_text">Give us a review! Let us know how we did and how we can improve Aphrodite.</string>
