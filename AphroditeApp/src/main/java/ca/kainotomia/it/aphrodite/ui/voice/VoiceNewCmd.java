@@ -55,6 +55,8 @@ public class VoiceNewCmd extends Fragment {
                 dbNode.addVoiceCommand(titleTxt, descTxt);
                 requireActivity().getSupportFragmentManager().setFragmentResult("submit_pressed", new Bundle());
                 clearKeyboard();
+                title.setText("");
+                desc.setText("");
             } else {
                 Toast.makeText(getActivity(), getString(R.string.field_cannot_be_empty_txt), Toast.LENGTH_SHORT).show();
             }
