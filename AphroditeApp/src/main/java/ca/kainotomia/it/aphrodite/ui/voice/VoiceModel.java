@@ -4,6 +4,7 @@ public class VoiceModel {
     String voiceCmdTitle;
     String voiceCmdDesc;
 
+    // THIS IS NEEDED FOR FIREBASE, DO NOT DELETE
     public VoiceModel() {
     }
 

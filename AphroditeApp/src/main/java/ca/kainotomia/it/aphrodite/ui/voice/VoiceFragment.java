@@ -11,9 +11,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
-import android.view.animation.AnimationSet;
-import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.Toast;
 import android.widget.ToggleButton;
@@ -22,7 +19,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentContainerView;
-import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -30,34 +26,25 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
-import com.firebase.ui.database.SnapshotParser;
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
-import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.Query;
+
+import java.util.Objects;
 
 import ca.kainotomia.it.aphrodite.R;
 import ca.kainotomia.it.aphrodite.UpdateDBNode;
-import ca.kainotomia.it.aphrodite.ui.home.HomeFragment;
 
 public class VoiceFragment extends Fragment {
 
-//    TextView n1, n2, n3, n4, n5, n6, n7;
-//    TextView d1, d2, d3, d4, d5, d6, d7;
-    ToggleButton muteMic;
-    ExtendedFloatingActionButton newVoiceCommand;
+    private ToggleButton muteMic;
+    private ExtendedFloatingActionButton newVoiceCommand;
+    private Button goToLED;
 
     private RecyclerView voiceDefRV;
     private RecyclerView voiceUserRV;
     private FirebaseRecyclerAdapter<VoiceModel, VoiceHolder> voiceFBRA;
     private FirebaseRecyclerAdapter<VoiceModel, VoiceHolder> voiceUserFBRA;
     private FragmentContainerView newCmdFragment;
-    private int numUserCommands;
-
-
-
-//    // Write a message to the database
-//    FirebaseDatabase database;
-//    DatabaseReference myRef;
 
     ConnectivityManager connectivityManager;
     NetworkInfo networkInfo;
@@ -67,17 +54,34 @@ public class VoiceFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.voice_fragment, container, false);
 
-        connectivityManager = (ConnectivityManager) getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        connectivityManager = (ConnectivityManager) requireActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
         networkInfo = connectivityManager.getActiveNetworkInfo();
+        newCmdFragment = root.findViewById(R.id.voice_nestedFragment);
+        requireActivity().getSupportFragmentManager().setFragmentResultListener("cancel_pressed", getViewLifecycleOwner(), (requestKey, result) -> {
+            // When the cancel button on the popup is pressed, set fragment container view invisible again
+            newCmdFragment.setVisibility(View.INVISIBLE);
+            muteMic.setEnabled(true);
+            goToLED.setEnabled(true);
+            newVoiceCommand.setEnabled(true);
+        });
+
+        requireActivity().getSupportFragmentManager().setFragmentResultListener("submit_pressed", getViewLifecycleOwner(), (requestKey, result) -> {
+            newCmdFragment.setVisibility(View.INVISIBLE);
+            muteMic.setEnabled(true);
+            goToLED.setEnabled(true);
+            newVoiceCommand.setEnabled(true);
+        });
 
         voiceDefRV = root.findViewById(R.id.voice_defRecyclerView);
-        voiceDefRV.setLayoutManager(new GridLayoutManager(root.getContext(),2));
+        voiceDefRV.setLayoutManager(new GridLayoutManager(root.getContext(), 2));
         voiceDefRV.setHasFixedSize(false);
+        voiceDefRV.setMotionEventSplittingEnabled(false);
 
         voiceUserRV = root.findViewById(R.id.voice_userRecyclerView);
         voiceUserRV.setLayoutManager(new LinearLayoutManager(root.getContext()));
         voiceUserRV.setHasFixedSize(false);
-//        voiceRV
+        voiceUserRV.setMotionEventSplittingEnabled(false);
 
         if (networkInfo == null || !networkInfo.isConnected()) {
             Toast.makeText(getActivity(), getString(R.string.voice_noConnection), Toast.LENGTH_LONG).show();
@@ -88,8 +92,6 @@ public class VoiceFragment extends Fragment {
 
 
         return root;
-        // View root = inflater.inflate(R.layout.voice_fragment, container, false);
-        //        return root;
     }
 
     private void getFirebaseDefaultVoiceCommands() {
@@ -97,13 +99,7 @@ public class VoiceFragment extends Fragment {
         Query query = dbNode.getDatabaseReference();
 
         FirebaseRecyclerOptions<VoiceModel> options = new FirebaseRecyclerOptions.Builder<VoiceModel>()
-                .setQuery(query, new SnapshotParser<VoiceModel>() {
-                    @NonNull
-                    @Override
-                    public VoiceModel parseSnapshot(@NonNull DataSnapshot snapshot) {
-                        return new VoiceModel(snapshot.getKey(), snapshot.getValue().toString());
-                    }
-                })
+                .setQuery(query, snapshot -> new VoiceModel(snapshot.getKey(), Objects.requireNonNull(snapshot.getValue()).toString()))
                 .build();
 
         voiceFBRA = new FirebaseRecyclerAdapter<VoiceModel, VoiceHolder>(options) {
@@ -129,14 +125,7 @@ public class VoiceFragment extends Fragment {
         Query query = dbNode.getDatabaseReference().child(dbNode.getCurrentUid());
 
         FirebaseRecyclerOptions<VoiceModel> options = new FirebaseRecyclerOptions.Builder<VoiceModel>()
-                .setQuery(query, new SnapshotParser<VoiceModel>() {
-                    @NonNull
-                    @Override
-                    public VoiceModel parseSnapshot(@NonNull DataSnapshot snapshot) {
-                        numUserCommands++;
-                        return new VoiceModel(snapshot.getKey(), snapshot.getValue().toString());
-                    }
-                })
+                .setQuery(query, snapshot -> new VoiceModel(snapshot.getKey(), Objects.requireNonNull(snapshot.getValue()).toString()))
                 .build();
 
         voiceUserFBRA = new FirebaseRecyclerAdapter<VoiceModel, VoiceHolder>(options) {
@@ -161,8 +150,12 @@ public class VoiceFragment extends Fragment {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        voiceFBRA.stopListening();
-        voiceUserFBRA.stopListening();
+        if (voiceFBRA != null) {
+            voiceFBRA.stopListening();
+        }
+        if (voiceUserFBRA != null) {
+            voiceUserFBRA.stopListening();
+        }
     }
 
     @Override
@@ -171,16 +164,14 @@ public class VoiceFragment extends Fragment {
 
         voiceFBRA.startListening();
         voiceUserFBRA.startListening();
-//        voiceUserFBRA.getItemCount();
 
         muteMic = view.findViewById(R.id.VC_muteMic_btnID);
         newVoiceCommand = view.findViewById(R.id.voice_fab);
-        newCmdFragment = view.findViewById(R.id.voice_nestedFragment);
+
 
         //Update DB with mic state
         muteMic.setOnClickListener(v -> {
             networkInfo = connectivityManager.getActiveNetworkInfo();
-            System.out.println(networkInfo);
             if (networkInfo != null && networkInfo.isConnected()) {
                 UpdateDBNode dbNode = new UpdateDBNode("mic_state");
                 //Connected, update db with mic state
@@ -197,23 +188,15 @@ public class VoiceFragment extends Fragment {
             }
         });
 
-        newVoiceCommand.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //TODO user can only create 3 commands, check that 3 have been created, if 3 no more
-                System.out.println(voiceUserFBRA.getItemCount());
-                VoiceNewCmd voiceNewCmd = new VoiceNewCmd();
-                FragmentTransaction fragmentTransaction = getChildFragmentManager().beginTransaction();
-                fragmentTransaction.add(R.id.voice_nestedFragment, voiceNewCmd).commit();
-                Animation fadeIn = AnimationUtils.loadAnimation(getContext(),R.anim.fade_in);
-                newCmdFragment.startAnimation(fadeIn);
-                newCmdFragment.setVisibility(View.VISIBLE);
 
-
-            }
+        newVoiceCommand.setOnClickListener(v -> {
+            newCmdFragment.setVisibility(View.VISIBLE);
+            muteMic.setEnabled(false);
+            goToLED.setEnabled(false);
+            newVoiceCommand.setEnabled(false);
         });
 
-        Button goToLED = view.findViewById(R.id.VC_changeLED_btnID);
+        goToLED = view.findViewById(R.id.VC_changeLED_btnID);
         goToLED.setOnClickListener(v -> {
             Fragment ledColour = new LEDColourFragment();
             FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
@@ -225,7 +208,4 @@ public class VoiceFragment extends Fragment {
 
     }
 
-    public int getNumUserCommands() {
-        return numUserCommands;
-    }
 }

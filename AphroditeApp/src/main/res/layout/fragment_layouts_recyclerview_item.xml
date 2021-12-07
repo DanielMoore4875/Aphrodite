@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_gravity="center_horizontal"
     android:background="@color/lighter_oak"
-    android:layout_marginStart="30dp"
-    android:layout_marginTop="30dp"
     android:columnCount="2"
-    android:id="@+id/temp_GRIDLAY"
     android:orientation="vertical">
 
 
@@ -16,20 +13,14 @@
         android:id="@+id/FLRVI_btn"
         android:layout_width="140dp"
         android:layout_height="140dp"
+        android:layout_row="0"
+        android:layout_marginBottom="15dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_gravity="fill_horizontal"
+        android:layout_columnWeight="1"
+        android:layout_column="0"
         android:backgroundTint="@color/light_ocean"
         android:textColor="@color/mid_ocean"
         app:cornerRadius="10dp"
         app:rippleColor="@color/lighter_oak" />
-    <!--
-            app:icon="@drawable/sun_button_oak"
-            app:iconGravity="textTop"
-            app:iconTint="@color/mid_ocean"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
-            -->
-    <!--    android:text="@string/H_MorningButton_text"-->
 </GridLayout>

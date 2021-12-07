@@ -11,11 +11,12 @@ import android.os.Bundle;
 import android.os.Handler;
 
 public class SplashScreenActivity extends AppCompatActivity {
-    Handler handler = new Handler();
+    Handler handler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        handler = new Handler();
         handler.postDelayed(() -> {
             //LOGIN ACTIVITY HERE
             startActivity(new Intent(SplashScreenActivity.this, LoginActivity.class));

@@ -1,106 +1,187 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/lighter_oak"
-    tools:context=".ui.voice.LEDColourFragment">
-
-    <com.google.android.material.slider.Slider
-        android:id="@+id/LED_Red_Slider"
-        android:layout_width="630dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="24dp"
-        android:stepSize="1"
-        android:valueFrom="0"
-        android:valueTo="255"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <com.google.android.material.slider.Slider
-        android:id="@+id/LED_Green_Slider"
-        android:layout_width="630dp"
-        android:layout_height="35dp"
-        android:stepSize="1"
-        android:valueFrom="0"
-        android:valueTo="255"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.231" />
-
-    <com.google.android.material.slider.Slider
-        android:id="@+id/LED_Blue_Slider"
-        android:layout_width="630dp"
-        android:layout_height="35dp"
-        android:stepSize="1"
-        android:valueFrom="0"
-        android:valueTo="255"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.404" />
-
-    <TextView
-        android:id="@+id/LED_Red_Txt"
-        android:layout_width="200dp"
-        android:layout_height="35dp"
-        android:text="@string/placeholder"
-        android:textAlignment="textStart"
-        android:textSize="@dimen/LED_txt_size"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.094"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.611" />
-
-    <TextView
-        android:id="@+id/LED_Green_Txt"
-        android:layout_width="200dp"
-        android:layout_height="35dp"
-        android:text="@string/placeholder"
-        android:textSize="@dimen/LED_txt_size"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.499"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.611" />
-
-    <TextView
-        android:id="@+id/LED_Blue_Txt"
-        android:layout_width="200dp"
-        android:layout_height="35dp"
-        android:text="@string/placeholder"
-        android:textSize="@dimen/LED_txt_size"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.905"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.611" />
-
-    <Button
-        android:id="@+id/LED_colour_btn"
-        android:layout_width="187dp"
-        android:layout_height="72dp"
-        android:text="@string/LED_btn"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.511"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.911" />
+    android:fillViewport="true"
+    tools:layout_editor_absoluteX="1dp"
+    tools:layout_editor_absoluteY="159dp">
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/lighter_oak"
+        tools:context=".ui.voice.LEDColourFragment">
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/LED_Red_Slider"
+            android:layout_width="@dimen/LED_slider_width"
+            android:layout_height="@dimen/LED_slider_height"
+            android:layout_marginTop="72dp"
+            android:layout_marginEnd="@dimen/LED_slider_startEnd"
+            android:stepSize="1"
+            android:valueFrom="0"
+            android:valueTo="255"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.512"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:thumbColor="#D32F2F"
+            app:trackColorActive="#C2185B" />
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/LED_Green_Slider"
+            android:layout_width="@dimen/LED_slider_width"
+            android:layout_height="@dimen/LED_slider_height"
+            android:layout_marginTop="16dp"
+            android:stepSize="1"
+            android:valueFrom="0"
+            android:valueTo="255"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/LED_Red_Txt"
+            app:thumbColor="#689F38"
+            app:trackColorActive="#388E3C" />
+
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/LED_Blue_Slider"
+            android:layout_width="@dimen/LED_slider_width"
+            android:layout_height="@dimen/LED_slider_height"
+            android:layout_marginTop="16dp"
+            android:stepSize="1"
+            android:valueFrom="0"
+            android:valueTo="255"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/LED_Green_Txt"
+            app:thumbColor="#1976D2"
+            app:trackColorActive="#0288D1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:text="@string/LED_CustomizeLED_Text"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textColor="@color/dark_ocean"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/LED_Red_Txt"
+            android:layout_width="178dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:text="@string/placeholder"
+            android:textAlignment="textStart"
+            android:textColor="@color/dark_ocean"
+            android:textSize="@dimen/LED_txt_size"
+            app:layout_constraintStart_toEndOf="@+id/LED_Red_LetterR"
+            app:layout_constraintTop_toBottomOf="@+id/LED_Red_Slider" />
+
+        <TextView
+            android:id="@+id/LED_Red_LetterR"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="4dp"
+            android:text="@string/placeholder"
+            android:textAlignment="textStart"
+            android:textColor="@color/dark_ocean"
+            android:textSize="@dimen/LED_txt_size"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/LED_Red_Slider" />
+
+        <TextView
+            android:id="@+id/LED_Green_Txt"
+            android:layout_width="188dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:text="@string/placeholder"
+            android:textColor="@color/dark_ocean"
+            android:textSize="@dimen/LED_txt_size"
+            app:layout_constraintStart_toEndOf="@+id/LED_Green_LetterG"
+            app:layout_constraintTop_toBottomOf="@+id/LED_Green_Slider" />
+
+        <TextView
+            android:id="@+id/LED_Green_LetterG"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="4dp"
+            android:text="@string/placeholder"
+            android:textAlignment="textStart"
+            android:textColor="@color/dark_ocean"
+            android:textSize="@dimen/LED_txt_size"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/LED_Green_Slider" />
+
+        <TextView
+            android:id="@+id/LED_Blue_Txt"
+            android:layout_width="190dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:text="@string/placeholder"
+            android:textColor="@color/dark_ocean"
+            android:textSize="@dimen/LED_txt_size"
+            app:layout_constraintStart_toEndOf="@+id/LED_Blue_LetterB"
+            app:layout_constraintTop_toBottomOf="@+id/LED_Blue_Slider" />
+
+        <TextView
+            android:id="@+id/LED_Blue_LetterB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="4dp"
+            android:text="@string/placeholder"
+            android:textAlignment="textStart"
+            android:textColor="@color/dark_ocean"
+            android:textSize="@dimen/LED_txt_size"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/LED_Blue_Slider" />
+
+        <Button
+            android:id="@+id/LED_colour_btn"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/Button_height"
+            android:layout_marginStart="@dimen/Button_margin_StartEnd"
+            android:layout_marginEnd="@dimen/Button_margin_StartEnd"
+            android:layout_marginTop="@dimen/Button_margin_StartEnd"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="@color/light_ocean"
+            android:text="@string/LED_btn"
+            android:textColor="@color/mid_ocean"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:cornerRadius="@dimen/Button_radius"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/LED_Blue_Txt"
+            app:layout_constraintVertical_bias="1.0"
+            app:rippleColor="@color/lighter_oak" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>

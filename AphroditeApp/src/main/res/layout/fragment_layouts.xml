@@ -2,70 +2,55 @@
 <!--Daniel Moore n01354875 Section B-->
 <!--Ryan Black n01305403 Section B-->
 <!--Alyssa Gomez n01042777 Section B-->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/lighter_oak"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
-    <!--    displaying data from database-->
-    <!--    <ListView-->
-    <!--        android:id="@+id/idLVCourses"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="match_parent"/>-->
+<!--    TODO landscape view-->
 
-    <!--    <LinearLayout-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:orientation="vertical">-->
-
-
-    <!--        <EditText-->
-    <!--            android:id="@+id/editlayouttitletext"-->
-    <!--            android:layout_width="match_parent"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:padding="8dp"-->
-    <!--            android:hint="Layout Title"-->
-    <!--            android:layout_gravity="center"-->
-    <!--            android:importantForAutofill="no"-->
-    <!--            android:inputType="text"/>-->
-
-
-    <!--        <EditText-->
-    <!--            android:id="@+id/etd"-->
-    <!--            android:layout_width="match_parent"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:padding="8dp"-->
-    <!--            android:hint="Layout Description"-->
-    <!--            android:layout_gravity="center" />-->
-    <!--        <Button-->
-    <!--            android:id="@+id/btn"-->
-    <!--            android:layout_width="wrap_content"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:textColor="@android:color/white"-->
-    <!--            android:text="@string/layoutbuttontxt"/>-->
-    <!--    </LinearLayout>-->
-
-    <!--    <androidx.recyclerview.widget.RecyclerView-->
-    <!--        android:id="@+id/LF_recyclerView"-->
-    <!--        android:padding="4dp"-->
-    <!--        android:layout_margin="5dp"-->
-    <!--        android:scrollbars="vertical"-->
-    <!--        -->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="match_parent">-->
-    <!--    </androidx.recyclerview.widget.RecyclerView>-->
-
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/FL_recyclerView"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="center_horizontal"
-        android:visibility="visible"/>
-<!--    app:spanCount="2"
-        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        -->
-</LinearLayout>
+        android:background="@color/lighter_oak"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="10dp"
+            android:text="@string/FL_clicktoedit_txt"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textColor="@color/dark_ocean"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/FL_recyclerView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="10dp"
+            android:visibility="visible" />
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/Layouts_progressBar"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

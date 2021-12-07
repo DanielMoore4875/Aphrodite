@@ -1,9 +1,9 @@
 package ca.kainotomia.it.aphrodite.ui.layouts;
 
 public class Model {
-    String mid,mTitle, mDescription;
     public String title;
 
+    // THIS IS NEEDED FOR FIREBASE, DO NOT DELETE
     public Model() {
     }
 
@@ -19,33 +19,4 @@ public class Model {
         return this.title;
     }
 
-    //    public Model(String mid, String mTitle, String mDescription) {
-//        this.mid = mid;
-//        this.mTitle = mTitle;
-//        this.mDescription = mDescription;
-//    }
-//
-//    public String getMid() {
-//        return mid;
-//    }
-//
-//    public void setMid(String mid) {
-//        this.mid = mid;
-//    }
-//
-//    public String getmTitle() {
-//        return mTitle;
-//    }
-//
-//    public void setmTitle(String mTitle) {
-//        this.mTitle = mTitle;
-//    }
-//
-//    public String getmDescription() {
-//        return mDescription;
-//    }
-//
-//    public void setmDescription(String mDescription) {
-//        this.mDescription = mDescription;
-//    }
 }

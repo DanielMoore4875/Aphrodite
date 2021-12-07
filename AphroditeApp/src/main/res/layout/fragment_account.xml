@@ -26,7 +26,6 @@
         android:textColor="@color/mid_ocean"
         android:textStyle="bold"
         app:cornerRadius="10dp"
-        app:icon="@drawable/manage"
         app:iconGravity="textStart"
         app:iconSize="22dp"
         app:iconTint="@color/mid_ocean"
@@ -51,7 +50,6 @@
         android:textColor="@color/mid_ocean"
         android:textStyle="bold"
         app:cornerRadius="10dp"
-        app:icon="@drawable/about"
         app:iconGravity="textStart"
         app:iconTint="@color/mid_ocean"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -89,14 +87,14 @@
         android:layout_width="139dp"
         android:layout_height="124dp"
         android:layout_marginTop="50dp"
-        android:background="@color/light_ocean"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/profile"
-        tools:src="@tools:sample/avatars" />
+        app:srcCompat="@drawable/aphrodite_logo"
+        tools:src="@tools:sample/avatars"
+        tools:ignore="ContentDescription" />
 
     <Button
         android:id="@+id/AF_Button_support"
@@ -111,7 +109,6 @@
         android:textColor="@color/mid_ocean"
         android:textStyle="bold"
         app:cornerRadius="10dp"
-        app:icon="@drawable/ic_baseline_rate_review_24"
         app:iconGravity="textStart"
         app:iconSize="22dp"
         app:iconTint="@color/mid_ocean"
@@ -123,5 +120,30 @@
         app:layout_constraintVertical_bias="0.0"
         app:rippleColor="@color/lighter_oak"
         tools:ignore="TextContrastCheck" />
+
+    <Button
+        android:id="@+id/AFSS_Button_logout"
+        android:layout_width="0dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:backgroundTint="@color/peach"
+        android:text="@string/AF_Button_logout"
+        android:textColor="@color/lighter_oak"
+        android:textStyle="bold"
+        app:cornerRadius="10dp"
+        app:iconGravity="textStart"
+        app:iconSize="25dp"
+        app:iconTint="@color/lighter_oak"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/AF_Button_settings"
+        app:layout_constraintVertical_bias="0.0"
+        app:rippleColor="@color/lighter_oak"
+        tools:ignore="TextContrastCheck" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -23,24 +23,11 @@
         <item name="android:statusBarColor">@color/mid_ocean</item>
     </style>
 
-    <style name="LoginTheme" parent="FirebaseUI">
-        <item name="colorPrimaryVariant">@color/mid_ocean</item>
-        <item name="colorOnPrimary">@color/dark_ocean</item>
-
-
-        <item name="colorButtonNormal">@color/light_oak</item>
-        <item name="colorControlNormal">@color/oak</item>
-        <item name="colorControlActivated">@color/oak</item>
-
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-        <item name="android:windowBackground">@color/lighter_oak</item>
-        <item name="android:textColorHint">@color/dark_ocean</item>
-    </style>
-
-    <style name="Theme.Aphrodite.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
+    <!--BUTTON STYLE REGISTRATION BUTTONS-->
+    <style name="RegisterPageItems" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/dark_ocean</item>
     </style>
 
     <!--Switch Colour State-->
@@ -51,7 +38,4 @@
         <item name="colorSwitchThumbNormal">@color/light_ocean</item>
     </style>
 
-    <style name="Theme.Aphrodite.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-
-    <style name="Theme.Aphrodite.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

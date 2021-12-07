@@ -15,24 +15,26 @@
 
     <ImageView
         android:id="@+id/AFR_ImageView_logo"
-        android:layout_width="175dp"
-        android:layout_height="156dp"
+        android:layout_width="224dp"
+        android:layout_height="192dp"
         android:layout_marginTop="20dp"
         android:adjustViewBounds="false"
         android:background="@drawable/roundstyle"
         android:cropToPadding="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/aphrodite_logot_trans_med" />
+        app:srcCompat="@drawable/aphrodite_logot_trans_med"
+        android:contentDescription="@string/aphrodite_logo_desc" />
 
     <TextView
         android:id="@+id/AFR_TextView_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:fontFamily="sans-serif-medium"
         android:gravity="center"
         android:text="@string/AFA_TextView_title"
@@ -55,6 +57,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="30dp"
         android:gravity="center"
+        android:lineSpacingExtra="4dp"
         android:text="@string/AFA_TextView_aboutustext"
         android:textAllCaps="true"
         android:textColor="@color/dark_ocean"
@@ -66,11 +69,10 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:text="kainotomia.aphrodite@gmail.com"
+        android:text="@string/kainotomia_email"
         android:textColor="@color/dark_ocean"
         android:textSize="16sp"
         android:textStyle="bold"

@@ -3,97 +3,58 @@
 <!--Ryan Black n01305403 Section B-->
 <!--Alyssa Gomez n01042777 Section B-->
 <resources>
+    <!--App Name-->
     <string name="app_name">Aphrodite</string>
-    <string name="title_home">Home</string>
-    <string name="title_layouts">Layouts</string>
-    <string name="title_account">Account</string>
+
+    <!--Bottom Navigation-->
+    <string name="nav_title_home">Home</string>
+    <string name="nav_title_layouts">Layouts</string>
+    <string name="nav_title_settings">Settings</string>
+    <string name="nav_title_voice">Voice/LED</string>
+
+    <!--Back Button Alert Dialog (Main Activity)-->
     <string name="MA_AlertDialogExitApp_title">Exit App</string>
     <string name="MA_AlertDialogExitApp_msg">Are you sure you want to exit?</string>
     <string name="MA_AlertDialogExitApp_yes">Yes, exit app</string>
     <string name="MA_AlertDialogExitApp_no">No, stay in app</string>
-    <string name="on_off">ON/OFF</string>
-    <string name="saved_layouts">Saved Layouts</string>
-    <string name="savebutton">Save button</string>
-    <string name="humidtemperature">Humidity Temperature</string>
-    <string name="proximity">Proximity</string>
-    <string name="voicerecognition">Voice Recognition</string>
-    <string name="weather">Weather</string>
-    <string name="title_voice">Voice/LED</string>
+
+
     <string name="AF_TextView_username">Username</string>
-    <string name="AF_TextView_version">Version Number</string>
-    <string name="HO_HomePage_title" translatable="false">HOME</string>
     <string name="AFA_TextView_aboutustext">
         The Aphrodite app controls the Aphrodite smart mirror display. The layouts contain modules that can show different information in many locations around the mirror. Some of these include, time, date, stocks and sensor data read from the temperature-humidity module. In the future we hope to add video streaming as a module as well. Once the user is logged in, the layouts are saved to their account and can be accessed from the app at any time. Aphrodite also has a voice command feature with 7 preset actions that the user can customize the sound for.
     </string>
+
     <string name="AFA_TextView_title">ABOUT US</string>
-    <string name="AFS_TextView_Number">Call Us: 123–456–7890</string>
-    <string name="AF_Button_settings">Settings</string>
+    <string name="AF_Button_settings">Advanced Settings</string>
     <string name="AF_Button_support">Review</string>
     <string name="AF_Button_about">About</string>
     <string name="AF_Button_logout">Log Out</string>
-    <string name="AFSS_TextView_title">Settings</string>
-    <string name="AFSS_Button_add">Add New Profile</string>
+    <string name="AFSS_TextView_title">Advanced Settings</string>
     <string name="AFSS_Button_terminate">Terminate Aphrodite Account</string>
-    <string name="AFSS_Button_remove">Remove Profile</string>
-    <string name="AFS_TextView_Email">Email</string>
-    <string name="AFS_TextView_title">Support</string>
-    <string name="H_MorningButton_text">morning</string>
-    <string name="H_StockButton_text">Stock</string>
-    <string name="H_AddButton_text">add</string>
-    <string name="H_NightButton_text">night</string>
-    <string name="VF_snackbar_add_txt">ADD COMMAND</string>
-    <string name="VF_snackbar_remove_txt">REMOVE COMMAND</string>
-    <string name="VR_record_txt">Record Command</string>
-    <string name="VF_command_name_hint">Command Name</string>
-    <string name="VF_command_name_txt">Command Name</string>
-    <string name="VF_record_help_txt">Enter Name then press Record</string>
-    <string name="VF_spinner_help_txt">View Stored Commands</string>
-    <string name="LA_webClientID_txt" translatable="false">862254589566-0cvfjpl3d7l16qh1v7rohm87t6cpg6ae.apps.googleusercontent.com</string>
     <string name="VC_placeholder_vcName_txt">Voice Command Name</string>
     <string name="VC_placeholder_vcDesc_txt">Voice Command Description</string>
-    <string name="VC_mute_mic_txt">Mute Mic</string>
     <string name="VC_led_txt">LED Colour</string>
 
-    <string name="action_settings">Settings</string>
     <string name="CL_LayoutName_Text">Layout Name</string>
     <string name="CL_CreateLayout_Text">Toggle Modules and Choose Locations</string>
+    <!--MODULES NAMES START-->
     <string name="CL_Feature_Text_Time">Time</string>
     <string name="CL_Feature_Text_Date">Date</string>
     <string name="CL_Feature_Text_Calendar">Calendar</string>
     <string name="CL_Feature_Text_Weather">Weather</string>
-    <string name="CL_Feature_Text_ToDoList">To-Do List</string>
-    <string name="CL_Feature_Text_RoomT_H">Room Temp_Hum</string>
+    <string name="CL_Feature_Text_RoomT_H">Room_Temp_Hum</string>
     <string name="CL_Feature_Text_Stocks">Stocks</string>
     <string name="CL_Feature_Text_Youtube">Youtube</string>
     <string name="CL_Feature_Text_SocialMedNot">Notifications</string>
+    <!--MODULES NAMES END-->
     <string name="CL_SaveButton_Text">Save</string>
-    <string name="SSL_ChosenLayout_Name">Layout Name</string>
-    <string name="AFP_Edit_Text_name">Enter A Name</string>
-    <string name="AFP_TextView_title">Create A Profile</string>
-    <string name="AFP_Button_submit">Create Profile</string>
-    <string name="VC_name_cmd1_txt">Mirror ON</string>
-    <string name="VC_name_cmd2_txt">Mirror OFF</string>
-    <string name="VC_name_cmd3_txt">LED ON</string>
-    <string name="VC_name_cmd4_txt">LED OFF</string>
-    <string name="VC_name_cmd5_txt">Cmd #5</string>
-    <string name="VC_name_cmd6_txt">Cmd #6</string>
-    <string name="VC_name_cmd7_txt">Cmd #7</string>
-    <string name="VC_desc_cmd1_txt">Turn the mirror on</string>
-    <string name="VC_desc_cmd2_txt">Put the mirror to sleep</string>
-    <string name="VC_desc_cmd3_txt">Turn the LEDS on (last colour you set)</string>
-    <string name="VC_desc_cmd4_txt">Turn the LEDS off</string>
-    <string name="VC_desc_cmd5_txt">Cmd 5 Desc placeholder</string>
-    <string name="VC_desc_cmd6_txt">Cmd 6 Desc placeholder</string>
-    <string name="VC_desc_cmd7_txt">Cmd 7 Desc placeholder</string>
-    <string name="VC_micUnmuted_txt">Mic Un-Muted</string>
+    <string name="VC_micUnMuted_txt">Mic Un-Muted</string>
     <string name="VC_micMuted_txt">Mic Muted</string>
     <string name="Login_userCreated_txt">User created</string>
-    <string name="Login_welcomeName_txt">\"Welcome \"</string>
-    <string name="Login_userError_txt">ERROR: user not created</string>
     <string name="AFR_TextView_title">Review</string>
-    <string name="AFR_TextView_review">Optional Please Give Your Response For The App:</string>
-    <string name="AFR_Button_submit" translatable="false">Submit</string>
-    <string name="AF_EmailButton_text" translatable="false">Email</string>
+    <string name="AFR_Button_submit">Submit</string>
+
+    <!--MODULE LOCATIONS-->
     <string-array name="Layout_Values">
         <item>Choose Location</item>
         <item>top_bar</item>
@@ -110,39 +71,93 @@
         <item>fullscreen_above</item>
         <item>fullscreen_below</item>
     </string-array>
-    <string name="LED_r_txt">R: 0</string>
-    <string name="LED_g_txt">G: 0</string>
-    <string name="LED_b_txt">B: 0</string>
+
+    <string name="LED_r_txt" translatable="false">R:</string>
+    <string name="LED_g_txt" translatable="false">G:</string>
+    <string name="LED_b_txt" translatable="false">B:</string>
     <string name="placeholder" translatable="false">place</string>
     <string name="LED_btn">Change Colour</string>
-    <string name="savedmodulesnack">Saved New Layout</string>
     <string name="reviewsnack">Thank You For Reviewing!</string>
-    <string name="CLF_time">Time</string>
-    <string name="CLL_snackbar_error_txt">Enter a layout name</string>
     <string name="LED_CustomizeLED_Text">Customize LED</string>
     <string name="VC_VoiceLED_Text">Voice and LED</string>
-    <string name="AFS_ReviewButton_Text">Review</string>
-    <string name="AFR_EditText_review">Tap here to write your Review here!</string>
+    <string name="AFR_EditText_review">Tap here to write your Review!</string>
     <string name="CL_noChosenLoc_error_txt">Select location for all chosen modules</string>
     <string name="CL_enterName_txt">Please enter a name</string>
-    <string name="layoutbuttontxt">Create Layout</string>
     <string name="VC_mic_muted">Mic is muted</string>
     <string name="VC_mic_unmuted">Mic is unmuted</string>
-    <string name="LED_R" translatable="false">R:\ </string>
-    <string name="LED_G" translatable="false">G:\ </string>
-    <string name="LED_B" translatable="false">B:\ </string>
+
+    <!--For digits criteria (start)-->
     <string name="alphabet" translatable="false">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
     <string name="alphabetAndUnderscore" translatable="false">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_</string>
     <string name="alphabetAndSpace" translatable="false">abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
+    <!--For digits criteria (end)-->
+
     <string name="kainotomia_email" translatable="false">kainotomia.aphrodite@gmail.com</string>
-    <string name="Home_def_morn">default morning layout loaded</string>
-    <string name="Home_def_stocks">default stocks layout loaded</string>
+
     <string name="voice_noConnection">CONNECTION NEEDED, NO CONNECTION</string>
     <string name="voice_fab_desc">New Voice Command</string>
     <string name="voice_new_command">New Command</string>
     <string name="voice_desc_editTxt">Description</string>
-    <string name="voice_title_editTxt">Title_here</string>
-    <string name="voice_submit_cmd_txt">Submit Command</string>
+    <string name="voice_title_editTxt">Title</string>
+    <string name="voice_submit_cmd_txt">Save</string>
     <string name="voice_default_commands">Default Commands</string>
     <string name="voice_user_commands">User Commands (Max 3)</string>
+
+    <string name="AFR_TextView_text">Give us a review! Let us know how we did and how we can improve Aphrodite.</string>
+    <string name="H_TextView_text">What will be your layout today?</string>
+
+
+    <string name="field_cannot_be_empty_txt">Field cannot be empty</string>
+    <string name="FSU_register_txt">Register</string>
+
+    <!--  Fragment Sign in and Fragment Sign Up  -->
+    <string name="FSU_name_hint">Name</string>
+    <string name="FSU_email_hint">Email</string>
+    <string name="FSU_pass_hint">Password</string>
+    <string name="FSI_login_txt">Login</string>
+    <string name="FSU_already_registered_txt">Already Registered?</string>
+    <string name="FSU_gotologin_txt">Go To Login</string>
+    <string name="FSU_userExistsError">User already created</string>
+    <string name="FSU_emptyFieldsError">Fields cannot be empty</string>
+    <string name="FSU_confirmPass_hint">Confirm Password</string>
+    <string name="FSU_matchPasswordsError">Passwords do not match</string>
+    <string name="FSI_fieldEmptyError">Please fill both fields</string>
+    <string name="HF_add_layout_fab">Add Layout</string>
+    <string name="FL_clicktoedit_txt">Tap on a Layout to edit</string>
+    <string name="HF_updateCurrentLayoutError">Layout couldn\'t be set</string>
+
+    <!-- Master Module Names (English Only) (start) -->
+    <string name="MASTER_Mod0" translatable="false">Time</string>
+    <string name="MASTER_Mod1" translatable="false">Date</string>
+    <string name="MASTER_Mod2" translatable="false">Calendar</string>
+    <string name="MASTER_Mod3" translatable="false">Weather</string>
+    <string name="MASTER_Mod4" translatable="false">Room_Temp_Hum</string>
+    <string name="MASTER_Mod5" translatable="false">Stocks</string>
+    <string name="MASTER_Mod6" translatable="false">Youtube</string>
+    <string name="MASTER_Mod7" translatable="false">Notifications</string>
+    <!-- Master Module Names (English Only) (start) -->
+
+
+    <string name="FSU_SI_email_incorrectERROR">Email has incorrect formatting</string>
+    <string name="ACF_user_signin_error">User password needed</string>
+    <string name="ASF_AD_title">Are you sure?</string>
+    <string name="ASF_AD_msg">All data will be lost, this is irreversible</string>
+    <string name="ASF_AD_yes">Yes, delete my account</string>
+    <string name="ASF_AD_no">No, go back</string>
+    <string name="ASF_password_here_to_terminate">Password here to terminate</string>
+    <string name="user_deleted_txt">User Deleted</string>
+    <string name="voice_cancel_cmd_txt">Cancel</string>
+    <string name="voice_colourAdded">Colour Changed</string>
+    <string name="voice_colourAddedError">Colour Couldn\'t Be Changed</string>
+
+    <!--MISC-->
+    <string name="number_zero" translatable="false">0</string>
+    <string name="word_created">created</string>
+    <string name="word_edited">edited</string>
+    <string name="word_error_creating">error creating</string>
+    <string name="word_error_editing">error editing</string>
+    <string name="word_error_saving_review">Error saving review</string>
+    <string name="aphrodite_logo_desc">Aphrodite Logo</string>
+
+
 </resources>

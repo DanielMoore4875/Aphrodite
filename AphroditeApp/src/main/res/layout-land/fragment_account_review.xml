@@ -7,7 +7,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/lighter_oak"
     android:fillViewport="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -18,28 +17,11 @@
         tools:layout_editor_absoluteX="-28dp"
         tools:layout_editor_absoluteY="160dp">
 
-        <ImageView
-            android:id="@+id/AFR_ImageView_logo"
-            android:layout_width="175dp"
-            android:layout_height="156dp"
-            android:layout_marginTop="20dp"
-            android:adjustViewBounds="false"
-            android:background="@drawable/roundstyle"
-            android:cropToPadding="true"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.044"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
-            app:srcCompat="@drawable/aphrodite_logot_trans_med"
-            tools:ignore="ContentDescription" />
-
         <TextView
             android:id="@+id/AFR_TextView_title"
             android:layout_width="189dp"
             android:layout_height="40dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="56dp"
             android:fontFamily="sans-serif-medium"
             android:gravity="center"
             android:text="@string/AFR_TextView_title"
@@ -47,26 +29,38 @@
             android:textColor="@color/dark_ocean"
             android:textSize="20sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.691"
+            app:layout_constraintHorizontal_bias="0.138"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/AFR_TextView_text_"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="56dp"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:text="@string/AFR_TextView_text"
+            android:textAllCaps="true"
+            android:textColor="@color/dark_ocean"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.037"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/AFR_TextView_title" />
 
         <RatingBar
             android:id="@+id/AFR_RatingBar_ratebar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="44dp"
             android:numStars="5"
             android:stepSize=".5"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.698"
+            app:layout_constraintHorizontal_bias="0.099"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/AFR_TextView_title"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toBottomOf="@+id/AFR_TextView_text_" />
 
         <Button
             android:id="@+id/AFR_Button_submit"
@@ -82,29 +76,36 @@
             app:cornerRadius="@dimen/Button_radius"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/AFR_EditText_input"
+            app:layout_constraintTop_toBottomOf="@+id/AFR_RatingBar_ratebar"
             app:layout_constraintVertical_bias="1.0"
             app:rippleColor="@color/lighter_oak"
             tools:text="@string/AFR_Button_submit" />
 
         <EditText
             android:id="@+id/AFR_EditText_input"
-            android:layout_width="595dp"
-            android:layout_height="140dp"
+            android:layout_width="336dp"
+            android:layout_height="200dp"
+            android:imeOptions="actionDone"
             android:layout_centerInParent="true"
-            android:background="@color/light_ocean"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/roundedcorner_button"
+            android:backgroundTint="@color/light_oak"
             android:gravity="center"
             android:hint="@string/AFR_EditText_review"
+            android:importantForAutofill="no"
+            android:inputType="textAutoCorrect"
             android:padding="15dp"
+            android:textColor="@color/dark_ocean"
             android:textColorHint="@color/dark_ocean"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/AFR_RatingBar_ratebar"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.878"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/AFR_RatingBar_ratebar"
-            app:layout_constraintVertical_bias="0.289" />
+            app:layout_constraintTop_toTopOf="@+id/AFR_TextView_title" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </ScrollView>
