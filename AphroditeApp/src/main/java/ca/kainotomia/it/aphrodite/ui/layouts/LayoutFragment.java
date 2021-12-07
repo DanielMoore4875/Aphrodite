@@ -94,14 +94,11 @@ public class LayoutFragment extends Fragment {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
                             String btnName = holder.getBtn().getText().toString();
-                            System.out.println(snapshot.getChildrenCount());
                             for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                                 String modVal = (String) dataSnapshot.getValue(true);
                                 moduleNameData.add(dataSnapshot.getKey());
                                 moduleLocData.add(modVal);
                             }
-                            System.out.println(moduleNameData);
-                            System.out.println(moduleLocData);
                             CreateLayoutFragment createLayoutFragment = new CreateLayoutFragment();
                             Bundle createLayoutBundle = new Bundle();
                             createLayoutBundle.putString("layoutName", model.getTitle());

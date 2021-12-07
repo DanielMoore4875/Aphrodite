@@ -57,7 +57,6 @@ public class AccountFragment extends Fragment implements View.OnClickListener {
         Button logoutAccount = rootView.findViewById(R.id.AFSS_Button_logout);
 
         logoutAccount.setOnClickListener(v -> {
-            System.out.println("LOGOUT");
             FirebaseAuth.getInstance().signOut();
             Intent intent = new Intent(getActivity(), LoginActivity.class);
             startActivity(intent);

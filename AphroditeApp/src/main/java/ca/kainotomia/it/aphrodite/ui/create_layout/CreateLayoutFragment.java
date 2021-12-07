@@ -8,6 +8,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.widget.SwitchCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -254,13 +255,13 @@ public class CreateLayoutFragment extends Fragment {
         }
 
         saveLayout = root.findViewById(R.id.CLP_SaveButton);
-        saveLayout.setOnClickListener(v -> handleSaveBtn());
+        saveLayout.setOnClickListener(v -> handleSaveBtn(root));
 
         return root;
     }
 
 
-    private void handleSaveBtn() {
+    private void handleSaveBtn(View view) {
         UpdateDBNode dbNode = new UpdateDBNode("layouts");
         String[] moduleNames = getResources().getStringArray(R.array.Layout_Values);
         String layoutName = layoutNameEditText.getText().toString();
@@ -294,8 +295,8 @@ public class CreateLayoutFragment extends Fragment {
             Toast.makeText(getActivity(), getString(R.string.CL_noChosenLoc_error_txt), Toast.LENGTH_SHORT).show();
         } else {
             if (!layoutName.isEmpty()) {
-                System.out.println(Arrays.toString(modulesIsChecked));
-                System.out.println(Arrays.toString(modulesLocation));
+//                System.out.println(Arrays.toString(modulesIsChecked));
+//                System.out.println(Arrays.toString(modulesLocation));
                 for (int i = 0; i < modulesLocation.length; i++) {
                     if (modulesLocation[i].equals(moduleNames[0])) {
                         modulesLocation[i] = "null";
@@ -307,17 +308,14 @@ public class CreateLayoutFragment extends Fragment {
                 if (layoutNameBun == null) {
                     dbNode.addLayout(layoutName, modulesIsChecked, modNamesFromLeft, modulesLocation);
                     Toast.makeText(getActivity(), layoutName + " " + getString(R.string.word_created), Toast.LENGTH_SHORT).show();
+                    // Uses the bottom navigation instead of fragment transaction to move places
+                    Navigation.findNavController(view).navigate(R.id.navigation_home);
                 } else {
                     dbNode.editLayout(layoutName, modulesIsChecked, modNamesFromLeftEdit, modulesLocation);
                     Toast.makeText(getActivity(), layoutName +  " " + getString(R.string.word_edited), Toast.LENGTH_SHORT).show();
+                    // Uses the bottom navigation instead of fragment transaction to move places
+                    Navigation.findNavController(view).navigate(R.id.navigation_layout);
                 }
-                //cant be put in strings.xml
-
-                HomeFragment home = new HomeFragment();
-                FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
-                transaction.replace(R.id.nav_host_fragment, home);
-                transaction.addToBackStack(null);
-                transaction.commit();
             } else {
                 Toast.makeText(getActivity(), getString(R.string.CL_enterName_txt), Toast.LENGTH_SHORT).show();
             }

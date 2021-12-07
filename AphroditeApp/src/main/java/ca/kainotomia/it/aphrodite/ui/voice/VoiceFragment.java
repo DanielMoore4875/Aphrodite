@@ -30,7 +30,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.firebase.ui.database.SnapshotParser;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
+import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.Query;
 
 import java.util.Objects;
@@ -51,6 +54,8 @@ public class VoiceFragment extends Fragment {
     private FragmentContainerView newCmdFragment;
     private int numUserCommands;
 
+    private BottomNavigationView bottomNavigationView;
+
     ConnectivityManager connectivityManager;
     NetworkInfo networkInfo;
 
@@ -58,6 +63,7 @@ public class VoiceFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.voice_fragment, container, false);
+
 
         connectivityManager = (ConnectivityManager) requireActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
         networkInfo = connectivityManager.getActiveNetworkInfo();
@@ -157,8 +163,12 @@ public class VoiceFragment extends Fragment {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        voiceFBRA.stopListening();
-        voiceUserFBRA.stopListening();
+        if (voiceFBRA != null) {
+            voiceFBRA.stopListening();
+        }
+        if (voiceUserFBRA != null) {
+            voiceUserFBRA.stopListening();
+        }
     }
 
 
@@ -182,7 +192,6 @@ public class VoiceFragment extends Fragment {
         //Update DB with mic state
         muteMic.setOnClickListener(v -> {
             networkInfo = connectivityManager.getActiveNetworkInfo();
-            System.out.println(networkInfo);
             if (networkInfo != null && networkInfo.isConnected()) {
                 UpdateDBNode dbNode = new UpdateDBNode("mic_state");
                 //Connected, update db with mic state
@@ -201,7 +210,6 @@ public class VoiceFragment extends Fragment {
 
 
         newVoiceCommand.setOnClickListener(v -> {
-            System.out.println(voiceUserFBRA.getItemCount());
             newCmdFragment.setVisibility(View.VISIBLE);
             muteMic.setEnabled(false);
             goToLED.setEnabled(false);
@@ -216,7 +224,6 @@ public class VoiceFragment extends Fragment {
             transaction.addToBackStack(null);
             transaction.commit();
         });
-
 
 
     }

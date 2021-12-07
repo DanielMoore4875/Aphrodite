@@ -119,14 +119,6 @@ public class UpdateDBNode {
         }
     }
 
-//    public void printarr(String[] arr) {
-//        System.out.println("THIS ARRAY: [");
-//        for (String s : arr) {
-//            System.out.print(s + " ");
-//        }
-//        System.out.println("]");
-//    }
-
     public boolean saveRating(String review, float star) {
         if (Objects.requireNonNull(getDatabaseReference().getKey()).equals("rating")) {
             getDatabaseReference()
@@ -167,8 +159,6 @@ public class UpdateDBNode {
     // Add a voice command title and description
     public void addVoiceCommand(String title, String desc) {
         if (Objects.requireNonNull(getDatabaseReference().getKey()).equals("user_voice_commands")) {
-            System.out.println(title);
-            System.out.println(desc);
             getDatabaseReference().child(getCurrentUid()).get().addOnCompleteListener(task -> {
                 if (task.isSuccessful()) {
                     DataSnapshot data = task.getResult();

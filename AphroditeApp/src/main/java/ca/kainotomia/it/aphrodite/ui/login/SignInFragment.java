@@ -74,13 +74,13 @@ public class SignInFragment extends Fragment {
                             signInProgress.setVisibility(View.INVISIBLE);
                             loginBtn_L.setEnabled(true);
 
-                            System.out.println("\nName: " + Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getDisplayName() +
-                                    "\nUserID: " + FirebaseAuth.getInstance().getCurrentUser().getUid() +
-                                    "\nEmail: " + FirebaseAuth.getInstance().getCurrentUser().getEmail() +
-                                    "\nPhone Number: " + FirebaseAuth.getInstance().getCurrentUser().getPhoneNumber() +
-                                    "\nProvider ID: " + FirebaseAuth.getInstance().getCurrentUser().getProviderId() +
-                                    "\nTenant ID: " + FirebaseAuth.getInstance().getCurrentUser().getTenantId() +
-                                    "\nPhoto URL: " + FirebaseAuth.getInstance().getCurrentUser().getPhotoUrl());
+//                            System.out.println("\nName: " + Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getDisplayName() +
+//                                    "\nUserID: " + FirebaseAuth.getInstance().getCurrentUser().getUid() +
+//                                    "\nEmail: " + FirebaseAuth.getInstance().getCurrentUser().getEmail() +
+//                                    "\nPhone Number: " + FirebaseAuth.getInstance().getCurrentUser().getPhoneNumber() +
+//                                    "\nProvider ID: " + FirebaseAuth.getInstance().getCurrentUser().getProviderId() +
+//                                    "\nTenant ID: " + FirebaseAuth.getInstance().getCurrentUser().getTenantId() +
+//                                    "\nPhoto URL: " + FirebaseAuth.getInstance().getCurrentUser().getPhotoUrl());
                             requireActivity().finish();
                         })
                         .addOnFailureListener(e -> {

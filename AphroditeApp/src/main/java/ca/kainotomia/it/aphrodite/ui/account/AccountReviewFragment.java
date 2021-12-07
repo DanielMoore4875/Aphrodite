@@ -11,6 +11,7 @@ import android.widget.RatingBar;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.navigation.Navigation;
 
 import com.google.android.material.snackbar.Snackbar;
 
@@ -50,18 +51,9 @@ public class AccountReviewFragment extends Fragment implements View.OnClickListe
             Snackbar.make(view, (R.string.reviewsnack), Snackbar.LENGTH_LONG).show();
             String review = AFR_EditText_input.getText().toString();
             float rating = AFR_ratingBar_ratebar.getRating();
-            System.out.println(review + " " + rating);
-            System.out.println("SAVED: " + dbNode.saveRating(review, rating));
-            fragment = new HomeFragment();
-            replaceFragment(fragment);
+            dbNode.saveRating(review, rating);
+            Navigation.findNavController(view).navigate(R.id.navigation_home);
         }
-    }
-
-    public void replaceFragment(Fragment someFragment) {
-        FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
-        transaction.replace(R.id.nav_host_fragment, someFragment);
-        transaction.addToBackStack(null);
-        transaction.commit();
     }
 
 }
