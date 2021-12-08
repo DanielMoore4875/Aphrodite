@@ -117,7 +117,7 @@ public class SignUpFragment extends Fragment {
                     });
                 } else {
                     setPBInvisibleAndEnableButtons();
-                    Toast.makeText(getActivity(), "Pass must be:\n - 8 chars\nAt least one\n - digit\n - lowercase letter\n - uppercase letter", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getActivity(), "Pass must be:\n - 8 chars\nAt least one\n - digit\n - lowercase letter\n - uppercase letter\n - special character", Toast.LENGTH_LONG).show();
                 }
             } else {
                 setPBInvisibleAndEnableButtons();
