@@ -52,6 +52,9 @@ public class MainActivity extends AppCompatActivity {
 
         SharedPreferences.Editor editor = sp.edit();
 
+        editor.putString("Layout name",savedpreflayoutname);
+        editor.commit();
+
  
         
   
