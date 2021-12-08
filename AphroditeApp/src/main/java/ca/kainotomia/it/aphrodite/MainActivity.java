@@ -32,8 +32,6 @@ public class MainActivity extends AppCompatActivity {
     String savedpreflayoutname;
 
 
-
-
     @Nullable
     @Override
     public View onCreateView(@Nullable View parent, @NonNull String name, @NonNull Context context, @NonNull AttributeSet attrs) {
@@ -46,18 +44,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        sp = getSharedPreferences("Saveduserprefs",Context.MODE_PRIVATE);
+        sp = getSharedPreferences("Saveduserprefs", Context.MODE_PRIVATE);
 
         SharedPreferences.Editor editor = sp.edit();
 
-        editor.putString("Layout name",savedpreflayoutname);
+        editor.putString("Layout name", savedpreflayoutname);
         editor.commit();
-
- 
-        
-  
-
-
 
 
         //Custom Action Bar
