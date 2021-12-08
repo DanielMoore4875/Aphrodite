@@ -55,6 +55,7 @@ public class VoiceFragment extends Fragment {
         View root = inflater.inflate(R.layout.voice_fragment, container, false);
 
 
+
         connectivityManager = (ConnectivityManager) requireActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
         networkInfo = connectivityManager.getActiveNetworkInfo();
         newCmdFragment = root.findViewById(R.id.voice_nestedFragment);
