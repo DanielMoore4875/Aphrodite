@@ -53,6 +53,13 @@ public class MainActivity extends AppCompatActivity {
         editor.putString("key","value");
         editor.putString("key","value");
 
+        editor.apply();
+
+        //reading from sharedpreferences
+
+        pref.getString();
+        pref.getString();
+
 
 
 
