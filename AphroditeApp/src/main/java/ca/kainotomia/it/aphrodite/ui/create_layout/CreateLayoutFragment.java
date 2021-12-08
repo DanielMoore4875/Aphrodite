@@ -62,7 +62,7 @@ public class CreateLayoutFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
 
         SharedPreferences sp = getActivity().getSharedPreferences("Saveduserprefs",Context.MODE_PRIVATE);
-        String Layoutname = sp.getString("Layout name","Layout error");
+        String savedpreflayoutname = sp.getString("Layout name","Layout error");
 
         View root = inflater.inflate(R.layout.create_layout_page_fragment, container, false);
         // master array of the names of the modules
