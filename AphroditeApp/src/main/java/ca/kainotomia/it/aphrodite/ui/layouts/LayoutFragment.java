@@ -135,6 +135,7 @@ public class LayoutFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         firebaseRecyclerAdapter.startListening();
 
+        //receive SharedPreferences
         SharedPreferences sp = getActivity().getSharedPreferences("UserLayoutPrefs",Context.MODE_PRIVATE);
 
 
