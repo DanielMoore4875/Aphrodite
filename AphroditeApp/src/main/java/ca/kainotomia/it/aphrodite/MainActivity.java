@@ -57,8 +57,9 @@ public class MainActivity extends AppCompatActivity {
 
         //reading from sharedpreferences
 
-        pref.getString();
-        pref.getString();
+        pref.getString("key","value");
+        pref.getString("key","value");
+        pref.getString("key","value");
 
 
 
