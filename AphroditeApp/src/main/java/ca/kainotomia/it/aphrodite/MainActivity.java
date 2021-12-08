@@ -30,9 +30,9 @@ public class MainActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
 
     //SharedPreferences start
-    SharedPreferences sp;
+    //SharedPreferences sp;
 
-    SharedPreferences.Editor editor = sp.edit();
+   // SharedPreferences.Editor editor = sp.edit();
 
 
 
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
     public View onCreateView(@Nullable View parent, @NonNull String name, @NonNull Context context, @NonNull AttributeSet attrs) {
 
         //getSharedPreferences mode
-        sp = getSharedPreferences("UserLayoutPrefs",Context.MODE_PRIVATE);
+        //sp = getSharedPreferences("UserLayoutPrefs",Context.MODE_PRIVATE);
 
         return super.onCreateView(parent, name, context, attrs);
     }
@@ -53,6 +53,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //getSharedPreferences
+
+        SharedPreferences pref=getSharedPreferences("UserLayoutPrefs",MODE_PRIVATE);
 
 
 
