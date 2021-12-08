@@ -1,6 +1,7 @@
 package ca.kainotomia.it.aphrodite.ui.create_layout;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -59,6 +60,9 @@ public class CreateLayoutFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
+
+        SharedPreferences sp
+
         View root = inflater.inflate(R.layout.create_layout_page_fragment, container, false);
         // master array of the names of the modules
         masterModules = new String[]{getString(R.string.MASTER_Mod0), getString(R.string.MASTER_Mod1),

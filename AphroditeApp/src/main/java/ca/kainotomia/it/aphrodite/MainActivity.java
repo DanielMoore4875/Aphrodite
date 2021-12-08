@@ -28,6 +28,8 @@ import java.util.Objects;
 public class MainActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
+    SharedPreferences sp;
+    String savedpreflayoutname;
 
 
 
@@ -44,24 +46,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //getSharedPreferences attempt 2
+        sp = getSharedPreferences("Saveduserprefs",Context.MODE_PRIVATE);
+        
+        sp = getSharedPreferences("UserLayoutPrefs",Context.MODE_PRIVATE);
 
-        SharedPreferences pref=getSharedPreferences("UserLayoutPrefs",MODE_PRIVATE);
+        SharedPreferences.Editor editor = sp.edit();
 
-        SharedPreferences.Editor editor=pref.edit();
-        editor.putString("key","value");
-        editor.putString("key","value");
-        editor.putString("key","value");
-
-        editor.apply();
-
-        //reading from sharedpreferences
-
-        pref.getString("key","value");
-        pref.getString("key","value");
-        pref.getString("key","value");
-
-
+ 
+        
+  
 
 
 
