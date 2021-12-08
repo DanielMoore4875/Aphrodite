@@ -41,16 +41,12 @@
             android:padding="10dp"
             android:visibility="visible" />
 
-    </LinearLayout>
+        <ProgressBar
+            android:id="@+id/Layouts_progressBar"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:visibility="visible" />
 
-    <ProgressBar
-        android:id="@+id/Layouts_progressBar"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
