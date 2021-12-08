@@ -47,8 +47,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         sp = getSharedPreferences("Saveduserprefs",Context.MODE_PRIVATE);
-        
-        sp = getSharedPreferences("UserLayoutPrefs",Context.MODE_PRIVATE);
 
         SharedPreferences.Editor editor = sp.edit();
 
