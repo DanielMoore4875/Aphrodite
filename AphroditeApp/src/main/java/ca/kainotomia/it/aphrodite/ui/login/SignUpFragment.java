@@ -1,5 +1,8 @@
 package ca.kainotomia.it.aphrodite.ui.login;
 
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Patterns;
@@ -38,6 +41,9 @@ public class SignUpFragment extends Fragment {
 
     private FirebaseAuth firebaseAuthSignUp;
 
+    ConnectivityManager connectivityManager;
+    NetworkInfo networkInfo;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -50,6 +56,9 @@ public class SignUpFragment extends Fragment {
                              Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_sign_up, container, false);
 
+        connectivityManager = (ConnectivityManager) requireActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
+        networkInfo = connectivityManager.getActiveNetworkInfo();
+
         signUpProgress = root.findViewById(R.id.FSU_progressBar);
 
         nameET_R = root.findViewById(R.id.FSU_nameEditTXT);
@@ -59,7 +68,13 @@ public class SignUpFragment extends Fragment {
         confirmPassET_R = root.findViewById(R.id.FSU_confrimPassEditTXT);
 
         registerBtn_R = root.findViewById(R.id.FSU_signup);
-        registerBtn_R.setOnClickListener(v -> checkUserExists());
+        registerBtn_R.setOnClickListener(v -> {
+            if ((networkInfo == null || !networkInfo.isConnected())) {
+                Toast.makeText(getActivity(), getString(R.string.voice_noConnection), Toast.LENGTH_LONG).show();
+            } else {
+                checkUserExists();
+            }
+        });
 
         goToLoginBtn = root.findViewById(R.id.FSU_goToLoginBtn);
         goToLoginBtn.setOnClickListener(v -> {
