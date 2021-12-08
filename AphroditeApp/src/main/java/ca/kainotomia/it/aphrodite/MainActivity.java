@@ -50,13 +50,10 @@ public class MainActivity extends AppCompatActivity {
 
         SharedPreferences.Editor editor=pref.edit();
         editor.putString("key","value");
+        editor.putString("key","value");
+        editor.putString("key","value");
 
-        editor.apply();
 
-        //reading from sharedpreferences
-
-        pref.getString();
-        pref.getString();
 
 
 
