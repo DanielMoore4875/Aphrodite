@@ -36,15 +36,12 @@ import ca.kainotomia.it.aphrodite.UpdateDBNode;
 
 public class VoiceFragment extends Fragment {
 
-    private ToggleButton muteMic;
     private ExtendedFloatingActionButton newVoiceCommand;
-    private Button goToLED;
 
     private RecyclerView voiceDefRV;
     private RecyclerView voiceUserRV;
     private FirebaseRecyclerAdapter<VoiceModel, VoiceHolder> voiceFBRA;
     private FirebaseRecyclerAdapter<VoiceModel, VoiceHolder> voiceUserFBRA;
-    private FragmentContainerView newCmdFragment;
 
     ConnectivityManager connectivityManager;
     NetworkInfo networkInfo;
@@ -55,24 +52,18 @@ public class VoiceFragment extends Fragment {
         View root = inflater.inflate(R.layout.voice_fragment, container, false);
 
 
-
         connectivityManager = (ConnectivityManager) requireActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
         networkInfo = connectivityManager.getActiveNetworkInfo();
-        newCmdFragment = root.findViewById(R.id.voice_nestedFragment);
-        requireActivity().getSupportFragmentManager().setFragmentResultListener("cancel_pressed", getViewLifecycleOwner(), (requestKey, result) -> {
-            // When the cancel button on the popup is pressed, set fragment container view invisible again
-            newCmdFragment.setVisibility(View.INVISIBLE);
-            muteMic.setEnabled(true);
-            goToLED.setEnabled(true);
-            newVoiceCommand.setEnabled(true);
-        });
-
-        requireActivity().getSupportFragmentManager().setFragmentResultListener("submit_pressed", getViewLifecycleOwner(), (requestKey, result) -> {
-            newCmdFragment.setVisibility(View.INVISIBLE);
-            muteMic.setEnabled(true);
-            goToLED.setEnabled(true);
-            newVoiceCommand.setEnabled(true);
-        });
+//        requireActivity().getSupportFragmentManager().setFragmentResultListener("cancel_pressed", getViewLifecycleOwner(), (requestKey, result) -> {
+//            // When the cancel button on the popup is pressed, set fragment container view invisible again
+//            newCmdFragment.setVisibility(View.INVISIBLE);
+//            newVoiceCommand.setEnabled(true);
+//        });
+//
+//        requireActivity().getSupportFragmentManager().setFragmentResultListener("submit_pressed", getViewLifecycleOwner(), (requestKey, result) -> {
+//            newCmdFragment.setVisibility(View.INVISIBLE);
+//            newVoiceCommand.setEnabled(true);
+//        });
 
         voiceDefRV = root.findViewById(R.id.voice_defRecyclerView);
         voiceDefRV.setLayoutManager(new GridLayoutManager(root.getContext(), 2));
@@ -122,13 +113,12 @@ public class VoiceFragment extends Fragment {
     }
 
     private void getFirebaseUserVoiceCommands() {
-        UpdateDBNode dbNode = new UpdateDBNode("user_voice_commands");
-        Query query = dbNode.getDatabaseReference().child(dbNode.getCurrentUid());
+        UpdateDBNode dbNode = new UpdateDBNode("vc_user");
+        Query query = dbNode.getDatabaseReference().child(dbNode.getCurrentUid()).limitToFirst(3);
 
         FirebaseRecyclerOptions<VoiceModel> options = new FirebaseRecyclerOptions.Builder<VoiceModel>()
                 .setQuery(query, snapshot -> new VoiceModel(snapshot.getKey(), Objects.requireNonNull(snapshot.getValue()).toString()))
                 .build();
-
         voiceUserFBRA = new FirebaseRecyclerAdapter<VoiceModel, VoiceHolder>(options) {
             @Override
             protected void onBindViewHolder(@NonNull VoiceHolder holder, int position, @NonNull VoiceModel model) {
@@ -165,46 +155,6 @@ public class VoiceFragment extends Fragment {
 
         voiceFBRA.startListening();
         voiceUserFBRA.startListening();
-
-        muteMic = view.findViewById(R.id.VC_muteMic_btnID);
-        newVoiceCommand = view.findViewById(R.id.voice_fab);
-
-
-        //Update DB with mic state
-        muteMic.setOnClickListener(v -> {
-            networkInfo = connectivityManager.getActiveNetworkInfo();
-            if (networkInfo != null && networkInfo.isConnected()) {
-                UpdateDBNode dbNode = new UpdateDBNode("mic_state");
-                //Connected, update db with mic state
-                if (muteMic.isChecked()) {
-                    Toast.makeText(getActivity(), getString(R.string.VC_mic_muted), Toast.LENGTH_SHORT).show();
-                    dbNode.setMicState(false);
-                } else {
-                    Toast.makeText(getActivity(), getString(R.string.VC_mic_unmuted), Toast.LENGTH_SHORT).show();
-                    dbNode.setMicState(true);
-                }
-            } else {
-                //Not Connected, let user know that the button won't do anything
-                Toast.makeText(getActivity(), getString(R.string.voice_noConnection), Toast.LENGTH_SHORT).show();
-            }
-        });
-
-
-        newVoiceCommand.setOnClickListener(v -> {
-            newCmdFragment.setVisibility(View.VISIBLE);
-            muteMic.setEnabled(false);
-            goToLED.setEnabled(false);
-            newVoiceCommand.setEnabled(false);
-        });
-
-        goToLED = view.findViewById(R.id.VC_changeLED_btnID);
-        goToLED.setOnClickListener(v -> {
-            Fragment ledColour = new LEDColourFragment();
-            FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
-            transaction.replace(R.id.nav_host_fragment, ledColour);
-            transaction.addToBackStack(null);
-            transaction.commit();
-        });
 
 
     }

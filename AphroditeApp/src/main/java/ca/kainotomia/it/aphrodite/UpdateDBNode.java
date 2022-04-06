@@ -57,7 +57,7 @@ public class UpdateDBNode {
          */
     public boolean addLayout(String layoutName, boolean[] modIsChecked, String[] moduleName, String[] moduleLoc) {
         if (Objects.requireNonNull(getDatabaseReference().getKey()).equals("layouts")) {
-            for (int i = 0; i < 8; i++) {
+            for (int i = 0; i < 7; i++) {
                 if (modIsChecked[i]) {
                     getDatabaseReference()
                             .child(getCurrentUid())
@@ -75,7 +75,7 @@ public class UpdateDBNode {
 
     public boolean editLayout(String layoutName, boolean[] modIsChecked, String[] moduleName, String[] moduleLoc) {
         if (Objects.requireNonNull(getDatabaseReference().getKey()).equals("layouts")) {
-            for (int i = 0; i < 8; i++) {
+            for (int i = 0; i < 7; i++) {
                 if (modIsChecked[i]) {
                     getDatabaseReference()
                             .child(getCurrentUid())
@@ -111,57 +111,6 @@ public class UpdateDBNode {
             return true;
         }
         return false;
-    }
-
-
-    public boolean changeLEDColour(String colour) {
-        if (Objects.requireNonNull(getDatabaseReference().getKey()).equals("led_colour")) {
-            getDatabaseReference()
-                    .child(getCurrentUid())
-                    .setValue(colour);
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    public void setMicState(boolean b) {
-        if (Objects.requireNonNull(getDatabaseReference().getKey()).equals("mic_state")) {
-            getDatabaseReference()
-                    .child(getCurrentUid())
-                    .setValue(b);
-
-        }
-    }
-
-    // Add a voice command title and description
-    public void addVoiceCommand(String title, String desc) {
-        if (Objects.requireNonNull(getDatabaseReference().getKey()).equals("user_voice_commands")) {
-            // no description = delete command
-            if (desc.equals("")) {
-                desc = null;
-            }
-            String finalDesc = desc;
-            getDatabaseReference().child(getCurrentUid()).get().addOnCompleteListener(task -> {
-                if (task.isSuccessful()) {
-                    DataSnapshot data = task.getResult();
-                    int numOfCommands;
-                    numOfCommands = (int) Objects.requireNonNull(task.getResult()).getChildrenCount();
-                    if (numOfCommands < 3) {
-                        UpdateDBNode.this.getDatabaseReference()
-                                .child(UpdateDBNode.this.getCurrentUid())
-                                .child(title)
-                                .setValue(finalDesc);
-                    } else if (Objects.requireNonNull(data).hasChild(title)) {
-                        //edit voice command that exists
-                        UpdateDBNode.this.getDatabaseReference()
-                                .child(UpdateDBNode.this.getCurrentUid())
-                                .child(title)
-                                .setValue(finalDesc);
-                    }
-                }
-            });
-        }
     }
 
     public boolean setCurrentLayout(String currentLayout) {

@@ -60,9 +60,8 @@ Taping on one of the layouts on the _**Choose Layout to Edit Page**_</br>
 &emsp;&emsp;_Review_ button lets the user share a 0-5 star review with some optional text. This will be stored in Firebase.</br>
 &emsp;&emsp;_Settings_ button lets the user logout or terminate their account. (Terminating will remove all data associated with the user from Firebase. If someone logs in with the same email in the future, it will create a new account since there is no record of the user.)
 </br></br>
-#### Voice Command & LED Edit Page
-&emsp;&emsp;_Mic muted/un-muted_ button will disable the voice recognition module on the mirror. There may be a cooldown from muting and ummuting the mic.</br>
-&emsp;&emsp;_LED Colour_ button allows the user to change the LED lights that will be on the final mirror.</br>
-&emsp;&emsp;The RGB value is stored in Firebase.
+#### Voice Command Page
+USE WEB APP FOR VOICE COMMAND CONTROL
+Set voice commands and set the layout that will be shown for custom commands 4-6
 </br></br>
 

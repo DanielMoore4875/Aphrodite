@@ -4,8 +4,6 @@
 //Alyssa Gomez n01042777 Section B
 package ca.kainotomia.it.aphrodite.ui.layouts;
 
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -123,7 +121,7 @@ public class LayoutFragment extends Fragment {
             }
         };
         //if the user has no layouts
-        if (firebaseRecyclerAdapter.getItemCount() <=0) {
+        if (firebaseRecyclerAdapter.getItemCount() <= 0) {
             layoutsPB.setVisibility(View.INVISIBLE);
         }
         recyclerView.setAdapter(firebaseRecyclerAdapter);
@@ -135,12 +133,7 @@ public class LayoutFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         firebaseRecyclerAdapter.startListening();
 
-        //receive SharedPreferences
-        SharedPreferences sp = getActivity().getSharedPreferences("UserLayoutPrefs",Context.MODE_PRIVATE);
-
-
     }
-
 
     @Override
     public void onDestroy() {

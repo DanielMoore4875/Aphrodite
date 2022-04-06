@@ -6,7 +6,6 @@
 package ca.kainotomia.it.aphrodite;
 
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.AttributeSet;
 import android.view.View;
@@ -28,7 +27,6 @@ import java.util.Objects;
 public class MainActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
-    SharedPreferences sp;
     String savedpreflayoutname;
 
 
@@ -43,13 +41,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        sp = getSharedPreferences("Saveduserprefs", Context.MODE_PRIVATE);
-
-        SharedPreferences.Editor editor = sp.edit();
-
-        editor.putString("Layout name", savedpreflayoutname);
-        editor.commit();
 
 
         //Custom Action Bar

@@ -11,7 +11,7 @@
     <string name="MA_AlertDialogExitApp_msg">Êtes-vous sûr de vouloir quitter?</string>
     <string name="MA_AlertDialogExitApp_yes">Oui, quitter l\'application</string>
     <string name="MA_AlertDialogExitApp_no">Non, restez dans l\'application</string>
-    <string name="nav_title_voice">Voix/LED</string>
+    <string name="nav_title_voice">Voix</string>
     <string name="AF_TextView_username">" Nom d\'utilisateur"</string>
     <string name="AFA_TextView_aboutustext">
         L\'application Aphrodite contrôle l\'affichage du miroir intelligent Aphrodite. Les mises en page contiennent des modules qui peuvent afficher différentes informations à de nombreux endroits autour du miroir. Certains d\'entre eux incluent l\'heure, la date, les stocks et les données du capteur lues à partir du module température-humidité. À l\'avenir, nous espérons également ajouter le streaming vidéo en tant que module. Une fois l\'utilisateur connecté, les mises en page sont enregistrées sur son compte et sont accessibles à tout moment depuis l\'application. Aphrodite dispose également d\'une fonction de commande vocale avec 7 actions prédéfinies pour lesquelles l\'utilisateur peut personnaliser le son.
@@ -26,7 +26,6 @@
     <string name="AFSS_Button_terminate">Résilier le compte Aphrodite</string>
     <string name="VC_placeholder_vcName_txt">" Nom de la commande vocale"</string>
     <string name="VC_placeholder_vcDesc_txt">" Description de la commande vocale"</string>
-    <string name="VC_led_txt">" Couleur des DEL"</string>
 
     <string name="CL_LayoutName_Text">Nom de la mise en page</string>
     <string name="CL_CreateLayout_Text">basculer entre les modules et choisir les emplacements</string>
@@ -37,12 +36,9 @@
     <string name="CL_Feature_Text_Weather">Temps</string>
     <string name="CL_Feature_Text_RoomT_H">" Température ambiante et bourdonnement"</string>
     <string name="CL_Feature_Text_Stocks">" Actions"</string>
-    <string name="CL_Feature_Text_Youtube">" Youtube"</string>
     <string name="CL_Feature_Text_SocialMedNot">" Notifications"</string>
     <!--MODULES END-->
     <string name="CL_SaveButton_Text">"Enregistrer"</string>
-    <string name="VC_micUnMuted_txt">couper le micro</string>
-    <string name="VC_micMuted_txt">activer le micro</string>
     <string name="Login_userCreated_txt">" Utilisateur créé"</string>
     <string name="AFR_TextView_title">Revoir</string>
     <string name="AFR_Button_submit">Soumettre</string>
@@ -52,9 +48,7 @@
     <string name="AFR_EditText_review">" Veuillez donner votre avis :"</string>
     <string name="CL_noChosenLoc_error_txt">Sélectionnez l\'emplacement pour tous les modules choisis</string>
     <string name="LED_CustomizeLED_Text">Personnaliser LED</string>
-    <string name="VC_VoiceLED_Text">Voix et LED</string>
-    <string name="VC_mic_muted">Le micro est coupé</string>
-    <string name="VC_mic_unmuted">Le micro n\'est pas coupé</string>
+    <string name="VC_VoiceLED_Text">Voix et LED (Visitez le site Web pour enregistrer)</string>
     <string name="CL_enterName_txt">Veuillez saisir un nom</string>
 
     <string name="voice_noConnection">CONNEXION NÉCESSAIRE, PAS DE CONNEXION</string>
@@ -63,8 +57,8 @@
     <string name="voice_desc_editTxt">La description</string>
     <string name="voice_title_editTxt">Titre_ici</string>
     <string name="voice_submit_cmd_txt">Soumettre la commande</string>
-    <string name="voice_default_commands">Commandes par défaut</string>
-    <string name="voice_user_commands">Commandes utilisateur (Max 3)</string>
+    <string name="voice_default_commands">Commandes par  (0–3)</string>
+    <string name="voice_user_commands">Commandes utilisateur (4–6)</string>
 
     <string name="AFR_TextView_text">Donnez-nous un avis ! Faites-nous savoir comment nous avons fait et comment nous pouvons améliorer Aphrodite.</string>
     <string name="H_TextView_text">Quel sera votre aménagement aujourd\'hui ?</string>

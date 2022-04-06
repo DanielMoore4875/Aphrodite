@@ -33,7 +33,6 @@
     <string name="AFSS_Button_terminate">Terminate Aphrodite Account</string>
     <string name="VC_placeholder_vcName_txt">Voice Command Name</string>
     <string name="VC_placeholder_vcDesc_txt">Voice Command Description</string>
-    <string name="VC_led_txt">LED Colour</string>
 
     <string name="CL_LayoutName_Text">Layout Name</string>
     <string name="CL_CreateLayout_Text">Toggle Modules and Choose Locations</string>
@@ -44,12 +43,9 @@
     <string name="CL_Feature_Text_Weather">Weather</string>
     <string name="CL_Feature_Text_RoomT_H">Room_Temp_Hum</string>
     <string name="CL_Feature_Text_Stocks">Stocks</string>
-    <string name="CL_Feature_Text_Youtube">Youtube</string>
     <string name="CL_Feature_Text_SocialMedNot">Notifications</string>
     <!--MODULES NAMES END-->
     <string name="CL_SaveButton_Text">Save</string>
-    <string name="VC_micUnMuted_txt">Mic Un-Muted</string>
-    <string name="VC_micMuted_txt">Mic Muted</string>
     <string name="Login_userCreated_txt">User created</string>
     <string name="AFR_TextView_title">Review</string>
     <string name="AFR_Button_submit">Submit</string>
@@ -79,12 +75,10 @@
     <string name="LED_btn">Change Colour</string>
     <string name="reviewsnack">Thank You For Reviewing!</string>
     <string name="LED_CustomizeLED_Text">Customize LED</string>
-    <string name="VC_VoiceLED_Text">Voice and LED</string>
+    <string name="VC_VoiceLED_Text">Voice (Visit website to record)</string>
     <string name="AFR_EditText_review">Tap here to write your Review!</string>
     <string name="CL_noChosenLoc_error_txt">Select location for all chosen modules</string>
     <string name="CL_enterName_txt">Please enter a name</string>
-    <string name="VC_mic_muted">Mic is muted</string>
-    <string name="VC_mic_unmuted">Mic is unmuted</string>
 
     <!--For digits criteria (start)-->
     <string name="alphabet" translatable="false">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
@@ -100,8 +94,8 @@
     <string name="voice_desc_editTxt">Description</string>
     <string name="voice_title_editTxt">Title</string>
     <string name="voice_submit_cmd_txt">Save</string>
-    <string name="voice_default_commands">Default Commands</string>
-    <string name="voice_user_commands">User Commands (Max 3)</string>
+    <string name="voice_default_commands">Default Commands (0–3)</string>
+    <string name="voice_user_commands">User Commands (4–6)</string>
 
     <string name="AFR_TextView_text">Give us a review! Let us know how we did and how we can improve Aphrodite.</string>
     <string name="H_TextView_text">What will be your layout today?</string>
@@ -133,8 +127,7 @@
     <string name="MASTER_Mod3" translatable="false">Weather</string>
     <string name="MASTER_Mod4" translatable="false">Room_Temp_Hum</string>
     <string name="MASTER_Mod5" translatable="false">Stocks</string>
-    <string name="MASTER_Mod6" translatable="false">Youtube</string>
-    <string name="MASTER_Mod7" translatable="false">Notifications</string>
+    <string name="MASTER_Mod6" translatable="false">Notifications</string>
     <!-- Master Module Names (English Only) (start) -->
 
 

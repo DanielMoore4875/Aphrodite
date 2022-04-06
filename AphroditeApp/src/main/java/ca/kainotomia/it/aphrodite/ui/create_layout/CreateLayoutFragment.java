@@ -1,7 +1,6 @@
 package ca.kainotomia.it.aphrodite.ui.create_layout;
 
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -30,7 +29,6 @@ public class CreateLayoutFragment extends Fragment {
     SwitchCompat weatherSw;
     SwitchCompat temp_humSw;
     SwitchCompat stocksSw;
-    SwitchCompat youtubeSw;
     SwitchCompat notifSw;
 
     Bundle layoutNameBun;
@@ -41,7 +39,6 @@ public class CreateLayoutFragment extends Fragment {
     Spinner weatherSp;
     Spinner temp_humSp;
     Spinner stocksSp;
-    Spinner youtubeSp;
     Spinner notifSp;
 
     Button saveLayout;
@@ -61,23 +58,21 @@ public class CreateLayoutFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
 
-        SharedPreferences sp = getActivity().getSharedPreferences("Saveduserprefs", Context.MODE_PRIVATE);
-        String savedpreflayoutname = sp.getString("Layout name", "Layout error");
-
         View root = inflater.inflate(R.layout.create_layout_page_fragment, container, false);
+
         // master array of the names of the modules
         masterModules = new String[]{getString(R.string.MASTER_Mod0), getString(R.string.MASTER_Mod1),
                 getString(R.string.MASTER_Mod2), getString(R.string.MASTER_Mod3),
                 getString(R.string.MASTER_Mod4), getString(R.string.MASTER_Mod5),
-                getString(R.string.MASTER_Mod6), getString(R.string.MASTER_Mod7)};
+                getString(R.string.MASTER_Mod6)};
         modNamesFromLeft = new String[]{getString(R.string.MASTER_Mod0), getString(R.string.MASTER_Mod1),
                 getString(R.string.MASTER_Mod2), getString(R.string.MASTER_Mod3),
                 getString(R.string.MASTER_Mod4), getString(R.string.MASTER_Mod5),
-                getString(R.string.MASTER_Mod6), getString(R.string.MASTER_Mod7)};
+                getString(R.string.MASTER_Mod6)};
         modNamesFromLeftEdit = new String[]{getString(R.string.MASTER_Mod0), getString(R.string.MASTER_Mod1),
                 getString(R.string.MASTER_Mod2), getString(R.string.MASTER_Mod3),
                 getString(R.string.MASTER_Mod4), getString(R.string.MASTER_Mod5),
-                getString(R.string.MASTER_Mod6), getString(R.string.MASTER_Mod7)};
+                getString(R.string.MASTER_Mod6)};
         layoutNameEditText = root.findViewById(R.id.CLP_LayoutName_User_Input_PT);
 
         // If this fragment is called from the LayoutFragment page, this Bundle will contain the name of
@@ -95,10 +90,8 @@ public class CreateLayoutFragment extends Fragment {
 //        modNamesFromLeftEdit[4] = temp_humSw.getText().toString();
         stocksSw = root.findViewById(R.id.CLP_Feature_Stocks);
 //        modNamesFromLeftEdit[5] = stocksSw.getText().toString();
-        youtubeSw = root.findViewById(R.id.CLP_Feature_Youtube);
-//        modNamesFromLeftEdit[6] = youtubeSw.getText().toString();
         notifSw = root.findViewById(R.id.CLP_Feature_SocialMediaNot);
-//        modNamesFromLeftEdit[7] = notifSw.getText().toString();
+//        modNamesFromLeftEdit[6] = notifSw.getText().toString();
 
         timeSp = root.findViewById(R.id.CLP_spinner_time);
         dateSp = root.findViewById(R.id.CLP_spinner_date);
@@ -106,7 +99,6 @@ public class CreateLayoutFragment extends Fragment {
         weatherSp = root.findViewById(R.id.CLP_spinner_weather);
         temp_humSp = root.findViewById(R.id.CLP_spinner_temp_hum);
         stocksSp = root.findViewById(R.id.CLP_spinner_stocks);
-        youtubeSp = root.findViewById(R.id.CLP_spinner_youtube);
         notifSp = root.findViewById(R.id.CLP_spinner_notif);
 
         //Pattern: Adapter. Using this array adapter to store strings to be used in the dropdown without changing the code
@@ -119,7 +111,6 @@ public class CreateLayoutFragment extends Fragment {
         weatherSp.setAdapter(adapter);
         temp_humSp.setAdapter(adapter);
         stocksSp.setAdapter(adapter);
-        youtubeSp.setAdapter(adapter);
         notifSp.setAdapter(adapter);
 
         timeSp.setEnabled(false);
@@ -128,7 +119,6 @@ public class CreateLayoutFragment extends Fragment {
         weatherSp.setEnabled(false);
         temp_humSp.setEnabled(false);
         stocksSp.setEnabled(false);
-        youtubeSp.setEnabled(false);
         notifSp.setEnabled(false);
 
 
@@ -142,6 +132,7 @@ public class CreateLayoutFragment extends Fragment {
 
             for (int i = 0; i < layoutNameData.size(); i++) {
                 switch (layoutNameData.get(i)) {
+                    case "time":
                     case "Time":
                         timeSw.setChecked(true);
                         for (int j = 0; j < adapter.getCount(); j++) {
@@ -153,6 +144,7 @@ public class CreateLayoutFragment extends Fragment {
                         timeSp.setEnabled(true);
                         handleSwitch(timeSw, timeSp);
                         break;
+                    case "date":
                     case "Date":
                         dateSw.setChecked(true);
                         for (int j = 0; j < adapter.getCount(); j++) {
@@ -164,6 +156,7 @@ public class CreateLayoutFragment extends Fragment {
                         dateSp.setEnabled(true);
                         handleSwitch(dateSw, dateSp);
                         break;
+                    case "calendar":
                     case "Calendar":
                         calendarSw.setChecked(true);
                         for (int j = 0; j < adapter.getCount(); j++) {
@@ -175,6 +168,7 @@ public class CreateLayoutFragment extends Fragment {
                         calendarSp.setEnabled(true);
                         handleSwitch(calendarSw, calendarSp);
                         break;
+                    case "weather":
                     case "Weather":
                         weatherSw.setChecked(true);
                         for (int j = 0; j < adapter.getCount(); j++) {
@@ -186,6 +180,7 @@ public class CreateLayoutFragment extends Fragment {
                         weatherSp.setEnabled(true);
                         handleSwitch(weatherSw, weatherSp);
                         break;
+                    case "temp-humid":
                     case "Room_Temp_Hum":
                         temp_humSw.setChecked(true);
                         for (int j = 0; j < adapter.getCount(); j++) {
@@ -197,6 +192,7 @@ public class CreateLayoutFragment extends Fragment {
                         temp_humSp.setEnabled(true);
                         handleSwitch(temp_humSw, temp_humSp);
                         break;
+                    case "stocks":
                     case "Stocks":
                         stocksSw.setChecked(true);
                         for (int j = 0; j < adapter.getCount(); j++) {
@@ -208,17 +204,7 @@ public class CreateLayoutFragment extends Fragment {
                         stocksSp.setEnabled(true);
                         handleSwitch(stocksSw, stocksSp);
                         break;
-                    case "Youtube":
-                        youtubeSw.setChecked(true);
-                        for (int j = 0; j < adapter.getCount(); j++) {
-                            if (youtubeSp.getItemAtPosition(j).equals(layoutLocData.get(i))) {
-                                youtubeSp.setSelection(j);
-                                break;
-                            }
-                        }
-                        youtubeSp.setEnabled(true);
-                        handleSwitch(youtubeSw, youtubeSp);
-                        break;
+                    case "notifications":
                     case "Notifications":
                         notifSw.setChecked(true);
                         for (int j = 0; j < adapter.getCount(); j++) {
@@ -241,7 +227,6 @@ public class CreateLayoutFragment extends Fragment {
         weatherSw.setOnClickListener(v -> handleSwitch(weatherSw, weatherSp));
         temp_humSw.setOnClickListener(v -> handleSwitch(temp_humSw, temp_humSp));
         stocksSw.setOnClickListener(v -> handleSwitch(stocksSw, stocksSp));
-        youtubeSw.setOnClickListener(v -> handleSwitch(youtubeSw, youtubeSp));
         notifSw.setOnClickListener(v -> handleSwitch(notifSw, notifSp));
 
         if (layoutNameBun == null) {
@@ -251,7 +236,6 @@ public class CreateLayoutFragment extends Fragment {
             weatherSp.setEnabled(false);
             temp_humSp.setEnabled(false);
             stocksSp.setEnabled(false);
-            youtubeSp.setEnabled(false);
             notifSp.setEnabled(false);
         }
 
@@ -275,7 +259,6 @@ public class CreateLayoutFragment extends Fragment {
                 weatherSw.isChecked(),
                 temp_humSw.isChecked(),
                 stocksSw.isChecked(),
-                youtubeSw.isChecked(),
                 notifSw.isChecked()
         };
 
@@ -286,7 +269,6 @@ public class CreateLayoutFragment extends Fragment {
                 weatherSp.getSelectedItem().toString(),
                 temp_humSp.getSelectedItem().toString(),
                 stocksSp.getSelectedItem().toString(),
-                youtubeSp.getSelectedItem().toString(),
                 notifSp.getSelectedItem().toString()
         };
 
@@ -324,11 +306,15 @@ public class CreateLayoutFragment extends Fragment {
         }
     }
 
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+    }
+
     // check if all chosen modules have a location selected
     private boolean checkAllChosen(boolean[] checkedMods, String[] modsLoc, String[] modNames) {
-        for (int i = 0; i < 8; i++) {
+        for (int i = 0; i < 7; i++) {
             if (checkedMods[i] && modsLoc[i].equals(modNames[0])) {
-
                 return false;
             }
         }

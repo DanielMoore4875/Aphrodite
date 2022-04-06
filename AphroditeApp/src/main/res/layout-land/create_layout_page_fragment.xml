@@ -17,18 +17,6 @@
         tools:context=".ui.create_layout.CreateLayoutFragment">
 
         <Spinner
-            android:id="@+id/CLP_spinner_youtube"
-            android:layout_width="@dimen/CLP_spinner_width"
-            android:layout_height="@dimen/CLP_height"
-            android:layout_marginTop="@dimen/CLP_margin_top"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.824"
-            app:layout_constraintStart_toEndOf="@+id/CLP_Feature_Youtube"
-            app:layout_constraintTop_toBottomOf="@+id/CLP_spinner_stocks"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <Spinner
             android:id="@+id/CLP_spinner_time"
             android:layout_width="@dimen/CLP_spinner_width"
             android:layout_height="@dimen/CLP_height"
@@ -104,13 +92,12 @@
             android:id="@+id/CLP_spinner_notif"
             android:layout_width="@dimen/CLP_spinner_width"
             android:layout_height="@dimen/CLP_height"
-            android:layout_marginTop="@dimen/CLP_margin_top"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.824"
             app:layout_constraintStart_toEndOf="@+id/CLP_Feature_SocialMediaNot"
-            app:layout_constraintTop_toBottomOf="@+id/CLP_spinner_youtube"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toBottomOf="@+id/CLP_spinner_stocks"
+            app:layout_constraintVertical_bias="0.151" />
 
         <TextView
             android:id="@+id/CL_CreateLayout_PT"
@@ -269,30 +256,9 @@
             tools:ignore="TextContrastCheck" />
 
         <androidx.appcompat.widget.SwitchCompat
-            android:id="@+id/CLP_Feature_Youtube"
-            android:layout_width="@dimen/CLP_switch_width"
-            android:layout_height="@dimen/CLP_height"
-            android:layout_marginTop="@dimen/CLP_margin_top"
-
-            android:layout_marginEnd="@dimen/CLP_switch_marginEnd"
-            android:layoutDirection="rtl"
-            android:minHeight="48dp"
-            android:text="@string/CL_Feature_Text_Youtube"
-            android:textColor="@color/dark_ocean"
-            android:theme="@style/StateCSwitch"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/CLP_Feature_Stocks"
-            app:layout_constraintVertical_bias="0.0"
-            tools:ignore="TextContrastCheck" />
-
-        <androidx.appcompat.widget.SwitchCompat
             android:id="@+id/CLP_Feature_SocialMediaNot"
             android:layout_width="@dimen/CLP_switch_width"
             android:layout_height="@dimen/CLP_height"
-            android:layout_marginTop="@dimen/CLP_margin_top"
             android:layout_marginEnd="@dimen/CLP_switch_marginEnd"
             android:layoutDirection="rtl"
             android:minHeight="48dp"
@@ -303,8 +269,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/CLP_Feature_Youtube"
-            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintTop_toBottomOf="@+id/CLP_Feature_Stocks"
+            app:layout_constraintVertical_bias="0.03"
             tools:ignore="TextContrastCheck" />
 
         <Button
