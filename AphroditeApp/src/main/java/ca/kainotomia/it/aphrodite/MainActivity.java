@@ -27,7 +27,6 @@ import java.util.Objects;
 public class MainActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
-    String savedpreflayoutname;
 
 
     @Nullable

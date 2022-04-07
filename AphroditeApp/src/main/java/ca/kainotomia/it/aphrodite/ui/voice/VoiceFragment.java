@@ -11,15 +11,11 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.Toast;
-import android.widget.ToggleButton;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentContainerView;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -35,9 +31,6 @@ import ca.kainotomia.it.aphrodite.R;
 import ca.kainotomia.it.aphrodite.UpdateDBNode;
 
 public class VoiceFragment extends Fragment {
-
-    private ExtendedFloatingActionButton newVoiceCommand;
-
     private RecyclerView voiceDefRV;
     private RecyclerView voiceUserRV;
     private FirebaseRecyclerAdapter<VoiceModel, VoiceHolder> voiceFBRA;
@@ -54,16 +47,6 @@ public class VoiceFragment extends Fragment {
 
         connectivityManager = (ConnectivityManager) requireActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
         networkInfo = connectivityManager.getActiveNetworkInfo();
-//        requireActivity().getSupportFragmentManager().setFragmentResultListener("cancel_pressed", getViewLifecycleOwner(), (requestKey, result) -> {
-//            // When the cancel button on the popup is pressed, set fragment container view invisible again
-//            newCmdFragment.setVisibility(View.INVISIBLE);
-//            newVoiceCommand.setEnabled(true);
-//        });
-//
-//        requireActivity().getSupportFragmentManager().setFragmentResultListener("submit_pressed", getViewLifecycleOwner(), (requestKey, result) -> {
-//            newCmdFragment.setVisibility(View.INVISIBLE);
-//            newVoiceCommand.setEnabled(true);
-//        });
 
         voiceDefRV = root.findViewById(R.id.voice_defRecyclerView);
         voiceDefRV.setLayoutManager(new GridLayoutManager(root.getContext(), 2));

@@ -33,12 +33,9 @@
             app:layout_constraintTop_toTopOf="parent" />
 
 
-
-
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="140dp"
+            android:layout_height="wrap_content"
             android:fillViewport="false"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -88,24 +85,24 @@
         </ScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-<!--    <androidx.coordinatorlayout.widget.CoordinatorLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent">-->
+    <!--    <androidx.coordinatorlayout.widget.CoordinatorLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent">-->
 
-<!--        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton-->
-<!--            android:id="@+id/voice_fab"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_gravity="bottom|end"-->
-<!--            android:layout_margin="16dp"-->
-<!--            android:backgroundTint="@color/peach"-->
-<!--            android:contentDescription="@string/voice_fab_desc"-->
-<!--            android:text="@string/voice_new_command"-->
-<!--            android:textColor="@color/dark_ocean"-->
-<!--            app:icon="@drawable/voice_add"-->
-<!--            app:iconTint="@color/dark_ocean"-->
-<!--            app:rippleColor="@color/lighter_oak" />-->
-<!--    </androidx.coordinatorlayout.widget.CoordinatorLayout>-->
+    <!--        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton-->
+    <!--            android:id="@+id/voice_fab"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_gravity="bottom|end"-->
+    <!--            android:layout_margin="16dp"-->
+    <!--            android:backgroundTint="@color/peach"-->
+    <!--            android:contentDescription="@string/voice_fab_desc"-->
+    <!--            android:text="@string/voice_new_command"-->
+    <!--            android:textColor="@color/dark_ocean"-->
+    <!--            app:icon="@drawable/voice_add"-->
+    <!--            app:iconTint="@color/dark_ocean"-->
+    <!--            app:rippleColor="@color/lighter_oak" />-->
+    <!--    </androidx.coordinatorlayout.widget.CoordinatorLayout>-->
 
 
 </RelativeLayout>
