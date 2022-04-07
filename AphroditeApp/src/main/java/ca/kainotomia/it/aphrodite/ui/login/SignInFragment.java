@@ -62,6 +62,7 @@ public class SignInFragment extends Fragment {
                 firebaseAuthSignIn.signInWithEmailAndPassword(emailET_L.getText().toString(),
                         passwordET_L.getText().toString())
                         .addOnSuccessListener(authResult -> {
+
                             startActivity(new Intent(requireActivity().getApplicationContext(), MainActivity.class));
                             signInProgress.setVisibility(View.INVISIBLE);
                             loginBtn_L.setEnabled(true);
